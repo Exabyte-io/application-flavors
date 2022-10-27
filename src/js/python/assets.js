@@ -25,6 +25,13 @@ export default () => {
             executableName,
         },
         {
+            content: readAssetFile(applicationName, "matplotlib_basic.pyi"),
+            name: "matplotlib_basic.py",
+            contextProviders: [],
+            applicationName,
+            executableName,
+        },
+        {
             content: readAssetFile(applicationName, "espresso_xml_get_qpt_irr.pyi"),
             name: "espresso_xml_get_qpt_irr.py",
             contextProviders: [],

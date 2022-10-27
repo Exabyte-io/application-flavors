@@ -19,6 +19,18 @@ export default {
                 ],
                 monitors: [monitors.standard_output],
             },
+            matplotlib_basic: {
+                input: [
+                    {
+                        name: "script.py",
+                        templateName: "matplotlib_basic.py",
+                    },
+                    {
+                        name: "requirements.txt",
+                    },
+                ],
+                monitors: [monitors.standard_output],
+            },
             espresso_xml_get_qpt_irr: {
                 input: [
                     {

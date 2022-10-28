@@ -9,23 +9,28 @@ import numpy as np
 
 # Plot Settings
 # -------------
-figsize        = (6.4, 4.8) # width, height [inches]
-dpi            = 100 # resolution [dots-per-inch]
-fsize_title    = 16 # font size of title
-fsize_axis     = 12 # font size of axis label
-fsize_tick     = 12 # font size of tick label
-fsize_legend   = 14 # font size of legend
-x_axis_label   = None # label for x-axis
-y_axis_label   = None # label for y-axis
-title          = None # figure title
-save_name      = "test.pdf" # output filename (with suffix), e.g. 'plot.pdf'
-x_tick_spacing = 1 # custom tick spacing for x-axis (optional)
-y_tick_spacing = 1 # custom tick spacing for y-axis (optional)
+figure_size      = (6.4, 4.8)  # width, height [inches]
+dpi              = 100  # resolution [dots-per-inch]
+font_size_title  = 16  # font size of title
+font_size_axis   = 12  # font size of axis label
+font_size_tick   = 12  # font size of tick label
+font_size_legend = 14  # font size of legend
+x_axis_label     = None  # label for x-axis
+y_axis_label     = None  # label for y-axis
+title            = None  # figure title
+show_legend      = False  # whether to show legend
+save_name        = "plot.pdf" # output filename (with suffix), e.g. 'plot.pdf'
+x_view_limits    = {"left": None, "right": None}  # view limits for x-axis
+y_view_limits    = {"top": None, "bottom": None}  # view limits for y-axis
+x_tick_spacing   = None  # custom tick spacing for x-axis (optional)
+y_tick_spacing   = None  # custom tick spacing for y-axis (optional)
+x_tick_labels    = None  # custom tick labels for x-axis (optional)
+y_tick_labels    = None  # custom tick labels for y-axis (optional)
 
 
 # Figure & axes objects
 # ---------------------
-fig = plt.figure(figsize=figsize, dpi=dpi)
+fig = plt.figure(figsize=figure_size, dpi=dpi)
 ax  = fig.add_subplot(111)
 
 # Example plot (REPLACE WITH YOUR
@@ -43,8 +48,8 @@ ax.plot(x, y, "g-", zorder=3)
 
 # View limits
 # -----------
-# ax.set_xlim(left=None, right=None)
-# ax.set_ylim(bottom=None, top=None)
+ax.set_xlim(**x_view_limits)
+ax.set_ylim(**y_view_limits)
 
 
 # Grid lines
@@ -61,30 +66,39 @@ ax.plot(x, y, "g-", zorder=3)
 # ax.xaxis.set_major_locator(ticker.MultipleLocator(x_tick_spacing))
 # ax.yaxis.set_major_locator(ticker.MultipleLocator(y_tick_spacing))
 
+# Custom tick labels
+# ------------------
+if x_tick_labels != None:
+    ax.set_xticklabels(x_tick_labels, fontdict={"fontsize": font_size_tick}, minor=False)
+if y_tick_labels != None:
+    ax.set_yticklabels(y_tick_labels, fontdict={"fontsize": font_size_tick}, minor=False)
+
 # Other tick settings
 # -------------------
-# ax.set_xticklabels(x_tick_labels, fontdict={"fontsize": fsize_tick}, minor=False)
-# ax.set_yticklabels(y_tick_labels, fontdict={"fontsize": fsize_tick}, minor=False)
-# ax.tick_params(axis="both", which="major", labelsize=fsize_tick, direction="in")
+# ax.tick_params(axis="both", which="major", labelsize=font_size_tick, direction="in")
 # ax.tick_params(axis="x", which="major", pad=10)
 # ax.tick_params(axis="x", which="minor", bottom=False, top=False)
 
 
 # Axis labels
 # -----------
-ax.set_xlabel(x_axis_label, size=fsize_axis)
-ax.set_ylabel(y_axis_label, size=fsize_axis)
+if x_axis_label != None:
+    ax.set_xlabel(x_axis_label, size=font_size_axis)
+if y_axis_label != None:
+    ax.set_ylabel(y_axis_label, size=font_size_axis)
 
 # Figure title
 # ------------
-# ax.set_title(title, fontsize=fsize_title)
+if title != None:
+    ax.set_title(title, fontsize=font_size_title)
 
 # Legend
 # ------
-# legend = ax.legend(prop={'size': fsize_legend})
+if show_legend:
+    ax.legend(prop={'size': font_size_legend})
 
 # Save figure
 # -----------
 if save_name != None:
-    save_fmt = save_name.split(".")[-1]
-    fig.savefig(save_name, format=save_fmt, bbox_inches="tight")
+    save_format = save_name.split(".")[-1]
+    fig.savefig(save_name, format=save_format, bbox_inches="tight")

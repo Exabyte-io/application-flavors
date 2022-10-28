@@ -19,10 +19,10 @@ export default {
                 ],
                 monitors: [monitors.standard_output],
             },
-            matplotlib_basic: {
+            "python:post_processing:plot:matplotlib": {
                 input: [
                     {
-                        name: "script.py",
+                        name: "plot.py",
                         templateName: "matplotlib_basic.py",
                     },
                     {

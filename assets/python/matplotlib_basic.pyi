@@ -33,7 +33,7 @@ y_tick_labels    = None  # custom tick labels for y-axis (optional)
 fig = plt.figure(figsize=figure_size, dpi=dpi)
 ax  = fig.add_subplot(111)
 
-# Example plot (REPLACE WITH YOUR
+# Example plot (REPLACE ACCORDINGLY)
 # ------------
 x = np.linspace(0, 7, num=100)
 y = np.sin(x)

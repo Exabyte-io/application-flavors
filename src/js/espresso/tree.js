@@ -423,6 +423,15 @@ export default {
                 results: [],
                 monitors: [monitors.standard_output],
             },
+            averaged_potential: {
+                input: [
+                    {
+                        name: "average.in",
+                    },
+                ],
+                results: ["averaged_potential_profile"],
+                monitors: [monitors.standard_output],
+            },
         },
     },
 };

@@ -412,7 +412,7 @@ export default {
     },
     "average.x": {
         monitors: [monitors.standard_output],
-        results: [],
+        results: ["averaged_potential_profile"],
         flavors: {
             average: {
                 input: [

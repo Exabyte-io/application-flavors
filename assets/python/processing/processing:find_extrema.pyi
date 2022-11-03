@@ -5,11 +5,12 @@
 import numpy as np
 from scipy.signal import find_peaks
 import json
+from munch import Munch
 
 # Data From Context
 # -----------------
 # The array can be extracted from the context by rendering the following Jinja template
-{% raw %} Y = np.array({{array_from_context}}) {% endraw %}  # extract array from context
+{% raw %}Y = np.array({{array_from_context}}){% endraw %}  # extract array from context
 
 # Settings
 # --------

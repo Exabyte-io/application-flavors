@@ -1,0 +1,42 @@
+{% set MATERIAL_INDEX = subworkflowContext.MATERIAL_INDEX | int %}
+&CONTROL
+    calculation = 'scf'
+    title = ''
+    verbosity = 'low'
+    restart_mode = '{{ input.RESTART_MODE }}'
+    wf_collect = .true.
+    tstress = .true.
+    tprnfor = .true.
+    outdir = {% raw %}'{{ JOB_WORK_DIR }}/outdir'{% endraw %}
+    wfcdir = {% raw %}'{{ JOB_WORK_DIR }}/outdir'{% endraw %}
+    prefix = '__prefix__'
+    pseudo_dir = {% raw %}'{{ JOB_WORK_DIR }}/pseudo'{% endraw %}
+/
+&SYSTEM
+    ibrav = {{ input.perMaterial[MATERIAL_INDEX].IBRAV }}
+    nat = {{ input.perMaterial[MATERIAL_INDEX].NAT }}
+    ntyp = {{ input.perMaterial[MATERIAL_INDEX].NTYP }}
+    ecutwfc = {{ cutoffs.wavefunction }}
+    ecutrho = {{ cutoffs.density }}
+    occupations = 'smearing'
+    degauss = 0.005
+/
+&ELECTRONS
+    diagonalization = 'david'
+    diago_david_ndim = 4
+    diago_full_acc = .true.
+    mixing_beta = 0.3
+    startingwfc = 'atomic+random'
+/
+&IONS
+/
+&CELL
+/
+ATOMIC_SPECIES
+{{ input.perMaterial[MATERIAL_INDEX].ATOMIC_SPECIES }}
+ATOMIC_POSITIONS crystal
+{{ input.perMaterial[MATERIAL_INDEX].ATOMIC_POSITIONS }}
+CELL_PARAMETERS angstrom
+{{ input.perMaterial[MATERIAL_INDEX].CELL_PARAMETERS }}
+K_POINTS automatic
+{% for d in kgrid.dimensions %}{{d}} {% endfor %}{% for s in kgrid.shifts %}{{s}} {% endfor %}

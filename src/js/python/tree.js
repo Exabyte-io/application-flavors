@@ -34,7 +34,8 @@ export default {
                         templateName: "find_extrema.py",
                     },
                     {
-                        name: "processing_requirements.txt",
+                        name: "requirements.txt",
+                        templateName: "processing_requirements.txt",
                     },
                 ],
                 monitors: [monitors.standard_output],

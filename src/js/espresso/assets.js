@@ -123,7 +123,7 @@ export default () => {
             content: readAssetFile(applicationName, "pw_bands_multimaterial.j2.in"),
             name: "pw_bands_multimaterial.in",
             contextProviders: [
-                "KGridFormDataManager",
+                "KPathFormDataManager",
                 "QEPWXInputDataManager",
                 "PlanewaveCutoffDataManager",
             ],

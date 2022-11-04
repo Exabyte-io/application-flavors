@@ -1,4 +1,4 @@
-{% set MATERIAL_INDEX = subworkflowContext.MATERIAL_INDEX | int %}
+{% set MATERIAL_INDEX = subworkflowContext.MATERIAL_INDEX -%}
 &CONTROL
     calculation = 'scf'
     title = ''

@@ -27,7 +27,7 @@ export default {
                 ],
                 monitors: [monitors.standard_output],
             },
-            "processing:find_extrema": {
+            "generic:processing:find_extrema:scipy": {
                 input: [
                     {
                         name: "find_extrema.py",

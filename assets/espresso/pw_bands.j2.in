@@ -1,3 +1,6 @@
+{% if subworkflowContext.MATERIAL_INDEX %}
+{%- set input = input.perMaterial[MATERIAL_INDEX] -%}
+{% endif -%}
 &CONTROL
     calculation = 'bands'
     title = ''

@@ -108,28 +108,6 @@ export default () => {
             applicationName,
             executableName: "pw.x",
         },
-        {
-            content: readAssetFile(applicationName, "pw_scf_multimaterial.j2.in"),
-            name: "pw_scf_multimaterial.in",
-            contextProviders: [
-                "KGridFormDataManager",
-                "QEPWXInputDataManager",
-                "PlanewaveCutoffDataManager",
-            ],
-            applicationName,
-            executableName: "pw.x",
-        },
-        {
-            content: readAssetFile(applicationName, "pw_bands_multimaterial.j2.in"),
-            name: "pw_bands_multimaterial.in",
-            contextProviders: [
-                "KPathFormDataManager",
-                "QEPWXInputDataManager",
-                "PlanewaveCutoffDataManager",
-            ],
-            applicationName,
-            executableName: "pw.x",
-        },
 
         /*
          *  PH.X

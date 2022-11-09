@@ -32,14 +32,14 @@ export default () => {
             executableName,
         },
         {
-            content: readAssetFile("python/processing", "processing:find_extrema.pyi"),
+            content: readAssetFile("python/generic", "processing:find_extrema.pyi"),
             name: "find_extrema.py",
             contextProviders: [],
             applicationName,
             executableName,
         },
         {
-            content: readAssetFile("python/processing", "requirements.j2.txt"),
+            content: readAssetFile("python/generic", "requirements.j2.txt"),
             name: "processing_requirements.txt",
             contextProviders: [],
             applicationName,

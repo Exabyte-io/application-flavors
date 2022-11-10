@@ -1,3 +1,6 @@
+{% if subworkflowContext.MATERIAL_INDEX %}
+{%- set input = input.perMaterial[subworkflowContext.MATERIAL_INDEX] -%}
+{% endif -%}
 &CONTROL
     calculation = 'scf'
     title = ''

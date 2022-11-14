@@ -338,7 +338,7 @@ export default {
             dynmat: {
                 input: [
                     {
-                        name: "matdyn_grid.in",
+                        name: "dynmat_grid.in",
                     },
                 ],
                 results: [],

@@ -412,7 +412,7 @@ export default {
     },
     "average.x": {
         monitors: [monitors.standard_output],
-        results: ["averaged_potential_profile"],
+        results: ["average_potential_profile"],
         flavors: {
             average: {
                 input: [
@@ -423,13 +423,13 @@ export default {
                 results: [],
                 monitors: [monitors.standard_output],
             },
-            averaged_potential: {
+            average_potential: {
                 input: [
                     {
                         name: "average.in",
                     },
                 ],
-                results: ["averaged_potential_profile"],
+                results: ["average_potential_profile"],
                 monitors: [monitors.standard_output],
             },
         },

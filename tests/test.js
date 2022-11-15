@@ -5,8 +5,8 @@ import {
     allowedMonitors,
     allowedResults,
     getAllAppTemplates,
-    getAppTree,
     getAppData,
+    getAppTree,
 } from "../src/js/index";
 
 describe("allowedResults", () => {
@@ -59,5 +59,98 @@ describe("getAppData", () => {
         expect(() => {
             getAppData("unknown_app");
         }).to.throw("unknown_app is not a known application with data.");
+    });
+});
+
+describe("assets for all executables", () => {
+    it("exists at least 1 asset for each tree entry for espresso tree", () => {
+        const tree = getAppTree("espresso");
+        const templates = getAllAppTemplates();
+
+        Object.keys(tree).forEach((treeItemName) => {
+            const treeItemTemplates = templates.filter(
+                (template) => template.executableName === treeItemName,
+            );
+
+            assert(treeItemTemplates.length > 0);
+        });
+    });
+
+    it("exists at least 1 asset for each tree entry for jupyterLab tree", () => {
+        const tree = getAppTree("jupyterLab");
+        const templates = getAllAppTemplates();
+
+        Object.keys(tree).forEach((treeItemName) => {
+            const treeItemTemplates = templates.filter(
+                (template) => template.executableName === treeItemName,
+            );
+
+            assert(treeItemTemplates.length > 0);
+        });
+    });
+
+    it.skip("exists at least 1 asset for each tree entry for ml tree", () => {
+        const tree = getAppTree("ml");
+        const templates = getAllAppTemplates();
+
+        Object.keys(tree).forEach((treeItemName) => {
+            const treeItemTemplates = templates.filter(
+                (template) => template.executableName === treeItemName,
+            );
+
+            assert(treeItemTemplates.length > 0);
+        });
+    });
+
+    it("exists at least 1 asset for each tree entry for nwchem tree", () => {
+        const tree = getAppTree("nwchem");
+        const templates = getAllAppTemplates();
+
+        Object.keys(tree).forEach((treeItemName) => {
+            const treeItemTemplates = templates.filter(
+                (template) => template.executableName === treeItemName,
+            );
+
+            assert(treeItemTemplates.length > 0);
+        });
+    });
+
+    it("exists at least 1 asset for each tree entry for python tree", () => {
+        const tree = getAppTree("python");
+        const templates = getAllAppTemplates();
+
+        Object.keys(tree).forEach((treeItemName) => {
+            const treeItemTemplates = templates.filter(
+                (template) => template.executableName === treeItemName,
+            );
+
+            assert(treeItemTemplates.length > 0);
+        });
+    });
+
+    it("exists at least 1 asset for each tree entry for shell tree", () => {
+        const tree = getAppTree("shell");
+        const templates = getAllAppTemplates();
+
+        Object.keys(tree).forEach((treeItemName) => {
+            const treeItemTemplates = templates.filter(
+                (template) => template.executableName === treeItemName,
+            );
+
+            assert(treeItemTemplates.length > 0);
+        });
+    });
+
+    it("exists at least 1 asset for each tree entry for vasp tree", () => {
+        const tree = getAppTree("vasp");
+        const templates = getAllAppTemplates();
+
+        Object.keys(tree).forEach((treeItemName) => {
+            const treeItemTemplates = templates.filter(
+                (template) => template.executableName === treeItemName,
+            );
+
+            assert(treeItemTemplates.length > 0);
+        });
     });
 });

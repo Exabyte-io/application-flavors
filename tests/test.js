@@ -5,8 +5,8 @@ import {
     allowedMonitors,
     allowedResults,
     getAllAppTemplates,
-    getAppTree,
     getAppData,
+    getAppTree,
 } from "../src/js/index";
 
 describe("allowedResults", () => {

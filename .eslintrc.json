@@ -1,3 +1,3 @@
 {
-    "extends": ["mat3ra"]
+    "extends": ["@exabyte-io/eslint-config"]
 }

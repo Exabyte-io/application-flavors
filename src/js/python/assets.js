@@ -25,7 +25,7 @@ export default () => {
             executableName,
         },
         {
-            content: readAssetFile(applicationName, "matplotlib_basic.pyi"),
+            content: readAssetFile("python/generic", "post_processing:plot:matplotlib.pyi"),
             name: "matplotlib_basic.py",
             contextProviders: [],
             applicationName,

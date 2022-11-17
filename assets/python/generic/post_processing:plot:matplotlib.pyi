@@ -68,9 +68,9 @@ ax.set_ylim(**y_view_limits)
 
 # Custom tick labels
 # ------------------
-if x_tick_labels != None:
+if x_tick_labels is not None:
     ax.set_xticklabels(x_tick_labels, fontdict={"fontsize": font_size_tick}, minor=False)
-if y_tick_labels != None:
+if y_tick_labels is not None:
     ax.set_yticklabels(y_tick_labels, fontdict={"fontsize": font_size_tick}, minor=False)
 
 # Other tick settings
@@ -82,14 +82,14 @@ if y_tick_labels != None:
 
 # Axis labels
 # -----------
-if x_axis_label != None:
+if x_axis_label is not None:
     ax.set_xlabel(x_axis_label, size=font_size_axis)
-if y_axis_label != None:
+if y_axis_label is not None:
     ax.set_ylabel(y_axis_label, size=font_size_axis)
 
 # Figure title
 # ------------
-if title != None:
+if title is not None:
     ax.set_title(title, fontsize=font_size_title)
 
 # Legend
@@ -99,6 +99,6 @@ if show_legend:
 
 # Save figure
 # -----------
-if save_name != None:
+if save_name is not None:
     save_format = save_name.split(".")[-1]
     fig.savefig(save_name, format=save_format, bbox_inches="tight")

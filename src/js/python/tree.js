@@ -19,7 +19,15 @@ export default {
                 ],
                 monitors: [monitors.standard_output],
             },
-            "python:post_processing:plot:matplotlib": {
+            espresso_xml_get_qpt_irr: {
+                input: [
+                    {
+                        name: "espresso_xml_get_qpt_irr.py",
+                    },
+                ],
+                monitors: [monitors.standard_output],
+            },
+            "generic:post_processing:plot:matplotlib": {
                 input: [
                     {
                         name: "plot.py",
@@ -27,14 +35,7 @@ export default {
                     },
                     {
                         name: "requirements.txt",
-                    },
-                ],
-                monitors: [monitors.standard_output],
-            },
-            espresso_xml_get_qpt_irr: {
-                input: [
-                    {
-                        name: "espresso_xml_get_qpt_irr.py",
+                        templateName: "processing_requirements.txt",
                     },
                 ],
                 monitors: [monitors.standard_output],

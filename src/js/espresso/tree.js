@@ -338,7 +338,7 @@ export default {
             dynmat: {
                 input: [
                     {
-                        name: "matdyn_grid.in",
+                        name: "dynmat_grid.in",
                     },
                 ],
                 results: [],
@@ -412,7 +412,7 @@ export default {
     },
     "average.x": {
         monitors: [monitors.standard_output],
-        results: [],
+        results: ["average_potential_profile"],
         flavors: {
             average: {
                 input: [
@@ -421,6 +421,15 @@ export default {
                     },
                 ],
                 results: [],
+                monitors: [monitors.standard_output],
+            },
+            average_potential: {
+                input: [
+                    {
+                        name: "average.in",
+                    },
+                ],
+                results: ["average_potential_profile"],
                 monitors: [monitors.standard_output],
             },
         },

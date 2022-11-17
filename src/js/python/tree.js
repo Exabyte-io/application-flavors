@@ -39,6 +39,19 @@ export default {
                 ],
                 monitors: [monitors.standard_output],
             },
+            "generic:processing:find_extrema:scipy": {
+                input: [
+                    {
+                        name: "find_extrema.py",
+                        templateName: "find_extrema.py",
+                    },
+                    {
+                        name: "requirements.txt",
+                        templateName: "processing_requirements.txt",
+                    },
+                ],
+                monitors: [monitors.standard_output],
+            },
             "pyml:setup_variables_packages": {
                 input: [
                     {

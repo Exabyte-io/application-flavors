@@ -7,8 +7,9 @@
     "postinstall": "npm run transpile",
     "transpile": "mkdir -p lib; babel src/js --out-dir lib/js; node build_templates.js",
     "test": "nyc --reporter=text mocha --require @babel/register tests",
-    "lint": "eslint src/js tests",
-    "lint:fix": "eslint --fix --cache src/js tests",
+    "lint": "eslint src/js tests && prettier --write src/js tests",
+    "lint:fix": "eslint --fix --cache src/js tests && prettier --write src/js tests",
+    "prettier": "prettier --check src/js tests",
     "prepare": "husky install"
   },
   "repository": {
@@ -23,14 +24,16 @@
   },
   "homepage": "https://github.com/Exabyte-io/exabyte-application-flavors",
   "devDependencies": {
-    "@exabyte-io/eslint-config": "^2022.11.16-0",
+    "@exabyte-io/eslint-config": "^2022.11.17-0",
     "chai": "^4.3.4",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^19.0.2",
     "eslint-config-mat3ra": "git+https://github.com/Exabyte-io/eslint-config-mat3ra.git#feat/SOF-6397",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-jsdoc": "^37.1.0",
     "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.27.1",
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
@@ -56,6 +59,7 @@
     "npm": ">=6.4.1"
   },
   "lint-staged": {
-    "*.js": "eslint --cache --fix"
+    "*.js": "eslint --cache --fix",
+    "*.{js,css}": "prettier --write"
   }
 }

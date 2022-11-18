@@ -1,7 +1,6 @@
 /.idea/
 /node_modules/
 /.nyc_output/
-/.husky/
 /lib/
 /venv/
 /test/pythonml/*.csv
@@ -9,4 +8,4 @@
 /test/pythonml/settings.py
 /test/pythonml/.job_context
 **/__pycache__/
-
+.eslintcache

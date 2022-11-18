@@ -27,6 +27,19 @@ export default {
                 ],
                 monitors: [monitors.standard_output],
             },
+            "generic:post_processing:plot:matplotlib": {
+                input: [
+                    {
+                        name: "plot.py",
+                        templateName: "matplotlib_basic.py",
+                    },
+                    {
+                        name: "requirements.txt",
+                        templateName: "processing_requirements.txt",
+                    },
+                ],
+                monitors: [monitors.standard_output],
+            },
             "generic:processing:find_extrema:scipy": {
                 input: [
                     {

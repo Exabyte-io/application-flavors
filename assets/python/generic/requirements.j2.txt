@@ -18,5 +18,6 @@
 
 
 munch==2.5.0
-numpy==1.19.5
-scipy==1.5.4
+numpy>=1.19.5
+scipy>=1.5.4
+matplotlib>=3.0.0

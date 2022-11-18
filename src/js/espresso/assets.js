@@ -174,6 +174,17 @@ export default () => {
         },
 
         /*
+         *  DYNMAT.X
+         */
+        {
+            content: readAssetFile(applicationName, "matdyn_grid.j2.in"),
+            name: "dynmat_grid.in",
+            contextProviders: ["IGridFormDataManager"],
+            applicationName,
+            executableName: "dynmat.x",
+        },
+
+        /*
          *  BANDS.X
          */
         {

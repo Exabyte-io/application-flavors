@@ -1,0 +1,27 @@
+#  structure:
+#  directory:  application name
+#  file:    version
+#  1st level: executable
+#  2nd level: build
+#  3rd level: model node path
+#  4th level: model node data
+pw.x:
+  default:
+    - path: /dft
+    - path: /dft/lda
+    - path: /dft/lda/spz
+      data:
+        functional:
+          name: PZ
+    - path: /dft/lda/spw92
+      data:
+        functional:
+          name: PW
+    - path: /dft/lda/svwn5
+      data:
+        functional:
+          name: VWN
+    - path: /dft/gga
+    - path: /dft/gga/pbe
+    - path: /dft/gga/pbesol
+    - path: /dft/gga/pw91

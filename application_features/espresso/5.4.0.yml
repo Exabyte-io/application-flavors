@@ -1,0 +1,18 @@
+#  structure:
+#  directory:  application name
+#  file:    version
+#  1st level: executable
+#  2nd level: build
+#  3rd level: model node path
+#  4th level: model node data
+include: 5.2.1.yml
+pw.x:
+  default:
+    - path: /dft/lda/spz
+      isRemoved: true
+    - path: /dft/lda/svwn5
+      data:
+        functional:
+          name: SVWN5
+    - path: /dft/gga/rvv10
+

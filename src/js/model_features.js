@@ -12,9 +12,9 @@ import { recursiveMerge } from "./utils";
  */
 export function filterTree(nodes, paths, pathData = null) {
     return nodes.reduce((acc, node) => {
-        if (paths.includes(node.label) || node.label === "") {
+        if (paths.includes(node.path) || node.path === "") {
             let modified = {};
-            let data = pathData && pathData.find((item) => item.path === node.label)?.data;
+            let data = pathData && pathData.find((item) => item.path === node.path)?.data;
             if (data) {
                 data = recursiveMerge(node.data, data);
                 modified = { ...node, data };

@@ -42,3 +42,16 @@ python -m unittest
 This set of tests is configured using the `integration_configuration.yaml` file, which contains information for which
 units are to be present in a test, and the order they're to be run in. It also contains general settings, such as
 where the test fixtures are located, and which files need to be cleaned up when a test job is complete.
+
+## Application Features
+The available options (e.g. models) for each application are defined via asset files in `application_features`,
+which are used to construct a single object containing all feature definitions (`model_feature_data.js`).
+These asset files are organized in the specific way, whereby the filepath also plays a role
+in the generation of the feature data object:
+1. directory - application name
+2. filename - application version
+3. first level (of the object defined by asset) - executable
+4. second level - build of the executable
+
+The build property contains a list of objects defining the path of the node in the feature tree
+(`path`) as well as additional data (`data`), which is used to redefine tree data locally.

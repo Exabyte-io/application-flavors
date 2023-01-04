@@ -4,7 +4,23 @@ import modelFeatures from "../../model_feature_data";
 import { recursiveMerge } from "./utils";
 
 /**
- * Filter nodes based on path and modify node data.
+ * Filter nodes from the model tree based on path and modify node data.
+ * A node of the model tree is defined in mode.js and has a form such as the following:
+ * ```
+ * {
+ *     path: "/dft/gga",
+ *     parentPath: "/dft",
+ *     data: {
+ *         subtype: {
+ *             slug: "gga",
+ *             name: "Generalized Gradient Approximation",
+ *         },
+ *     },
+ *     children: [
+ *         // array of child nodes
+ *     ],
+ * }
+ * ```
  * @param {Array} nodes - Array of nodes to be filtered.
  * @param {string[]} paths - Array of node paths
  * @param {Object[]} pathData - Array of objects containing path and node data.

@@ -32,9 +32,10 @@ const findKeys = (key, object) => {
 
 /**
  * Patched version of lodash's lodash.get() which handles empty object paths.
+ * I.e. in case of empty path, the object `obj` is returned.
  * @param {Object} obj - The object to query
  * @param {string} objPath - The path of the property to get
- * @returns {*} - Resolved value
+ * @returns {*} - Resolved value or initial object
  * @todo Move to code.js
  */
 const getByPath = (obj, objPath) => {

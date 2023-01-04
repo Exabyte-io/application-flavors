@@ -1,4 +1,4 @@
-import _ from "lodash";
+import lodash from "lodash";
 
 import modelFeatures from "../../model_feature_data";
 import { recursiveMerge } from "./utils";
@@ -40,7 +40,7 @@ export function filterTree(nodes, paths, pathData = null) {
                 if (children.length) modified = { ...node, ...modified, children };
             }
             // eslint-disable-next-line no-unused-expressions
-            _.isEmpty(modified) ? acc.push(node) : acc.push(modified);
+            lodash.isEmpty(modified) ? acc.push(node) : acc.push(modified);
         }
         return acc;
     }, []);

@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const yaml = require("js-yaml");
-const _ = require("lodash");
+const lodash = require("lodash");
 const utils = require("./lib/js/utils");
 
 const ASSET_PATH = path.resolve(__dirname, "application_features");
@@ -11,7 +11,7 @@ const FEATURE_DATA = {};
  * Search recursively for a key name in an object.
  * @param {string} key
  * @param {Object} object
- * @returns {String[]} - List of object paths (usable with _.set / _.get)
+ * @returns {String[]} - List of object paths (usable with lodash.set / lodash.get)
  * @todo Move to code.js
  */
 const findKeys = (key, object) => {
@@ -31,14 +31,14 @@ const findKeys = (key, object) => {
 };
 
 /**
- * Patched version of lodash's _.get() which handles empty object paths.
+ * Patched version of lodash's lodash.get() which handles empty object paths.
  * @param {Object} obj - The object to query
  * @param {string} objPath - The path of the property to get
  * @returns {*} - Resolved value
  * @todo Move to code.js
  */
 const getByPath = (obj, objPath) => {
-    return !objPath ? obj : _.get(obj, objPath);
+    return !objPath ? obj : lodash.get(obj, objPath);
 };
 
 /**
@@ -57,7 +57,7 @@ const loadYAMLWithReferences = (filePath, separator = "#") => {
     let yamlObj = yaml.load(fileContent);
     findKeys("include", yamlObj).forEach((includePath) => {
         console.log(`found include at path ${includePath}`);
-        const reference = _.get(yamlObj, includePath);
+        const reference = lodash.get(yamlObj, includePath);
         const parentObjPath = includePath.replace(/[.]?include/, "");
         const currObj = getByPath(yamlObj, parentObjPath);
         if (typeof reference === "string") {
@@ -68,9 +68,9 @@ const loadYAMLWithReferences = (filePath, separator = "#") => {
             if (!parentObjPath) {
                 yamlObj = resolved;
             } else {
-                _.set(yamlObj, parentObjPath, resolved);
+                lodash.set(yamlObj, parentObjPath, resolved);
             }
-            _.unset(yamlObj, includePath);
+            lodash.unset(yamlObj, includePath);
         }
         return null;
     });
@@ -93,7 +93,7 @@ const loadAssetFile = (dir, fileName, assetExtension = ".yml") => {
     const key = cleanObjectPath(path.basename(fileName, assetExtension));
     let objectPath = path.relative(ASSET_PATH, dir).split(path.sep).join(".");
     objectPath = [objectPath, key].filter(Boolean).join(".");
-    _.set(FEATURE_DATA, objectPath, yamlObj);
+    lodash.set(FEATURE_DATA, objectPath, yamlObj);
     console.log(`setting feature data of [${fileName}] at path [${objectPath}]`);
 };
 

@@ -24,12 +24,14 @@ export function readAssetFile(applicationPath, filename) {
 }
 
 /**
- * Create a list of keys from an array of objects.
+ * Create a list of values from an array containing objects with key `key`.
  * @param {Object[]} array - Array of Objects.
  * @param {string} key - Object attribute to create list for.
  * @returns {Array}
+ * @example
+ * mapByKey([{slug: "A", X: 24}, {slug: "B", X: 42}, true], "slug"); // returns ["A", "B"]
  */
-const mapToKeys = (array, key) => {
+const mapByKey = (array, key) => {
     if (!key) return array;
     return array
         .map((item) => (lodash.isPlainObject(item) ? item[key] : undefined))
@@ -45,10 +47,10 @@ const mapToKeys = (array, key) => {
  * @returns {Array} - The merged array.
  */
 const mergeArrayByKey = (array, other, key, mergeFunction) => {
-    const keys = mapToKeys(array, key);
-    const otherKeys = mapToKeys(array, key);
+    const values = mapByKey(array, key);
+    const otherValues = mapByKey(array, key);
     const merged = array
-        .filter((item) => otherKeys.includes(item[key]))
+        .filter((item) => otherValues.includes(item[key]))
         .map((item) =>
             mergeFunction(
                 item,
@@ -57,8 +59,8 @@ const mergeArrayByKey = (array, other, key, mergeFunction) => {
         )
         .filter(Boolean);
     return merged
-        .concat(array.filter((item) => !otherKeys.includes(item[key])))
-        .concat(other.filter((item) => !keys.includes(item[key])));
+        .concat(array.filter((item) => !otherValues.includes(item[key])))
+        .concat(other.filter((item) => !values.includes(item[key])));
 };
 
 /**

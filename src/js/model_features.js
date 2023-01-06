@@ -27,7 +27,7 @@ import { recursiveMerge } from "./utils";
  * @returns {Object[]} - The filtered tree (with possibly modified data).
  */
 export function filterTree(nodes, paths, pathData = null) {
-    return nodes.reduce((acc, node) => {
+    return nodes.reduce((accumulator, node) => {
         if (paths.includes(node.path) || node.path === "") {
             let modified = {};
             let data = pathData && pathData.find((item) => item.path === node.path)?.data;
@@ -40,9 +40,9 @@ export function filterTree(nodes, paths, pathData = null) {
                 if (children.length) modified = { ...node, ...modified, children };
             }
             // eslint-disable-next-line no-unused-expressions
-            lodash.isEmpty(modified) ? acc.push(node) : acc.push(modified);
+            lodash.isEmpty(modified) ? accumulator.push(node) : accumulator.push(modified);
         }
-        return acc;
+        return accumulator;
     }, []);
 }
 

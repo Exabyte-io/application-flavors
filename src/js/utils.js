@@ -24,21 +24,6 @@ export function readAssetFile(applicationPath, filename) {
 }
 
 /**
- * Create a list of values from an array containing objects with key `key`.
- * @param {Object[]} array - Array of Objects.
- * @param {string} key - Object attribute to create list for.
- * @returns {Array}
- * @example
- * mapByKey([{slug: "A", X: 24}, {slug: "B", X: 42}, true], "slug"); // returns ["A", "B"]
- */
-const mapByKey = (array, key) => {
-    if (!key) return array;
-    return array
-        .map((item) => (lodash.isPlainObject(item) ? item[key] : undefined))
-        .filter(Boolean);
-};
-
-/**
  * Merge two arrays containing objects with attribute `key`
  * @param {Array} array - The array incoming data is merged into.
  * @param {Array} other - The array containing new (incoming) data.
@@ -47,8 +32,8 @@ const mapByKey = (array, key) => {
  * @returns {Array} - The merged array.
  */
 const mergeArrayByKey = (array, other, key, mergeFunction) => {
-    const values = mapByKey(array, key);
-    const otherValues = mapByKey(array, key);
+    const values = lodash.map(array, key);
+    const otherValues = lodash.map(array, key);
     const merged = array
         .filter((item) => otherValues.includes(item[key]))
         .map((item) =>

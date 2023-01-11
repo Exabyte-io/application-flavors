@@ -28,53 +28,42 @@ export function readAssetFile(applicationPath, filename) {
  * @param {Array} array - The array incoming data is merged into.
  * @param {Array} other - The array containing new (incoming) data.
  * @param {string} key - Name of attribute to merge by.
- * @param {Function} mergeFunction - Function for merging pairs of items.
  * @returns {Array} - The merged array.
  */
-const mergeArrayByKey = (array, other, key, mergeFunction) => {
-    const values = lodash.map(array, key);
-    const otherValues = lodash.map(array, key);
-    const merged = array
-        .filter((item) => otherValues.includes(item[key]))
-        .map((item) =>
-            mergeFunction(
-                item,
-                other.find((obj) => obj[key] === item[key]),
-            ),
-        )
-        .filter(Boolean);
-    return merged
-        .concat(array.filter((item) => !otherValues.includes(item[key])))
-        .concat(other.filter((item) => !values.includes(item[key])));
+const mergeArrayByKey = (array, other, key) => {
+    return lodash.values(lodash.merge(lodash.keyBy(array, key), lodash.keyBy(other, key)));
 };
 
 /**
- * Recursively merge objects or arrays.
+ * Customizer for `lodash.mergeWith()` used to apply logic of removing
+ * objects which contain the property `isRemoved`.
+ * @param objValue
+ * @param srcValue
+ * @returns {unknown[]|Array}
+ */
+const customizer = (objValue, srcValue) => {
+    if (Array.isArray(objValue) && Array.isArray(srcValue)) {
+        if (objValue.every((item) => lodash.isPlainObject(item) && "path" in item)) {
+            const removedPaths = srcValue.filter((o) => o.isRemoved).map((o) => o.path);
+            if (removedPaths.length) {
+                return mergeArrayByKey(
+                    objValue.filter((o) => !removedPaths.includes(o.path)),
+                    srcValue.filter((o) => !o.isRemoved),
+                    "path",
+                );
+            }
+            return mergeArrayByKey(objValue, srcValue, "path");
+        }
+        return lodash.unionWith(objValue, srcValue, lodash.isEqual);
+    }
+};
+
+/**
+ * Recursively merge objects or arrays while removing objects with attribute `isRemoved`.
  * @param {Object|Array} target - The initial data structure to be merged into.
  * @param {Object|Array} source - The incoming data structure.
  * @returns {Object|Array|undefined} - The merged value.
  */
 export const recursiveMerge = (target, source) => {
-    if (!source) return target;
-    if ("isRemoved" in source && source.isRemoved) return undefined;
-    if (Array.isArray(target) && Array.isArray(source)) {
-        if (target.every((item) => lodash.isPlainObject(item) && "path" in item)) {
-            return mergeArrayByKey(target, source, "path", recursiveMerge);
-        }
-        return lodash.unionWith(target, source, lodash.isEqual);
-    }
-    const mergedObj = lodash.cloneDeep(target);
-    Object.entries(source).forEach(([key, value]) => {
-        if (!(key in target)) {
-            mergedObj[key] = value;
-        } else if (lodash.isPlainObject(value)) {
-            mergedObj[key] = recursiveMerge(target[key], value);
-        } else if (Array.isArray(value)) {
-            mergedObj[key] = recursiveMerge(target[key], value);
-        } else {
-            mergedObj[key] = value;
-        }
-        return null;
-    });
-    return mergedObj;
+    return lodash.mergeWith({}, target, source, customizer);
 };

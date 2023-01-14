@@ -2,7 +2,7 @@ import MODEL_TREE from "@exabyte-io/mode.js/model_tree";
 import { expect } from "chai";
 import t from "t";
 
-import { getModelTreeByApplication } from "../src/js/model_features";
+import { getModelTreeByApplication } from "../src/js/models";
 
 describe("Model features", () => {
     it("can be filtered by application", () => {

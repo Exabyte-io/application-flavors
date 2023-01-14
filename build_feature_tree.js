@@ -4,7 +4,7 @@ const yaml = require("js-yaml");
 const lodash = require("lodash");
 const utils = require("./lib/js/utils");
 
-const ASSET_PATH = path.resolve(__dirname, "application_features");
+const ASSET_PATH = path.resolve(__dirname, "models");
 const FEATURE_DATA = {};
 
 /**

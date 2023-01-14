@@ -43,11 +43,11 @@ This set of tests is configured using the `integration_configuration.yaml` file,
 units are to be present in a test, and the order they're to be run in. It also contains general settings, such as
 where the test fixtures are located, and which files need to be cleaned up when a test job is complete.
 
-## Application Features
-The available options (e.g. models) for each application are defined via asset files in `application_features`,
-which are used to construct a single object containing all feature definitions (`model_feature_data.js`).
+## Applications and Models
+The available models for each application are defined via asset files in the `models` directory,
+which are used to construct a single object whitelisting all models implemented by a given application (`model_list.js`).
 These asset files are organized in the specific way, whereby the filepath also plays a role
-in the generation of the feature data object:
+in the generation of the model list object:
 1. directory - application name
 2. filename - application version
 3. first level (of the object defined by asset) - executable

@@ -137,8 +137,4 @@ const getAssetData = (currPath) => {
 
 getAssetData(ASSET_PATH);
 
-fs.writeFileSync(
-    "./model_feature_data.js",
-    `module.exports = ${JSON.stringify(FEATURE_DATA)}`,
-    "utf8",
-);
+fs.writeFileSync("./model_list.js", `module.exports = ${JSON.stringify(FEATURE_DATA)}`, "utf8");

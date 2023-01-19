@@ -11,7 +11,7 @@ describe("Model features", () => {
             appName: "espresso",
             version: "5.4.0",
             executable: "pw.x",
-            build: "default",
+            build: "Default",
         });
         const pbe = t.find(filtered, (node) => node.path === "/dft/gga/pbe");
         const re = t.find(filtered, (node) => node.path === "/ml/re");

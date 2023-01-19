@@ -1,5 +1,5 @@
 pw.x:
-  default:
+  Default:
     - path: /dft
     - path: /dft/lda
     - path: /dft/lda/spz

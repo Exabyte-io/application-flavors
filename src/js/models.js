@@ -15,7 +15,7 @@ export function getModelTreeByApplication({
     appName,
     version,
     executable,
-    build = "default",
+    build = "Default",
 }) {
     const modelList = availableModels[appName][version][executable][build];
     const nodePaths = modelList.map((item) => item.path);

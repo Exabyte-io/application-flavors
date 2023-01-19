@@ -1,6 +1,6 @@
 include: 5.2.1.yml
 pw.x:
-  default:
+  Default:
     - path: /dft/lda/spz
       isRemoved: true
     - path: /dft/lda/svwn5

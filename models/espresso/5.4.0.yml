@@ -1,11 +1,11 @@
 include: 5.2.1.yml
 pw.x:
   Default:
-    - path: /dft/lda/spz
-      isRemoved: true
-    - path: /dft/lda/svwn5
+    # remove items using `isRemoved`
+    # - path: /dft/lda/spz
+    #   isRemoved: true
+    - path: /pb/qm/dft/ksdft/lda/svwn
       data:
         functional:
-          name: SVWN5
-    - path: /dft/gga/rvv10
+          title: SVWN5
 

@@ -54,7 +54,7 @@
     "@babel/preset-env": "7.16.4",
     "@babel/register": "7.16.0",
     "@exabyte-io/code.js": "^2022.11.18-0",
-    "@exabyte-io/mode.js": "git+https://github.com/Exabyte-io/mode.js.git#b39cdf676b00dcaf7a0075a7e2167231907d0b28",
+    "@exabyte-io/mode.js": "git+https://github.com/Exabyte-io/mode.js.git#d223c965c2c9a8f03aec77d3ba742f3f8d4d540c",
     "js-yaml": "^4.1.0",
     "lodash": "^4.17.21",
     "t": "^0.5.1",

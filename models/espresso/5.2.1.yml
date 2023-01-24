@@ -1,20 +1,23 @@
 pw.x:
   Default:
-    - path: /dft
-    - path: /dft/lda
-    - path: /dft/lda/spz
+    - path: /pb
+    - path: /pb/qm
+    - path: /pb/qm/dft
+    - path: /pb/qm/dft/ksdft
+    - path: /pb/qm/dft/ksdft/lda
+    - path: /pb/qm/dft/ksdft/lda/spz
       data:
         functional:
-          name: PZ
-    - path: /dft/lda/spw92
+          title: PZ
+    - path: /pb/qm/dft/ksdft/lda/spw92
       data:
         functional:
-          name: PW
-    - path: /dft/lda/svwn5
+          title: PW
+    - path: /pb/qm/dft/ksdft/lda/svwn
       data:
         functional:
-          name: VWN
-    - path: /dft/gga
-    - path: /dft/gga/pbe
-    - path: /dft/gga/pbesol
-    - path: /dft/gga/pw91
+          title: VWN
+    - path: /pb/qm/dft/ksdft/gga
+    - path: /pb/qm/dft/ksdft/gga/pbe
+    - path: /pb/qm/dft/ksdft/gga/pbesol
+    - path: /pb/qm/dft/ksdft/gga/pw91

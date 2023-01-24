@@ -13,8 +13,8 @@ describe("Model features", () => {
             executable: "pw.x",
             build: "Default",
         });
-        const pbe = t.find(filtered, (node) => node.path === "/dft/gga/pbe");
-        const re = t.find(filtered, (node) => node.path === "/ml/re");
+        const pbe = t.find(filtered, (node) => node.path === "/pb/qm/dft/ksdft/gga/pbe");
+        const re = t.find(filtered, (node) => node.path === "/st/det/ml/re");
         expect(pbe.data).to.have.property("functional");
         expect(re).to.be.undefined;
     });

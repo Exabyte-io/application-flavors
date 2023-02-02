@@ -9,3 +9,5 @@
 /test/pythonml/.job_context
 **/__pycache__/
 .eslintcache
+model_list.js
+

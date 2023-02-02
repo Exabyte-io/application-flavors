@@ -1,9 +1,9 @@
+import { deepClone } from "@exabyte-io/code.js/dist/utils";
 import _ from "underscore";
 
 import monitors from "../allowed_monitors";
 import postProcessors from "../allowed_post-processors";
 import allowedResults from "../allowed_results";
-import { deepClone } from "../utils";
 
 const allowedMonitors = [
     monitors.standard_output,

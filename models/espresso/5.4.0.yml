@@ -1,0 +1,11 @@
+include: 5.2.1.yml
+pw.x:
+  default:
+    - path: /dft/lda/spz
+      isRemoved: true
+    - path: /dft/lda/svwn5
+      data:
+        functional:
+          name: SVWN5
+    - path: /dft/gga/rvv10
+

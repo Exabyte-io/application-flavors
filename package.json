@@ -53,7 +53,7 @@
     "@babel/plugin-proposal-export-default-from": "7.16.0",
     "@babel/preset-env": "7.16.4",
     "@babel/register": "7.16.0",
-    "@exabyte-io/code.js": "^2022.11.18-0",
+    "@exabyte-io/code.js": "git+https://github.com/Exabyte-io/code.js.git#72d91d84cd70b032ade29f68c4cecb5570213593",
     "@exabyte-io/mode.js": "git+https://github.com/Exabyte-io/mode.js.git#b39cdf676b00dcaf7a0075a7e2167231907d0b28",
     "js-yaml": "^4.1.0",
     "lodash": "^4.17.21",

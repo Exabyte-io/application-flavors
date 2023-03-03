@@ -1,5 +1,6 @@
-import { mergeTerminalNodes } from "@exabyte-io/code.js/dist/utils/object";
+import { mergeTerminalNodes } from "@exabyte-io/code.js/dist/utils";
 import { filterTree } from "@exabyte-io/mode.js/dist/tree";
+import lodash from "lodash";
 
 import availableModels from "../../model_list";
 
@@ -25,7 +26,17 @@ export function getModelTreeByApplication({
     return filterTree(nodes, nodePaths, pathData);
 }
 
-export function getFilterList({
+/**
+ * Get list of paths and list of regex from nested filter object.
+ * @param {Object} filterObj - filter object with nesting [appName][version][build][executable][flavor]
+ * @param {string} appName - application name
+ * @param {string} version - application version
+ * @param {string} build - application build
+ * @param {string} executable - executable name
+ * @param {string} flavor - flavor name
+ * @return {*[]} - Path list and Regex list
+ */
+export function getFilterLists({
     filterObj,
     appName = "",
     version = "",
@@ -35,17 +46,25 @@ export function getFilterList({
 }) {
     let filterList;
     if (!appName) {
-        filterList = mergeTerminalNodes(filterObj, true);
+        filterList = mergeTerminalNodes(filterObj);
     } else if (!version) {
-        filterList = mergeTerminalNodes(filterObj[appName], true);
+        filterList = mergeTerminalNodes(filterObj[appName]);
     } else if (!build) {
-        filterList = mergeTerminalNodes(filterObj[appName][version], true);
+        filterList = mergeTerminalNodes(filterObj[appName][version]);
     } else if (!executable) {
-        filterList = mergeTerminalNodes(filterObj[appName][version][build], true);
+        filterList = mergeTerminalNodes(filterObj[appName][version][build]);
     } else if (!flavor) {
-        filterList = mergeTerminalNodes(filterObj[appName][version][build][executable], true);
+        filterList = mergeTerminalNodes(filterObj[appName][version][build][executable]);
     } else {
         filterList = filterObj[appName][version][build][executable][flavor];
     }
-    return filterList;
+    const extractUniqueBy = (name) => {
+        return lodash
+            .chain(filterList)
+            .filter((o) => Boolean(o[name]))
+            .uniqBy(name)
+            .value();
+    };
+
+    return [extractUniqueBy("path"), extractUniqueBy("regex")];
 }

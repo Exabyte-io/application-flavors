@@ -45,7 +45,7 @@ describe("filterEntityPaths", () => {
         expect(filteredPaths).to.be.an("array").that.is.empty;
     });
 
-    it("filters entity path collection with partial application data", () => {
+    it("can filter an entity path collection with partial application data", () => {
         const applicationData = { appName: "app", version: "v1", build: "Default" };
         const filteredPaths = filterEntityPaths({
             applicationData,
@@ -60,7 +60,7 @@ describe("filterEntityPaths", () => {
         ]);
     });
 
-    it("filters entity path collection with full application data", () => {
+    it("can filter an entity path collection with full application data", () => {
         const applicationData = {
             appName: "app",
             version: "v2",
@@ -75,5 +75,30 @@ describe("filterEntityPaths", () => {
         });
         expect(filteredPaths).to.have.length(2);
         expect(filteredPaths.map((o) => o.path)).to.have.members(["/a/b/k/l/m", "/n/o/p/q/r"]);
+    });
+
+    it("can filter a list of entities containing a path property", () => {
+        class MockEntity {
+            constructor(path_) {
+                this._path = path_;
+            }
+
+            get path() {
+                return this._path;
+            }
+        }
+        const applicationData = { appName: "app", version: "v1", build: "Default" };
+        const entityCollection = entityPathCollection.map((o) => new MockEntity(o.path));
+        const filteredEntities = filterEntityPaths({
+            applicationData,
+            entityPathCollection: entityCollection,
+            entityFilterObj: filterObj,
+        });
+        filteredEntities.forEach((e) => expect(e).to.be.an.instanceof(MockEntity));
+        expect(filteredEntities.map((e) => e.path)).to.have.members([
+            "/a/b/c/d/e",
+            "/a/b/c/d/f",
+            "/a/b/k/l/m",
+        ]);
     });
 });

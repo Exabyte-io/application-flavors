@@ -1,7 +1,7 @@
-default:
+Default:
   pw.x:
     pw_scf:
-    - regex: \/pb\/qm\/dft\/ksdft\/.*
+      - regex: \/pb\/qm\/dft\/ksdft\/.*
     pw_scf_bands_hse:
       - path: /pb/qm/dft/ksdft/hybrid?functional=hse
     pw_esm:

@@ -11,7 +11,7 @@ import { filterEntityPaths } from "./filters";
  * @param {string} flavor - flavor name
  * @returns {Array<Object>} - filtered list of model paths for given application data
  */
-export function filterModelsByApplication({
+export function filterModelsByApplicationParameters({
     modelPaths,
     appName,
     version,

@@ -1,6 +1,6 @@
 import { expect } from "chai";
 
-import { filterModelsByApplication } from "../src/js/models";
+import { filterModelsByApplicationParameters } from "../src/js/models";
 
 describe("filterModelsByApplication", () => {
     it("can filter list of model configs", () => {
@@ -24,7 +24,7 @@ describe("filterModelsByApplication", () => {
                 functional: "hse",
             },
         ];
-        const filteredConfigs = filterModelsByApplication({
+        const filteredConfigs = filterModelsByApplicationParameters({
             modelPaths: modelConfigs,
             appName: "espresso",
             version: "5.2.1",

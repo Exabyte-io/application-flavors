@@ -50,8 +50,22 @@ These asset files are organized in the specific way, whereby the filepath also p
 in the generation of the model list object:
 1. directory - application name
 2. filename - application version
-3. first level (of the object defined by asset) - executable
-4. second level - build of the executable
+3. first level (of the object defined by asset) - application build
+4. second level - executable
+5. third level - flavor
 
-The build property contains a list of objects defining the path of the node in the feature tree
-(`path`) as well as additional data (`data`), which is used to redefine tree data locally.
+The property for a given set of application parameters contains a list of objects defining the path of the model
+(`path`) or a regular expression (`regex`).
+These assets can also be reused to define new assets using the `include` keyword. When such data is included, the lists
+of path objects are merged without duplicates. Individual objects may be removed by using the `isRemoved` key:
+```yaml
+# build asset based on another asset
+include: 5.2.1.yml
+Default:
+  pw.x:
+    pw_scf_bands_hse:
+      - path: /pb/qm/dft/ksdft/hybrid?functional=hse
+        isRemoved: true
+      - path: /pb/qm/dft/ksdft/hybrid?functional=hse06
+```
+The above example effectively replaces the path object for the `pw_scf_bands_hse` flavor.

@@ -1,20 +1,16 @@
-pw.x:
-  default:
-    - path: /dft
-    - path: /dft/lda
-    - path: /dft/lda/spz
-      data:
-        functional:
-          name: PZ
-    - path: /dft/lda/spw92
-      data:
-        functional:
-          name: PW
-    - path: /dft/lda/svwn5
-      data:
-        functional:
-          name: VWN
-    - path: /dft/gga
-    - path: /dft/gga/pbe
-    - path: /dft/gga/pbesol
-    - path: /dft/gga/pw91
+Default:
+  pw.x:
+    pw_scf:
+      - regex: \/pb\/qm\/dft\/ksdft\/.*
+    pw_scf_bands_hse:
+      - path: /pb/qm/dft/ksdft/hybrid?functional=hse
+    pw_esm:
+      - regex: \/pb\/qm\/dft\/ksdft\/.*
+    pw_esm_relax:
+      - regex: \/pb\/qm\/dft\/ksdft\/.*
+    pw_nscf:
+      - regex: \/pb\/qm\/dft\/ksdft\/.*
+    pw_relax:
+      - regex: \/pb\/qm\/dft\/ksdft\/.*
+    pw_vc-relax:
+      - regex: \/pb\/qm\/dft\/ksdft\/.*

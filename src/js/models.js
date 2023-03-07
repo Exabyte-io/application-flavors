@@ -1,25 +1,27 @@
-import { filterTree } from "@exabyte-io/mode.js/dist/tree";
-
 import availableModels from "../../model_list";
+import { filterEntityPaths } from "./filters";
 
 /**
- * Selects a subset of the model tree for a given application
- * @param {Object|Array} tree - Tree object or array of nodes
- * @param {string} appName
- * @param {string} version
- * @param {string} executable
- * @param {string} build
+ * Filters list of models for a given application
+ * @param {Array<Object>} modelPaths - List of objects containing model path
+ * @param {string} appName - application name
+ * @param {string} version - application version
+ * @param {string} build - application build
+ * @param {string} executable - executable name
+ * @param {string} flavor - flavor name
+ * @returns {Array<Object>} - filtered list of model paths for given application data
  */
-export function getModelTreeByApplication({
-    tree,
+export function filterModelsByApplicationParameters({
+    modelPaths,
     appName,
     version,
+    build,
     executable,
-    build = "default",
+    flavor,
 }) {
-    const modelList = availableModels[appName][version][executable][build];
-    const nodePaths = modelList.map((item) => item.path);
-    const pathData = modelList.filter((item) => "data" in item);
-    const nodes = Array.isArray(tree) ? tree : [tree];
-    return filterTree(nodes, nodePaths, pathData);
+    return filterEntityPaths({
+        applicationData: { appName, version, build, executable, flavor },
+        entityFilterObj: availableModels,
+        entityPathCollection: modelPaths,
+    });
 }

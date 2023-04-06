@@ -8,5 +8,10 @@ export default {
             version: "3.0.3",
             isDefault: true,
         },
+        {
+            version: "3.0.3",
+            isDefault: false,
+            build: "pre-installed",
+        },
     ],
 };

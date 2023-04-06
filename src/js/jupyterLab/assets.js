@@ -8,22 +8,8 @@ const executableName = "jupyter";
 export default () => {
     const allAssets = [
         {
-            content: readAssetFile(applicationName, "install.j2.sh"),
-            name: "install.sh",
-            contextProviders: [],
-            applicationName,
-            executableName,
-        },
-        {
-            content: readAssetFile(applicationName, "configure.pyi"),
-            name: "config.py",
-            contextProviders: [],
-            applicationName,
-            executableName,
-        },
-        {
-            content: readAssetFile(applicationName, "configure.j2.sh"),
-            name: "configure.sh",
+            content: readAssetFile(applicationName, "requirements303.j2.txt"),
+            name: "requirements.txt",
             contextProviders: [],
             applicationName,
             executableName,

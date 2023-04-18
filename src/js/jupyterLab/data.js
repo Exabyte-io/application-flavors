@@ -11,7 +11,7 @@ export default {
         {
             version: "3.0.3",
             isDefault: false,
-            build: "pre-installed",
+            build: "with-pre-installed-packages",
         },
     ],
 };

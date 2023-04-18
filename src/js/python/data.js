@@ -2,11 +2,8 @@ export default {
     name: "python",
     shortName: "py",
     summary: "Python Script",
-    defaultVersion: "2.7.5",
+    defaultVersion: "3.8.6",
     versions: [
-        {
-            version: "2.7.5",
-        },
         {
             version: "3.6.12",
         },

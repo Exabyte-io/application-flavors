@@ -72,6 +72,10 @@ export default {
                         name: "pyml_custom.py",
                         templateName: "pyml_custom.py",
                     },
+                    {
+                        name: "requirements.txt",
+                        templateName: "pyml_requirements.txt",
+                    },
                 ],
                 monitors: [monitors.standard_output],
             },
@@ -80,6 +84,10 @@ export default {
                     {
                         name: "data_input_read_csv_pandas.py",
                         templateName: "data_input_read_csv_pandas.py",
+                    },
+                    {
+                        name: "requirements.txt",
+                        templateName: "pyml_requirements.txt",
                     },
                 ],
                 monitors: [monitors.standard_output],
@@ -90,6 +98,10 @@ export default {
                         name: "data_input_train_test_split_sklearn.py",
                         templateName: "data_input_train_test_split_sklearn.py",
                     },
+                    {
+                        name: "requirements.txt",
+                        templateName: "pyml_requirements.txt",
+                    },
                 ],
                 monitors: [monitors.standard_output],
             },
@@ -98,6 +110,10 @@ export default {
                     {
                         name: "pre_processing_min_max_sklearn.py",
                         templateName: "pre_processing_min_max_sklearn.py",
+                    },
+                    {
+                        name: "requirements.txt",
+                        templateName: "pyml_requirements.txt",
                     },
                 ],
                 monitors: [monitors.standard_output],
@@ -108,6 +124,10 @@ export default {
                         name: "pre_processing_remove_duplicates_pandas.py",
                         templateName: "pre_processing_remove_duplicates_pandas.py",
                     },
+                    {
+                        name: "requirements.txt",
+                        templateName: "pyml_requirements.txt",
+                    },
                 ],
                 monitors: [monitors.standard_output],
             },
@@ -116,6 +136,10 @@ export default {
                     {
                         name: "pre_processing_remove_missing_pandas.py",
                         templateName: "pre_processing_remove_missing_pandas.py",
+                    },
+                    {
+                        name: "requirements.txt",
+                        templateName: "pyml_requirements.txt",
                     },
                 ],
                 monitors: [monitors.standard_output],
@@ -126,6 +150,10 @@ export default {
                         name: "pre_processing_standardization_sklearn.py",
                         templateName: "pre_processing_standardization_sklearn.py",
                     },
+                    {
+                        name: "requirements.txt",
+                        templateName: "pyml_requirements.txt",
+                    },
                 ],
                 monitors: [monitors.standard_output],
             },
@@ -134,6 +162,10 @@ export default {
                     {
                         name: "model_adaboosted_trees_regression_sklearn.py",
                         templateName: "model_adaboosted_trees_regression_sklearn.py",
+                    },
+                    {
+                        name: "requirements.txt",
+                        templateName: "pyml_requirements.txt",
                     },
                 ],
                 monitors: [monitors.standard_output],
@@ -145,6 +177,10 @@ export default {
                         name: "model_bagged_trees_regression_sklearn.py",
                         templateName: "model_bagged_trees_regression_sklearn.py",
                     },
+                    {
+                        name: "requirements.txt",
+                        templateName: "pyml_requirements.txt",
+                    },
                 ],
                 results: ["workflow:pyml_predict"],
                 monitors: [monitors.standard_output],
@@ -154,6 +190,10 @@ export default {
                     {
                         name: "model_gradboosted_trees_regression_sklearn.py",
                         templateName: "model_gradboosted_trees_regression_sklearn.py",
+                    },
+                    {
+                        name: "requirements.txt",
+                        templateName: "pyml_requirements.txt",
                     },
                 ],
                 results: ["workflow:pyml_predict"],
@@ -165,6 +205,10 @@ export default {
                         name: "model_extreme_gradboosted_trees_regression_sklearn.py",
                         templateName: "model_extreme_gradboosted_trees_regression_sklearn.py",
                     },
+                    {
+                        name: "requirements.txt",
+                        templateName: "pyml_requirements.txt",
+                    },
                 ],
                 results: ["workflow:pyml_predict"],
                 monitors: [monitors.standard_output],
@@ -174,6 +218,10 @@ export default {
                     {
                         name: "model_k_means_clustering_sklearn.py",
                         templateName: "model_k_means_clustering_sklearn.py",
+                    },
+                    {
+                        name: "requirements.txt",
+                        templateName: "pyml_requirements.txt",
                     },
                 ],
                 results: ["workflow:pyml_predict"],
@@ -185,6 +233,10 @@ export default {
                         name: "model_kernel_ridge_regression_sklearn.py",
                         templateName: "model_kernel_ridge_regression_sklearn.py",
                     },
+                    {
+                        name: "requirements.txt",
+                        templateName: "pyml_requirements.txt",
+                    },
                 ],
                 results: ["workflow:pyml_predict"],
                 monitors: [monitors.standard_output],
@@ -194,6 +246,10 @@ export default {
                     {
                         name: "model_lasso_regression_sklearn.py",
                         templateName: "model_lasso_regression_sklearn.py",
+                    },
+                    {
+                        name: "requirements.txt",
+                        templateName: "pyml_requirements.txt",
                     },
                 ],
                 results: ["workflow:pyml_predict"],
@@ -205,6 +261,10 @@ export default {
                         name: "model_mlp_sklearn.py",
                         templateName: "model_mlp_sklearn.py",
                     },
+                    {
+                        name: "requirements.txt",
+                        templateName: "pyml_requirements.txt",
+                    },
                 ],
                 results: ["workflow:pyml_predict"],
                 monitors: [monitors.standard_output],
@@ -214,6 +274,10 @@ export default {
                     {
                         name: "model_random_forest_classification_sklearn.py",
                         templateName: "model_random_forest_classification_sklearn.py",
+                    },
+                    {
+                        name: "requirements.txt",
+                        templateName: "pyml_requirements.txt",
                     },
                 ],
                 results: ["workflow:pyml_predict"],
@@ -225,6 +289,10 @@ export default {
                         name: "model_gradboosted_trees_classification_sklearn.py",
                         templateName: "model_gradboosted_trees_classification_sklearn.py",
                     },
+                    {
+                        name: "requirements.txt",
+                        templateName: "pyml_requirements.txt",
+                    },
                 ],
                 results: ["workflow:pyml_predict"],
                 monitors: [monitors.standard_output],
@@ -234,6 +302,10 @@ export default {
                     {
                         name: "model_extreme_gradboosted_trees_classification_sklearn.py",
                         templateName: "model_extreme_gradboosted_trees_classification_sklearn.py",
+                    },
+                    {
+                        name: "requirements.txt",
+                        templateName: "pyml_requirements.txt",
                     },
                 ],
                 results: ["workflow:pyml_predict"],
@@ -245,6 +317,10 @@ export default {
                         name: "model_random_forest_regression_sklearn.py",
                         templateName: "model_random_forest_regression_sklearn.py",
                     },
+                    {
+                        name: "requirements.txt",
+                        templateName: "pyml_requirements.txt",
+                    },
                 ],
                 results: ["workflow:pyml_predict"],
                 monitors: [monitors.standard_output],
@@ -254,6 +330,10 @@ export default {
                     {
                         name: "model_ridge_regression_sklearn.py",
                         templateName: "model_ridge_regression_sklearn.py",
+                    },
+                    {
+                        name: "requirements.txt",
+                        templateName: "pyml_requirements.txt",
                     },
                 ],
                 results: ["workflow:pyml_predict"],
@@ -265,6 +345,10 @@ export default {
                         name: "post_processing_parity_plot_matplotlib.py",
                         templateName: "post_processing_parity_plot_matplotlib.py",
                     },
+                    {
+                        name: "requirements.txt",
+                        templateName: "pyml_requirements.txt",
+                    },
                 ],
                 results: ["file_content"],
                 monitors: [monitors.standard_output],
@@ -275,6 +359,10 @@ export default {
                         name: "post_processing_pca_2d_clusters_matplotlib.py",
                         templateName: "post_processing_pca_2d_clusters_matplotlib.py",
                     },
+                    {
+                        name: "requirements.txt",
+                        templateName: "pyml_requirements.txt",
+                    },
                 ],
                 results: ["file_content"],
                 monitors: [monitors.standard_output],
@@ -284,6 +372,10 @@ export default {
                     {
                         name: "post_processing_roc_curve_sklearn.py",
                         templateName: "post_processing_roc_curve_sklearn.py",
+                    },
+                    {
+                        name: "requirements.txt",
+                        templateName: "pyml_requirements.txt",
                     },
                 ],
                 results: ["file_content"],

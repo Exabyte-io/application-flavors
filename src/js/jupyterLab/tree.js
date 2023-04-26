@@ -10,16 +10,8 @@ export default {
                 isDefault: true,
                 input: [
                     {
-                        name: "install.sh",
-                        templateName: "install.sh",
-                    },
-                    {
-                        name: "config.py",
-                        templateName: "config.py",
-                    },
-                    {
-                        name: "configure.sh",
-                        templateName: "configure.sh",
+                        name: "requirements.txt",
+                        templateName: "requirements.txt",
                     },
                 ],
                 monitors: [monitors.standard_output, monitors.jupyterNotebookEndpoint],

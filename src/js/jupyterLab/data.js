@@ -9,7 +9,9 @@ export default {
             isDefault: true,
         },
         {
-            version: "0.33.12",
+            version: "3.0.3",
+            isDefault: false,
+            build: "with-pre-installed-packages",
         },
     ],
 };

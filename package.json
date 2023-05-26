@@ -42,7 +42,12 @@
     "lint-staged": "^12.1.2",
     "mocha": "^9.2.2",
     "nyc": "15.1.0",
-    "prettier": "^2.5.1"
+    "prettier": "^2.5.1",
+    "@exabyte-io/code.js": "2023.3.6-0",
+    "@exabyte-io/mode.js": "git+https://github.com/Exabyte-io/mode.js.git#b39cdf676b00dcaf7a0075a7e2167231907d0b28",
+    "lodash": "^4.17.21",
+    "underscore": "^1.12.1",
+    "underscore.string": "^3.3.4"
   },
   "license": "Apache-2.0",
   "dependencies": {
@@ -53,12 +58,14 @@
     "@babel/plugin-proposal-export-default-from": "7.16.0",
     "@babel/preset-env": "7.16.4",
     "@babel/register": "7.16.0",
-    "@exabyte-io/code.js": "2023.3.6-0",
-    "@exabyte-io/mode.js": "git+https://github.com/Exabyte-io/mode.js.git#b39cdf676b00dcaf7a0075a7e2167231907d0b28",
-    "js-yaml": "^4.1.0",
-    "lodash": "^4.17.21",
-    "underscore": "^1.12.1",
-    "underscore.string": "^3.3.4"
+    "js-yaml": "^4.1.0"
+  },
+  "peerDependencies": {
+    "@exabyte-io/code.js": "*",
+    "@exabyte-io/mode.js": "*",
+    "lodash": "*",
+    "underscore": "*",
+    "underscore.string": "*"
   },
   "engines": {
     "node": ">=12.0",

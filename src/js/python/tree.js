@@ -27,6 +27,18 @@ export default {
                 ],
                 monitors: [monitors.standard_output],
             },
+            espresso_extract_kpoints: {
+                input: [
+                    {
+                        name: "espresso_extract_kpoints.py",
+                    },
+                    {
+                        name: "requirements.txt",
+                        templateName: "requirements_empty.txt"
+                    }
+                ],
+                monitors: [monitors.standard_output],
+            },
             "generic:post_processing:plot:matplotlib": {
                 input: [
                     {

@@ -181,27 +181,25 @@ export default {
                     "final_structure",
                 ],
             },
-            // Temporarily disabled to keep track of. `Subworkflow.addConvergence` is using updateContext instead.
-            // TODO: remove or re-enable during next refactoring
-            // "pw_scf_kpt_conv": {
-            //     "input": [
-            //         {
-            //             "name": "pw_scf_kpt_conv.in"
-            //         }
-            //     ],
-            //     "results": [
-            //         'total_energy',
-            //         'fermi_energy',
-            //         'pressure',
-            //         'atomic_forces',
-            //         'total_force',
-            //         'stress_tensor'
-            //     ],
-            //     "monitors": [
-            //         monitors.standard_output,
-            //         monitors.convergence_electronic
-            //     ],
-            // },
+            pw_scf_kpt_conv: {
+                input: [
+                    {
+                        name: "pw_scf_kpt_conv.in",
+                    },
+                ],
+                results: [
+                    'total_energy',
+                    'fermi_energy',
+                    'pressure',
+                    'atomic_forces',
+                    'total_force',
+                    'stress_tensor',
+                ],
+                monitors: [
+                    monitors.standard_output,
+                    monitors.convergence_electronic,
+                ],
+            },
         },
     },
     "ph.x": {

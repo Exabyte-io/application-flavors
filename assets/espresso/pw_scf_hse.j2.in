@@ -1,0 +1,47 @@
+{% if subworkflowContext.MATERIAL_INDEX %}
+{%- set input = input.perMaterial[subworkflowContext.MATERIAL_INDEX] -%}
+{% endif -%}
+&CONTROL
+    calculation = 'scf'
+    title = ''
+    verbosity = 'low'
+    restart_mode = '{{ input.RESTART_MODE }}'
+    wf_collect = .true.
+    tstress = .true.
+    tprnfor = .true.
+    outdir = {% raw %}'{{ JOB_WORK_DIR }}/outdir'{% endraw %}
+    wfcdir = {% raw %}'{{ JOB_WORK_DIR }}/outdir'{% endraw %}
+    prefix = '__prefix__'
+    pseudo_dir = {% raw %}'{{ JOB_WORK_DIR }}/pseudo'{% endraw %}
+/
+&SYSTEM
+    ibrav = {{ input.IBRAV }}
+    nat = {{ input.NAT }}
+    ntyp = {{ input.NTYP }}
+    ecutwfc = {{ cutoffs.wavefunction }}
+    ecutrho = {{ cutoffs.density }}
+    ecutfock = 100
+    occupations = 'smearing'
+    degauss = 0.005
+    input_dft='hse',
+    nqx1 = {% if kgrid.dimensions[0]%2 == 0 %}{{kgrid.dimensions[0]/2}}{% else %}{{(kgrid.dimensions[0]+1)/2}}{% endif %}, nqx2 = {% if kgrid.dimensions[1]%2 == 0 %}{{kgrid.dimensions[1]/2}}{% else %}{{(kgrid.dimensions[1]+1)/2}}{% endif %}, nqx3 = {% if kgrid.dimensions[2]%2 == 0 %}{{kgrid.dimensions[2]/2}}{% else %}{{(kgrid.dimensions[2]+1)/2}}{% endif %}
+/
+&ELECTRONS
+    diagonalization = 'david'
+    diago_david_ndim = 4
+    diago_full_acc = .true.
+    mixing_beta = 0.3
+    startingwfc = 'atomic+random'
+/
+&IONS
+/
+&CELL
+/
+ATOMIC_SPECIES
+{{ input.ATOMIC_SPECIES }}
+ATOMIC_POSITIONS crystal
+{{ input.ATOMIC_POSITIONS }}
+CELL_PARAMETERS angstrom
+{{ input.CELL_PARAMETERS }}
+K_POINTS automatic
+{% for d in kgrid.dimensions %}{% if d%2 == 0 %}{{d}} {% else %}{{d+1}} {% endif %}{% endfor %}{% for s in kgrid.shifts %}{{s}} {% endfor %}

@@ -66,6 +66,24 @@ export default {
                 ],
                 monitors: [monitors.standard_output, monitors.convergence_electronic],
             },
+            pw_scf_hse: {
+                input: [
+                    {
+                        name: "pw_scf_hse.in",
+                    },
+                ],
+                results: [
+                    "atomic_forces",
+                    "band_gaps",
+                    "fermi_energy",
+                    "pressure",
+                    "stress_tensor",
+                    "total_energy",
+                    "total_energy_contributions",
+                    "total_force",
+                ],
+                monitors: [monitors.standard_output, monitors.convergence_electronic],
+            },
             pw_esm: {
                 input: [
                     {

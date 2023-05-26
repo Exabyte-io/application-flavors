@@ -14,9 +14,9 @@ export const makeObjectsFromContextProviderNames = (asset) => {
 
 /**
  * Load an asset file for the given application, of the given name.
- * @param applicationPath {str} The directory path in the /assets directory of this package, for this application
- * @param filename {str} The name of the file in the applicationPath directory to load and return
- * @returns {str} The contents of the given file
+ * @param applicationPath {string} The directory path in the /assets directory of this package, for this application
+ * @param filename {string} The name of the file in the applicationPath directory to load and return
+ * @returns {string} The contents of the given file
  */
 export function readAssetFile(applicationPath, filename) {
     const assetsDir = path.resolve(__dirname, "../../assets/");

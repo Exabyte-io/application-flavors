@@ -108,6 +108,17 @@ export default () => {
             applicationName,
             executableName: "pw.x",
         },
+        {
+            content: readAssetFile(applicationName, "pw_scf_hse.j2.in"),
+            name: "pw_scf_hse.in",
+            contextProviders: [
+                "KGridFormDataManager",
+                "QEPWXInputDataManager",
+                "PlanewaveCutoffDataManager",
+            ],
+            applicationName,
+            executableName: "pw.x",
+        },
 
         /*
          *  PH.X

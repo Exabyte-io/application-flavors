@@ -25,6 +25,13 @@ export default () => {
             executableName,
         },
         {
+            content: readAssetFile(applicationName, "requirements_empty.j2.txt"),
+            name: "requirements_empty.txt",
+            contextProviders: [],
+            applicationName,
+            executableName,
+        },
+        {
             content: readAssetFile("python/generic", "post_processing:plot:matplotlib.pyi"),
             name: "matplotlib_basic.py",
             contextProviders: [],
@@ -34,6 +41,13 @@ export default () => {
         {
             content: readAssetFile(applicationName, "espresso_xml_get_qpt_irr.pyi"),
             name: "espresso_xml_get_qpt_irr.py",
+            contextProviders: [],
+            applicationName,
+            executableName,
+        },
+        {
+            content: readAssetFile(applicationName, "espresso_extract_kpoints.pyi"),
+            name: "espresso_extract_kpoints.py",
             contextProviders: [],
             applicationName,
             executableName,

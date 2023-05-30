@@ -1,9 +1,54 @@
-import availableModels from "../../model_list";
-import { filterEntityPaths } from "./filters";
+import { filterEntityList, mergeTerminalNodes } from "@exabyte-io/code.js/dist/utils";
+import lodash from "lodash";
+
+import applicationModelMap from "../../model_list";
+
+/**
+ * Get list of paths and list of regex from nested filter object.
+ * @param {Object} filterObj - filter object with nesting [appName][version][build][executable][flavor]
+ * @param {string} appName - application name
+ * @param {string} version - application version
+ * @param {string} build - application build
+ * @param {string} executable - executable name
+ * @param {string} flavor - flavor name
+ * @return {*[]} - Path list and Regex list
+ */
+function getFilterObjects({
+    filterTree,
+    appName = "",
+    version = "",
+    build = "",
+    executable = "",
+    flavor = "",
+}) {
+    let filterList;
+    if (!appName) {
+        filterList = mergeTerminalNodes(filterTree);
+    } else if (!version) {
+        filterList = mergeTerminalNodes(filterTree[appName]);
+    } else if (!build) {
+        filterList = mergeTerminalNodes(filterTree[appName][version]);
+    } else if (!executable) {
+        filterList = mergeTerminalNodes(filterTree[appName][version][build]);
+    } else if (!flavor) {
+        filterList = mergeTerminalNodes(filterTree[appName][version][build][executable]);
+    } else {
+        filterList = filterTree[appName][version][build][executable][flavor];
+    }
+    const extractUniqueBy = (name) => {
+        return lodash
+            .chain(filterList)
+            .filter((o) => Boolean(o[name]))
+            .uniqBy(name)
+            .value();
+    };
+
+    return [].concat(extractUniqueBy("path"), extractUniqueBy("regex"));
+}
 
 /**
  * Filters list of models for a given application
- * @param {Array<Object>} modelPaths - List of objects containing model path
+ * @param {Array<Object>} modelPaths - List of model configs or objects containing model path
  * @param {string} appName - application name
  * @param {string} version - application version
  * @param {string} build - application build
@@ -12,16 +57,23 @@ import { filterEntityPaths } from "./filters";
  * @returns {Array<Object>} - filtered list of model paths for given application data
  */
 export function filterModelsByApplicationParameters({
-    modelPaths,
+    modelList,
     appName,
     version,
     build,
     executable,
     flavor,
 }) {
-    return filterEntityPaths({
-        applicationData: { appName, version, build, executable, flavor },
-        entityFilterObj: availableModels,
-        entityPathCollection: modelPaths,
+    const filterObjects = getFilterObjects({
+        filterTree: applicationModelMap,
+        appName,
+        version,
+        build,
+        executable,
+        flavor,
+    });
+    return filterEntityList({
+        entitiesOrPaths: modelList,
+        filterObjects,
     });
 }

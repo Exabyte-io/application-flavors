@@ -25,7 +25,7 @@ describe("filterModelsByApplication", () => {
             },
         ];
         const filteredConfigs = filterModelsByApplicationParameters({
-            modelPaths: modelConfigs,
+            modelList: modelConfigs,
             appName: "espresso",
             version: "5.2.1",
             build: "Default",

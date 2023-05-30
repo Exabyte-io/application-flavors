@@ -1,7 +1,7 @@
 import { filterEntityList, mergeTerminalNodes } from "@exabyte-io/code.js/dist/utils";
 import lodash from "lodash";
 
-import applicationModelMap from "../../model_list";
+import { models as applicationModelMap } from "../../filter_trees";
 
 /**
  * Get list of paths and list of regex from nested filter object.
@@ -13,7 +13,7 @@ import applicationModelMap from "../../model_list";
  * @param {string} flavor - flavor name
  * @return {*[]} - Path list and Regex list
  */
-function getFilterObjects({
+export function getFilterObjects({
     filterTree,
     appName = "",
     version = "",

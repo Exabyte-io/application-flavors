@@ -6,8 +6,10 @@ const codeJsUtils = require("@exabyte-io/code.js/dist/utils");
 
 const utils = require("./lib/js/utils");
 
-const ASSET_PATH = path.resolve(__dirname, "models");
-const FEATURE_DATA = {};
+const MODEL_ASSET_PATH = path.resolve(__dirname, "models");
+const METHOD_ASSET_PATH = path.resolve(__dirname, "methods");
+const MODEL_FILTER_TREE = {};
+const METHOD_FILTER_TREE = {};
 
 /**
  * Search recursively for a key name in an object.
@@ -90,21 +92,23 @@ const cleanObjectPath = (objPath) => {
  * @param {string} dir - folder containing asset file
  * @param {string} fileName - asset file name
  * @param {string} assetExtension - file extension for asset
+ * @param {Object} targetObj - Object in which assets are assigned
  */
-const loadAssetFile = (dir, fileName, assetExtension = ".yml") => {
+const loadAssetFile = (dir, fileName, assetExtension, targetObj, asset_path) => {
     const yamlObj = loadYAMLWithReferences(path.resolve(dir, fileName));
     const key = cleanObjectPath(path.basename(fileName, assetExtension));
-    let objectPath = path.relative(ASSET_PATH, dir).split(path.sep).join(".");
+    let objectPath = path.relative(asset_path, dir).split(path.sep).join(".");
     objectPath = [objectPath, key].filter(Boolean).join(".");
-    lodash.set(FEATURE_DATA, objectPath, yamlObj);
-    console.log(`setting feature data of [${fileName}] at path [${objectPath}]`);
+    lodash.set(targetObj, objectPath, yamlObj);
+    console.log(`setting filter data of [${fileName}] at path [${objectPath}]`);
 };
 
 /**
  * Traverse asset folder recursively and load asset files.
  * @param currPath {string} - path to asset directory
+ * @param {Object} targetObj - Object in which assets are assigned
  */
-const getAssetData = (currPath) => {
+const getAssetData = (currPath, targetObj, asset_path) => {
     const branches = codeJsUtils.getDirectories(currPath);
     const assetFiles = codeJsUtils.getFilesInDirectory(currPath, [".yml", ".yaml"], false);
     console.log(`current directory: ${currPath}`);
@@ -114,16 +118,22 @@ const getAssetData = (currPath) => {
 
     assetFiles.forEach((asset) => {
         try {
-            loadAssetFile(currPath, asset);
+            loadAssetFile(currPath, asset, ".yml", targetObj, asset_path);
         } catch (e) {
             console.log(e);
         }
     });
     branches.forEach((b) => {
-        getAssetData(path.resolve(currPath, b));
+        getAssetData(path.resolve(currPath, b), targetObj, asset_path);
     });
 };
 
-getAssetData(ASSET_PATH);
+getAssetData(MODEL_ASSET_PATH, MODEL_FILTER_TREE, MODEL_ASSET_PATH);
+getAssetData(METHOD_ASSET_PATH, METHOD_FILTER_TREE, METHOD_ASSET_PATH);
 
-fs.writeFileSync("./model_list.js", `module.exports = ${JSON.stringify(FEATURE_DATA)}`, "utf8");
+const data = {
+    models: MODEL_FILTER_TREE,
+    methods: METHOD_FILTER_TREE,
+};
+
+fs.writeFileSync("./filter_trees.js", `module.exports = ${JSON.stringify(data)}`, "utf8");

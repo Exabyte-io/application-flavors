@@ -2,6 +2,8 @@ const fs = require("fs");
 const path = require("path");
 const yaml = require("js-yaml");
 const lodash = require("lodash");
+const codeJsUtils = require("@exabyte-io/code.js/dist/utils");
+
 const utils = require("./lib/js/utils");
 
 const ASSET_PATH = path.resolve(__dirname, "models");
@@ -105,19 +107,13 @@ const getDirectories = (currentPath) => {
         .map((dirent) => dirent.name);
 };
 
-const getAssetFiles = (currentPath, assetExtension = ".yml") => {
-    return fs
-        .readdirSync(currentPath)
-        .filter((dirItem) => path.extname(dirItem) === assetExtension);
-};
-
 /**
  * Traverse asset folder recursively and load asset files.
  * @param currPath {string} - path to asset directory
  */
 const getAssetData = (currPath) => {
     const branches = getDirectories(currPath);
-    const assetFiles = getAssetFiles(currPath);
+    const assetFiles = codeJsUtils.getFilesInDirectory(currPath, [".yml", ".yaml"], false);
     console.log(`current directory: ${currPath}`);
     console.log("contains assets: ");
     assetFiles.forEach((a) => console.log(a));

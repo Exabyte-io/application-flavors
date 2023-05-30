@@ -2,7 +2,7 @@ import { expect } from "chai";
 
 import { filterModelsByApplicationParameters } from "../src/js/models";
 
-describe("filterModelsByApplication", () => {
+describe("filterModelsByApplicationParameters", () => {
     it("can filter list of model configs", () => {
         const modelConfigs = [
             {

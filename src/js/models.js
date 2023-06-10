@@ -4,6 +4,19 @@ import lodash from "lodash";
 import { models as applicationModelMap } from "../../filter_trees";
 
 /**
+ * Extract unique filter objects by name of key.
+ * @param {Array<{path: string}|{regex: string}>} filterObjects - List of filter objects
+ * @param {string} name - Name of object key
+ */
+function extractUniqueBy(filterObjects, name) {
+    return lodash
+        .chain(filterObjects)
+        .filter((o) => Boolean(o[name]))
+        .uniqBy(name)
+        .value();
+}
+
+/**
  * Get list of paths and list of regex from nested filter object.
  * @param {Object} filterObj - filter object with nesting [appName][version][build][executable][flavor]
  * @param {string} appName - application name
@@ -35,15 +48,8 @@ export function getFilterObjects({
     } else {
         filterList = filterTree[appName][version][build][executable][flavor];
     }
-    const extractUniqueBy = (name) => {
-        return lodash
-            .chain(filterList)
-            .filter((o) => Boolean(o[name]))
-            .uniqBy(name)
-            .value();
-    };
 
-    return [].concat(extractUniqueBy("path"), extractUniqueBy("regex"));
+    return [].concat(extractUniqueBy(filterList, "path"), extractUniqueBy(filterList, "regex"));
 }
 
 /**

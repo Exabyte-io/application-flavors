@@ -17,7 +17,7 @@ const METHOD_FILTER_TREE = {};
  */
 function loadAndInsertAssetData(targetObject, assetPath, assetRoot) {
     const fileContent = fs.readFileSync(assetPath, "utf8");
-    const data = yaml.load(fileContent, { schema: utils.allYAMLSchemas });
+    const data = yaml.load(fileContent, { schema: utils.JsYamlAllSchemas });
     const objectPath = utils.createObjectPathFromFilePath(assetPath, assetRoot);
     lodash.set(targetObject, objectPath, data);
 }

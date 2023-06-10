@@ -1,7 +1,7 @@
 import { filterEntityList, mergeTerminalNodes } from "@exabyte-io/code.js/dist/utils";
 import lodash from "lodash";
 
-import applicationModelMap from "../../model_list";
+import { models as applicationModelMap } from "../../filter_trees";
 
 /**
  * Extract unique filter objects by name of key.
@@ -26,7 +26,7 @@ function extractUniqueBy(filterObjects, name) {
  * @param {string} flavor - flavor name
  * @return {*[]} - Path list and Regex list
  */
-function getFilterObjects({
+export function getFilterObjects({
     filterTree,
     appName = "",
     version = "",

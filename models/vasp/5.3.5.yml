@@ -1,0 +1,24 @@
+Default:
+    vasp:
+        vasp:
+            - regex: \/pb\/qm\/dft\/ksdft\/.*
+        vasp_bands:
+            - regex: \/pb\/qm\/dft\/ksdft\/.*
+        vasp_ncsf:
+            - regex: \/pb\/qm\/dft\/ksdft\/.*
+        vasp_relax:
+            - regex: \/pb\/qm\/dft\/ksdft\/.*
+        vasp_vc_relax:
+            - regex: \/pb\/qm\/dft\/ksdft\/.*
+        vasp_zpe:
+            - regex: \/pb\/qm\/dft\/ksdft\/.*
+        vasp_kpt_conv:
+            - regex: \/pb\/qm\/dft\/ksdft\/.*
+        vasp_vc_relax_conv:
+            - regex: \/pb\/qm\/dft\/ksdft\/.*
+        vasp_neb:
+            - regex: \/pb\/qm\/dft\/ksdft\/.*
+        vasp_neb_initial:
+            - regex: \/pb\/qm\/dft\/ksdft\/.*
+        vasp_neb_final:
+            - regex: \/pb\/qm\/dft\/ksdft\/.*

@@ -1,0 +1,4 @@
+Default:
+    nwchem:
+        nwchem_total_energy:
+           - regex: \/pb\/qm\/dft\/ksdft\/.*

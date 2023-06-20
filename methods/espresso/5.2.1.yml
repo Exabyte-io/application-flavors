@@ -1,16 +1,16 @@
 Default:
   pw.x:
     pw_scf:
-      -   path: /qm/wf/undefined/pw/undefined
-      -   regex: \/qm\/wf\/undefined\/psp\/.*
-      -   regex: \/qm\/wf\/undefined\/smearing\/.*
-      -   regex: \/qm\/wf\/undefined\/tetrahedron\/.*
-      -   path: /opt/diff/ordern/cg/undefined
-      -   path: /linalg/diag/undefined/davidson/undefined
+      -   path: /qm/wf/none/pw/none
+      -   regex: \/qm\/wf\/none\/psp\/.*
+      -   regex: \/qm\/wf\/none\/smearing\/.*
+      -   regex: \/qm\/wf\/none\/tetrahedron\/.*
+      -   path: /opt/diff/ordern/cg/none
+      -   path: /linalg/diag/none/davidson/none
     pw_scf_bands_hse:
-      -   path: /qm/wf/undefined/pw/undefined
-      -   regex: \/qm\/wf\/undefined\/psp\/.*
-      -   regex: \/qm\/wf\/undefined\/smearing\/.*
-      -   regex: \/qm\/wf\/undefined\/tetrahedron\/.*
-      -   path: /opt/diff/ordern/cg/undefined
-      -   path: /linalg/diag/undefined/davidson/undefined
+      -   path: /qm/wf/none/pw/none
+      -   regex: \/qm\/wf\/none\/psp\/.*
+      -   regex: \/qm\/wf\/none\/smearing\/.*
+      -   regex: \/qm\/wf\/none\/tetrahedron\/.*
+      -   path: /opt/diff/ordern/cg/none
+      -   path: /linalg/diag/none/davidson/none

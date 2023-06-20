@@ -1,8 +1,8 @@
 Default:
     vasp:
         vasp:
-            -   path: /qm/wf/undefined/pw/undefined
-            -   path: /qm/wf/undefined/psp/paw
-            -   regex: \/qm\/wf\/undefined\/smearing\/(fermi-dirac|gaussian|methfessel-paxton)
-            -   regex: \/qm\/wf\/undefined\/tetrahedron\/(linear|bloechl)
+            -   path: /qm/wf/none/pw/none
+            -   path: /qm/wf/none/psp/paw
+            -   regex: \/qm\/wf\/none\/smearing\/(fermi-dirac|gaussian|methfessel-paxton)
+            -   regex: \/qm\/wf\/none\/tetrahedron\/(linear|bloechl)
 

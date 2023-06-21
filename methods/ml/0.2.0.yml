@@ -1,0 +1,11 @@
+Default:
+    train:
+        train:
+            - path: "/none/none/none/linear/least_squares"
+            - path: "/none/none/none/linear/ridge"
+            - path: "/none/none/none/kernel_ridge/least_squares"
+    score:
+        score:
+            - path: "/none/none/none/linear/least_squares"
+            - path: "/none/none/none/linear/ridge"
+            - path: "/none/none/none/kernel_ridge/least_squares"

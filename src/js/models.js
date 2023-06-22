@@ -11,9 +11,14 @@ import { models as applicationModelMap } from "../../filter_trees";
 function extractUniqueBy(filterObjects, name) {
     return lodash
         .chain(filterObjects)
+        .filter(Boolean)
         .filter((o) => Boolean(o[name]))
         .uniqBy(name)
         .value();
+}
+
+function safelyGet(obj, ...args) {
+    return lodash.get(obj, args, undefined);
 }
 
 /**
@@ -38,15 +43,15 @@ export function getFilterObjects({
     if (!appName) {
         filterList = mergeTerminalNodes(filterTree);
     } else if (!version) {
-        filterList = mergeTerminalNodes(filterTree[appName]);
+        filterList = mergeTerminalNodes(safelyGet(filterTree, appName));
     } else if (!build) {
-        filterList = mergeTerminalNodes(filterTree[appName][version]);
+        filterList = mergeTerminalNodes(safelyGet(filterTree, appName, version));
     } else if (!executable) {
-        filterList = mergeTerminalNodes(filterTree[appName][version][build]);
+        filterList = mergeTerminalNodes(safelyGet(filterTree, appName, version, build));
     } else if (!flavor) {
-        filterList = mergeTerminalNodes(filterTree[appName][version][build][executable]);
+        filterList = mergeTerminalNodes(safelyGet(filterTree, appName, version, build, executable));
     } else {
-        filterList = filterTree[appName][version][build][executable][flavor];
+        filterList = safelyGet(filterTree, appName, version, build, executable, flavor);
     }
 
     return [].concat(extractUniqueBy(filterList, "path"), extractUniqueBy(filterList, "regex"));

@@ -114,5 +114,16 @@ export default {
             build: "Intel",
             hasAdvancedComputeOptions: true,
         },
+        {
+            version: "7.2",
+            isDefault: true,
+            hasAdvancedComputeOptions: true,
+        },
+        {
+            version: "7.2",
+            isDefault: false,
+            build: "Intel",
+            hasAdvancedComputeOptions: true,
+        },
     ],
 };

@@ -1,6 +1,6 @@
 import { expect } from "chai";
 
-import { filterModelsByApplicationParameters } from "../src/js/models";
+import { filterModelsByApplicationParameters, getFilterObjects } from "../src/js/models";
 
 describe("filterModelsByApplicationParameters", () => {
     const modelConfigs = [
@@ -23,6 +23,7 @@ describe("filterModelsByApplicationParameters", () => {
             functional: "hse",
         },
     ];
+
     it("can filter list of model configs", () => {
         const filteredConfigs = filterModelsByApplicationParameters({
             modelList: modelConfigs,
@@ -46,5 +47,22 @@ describe("filterModelsByApplicationParameters", () => {
             build: "Default",
         });
         expect(filteredConfigs).to.have.length(0);
+    });
+
+    it("should use filters from a previous version if selected is undefined", () => {
+        const mockTree = {
+            a: {
+                6.3: [{ path: "63_a" }, { path: "63_b" }],
+                "5.4.2": [{ path: "542_a" }, { path: "542_b" }],
+                5.7: [{ path: "57_a" }, { path: "57_b" }],
+            },
+        };
+
+        const filters = getFilterObjects({
+            filterTree: mockTree,
+            appName: "a",
+            version: "6.2",
+        });
+        expect(filters.map((f) => f.path)).to.have.members(["57_a", "57_b"]);
     });
 });

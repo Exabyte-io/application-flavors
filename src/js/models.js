@@ -1,4 +1,8 @@
-import { filterEntityList, mergeTerminalNodes } from "@exabyte-io/code.js/dist/utils";
+import {
+    filterEntityList,
+    findPreviousVersion,
+    mergeTerminalNodes,
+} from "@exabyte-io/code.js/dist/utils";
 import lodash from "lodash";
 
 import { models as applicationModelMap } from "../../filter_trees";
@@ -19,6 +23,11 @@ function extractUniqueBy(filterObjects, name) {
 
 function safelyGet(obj, ...args) {
     return lodash.get(obj, args, undefined);
+}
+
+function getPreviousVersion(obj, version) {
+    const prev = findPreviousVersion(Object.keys(obj), version);
+    return lodash.get(obj, prev, undefined);
 }
 
 /**
@@ -45,7 +54,10 @@ export function getFilterObjects({
     } else if (!version) {
         filterList = mergeTerminalNodes(safelyGet(filterTree, appName));
     } else if (!build) {
-        filterList = mergeTerminalNodes(safelyGet(filterTree, appName, version));
+        const branch =
+            safelyGet(filterTree, appName, version) ||
+            getPreviousVersion(filterTree[appName], version);
+        filterList = mergeTerminalNodes(branch);
     } else if (!executable) {
         filterList = mergeTerminalNodes(safelyGet(filterTree, appName, version, build));
     } else if (!flavor) {

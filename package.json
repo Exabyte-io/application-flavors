@@ -1,11 +1,11 @@
 {
   "name": "@exabyte-io/application-flavors.js",
-  "version": "2022.1.9-2",
+  "version": "0.0.0",
   "description": "Input file templates and related computational configuration parameters for the applications used in the platform.",
   "scripts": {
     "prepublishOnly": "rm -rf lib; npm run transpile",
     "postinstall": "npm run transpile",
-    "transpile": "mkdir -p lib; babel src/js --out-dir lib/js; npm run build:assets",
+    "transpile": "mkdir -p lib; babel src/js --out-dir lib/js",
     "test": "nyc --reporter=text mocha --require @babel/register tests",
     "build:assets": "node build_templates.js; node build_filter_trees.js",
     "lint": "eslint src/js tests && prettier --write src/js tests",

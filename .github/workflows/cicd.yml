@@ -40,8 +40,7 @@ jobs:
         node-version: 
           - 12.x 
           - 14.x
-          # TODO: re-enable after https://mat3ra.atlassian.net/browse/SOF-6740
-          # - 16.x
+          - 16.x
 
     steps:
       - name: Checkout this repository

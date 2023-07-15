@@ -1,0 +1,72 @@
+Default:
+    vasp:
+        vasp:
+            - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+        vasp_bands:
+            - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+        vasp_ncsf:
+            - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+        vasp_relax:
+            - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+        vasp_vc_relax:
+            - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+        vasp_zpe:
+            - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+        vasp_kpt_conv:
+            - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+        vasp_vc_relax_conv:
+            - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+        vasp_neb:
+            - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+        vasp_neb_initial:
+            - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+        vasp_neb_final:
+            - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+Non-collinear:
+    vasp:
+        vasp:
+            -   regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+        vasp_bands:
+            -   regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+        vasp_ncsf:
+            -   regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+        vasp_relax:
+            -   regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+        vasp_vc_relax:
+            -   regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+        vasp_zpe:
+            -   regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+        vasp_kpt_conv:
+            -   regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+        vasp_vc_relax_conv:
+            -   regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+        vasp_neb:
+            -   regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+        vasp_neb_initial:
+            -   regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+        vasp_neb_final:
+            -   regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+VTST:
+    vasp:
+        vasp:
+            -   regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+        vasp_bands:
+            -   regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+        vasp_ncsf:
+            -   regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+        vasp_relax:
+            -   regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+        vasp_vc_relax:
+            -   regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+        vasp_zpe:
+            -   regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+        vasp_kpt_conv:
+            -   regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+        vasp_vc_relax_conv:
+            -   regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+        vasp_neb:
+            -   regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+        vasp_neb_initial:
+            -   regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+        vasp_neb_final:
+            -   regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*

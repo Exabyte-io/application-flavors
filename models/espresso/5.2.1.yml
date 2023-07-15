@@ -1,16 +1,16 @@
 Default:
   pw.x:
     pw_scf:
-      - regex: \/pb\/qm\/dft\/ksdft\/.*
+      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
     pw_scf_bands_hse:
       - path: /pb/qm/dft/ksdft/hybrid?functional=hse
     pw_esm:
-      - regex: \/pb\/qm\/dft\/ksdft\/.*
+      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
     pw_esm_relax:
-      - regex: \/pb\/qm\/dft\/ksdft\/.*
+      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
     pw_nscf:
-      - regex: \/pb\/qm\/dft\/ksdft\/.*
+      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
     pw_relax:
-      - regex: \/pb\/qm\/dft\/ksdft\/.*
+      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
     pw_vc-relax:
-      - regex: \/pb\/qm\/dft\/ksdft\/.*
+      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*

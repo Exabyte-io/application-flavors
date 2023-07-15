@@ -43,9 +43,11 @@ This set of tests is configured using the `integration_configuration.yaml` file,
 units are to be present in a test, and the order they're to be run in. It also contains general settings, such as
 where the test fixtures are located, and which files need to be cleaned up when a test job is complete.
 
-## Applications and Models
+## Applications, Models, and Methods
 The available models for each application are defined via asset files in the `models` directory,
-which are used to construct a single object whitelisting all models implemented by a given application (`model_list.js`).
+and `methods` directory, respectively.
+The asset files are used to construct a single object whitelisting all models implemented
+by a given application (`filter_trees.js`).
 These asset files are organized in the specific way, whereby the filepath also plays a role
 in the generation of the model list object:
 1. directory - application name
@@ -54,18 +56,22 @@ in the generation of the model list object:
 4. second level - executable
 5. third level - flavor
 
-The property for a given set of application parameters contains a list of objects defining the path of the model
-(`path`) or a regular expression (`regex`).
-These assets can also be reused to define new assets using the `include` keyword. When such data is included, the lists
-of path objects are merged without duplicates. Individual objects may be removed by using the `isRemoved` key:
+The property for a given set of application parameters contains a list of filter objects
+defining the path of the model (`path`) or a regular expression (`regex`).
+These assets can also be reused to define new assets using the `!include` Yaml tag
+(defined in [code.js](https://github.com/Exabyte-io/code.js)), which also supports
+accessing properties and array elements (see example below).
 ```yaml
 # build asset based on another asset
-include: 5.2.1.yml
 Default:
   pw.x:
+    # reuse all pw_scf filters from version 5.2.1
+    pw_scf: !include "models/espresso/5.2.1.yml#/Default/pw.x/pw_scf"
+
+    # define filters for pw_scf_bands_hse flavor in-place
     pw_scf_bands_hse:
       - path: /pb/qm/dft/ksdft/hybrid?functional=hse
         isRemoved: true
       - path: /pb/qm/dft/ksdft/hybrid?functional=hse06
 ```
-The above example effectively replaces the path object for the `pw_scf_bands_hse` flavor.
+

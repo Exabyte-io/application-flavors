@@ -26,3 +26,4 @@ notebook>=6.2.0
 exabyte-api-client>=2020.10.19
 numpy>=1.17.3
 pandas>=1.1.4
+urllib3<2

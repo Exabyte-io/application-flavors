@@ -1,0 +1,17 @@
+-   content: !readFile "templates/espresso/gw_bands_plasmon_pole.j2.in"
+    name: gw_bands_plasmon_pole.in
+    contextProviders:
+        -   name: KGridFormDataManager
+        -   name: QGridFormDataManager
+        -   name: ExplicitKPath2PIBAFormDataManager
+    applicationName: espresso
+    executableName: gw.x
+
+-   content: !readFile "templates/espresso/gw_bands_full_frequency.j2.in"
+    name: gw_bands_full_frequency.in
+    contextProviders:
+        -   name: KGridFormDataManager
+        -   name: QGridFormDataManager
+        -   name: ExplicitKPath2PIBAFormDataManager
+    applicationName: espresso
+    executableName: gw.x

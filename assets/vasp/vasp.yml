@@ -1,0 +1,115 @@
+-   content: !readFile "templates/vasp/INCAR.j2"
+    name: INCAR
+    contextProviders:
+        -   name: VASPInputDataManager
+    applicationName: vasp
+    executableName: vasp
+
+-   content: !readFile "templates/vasp/INCAR_bands.j2"
+    name: INCAR_BANDS
+    contextProviders:
+        -   name: VASPInputDataManager
+    applicationName: vasp
+    executableName: vasp
+
+-   content: !readFile "templates/vasp/INCAR_zpe.j2"
+    name: INCAR_ZPE
+    contextProviders:
+        -   name: VASPInputDataManager
+    applicationName: vasp
+    executableName: vasp
+
+-   content: !readFile "templates/vasp/INCAR_relax.j2"
+    name: INCAR_RELAX
+    contextProviders:
+        -   name: VASPInputDataManager
+    applicationName: vasp
+    executableName: vasp
+
+-   content: !readFile "templates/vasp/INCAR_vc_relax.j2"
+    name: INCAR_VC_RELAX
+    contextProviders:
+        -   name: VASPInputDataManager
+    applicationName: vasp
+    executableName: vasp
+
+-   content: !concatString
+        -   !readFile "templates/vasp/INCAR.j2"
+        -   !readFile "templates/vasp/_MIXIN_INCAR_hse.j2"
+    name: INCAR_HSE
+    contextProviders:
+        -   name: VASPInputDataManager
+    applicationName: vasp
+    executableName: vasp
+
+-   content: !concatString
+        -   !readFile "templates/vasp/INCAR_bands.j2"
+        -   !readFile "templates/vasp/_MIXIN_INCAR_hse.j2"
+    name: INCAR_BANDS_HSE
+    contextProviders:
+        -   name: VASPInputDataManager
+    applicationName: vasp
+    executableName: vasp
+
+-   content: !readFile "templates/vasp/KPOINTS.j2"
+    name: KPOINTS
+    contextProviders:
+        -   name: KGridFormDataManager
+        -   name: VASPInputDataManager
+    applicationName: vasp
+    executableName: vasp
+
+-   content: !readFile "templates/vasp/KPOINTS_bands.j2"
+    name: KPOINTS_BANDS
+    contextProviders:
+        -   name: KPathFormDataManager
+        -   name: VASPInputDataManager
+    applicationName: vasp
+    executableName: vasp
+
+-   content: !readFile "templates/vasp/KPOINTS_conv.j2"
+    name: KPOINTS_CONV
+    contextProviders:
+        -   name: KGridFormDataManager
+        -   name: VASPInputDataManager
+    applicationName: vasp
+    executableName: vasp
+
+-   content: !readFile "templates/vasp/POSCAR.j2"
+    name: POSCAR
+    contextProviders:
+        -   name: VASPInputDataManager
+    applicationName: vasp
+    executableName: vasp
+
+-   content: !readFile "templates/vasp/INCAR_neb.j2"
+    name: INCAR_NEB
+    contextProviders:
+        -   name: NEBFormDataManager
+        -   name: VASPNEBInputDataManager
+    applicationName: vasp
+    executableName: vasp
+
+-   content: !readFile "templates/vasp/INCAR_neb_initial_final.j2"
+    name: INCAR_NEB_INITIAL_FINAL
+    contextProviders:
+        -   name: NEBFormDataManager
+        -   name: VASPNEBInputDataManager
+    applicationName: vasp
+    executableName: vasp
+
+-   content: !readFile "templates/vasp/POSCAR_NEB_initial.j2"
+    name: POSCAR_NEB_INITIAL
+    contextProviders:
+        -   name: NEBFormDataManager
+        -   name: VASPNEBInputDataManager
+    applicationName: vasp
+    executableName: vasp
+
+-   content: !readFile "templates/vasp/POSCAR_NEB_final.j2"
+    name: POSCAR_NEB_FINAL
+    contextProviders:
+        -   name: NEBFormDataManager
+        -   name: VASPNEBInputDataManager
+    applicationName: vasp
+    executableName: vasp

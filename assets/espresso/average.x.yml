@@ -1,0 +1,5 @@
+-   content: !readFile "templates/espresso/average.j2.in"
+    name: average.in
+    contextProviders: []
+    applicationName: espresso
+    executableName: average.x

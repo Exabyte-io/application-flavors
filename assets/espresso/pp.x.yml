@@ -1,0 +1,11 @@
+-   content: !readFile "templates/espresso/pp_density.j2.in"
+    name: pp_density.in
+    contextProviders: []
+    applicationName: espresso
+    executableName: pp.x
+
+-   content: !readFile "templates/espresso/pp_electrostatic_potential.j2.in"
+    name: pp_electrostatic_potential.in
+    contextProviders: []
+    applicationName: espresso
+    executableName: pp.x

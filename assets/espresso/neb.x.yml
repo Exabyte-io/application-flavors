@@ -1,0 +1,9 @@
+-   content: !readFile "templates/espresso/neb.j2.in"
+    name: neb.in
+    contextProviders:
+        -   name: KGridFormDataManager
+        -   name: NEBFormDataManager
+        -   name: QENEBInputDataManager
+        -   name: PlanewaveCutoffDataManager
+    applicationName: espresso
+    executableName: neb.x

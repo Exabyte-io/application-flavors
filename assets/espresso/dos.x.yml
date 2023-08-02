@@ -1,0 +1,5 @@
+-   content: !readFile "templates/espresso/dos.j2.in"
+    name: dos.in
+    contextProviders: []
+    applicationName: espresso
+    executableName: dos.x

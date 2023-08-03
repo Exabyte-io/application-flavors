@@ -1,0 +1,14 @@
+monitors:
+    -   standard_output
+results:
+    -   band_structure
+flavors:
+    bands:
+        input:
+            -   name: bands.in
+        results:
+            -   band_structure
+        monitors:
+            -   standard_output
+        applicationName: espresso
+        executableName: bands.x

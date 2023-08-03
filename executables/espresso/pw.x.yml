@@ -1,0 +1,186 @@
+isDefault: true
+hasAdvancedComputeOptions: true
+postProcessors:
+    -   remove_non_zero_weight_kpoints
+monitors:
+    -   standard_output"
+    -   convergence_ionic"
+    -   convergence_electronic"
+results:
+    -   atomic_forces
+    -   band_gaps
+    -   charge_density_profile
+    -   density_of_states
+    -   fermi_energy
+    -   final_structure
+    -   magnetic_moments
+    -   potential_profile
+    -   pressure
+    -   reaction_energy_barrier
+    -   reaction_energy_profile
+    -   stress_tensor
+    -   total_energy
+    -   total_energy_contributions
+    -   total_force
+flavors:
+    pw_scf:
+        isDefault: true
+        input:
+            -   name: pw_scf.in
+        results:
+            -   atomic_forces
+            -   fermi_energy
+            -   pressure
+            -   stress_tensor
+            -   total_energy
+            -   total_energy_contributions
+            -   total_force
+        monitors:
+            -   standard_output
+            -   convergence_electronic
+        applicationName: espresso
+        executableName: pw.x
+
+    pw_scf_bands_hse:
+        input:
+            -   name: pw_scf_bands_hse.in
+        results:
+            -   total_energy
+            -   total_energy_contributions
+            -   pressure
+            -   fermi_energy
+            -   atomic_forces
+            -   total_force
+            -   stress_tensor
+        monitors:
+            -   standard_output
+            -   convergence_electronic
+        applicationName: espresso
+        executableName: pw.x
+
+    pw_scf_hse:
+        input:
+            -   name: pw_scf_hse.in
+        results:
+            -   atomic_forces
+            -   band_gaps
+            -   fermi_energy
+            -   pressure
+            -   stress_tensor
+            -   total_energy
+            -   total_energy_contributions
+            -   total_force
+        monitors:
+            -   standard_output
+            -   convergence_electronic
+        applicationName: espresso
+        executableName: pw.x
+
+    pw_esm:
+        input:
+            -   name: pw_esm.in
+        results:
+            -   total_energy
+            -   total_energy_contributions
+            -   pressure
+            -   fermi_energy
+            -   atomic_forces
+            -   total_force
+            -   stress_tensor
+            -   potential_profile
+            -   charge_density_profile
+        monitors:
+            -   standard_output
+            -   convergence_electronic
+        applicationName: espresso
+        executableName: pw.x
+
+    pw_esm_relax:
+        input:
+            -   name: pw_esm_relax.in
+        results:
+            -   total_energy
+            -   total_energy_contributions
+            -   pressure
+            -   fermi_energy
+            -   atomic_forces
+            -   total_force
+            -   stress_tensor
+            -   potential_profile
+            -   charge_density_profile
+        monitors:
+            -   standard_output
+            -   convergence_electronic
+        applicationName: espresso
+        executableName: pw.x
+
+    pw_nscf:
+        input:
+            -   name: pw_nscf.in
+        results:
+            -   fermi_energy
+            -   band_gaps
+        monitors:
+            -   standard_output
+        applicationName: espresso
+        executableName: pw.x
+
+    pw_bands:
+        input:
+            -   name: pw_bands.in
+        monitors:
+            -   standard_output
+        applicationName: espresso
+        executableName: pw.x
+
+    pw_relax:
+        input:
+            -   name: pw_relax.in
+        monitors:
+            -   standard_output
+            -   convergence_electronic
+            -   convergence_ionic
+        results:
+            -   total_energy
+            -   fermi_energy
+            -   pressure
+            -   atomic_forces
+            -   total_force
+            -   stress_tensor
+            -   final_structure
+        applicationName: espresso
+        executableName: pw.x
+
+    pw_vc-relax:
+        input:
+            -   name: pw_vc_relax.in
+        monitors:
+            -   standard_output
+            -   convergence_electronic
+            -   convergence_ionic
+        results:
+            -   total_energy
+            -   fermi_energy
+            -   pressure
+            -   atomic_forces
+            -   total_force
+            -   stress_tensor
+            -   final_structure
+        applicationName: espresso
+        executableName: pw.x
+
+    pw_scf_kpt_conv:
+        input:
+            -   name: pw_scf_kpt_conv.in
+        results:
+            -   total_energy
+            -   fermi_energy
+            -   pressure
+            -   atomic_forces
+            -   total_force
+            -   stress_tensor
+        monitors:
+            -   standard_output
+            -   convergence_electronic
+        applicationName: espresso
+        executableName: pw.x

@@ -1,0 +1,13 @@
+isDefault: false
+monitors:
+    -   standard_output
+results:
+    -   predicted_properties
+flavors:
+    score:
+        isDefault: true
+        input: []
+        monitors:
+            -   standard_output
+        applicationName: exabyteml
+        executableName: score

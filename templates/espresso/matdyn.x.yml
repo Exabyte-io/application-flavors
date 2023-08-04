@@ -1,11 +1,11 @@
--   content: !readFile "templates/espresso/matdyn_grid.j2.in"
+-   content: !readFile "assets/espresso/matdyn_grid.j2.in"
     name: matdyn_grid.in
     contextProviders:
         -   name: IGridFormDataManager
     applicationName: espresso
     executableName: matdyn.x
 
--   content: !readFile "templates/espresso/matdyn_path.j2.in"
+-   content: !readFile "assets/espresso/matdyn_path.j2.in"
     name: matdyn_path.in
     contextProviders:
         -   name: IPathFormDataManager

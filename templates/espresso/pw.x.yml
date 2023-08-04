@@ -1,4 +1,4 @@
--   content: !readFile "templates/espresso/pw_scf.j2.in"
+-   content: !readFile "assets/espresso/pw_scf.j2.in"
     name: pw_scf.in
     contextProviders:
         -   name: KGridFormDataManager
@@ -7,7 +7,7 @@
     applicationName: espresso
     executableName: pw.x
 
--   content: !readFile "templates/espresso/pw_scf_bands_hse.j2.in"
+-   content: !readFile "assets/espresso/pw_scf_bands_hse.j2.in"
     name: pw_scf_bands_hse.in
     contextProviders:
         -   name: QEPWXInputDataManager
@@ -17,7 +17,7 @@
     applicationName: espresso
     executableName: pw.x
 
--   content: !readFile "templates/espresso/pw_esm.j2.in"
+-   content: !readFile "assets/espresso/pw_esm.j2.in"
     name: pw_esm.in
     contextProviders:
         -   name: KGridFormDataManager
@@ -27,7 +27,7 @@
     applicationName: espresso
     executableName: pw.x
 
--   content: !readFile "templates/espresso/pw_esm_relax.j2.in"
+-   content: !readFile "assets/espresso/pw_esm_relax.j2.in"
     name: pw_esm_relax.in
     contextProviders:
         -   name: KGridFormDataManager
@@ -37,7 +37,7 @@
     applicationName: espresso
     executableName: pw.x
 
--   content: !readFile "templates/espresso/pw_scf_kpt_conv.j2.in"
+-   content: !readFile "assets/espresso/pw_scf_kpt_conv.j2.in"
     name: pw_scf_kpt_conv.in
     contextProviders:
         -   name: QEPWXInputDataManager
@@ -45,7 +45,7 @@
     applicationName: espresso
     executableName: pw.x
 
--   content: !readFile "templates/espresso/pw_nscf.j2.in"
+-   content: !readFile "assets/espresso/pw_nscf.j2.in"
     name: pw_nscf.in
     contextProviders:
         -   name: KGridFormDataManager
@@ -54,7 +54,7 @@
     applicationName: espresso
     executableName: pw.x
 
--   content: !readFile "templates/espresso/pw_relax.j2.in"
+-   content: !readFile "assets/espresso/pw_relax.j2.in"
     name: pw_relax.in
     contextProviders:
         -   name: KGridFormDataManager
@@ -63,7 +63,7 @@
     applicationName: espresso
     executableName: pw.x
 
--   content: !readFile "templates/espresso/pw_vc_relax.j2.in"
+-   content: !readFile "assets/espresso/pw_vc_relax.j2.in"
     name: pw_vc_relax.in
     contextProviders:
         -   name: KGridFormDataManager
@@ -72,7 +72,7 @@
     applicationName: espresso
     executableName: pw.x
 
--   content: !readFile "templates/espresso/pw_bands.j2.in"
+-   content: !readFile "assets/espresso/pw_bands.j2.in"
     name: pw_bands.in
     contextProviders:
         -   name: KPathFormDataManager
@@ -81,7 +81,7 @@
     applicationName: espresso
     executableName: pw.x
 
--   content: !readFile "templates/espresso/pw_scf_hse.j2.in"
+-   content: !readFile "assets/espresso/pw_scf_hse.j2.in"
     name: pw_scf_hse.in
     contextProviders:
         -   name: KGridFormDataManager

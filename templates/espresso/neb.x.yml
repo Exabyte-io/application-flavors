@@ -1,4 +1,4 @@
--   content: !readFile "templates/espresso/neb.j2.in"
+-   content: !readFile "assets/espresso/neb.j2.in"
     name: neb.in
     contextProviders:
         -   name: KGridFormDataManager

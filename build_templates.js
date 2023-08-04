@@ -26,7 +26,7 @@ buildAsset({
 
 buildAsset({
     assetPath: "./applications/application_data.yml",
-    targetPath: "./lib/js/data/applications.js",
+    targetPath: "./lib/js/data/application_data.js",
     dataKey: "applicationData",
 });
 

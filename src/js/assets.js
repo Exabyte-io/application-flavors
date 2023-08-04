@@ -6,3 +6,13 @@ export function getAllAppTemplates() {
     const fileContent = fs.readFileSync("./templates/templates.yml");
     return yaml.load(fileContent, { schema: JsYamlAllSchemas });
 }
+
+export function getAllAppData() {
+    const fileContent = fs.readFileSync("./applications/application_data.yml");
+    return yaml.load(fileContent, { schema: JsYamlAllSchemas });
+}
+
+export function getAllAppTree() {
+    const fileContent = fs.readFileSync("./executables/tree.yml");
+    return yaml.load(fileContent, { schema: JsYamlAllSchemas });
+}

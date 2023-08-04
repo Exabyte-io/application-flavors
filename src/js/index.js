@@ -1,4 +1,4 @@
-export { getAllAppTemplates } from "./assets";
+export { getAllAppTemplates, getAllAppData, getAllAppTree } from "./assets";
 export { getAppTree } from "./tree";
 export { getAppData } from "./data";
 export { allTemplates } from "./data/templates";

@@ -1,5 +1,5 @@
 /**
  * Empty module file which will get populated at build time
- * by build_templates.js
+ * by build_assets.js
  */
-export const allTemplates = [];
+export const applicationData = {};

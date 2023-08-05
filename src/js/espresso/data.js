@@ -125,5 +125,11 @@ export default {
             build: "Intel",
             hasAdvancedComputeOptions: true,
         },
+        {
+            version: "7.2",
+            isDefault: false,
+            build: "GNU",
+            hasAdvancedComputeOptions: true,
+        },
     ],
 };

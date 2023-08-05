@@ -15,15 +15,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Exabyte-io/exabyte-application-flavors.git"
+    "url": "https://github.com/Exabyte-io/application-flavors.git"
   },
   "main": "lib/js/index.js",
   "author": "Exabyte Inc.",
   "email": "info@exabyte.io",
   "bugs": {
-    "url": "https://github.com/Exabyte-io/exabyte-application-flavors/issues"
+    "url": "https://github.com/Exabyte-io/application-flavors/issues"
   },
-  "homepage": "https://github.com/Exabyte-io/exabyte-application-flavors",
+  "homepage": "https://github.com/Exabyte-io/application-flavors",
   "devDependencies": {
     "@exabyte-io/eslint-config": "^2022.11.17-0",
     "@exabyte-io/code.js": "git+https://github.com/Exabyte-io/code.js.git#1a0884db8d778d146c91d31234291221788c5881",

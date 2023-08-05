@@ -1,6 +1,6 @@
 espresso: !include "applications/espresso.yml"
 exabyteml: !include "applications/exabyteml.yml"
-jupyterLab: !include "applications/jupterLab.yml"
+jupyterLab: !include "applications/jupyterLab.yml"
 nwchem: !include "applications/nwchem.yml"
 python: !include "applications/python.yml"
 shell: !include "applications/shell.yml"

@@ -1,3 +1,0 @@
-src/js/data/templates.js filter=lfs diff=lfs merge=lfs -text
-src/js/data/application_data.js filter=lfs diff=lfs merge=lfs -text
-src/js/data/tree.js filter=lfs diff=lfs merge=lfs -text

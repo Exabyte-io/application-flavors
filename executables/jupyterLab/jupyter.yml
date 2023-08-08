@@ -1,7 +1,7 @@
 isDefault: true
 monitors:
   - standard_output
-  - jupyterNotebookEndpoint
+  - jupyter_notebook_endpoint
 results: []
 flavors:
   notebook:
@@ -11,6 +11,6 @@ flavors:
         templateName: requirements.txt
     monitors:
       - standard_output
-      - jupyterNotebookEndpoint
+      - jupyter_notebook_endpoint
     applicationName: jupyterLab
     executableName: jupyter

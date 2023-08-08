@@ -384,13 +384,13 @@ module.exports = {
         jupyterLab: {
             jupyter: {
                 isDefault: true,
-                monitors: ["standard_output", "jupyterNotebookEndpoint"],
+                monitors: ["standard_output", "jupyter_notebook_endpoint"],
                 results: [],
                 flavors: {
                     notebook: {
                         isDefault: true,
                         input: [{ name: "requirements.txt", templateName: "requirements.txt" }],
-                        monitors: ["standard_output", "jupyterNotebookEndpoint"],
+                        monitors: ["standard_output", "jupyter_notebook_endpoint"],
                         applicationName: "jupyterLab",
                         executableName: "jupyter",
                     },

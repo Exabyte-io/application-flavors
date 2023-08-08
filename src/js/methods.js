@@ -1,6 +1,6 @@
 import { filterEntityList } from "@exabyte-io/code.js/dist/utils";
 
-import { methods as applicationMethodMap } from "../../filter_trees";
+import { methods as applicationMethodMap } from "./data/filter_trees";
 import { getFilterObjects } from "./models";
 
 export function filterMethodsByApplicationParameters({

@@ -5,7 +5,7 @@ import {
 } from "@exabyte-io/code.js/dist/utils";
 import lodash from "lodash";
 
-import { models as applicationModelMap } from "../../filter_trees";
+import { models as applicationModelMap } from "./data/filter_trees";
 
 /**
  * Extract unique filter objects by name of key.

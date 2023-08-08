@@ -200,7 +200,7 @@ module.exports = {
                 isDefault: true,
                 hasAdvancedComputeOptions: true,
                 postProcessors: ["remove_non_zero_weight_kpoints"],
-                monitors: ['standard_output"', 'convergence_ionic"', 'convergence_electronic"'],
+                monitors: ["standard_output", "convergence_ionic", "convergence_electronic"],
                 results: [
                     "atomic_forces",
                     "band_gaps",

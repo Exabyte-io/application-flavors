@@ -391,7 +391,7 @@ module.exports = {
                         isDefault: true,
                         input: [{ name: "requirements.txt", templateName: "requirements.txt" }],
                         monitors: ["standard_output", "jupyterNotebookEndpoint"],
-                        applicationName: "jupyerLab",
+                        applicationName: "jupyterLab",
                         executableName: "jupyter",
                     },
                 },

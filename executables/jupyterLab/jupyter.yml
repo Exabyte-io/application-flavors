@@ -12,5 +12,5 @@ flavors:
         monitors:
             -   standard_output
             -   jupyterNotebookEndpoint
-        applicationName: jupyerLab
+        applicationName: jupyterLab
         executableName: jupyter

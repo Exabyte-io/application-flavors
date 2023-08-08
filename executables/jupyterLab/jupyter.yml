@@ -1,16 +1,16 @@
 isDefault: true
 monitors:
-    -   standard_output
-    -   jupyterNotebookEndpoint
+  - standard_output
+  - jupyterNotebookEndpoint
 results: []
 flavors:
-    notebook:
-        isDefault: true
-        input:
-            -   name: requirements.txt
-                templateName: requirements.txt
-        monitors:
-            -   standard_output
-            -   jupyterNotebookEndpoint
-        applicationName: jupyterLab
-        executableName: jupyter
+  notebook:
+    isDefault: true
+    input:
+      - name: requirements.txt
+        templateName: requirements.txt
+    monitors:
+      - standard_output
+      - jupyterNotebookEndpoint
+    applicationName: jupyterLab
+    executableName: jupyter

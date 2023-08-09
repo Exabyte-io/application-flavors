@@ -26,8 +26,8 @@ function safelyGet(obj, ...args) {
 }
 
 function getPreviousVersion(obj, version) {
-    const prev = findPreviousVersion(Object.keys(obj), version);
-    return lodash.get(obj, prev, undefined);
+    const availableVersions = obj ? Object.keys(obj) : [];
+    return findPreviousVersion(availableVersions, version) || "";
 }
 
 /**
@@ -49,21 +49,27 @@ export function getFilterObjects({
     flavor = "",
 }) {
     let filterList;
+    const version_ = safelyGet(filterTree, appName, version)
+        ? version
+        : getPreviousVersion(filterTree[appName], version);
+
     if (!appName) {
         filterList = mergeTerminalNodes(filterTree);
-    } else if (!version) {
+    } else if (!version_) {
         filterList = mergeTerminalNodes(safelyGet(filterTree, appName));
     } else if (!build) {
         const branch =
-            safelyGet(filterTree, appName, version) ||
-            getPreviousVersion(filterTree[appName], version);
+            safelyGet(filterTree, appName, version_) ||
+            getPreviousVersion(filterTree[appName], version_);
         filterList = mergeTerminalNodes(branch);
     } else if (!executable) {
-        filterList = mergeTerminalNodes(safelyGet(filterTree, appName, version, build));
+        filterList = mergeTerminalNodes(safelyGet(filterTree, appName, version_, build));
     } else if (!flavor) {
-        filterList = mergeTerminalNodes(safelyGet(filterTree, appName, version, build, executable));
+        filterList = mergeTerminalNodes(
+            safelyGet(filterTree, appName, version_, build, executable),
+        );
     } else {
-        filterList = safelyGet(filterTree, appName, version, build, executable, flavor);
+        filterList = safelyGet(filterTree, appName, version_, build, executable, flavor);
     }
 
     return [].concat(extractUniqueBy(filterList, "path"), extractUniqueBy(filterList, "regex"));

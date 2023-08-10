@@ -19,7 +19,7 @@ rules:
     min-spaces-from-content: 1
   comments-indentation: disable
 
-ignore:
-  - node_modules/
-  - test/
-  - tests/
+ignore: |
+  node_modules/
+  test/
+  tests/

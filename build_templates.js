@@ -10,10 +10,10 @@ const utils = require("@exabyte-io/code.js/dist/utils");
 function buildAsset({ assetPath, targetPath, dataKey = "" }) {
     const fileContent = fs.readFileSync(assetPath);
     const obj = yaml.load(fileContent, { schema: utils.JsYamlAllSchemas });
-    const ignore = "// eslint-disable\n";
+    const ignore = "/* eslint-disable */\n";
     fs.writeFileSync(
         targetPath,
-        ignore + `module.exports = {${dataKey}: ` + JSON.stringify(obj) + "}",
+        ignore + `module.exports = {${dataKey}: ` + JSON.stringify(obj) + "}\n",
         "utf8",
     );
     console.log(`Written asset "${assetPath}" to "${targetPath}"`);

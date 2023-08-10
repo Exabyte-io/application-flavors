@@ -53,7 +53,7 @@ flavors:
       - name: KPOINTS
         templateName: KPOINTS_BANDS
       - name: POSCAR
-        templateName: ""
+        templateName: ''
     results:
       - band_structure
     monitors:
@@ -108,7 +108,7 @@ flavors:
       - name: KPOINTS
         templateName: KPOINTS_BANDS
       - name: POSCAR
-        templateName: ""
+        templateName: ''
     results:
       - band_structure
     monitors:

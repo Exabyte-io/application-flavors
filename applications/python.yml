@@ -1,11 +1,11 @@
 name: python
 shortName: py
 summary: Python Script
-defaultVersion: "3.8.6"
+defaultVersion: '3.8.6'
 versions:
-  - version: "3.6.12"
-  - version: "3.7.9"
-  - version: "3.8.6"
+  - version: '3.6.12'
+  - version: '3.7.9'
+  - version: '3.8.6'
     isDefault: true
-  - version: "3.9.1"
-  - version: "anaconda3-5.2.0"
+  - version: '3.9.1'
+  - version: 'anaconda3-5.2.0'

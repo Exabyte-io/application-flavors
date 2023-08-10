@@ -2,7 +2,7 @@ isDefault: true
 monitors:
   - standard_output
 results:
-  - "workflow:ml_predict"
+  - 'workflow:ml_predict'
 flavors:
   train:
     isDefault: true

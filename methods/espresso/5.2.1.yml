@@ -2,15 +2,15 @@ Default:
   pw.x:
     pw_scf:
       - path: /qm/wf/undefined/pw/undefined
-      - regex: "\/qm\/wf\/undefined\/psp\/.*"
-      - regex: "\/qm\/wf\/undefined\/smearing\/.*"
-      - regex: "\/qm\/wf\/undefined\/tetrahedron\/.*"
+      - regex: '\/qm\/wf\/undefined\/psp\/.*'
+      - regex: '\/qm\/wf\/undefined\/smearing\/.*'
+      - regex: '\/qm\/wf\/undefined\/tetrahedron\/.*'
       - path: /opt/diff/ordern/cg/undefined
       - path: /linalg/diag/undefined/davidson/undefined
     pw_scf_bands_hse:
       - path: /qm/wf/undefined/pw/undefined
-      - regex: "\/qm\/wf\/undefined\/psp\/.*"
-      - regex: "\/qm\/wf\/undefined\/smearing\/.*"
-      - regex: "\/qm\/wf\/undefined\/tetrahedron\/.*"
+      - regex: '\/qm\/wf\/undefined\/psp\/.*'
+      - regex: '\/qm\/wf\/undefined\/smearing\/.*'
+      - regex: '\/qm\/wf\/undefined\/tetrahedron\/.*'
       - path: /opt/diff/ordern/cg/undefined
       - path: /linalg/diag/undefined/davidson/undefined

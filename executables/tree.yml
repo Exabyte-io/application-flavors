@@ -1,26 +1,26 @@
 espresso:
-  average.x: !include "executables/espresso/average.x.yml"
-  bands.x: !include "executables/espresso/bands.x.yml"
-  dos.x: !include "executables/espresso/dos.x.yml"
-  dynmat.x: !include "executables/espresso/dynmat.x.yml"
-  gw.x: !include "executables/espresso/gw.x.yml"
-  matdyn.x: !include "executables/espresso/matdyn.x.yml"
-  neb.x: !include "executables/espresso/neb.x.yml"
-  ph.x: !include "executables/espresso/ph.x.yml"
-  pp.x: !include "executables/espresso/pp.x.yml"
-  projwfc.x: !include "executables/espresso/projwfc.x.yml"
-  pw.x: !include "executables/espresso/pw.x.yml"
-  q2r.x: !include "executables/espresso/q2r.x.yml"
+  average.x: !include 'executables/espresso/average.x.yml'
+  bands.x: !include 'executables/espresso/bands.x.yml'
+  dos.x: !include 'executables/espresso/dos.x.yml'
+  dynmat.x: !include 'executables/espresso/dynmat.x.yml'
+  gw.x: !include 'executables/espresso/gw.x.yml'
+  matdyn.x: !include 'executables/espresso/matdyn.x.yml'
+  neb.x: !include 'executables/espresso/neb.x.yml'
+  ph.x: !include 'executables/espresso/ph.x.yml'
+  pp.x: !include 'executables/espresso/pp.x.yml'
+  projwfc.x: !include 'executables/espresso/projwfc.x.yml'
+  pw.x: !include 'executables/espresso/pw.x.yml'
+  q2r.x: !include 'executables/espresso/q2r.x.yml'
 jupyterLab:
-  jupyter: !include "executables/jupyterLab/jupyter.yml"
+  jupyter: !include 'executables/jupyterLab/jupyter.yml'
 exabyteml:
-  score: !include "executables/exabyteml/score.yml"
-  train: !include "executables/exabyteml/train.yml"
+  score: !include 'executables/exabyteml/score.yml'
+  train: !include 'executables/exabyteml/train.yml'
 nwchem:
-  nwchem: !include "executables/nwchem/nwchem.yml"
+  nwchem: !include 'executables/nwchem/nwchem.yml'
 python:
-  python: !include "executables/python/python.yml"
+  python: !include 'executables/python/python.yml'
 shell:
-  sh: !include "executables/shell/sh.yml"
+  sh: !include 'executables/shell/sh.yml'
 vasp:
-  vasp: !include "executables/vasp/vasp.yml"
+  vasp: !include 'executables/vasp/vasp.yml'

@@ -1,7 +1,7 @@
 name: exabyteml
 shortName: ml
 summary: Exabyte Machine Learning Engine
-defaultVersion: "0.2.0"
+defaultVersion: '0.2.0'
 versions:
-  - version: "0.2.0"
+  - version: '0.2.0'
     isDefault: true

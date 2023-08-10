@@ -1,4 +1,4 @@
-pyml_render_output_directory: ".."
+pyml_render_output_directory: '..'
 documentation_box_common_text:
   regression: >
     When then workflow is in Training mode, the model is trained

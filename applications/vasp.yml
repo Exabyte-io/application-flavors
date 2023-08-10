@@ -4,7 +4,7 @@ summary: Vienna Ab-initio Simulation Package
 defaultVersion: "5.3.5"
 isLicensed: true
 versions:
-  # version 5.3.5
+  #### version 5.3.5 ####
   - version: "5.3.5"
     isDefault: true
   - version: "5.3.5"
@@ -13,7 +13,7 @@ versions:
   - version: "5.3.5"
     isDefault: false
     build: VTST
-  # version 5.4.4
+  #### version 5.4.4 ####
   - version: "5.4.4"
     isDefault: true
   - version: "5.4.4"

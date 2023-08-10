@@ -21,7 +21,6 @@ jobs:
         with:
           repository: Exabyte-io/actions
           token: ${{ secrets.BOT_GITHUB_TOKEN }}
-          ref: 4d3e0fc415f6eb28739a331e7f44cd7ba242668f
           path: actions
 
       - name: Run Yaml linter

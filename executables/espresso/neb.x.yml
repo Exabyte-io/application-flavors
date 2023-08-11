@@ -1,0 +1,17 @@
+monitors:
+  - standard_output
+results:
+  - reaction_energy_barrier
+  - reaction_energy_profile
+flavors:
+  neb:
+    isMultiMaterial: true
+    input:
+      - name: neb.in
+    results:
+      - reaction_energy_barrier
+      - reaction_energy_profile
+    monitors:
+      - standard_output
+    applicationName: espresso
+    executableName: neb.x

@@ -1,0 +1,21 @@
+isDefault: true
+hasAdvancedComputeOptions: false
+postProcessors:
+  - error_handler
+monitors:
+  - standard_output
+results:
+  - total_energy
+  - total_energy_contributions
+flavors:
+  nwchem_total_energy:
+    isDefault: true
+    input:
+      - name: nwchem_total_energy.inp
+    results:
+      - total_energy
+      - total_energy_contributions
+    monitors:
+      - standard_output
+    applicationName: nwchem
+    executableName: nwchem

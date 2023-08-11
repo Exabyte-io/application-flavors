@@ -1,0 +1,23 @@
+monitors:
+  - standard_output
+results:
+  - average_potential_profile
+flavors:
+  average:
+    input:
+      - name: average.in
+    results: []
+    monitors:
+      - standard_output
+    applicationName: espresso
+    executableName: average.x
+
+  average_potential:
+    input:
+      - name: average.in
+    results:
+      - average_potential_profile
+    monitors:
+      - standard_output
+    applicationName: espresso
+    executableName: average.x

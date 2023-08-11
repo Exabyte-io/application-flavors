@@ -4,13 +4,35 @@
  * downstream consumption to avoid FS calls in the browser.
  */
 const fs = require("fs");
-const flavors = require("./lib/js/assets");
-const obj = flavors.getAllAppTemplates();
-fs.writeFileSync("./lib/js/templates.js", "module.exports = {allTemplates: " + JSON.stringify(obj) + "}", "utf8");
+const yaml = require("js-yaml");
+const utils = require("@exabyte-io/code.js/dist/utils");
 
-// Verify contents
-// const templates = require("./lib/js/templates");
-// console.log(templates);
+function buildAsset({ assetPath, targetPath, dataKey = "" }) {
+    const fileContent = fs.readFileSync(assetPath);
+    const obj = yaml.load(fileContent, { schema: utils.JsYamlAllSchemas });
+    const ignore = "/* eslint-disable */\n";
+    fs.writeFileSync(
+        targetPath,
+        ignore + `module.exports = {${dataKey}: ` + JSON.stringify(obj) + "}\n",
+        "utf8",
+    );
+    console.log(`Written asset "${assetPath}" to "${targetPath}"`);
+}
 
-// Downstream usage of compiled templates
-// import { allTemplates } from "@exabyte-io/application-flavors/templates";
+buildAsset({
+    assetPath: "./templates/templates.yml",
+    targetPath: "./src/js/data/templates.js",
+    dataKey: "allTemplates",
+});
+
+buildAsset({
+    assetPath: "./applications/application_data.yml",
+    targetPath: "./src/js/data/application_data.js",
+    dataKey: "applicationData",
+});
+
+buildAsset({
+    assetPath: "./executables/tree.yml",
+    targetPath: "./src/js/data/tree.js",
+    dataKey: "applicationTree",
+});

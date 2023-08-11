@@ -1,5 +1,6 @@
+# yamllint disable rule:truthy rule:line-length
 name: adaboosted_trees
-category: "regression"
+category: 'regression'
 provider: sklearn
 ensemble: True
 description: >
@@ -12,11 +13,11 @@ model_class: sklearn.ensemble.AdaBoostRegressor
 model_default_args:
   n_estimators: 50
   learning_rate: 1
-  loss: "linear"
+  loss: 'linear'
 base_estimator_class: sklearn.tree.DecisionTreeRegressor
 base_estimator_default_args:
-  criterion: "mse"
-  splitter: "best"
+  criterion: 'mse'
+  splitter: 'best'
   max_depth: None
   min_samples_split: 2
   min_samples_leaf: 1
@@ -29,7 +30,7 @@ base_estimator_default_args:
 ---
 
 name: bagged_trees
-category: "regression"
+category: 'regression'
 provider: sklearn
 ensemble: True
 description: >
@@ -49,8 +50,8 @@ model_default_args:
   verbose: 0
 base_estimator_class: sklearn.tree.DecisionTreeRegressor
 base_estimator_default_args:
-  criterion: "mse"
-  splitter: "best"
+  criterion: 'mse'
+  splitter: 'best'
   max_depth: None
   min_samples_split: 2
   min_samples_leaf: 1
@@ -63,7 +64,7 @@ base_estimator_default_args:
 ---
 
 name: gradboosted_trees
-category: "regression"
+category: 'regression'
 provider: sklearn
 ensemble: False
 description: >
@@ -75,11 +76,11 @@ imports:
   - sklearn.ensemble
 model_class: sklearn.ensemble.GradientBoostingRegressor
 model_default_args:
-  loss: "ls"
+  loss: 'ls'
   learning_rate: 0.1
   n_estimators: 100
   subsample: 1.0
-  criterion: "friedman_mse"
+  criterion: 'friedman_mse'
   min_samples_split: 2
   min_samples_leaf: 1
   min_weight_fraction_leaf: 0.0
@@ -107,12 +108,12 @@ imports:
 model_class: sklearn.cluster.KMeans
 model_default_args:
   n_clusters: 4
-  init: "k-means++"
+  init: 'k-means++'
   n_init: 10
   max_iter: 300
   tol: 1.e-4
   copy_x: True
-  algorithm: "auto"
+  algorithm: 'auto'
   verbose: 0
 
 ---
@@ -128,7 +129,7 @@ imports:
 model_class: sklearn.kernel_ridge.KernelRidge
 model_default_args:
   alpha: 1.0
-  kernel: "linear"
+  kernel: 'linear'
 
 ---
 
@@ -148,7 +149,7 @@ model_default_args:
   precompute: False
   tol: 1.e-4
   positive: True
-  selection: "cyclic"
+  selection: 'cyclic'
 
 ---
 
@@ -163,8 +164,8 @@ imports:
 model_class: sklearn.neural_network.MLPRegressor
 model_default_args:
   hidden_layer_sizes: (100,)
-  activation: "relu"
-  solver: "adam"
+  activation: 'relu'
+  solver: 'adam'
   max_iter: 300
   early_stopping: False
   validation_fraction: 0.1
@@ -182,12 +183,12 @@ imports:
 model_class: sklearn.ensemble.RandomForestClassifier
 model_default_args:
   n_estimators: 100
-  criterion: "gini"
+  criterion: 'gini'
   max_depth: None
   min_samples_split: 2
   min_samples_leaf: 1
   min_weight_fraction_leaf: 0.0
-  max_features: "auto"
+  max_features: 'auto'
   max_leaf_nodes: None
   min_impurity_decrease: 0.0
   bootstrap: True
@@ -210,12 +211,12 @@ imports:
 model_class: sklearn.ensemble.RandomForestRegressor
 model_default_args:
   n_estimators: 100
-  criterion: "mse"
+  criterion: 'mse'
   max_depth: None
   min_samples_split: 2
   min_samples_leaf: 1
   min_weight_fraction_leaf: 0.0
-  max_features: "auto"
+  max_features: 'auto'
   max_leaf_nodes: None
   min_impurity_decrease: 0.0
   bootstrap: True

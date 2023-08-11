@@ -1,0 +1,23 @@
+!flatten
+- !include 'templates/espresso/average.x.yml'
+- !include 'templates/espresso/bands.x.yml'
+- !include 'templates/espresso/dos.x.yml'
+- !include 'templates/espresso/dynmat.x.yml'
+- !include 'templates/espresso/gw.x.yml'
+- !include 'templates/espresso/matdyn.x.yml'
+- !include 'templates/espresso/neb.x.yml'
+- !include 'templates/espresso/ph.x.yml'
+- !include 'templates/espresso/pp.x.yml'
+- !include 'templates/espresso/projwfc.x.yml'
+- !include 'templates/espresso/pw.x.yml'
+- !include 'templates/espresso/q2r.x.yml'
+# jupyterLab
+- !include 'templates/jupyterLab/jupyter.yml'
+# nwchem
+- !include 'templates/nwchem/nwchem.yml'
+# python
+- !include 'templates/python/python.yml'
+# shell
+- !include 'templates/shell/sh.yml'
+# vasp
+- !include 'templates/vasp/vasp.yml'

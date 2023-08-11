@@ -1,0 +1,6 @@
+- content: !readFile 'assets/espresso/matdyn_grid.j2.in'
+  name: dynmat_grid.in
+  contextProviders:
+    - name: IGridFormDataManager
+  applicationName: espresso
+  executableName: dynmat.x

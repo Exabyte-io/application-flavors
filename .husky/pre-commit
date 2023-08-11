@@ -1,4 +1,11 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+SRC_PATTERN="\.y(a?ml)$"
+if git diff --cached --name-only | grep --quiet -E "$SRC_PATTERN"
+then
+  echo "Yaml assets changed. Running build script."
+  npm run build:assets
+fi
+
 npx lint-staged

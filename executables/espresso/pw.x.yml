@@ -94,7 +94,7 @@ flavors:
     applicationName: espresso
     executableName: pw.x
     supportedApplicationVersions:
-      - "7.2"
+      - '7.2'
 
   pw_esm:
     input:

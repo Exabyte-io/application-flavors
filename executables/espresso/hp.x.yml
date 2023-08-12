@@ -10,6 +10,6 @@ flavors:
       - standard_output
     applicationName: espresso
     executableName: hp.x
-    supportedApplicationVersions:
-      - "7.0"
-      - "7.2"
+supportedApplicationVersions:
+  - '7.0'
+  - '7.2'

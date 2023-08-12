@@ -89,3 +89,12 @@
     - name: PlanewaveCutoffDataManager
   applicationName: espresso
   executableName: pw.x
+
+- content: !readFile 'assets/espresso/pw_scf_dft_u.j2.in'
+  name: pw_scf_dft_u.in
+  contextProviders:
+    - name: KGridFormDataManager
+    - name: QEPWXInputDataManager
+    - name: PlanewaveCutoffDataManager
+  applicationName: espresso
+  executableName: pw.x

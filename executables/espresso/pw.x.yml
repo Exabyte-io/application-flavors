@@ -76,6 +76,26 @@ flavors:
     applicationName: espresso
     executableName: pw.x
 
+  pw_scf_dft_u:
+    input:
+      - name: pw_scf_dft_u.in
+    results:
+      - atomic_forces
+      - band_gaps
+      - fermi_energy
+      - pressure
+      - stress_tensor
+      - total_energy
+      - total_energy_contributions
+      - total_force
+    monitors:
+      - standard_output
+      - convergence_electronic
+    applicationName: espresso
+    executableName: pw.x
+    supportedApplicationVersions:
+      - "7.2"
+
   pw_esm:
     input:
       - name: pw_esm.in

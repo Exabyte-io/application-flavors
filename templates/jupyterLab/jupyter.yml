@@ -1,0 +1,5 @@
+- content: !readFile 'assets/jupyterLab/requirements303.j2.txt'
+  name: requirements.txt
+  contextProviders: []
+  applicationName: jupyterLab
+  executableName: jupyter

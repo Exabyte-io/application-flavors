@@ -1,0 +1,21 @@
+monitors:
+  - standard_output
+results: []
+flavors:
+  pp_density:
+    input:
+      - name: pp_density.in
+    results: []
+    monitors:
+      - standard_output
+    applicationName: espresso
+    executableName: pp.x
+
+  pp_electrostatic_potential:
+    input:
+      - name: pp_electrostatic_potential.in
+    results: []
+    monitors:
+      - standard_output
+    applicationName: espresso
+    executableName: pp.x

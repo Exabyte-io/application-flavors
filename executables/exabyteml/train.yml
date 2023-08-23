@@ -1,0 +1,13 @@
+isDefault: true
+monitors:
+  - standard_output
+results:
+  - 'workflow:ml_predict'
+flavors:
+  train:
+    isDefault: true
+    input: []
+    monitors:
+      - standard_output
+    applicationName: exabyteml
+    executableName: train

@@ -1,0 +1,314 @@
+isDefault: true
+postProcessors:
+  - error_handler
+  - prepare_restart
+  - remove_non_zero_weight_kpoints
+monitors:
+  - standard_output
+  - convergence_ionic
+  - convergence_electronic
+results:
+  - atomic_forces
+  - band_gaps
+  - band_structure
+  - density_of_states
+  - fermi_energy
+  - pressure
+  - stress_tensor
+  - total_energy
+  - total_energy_contributions
+  - total_force
+  - zero_point_energy
+  - final_structure
+  - magnetic_moments
+  - reaction_energy_barrier
+  - reaction_energy_profile
+  - potential_profile
+  - charge_density_profile
+flavors:
+  vasp:
+    isDefault: true
+    input:
+      - name: INCAR
+      - name: KPOINTS
+      - name: POSCAR
+    results:
+      - total_energy
+      - total_energy_contributions
+      - pressure
+      - fermi_energy
+      - atomic_forces
+      - total_force
+      - stress_tensor
+    monitors:
+      - standard_output
+      - convergence_electronic
+    applicationName: vasp
+    executableName: vasp
+
+  vasp_bands:
+    input:
+      - name: INCAR
+        templateName: INCAR_BANDS
+      - name: KPOINTS
+        templateName: KPOINTS_BANDS
+      - name: POSCAR
+        templateName: ''
+    results:
+      - band_structure
+    monitors:
+      - standard_output
+      - convergence_electronic
+    applicationName: vasp
+    executableName: vasp
+
+  vasp_nscf:
+    input:
+      - name: INCAR
+        templateName: INCAR_BANDS
+      - name: KPOINTS
+        templateName: KPOINTS
+      - name: POSCAR
+        templateName: POSCAR
+    results:
+      - band_gaps
+      - fermi_energy
+    monitors:
+      - standard_output
+      - convergence_electronic
+    applicationName: vasp
+    executableName: vasp
+
+  vasp_hse:
+    isDefault: false
+    input:
+      - name: INCAR
+        templateName: INCAR_HSE
+      - name: KPOINTS
+      - name: POSCAR
+    results:
+      - total_energy
+      - total_energy_contributions
+      - pressure
+      - fermi_energy
+      - atomic_forces
+      - total_force
+      - stress_tensor
+    monitors:
+      - standard_output
+      - convergence_electronic
+    applicationName: vasp
+    executableName: vasp
+
+  vasp_bands_hse:
+    isDefault: false
+    input:
+      - name: INCAR
+        templateName: INCAR_BANDS_HSE
+      - name: KPOINTS
+        templateName: KPOINTS_BANDS
+      - name: POSCAR
+        templateName: ''
+    results:
+      - band_structure
+    monitors:
+      - standard_output
+      - convergence_electronic
+    applicationName: vasp
+    executableName: vasp
+
+  vasp_nscf_hse:
+    isDefault: false
+    input:
+      - name: INCAR
+        templateName: INCAR_BANDS_HSE
+      - name: KPOINTS
+        templateName: KPOINTS
+      - name: POSCAR
+        templateName: POSCAR
+    results:
+      - band_gaps
+      - fermi_energy
+    monitors:
+      - standard_output
+      - convergence_electronic
+    applicationName: vasp
+    executableName: vasp
+
+  vasp_relax:
+    input:
+      - name: INCAR
+        templateName: INCAR_RELAX
+      - name: KPOINTS
+        templateName: KPOINTS
+      - name: POSCAR
+        templateName: POSCAR
+    results:
+      - total_energy
+      - atomic_forces
+      - fermi_energy
+      - pressure
+      - stress_tensor
+      - total_force
+      - final_structure
+    monitors:
+      - standard_output
+      - convergence_electronic
+      - convergence_ionic
+    postProcessors:
+      - prepare_restart
+    applicationName: vasp
+    executableName: vasp
+
+  vasp_vc_relax:
+    input:
+      - name: INCAR
+        templateName: INCAR_VC_RELAX
+      - name: KPOINTS
+        templateName: KPOINTS
+      - name: POSCAR
+        templateName: POSCAR
+    results:
+      - total_energy
+      - atomic_forces
+      - fermi_energy
+      - pressure
+      - stress_tensor
+      - total_force
+      - final_structure
+    monitors:
+      - standard_output
+      - convergence_electronic
+      - convergence_ionic
+    postProcessors:
+      - prepare_restart
+    applicationName: vasp
+    executableName: vasp
+
+  vasp_zpe:
+    input:
+      - name: INCAR
+        templateName: INCAR_ZPE
+      - name: KPOINTS
+        templateName: KPOINTS
+      - name: POSCAR
+        templateName: POSCAR
+    results:
+      - total_energy
+      - fermi_energy
+      - pressure
+      - atomic_forces
+      - stress_tensor
+      - total_force
+      - zero_point_energy
+    monitors:
+      - standard_output
+      - convergence_electronic
+      - convergence_ionic
+    applicationName: vasp
+    executableName: vasp
+
+  vasp_kpt_conv:
+    # kpoint convergence => not including kgrid mixin
+    input:
+      - name: INCAR
+        templateName: INCAR
+      - name: KPOINTS
+        templateName: KPOINTS_CONV
+      - name: POSCAR
+        templateName: POSCAR
+    results:
+      - total_energy
+      - total_energy_contributions
+      - pressure
+      - fermi_energy
+      - atomic_forces
+      - total_force
+      - stress_tensor
+    monitors:
+      - standard_output
+      - convergence_electronic
+    applicationName: vasp
+    executableName: vasp
+
+  vasp_vc_relax_conv:
+    input:
+      - name: INCAR
+        templateName: INCAR_VC_RELAX
+      - name: KPOINTS
+        templateName: KPOINTS_CONV
+      - name: POSCAR
+        templateName: POSCAR
+    results:
+      - total_energy
+      - total_energy_contributions
+      - pressure
+      - fermi_energy
+      - atomic_forces
+      - total_force
+      - stress_tensor
+    monitors:
+      - standard_output
+      - convergence_electronic
+      - convergence_ionic
+    applicationName: vasp
+    executableName: vasp
+
+  vasp_neb:
+    isMultiMaterial: true
+    input:
+      - name: INCAR
+        templateName: INCAR_NEB
+      - name: KPOINTS
+        templateName: KPOINTS
+    results:
+      - reaction_energy_barrier
+      - reaction_energy_profile
+    monitors:
+      - standard_output
+    applicationName: vasp
+    executableName: vasp
+
+  vasp_neb_initial:
+    isMultiMaterial: true
+    input:
+      - name: INCAR
+        templateName: INCAR_NEB_INITIAL_FINAL
+      - name: KPOINTS
+      - name: POSCAR
+        templateName: POSCAR_NEB_INITIAL
+    results:
+      - total_energy
+      - total_energy_contributions
+      - pressure
+      - fermi_energy
+      - atomic_forces
+      - total_force
+      - stress_tensor
+    monitors:
+      - standard_output
+      - convergence_electronic
+    applicationName: vasp
+    executableName: vasp
+
+  vasp_neb_final:
+    isMultiMaterial: true
+    input:
+      - name: INCAR
+        templateName: INCAR_NEB_INITIAL_FINAL
+      - name: KPOINTS
+      - name: POSCAR
+        templateName: POSCAR_NEB_FINAL
+    results:
+      - total_energy
+      - total_energy_contributions
+      - pressure
+      - fermi_energy
+      - atomic_forces
+      - total_force
+      - stress_tensor
+    monitors:
+      - standard_output
+      - convergence_electronic
+    applicationName: vasp
+    executableName: vasp

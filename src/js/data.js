@@ -1,20 +1,4 @@
-import ESPRESSO_DATA from "./espresso/data";
-import JUPYTERLAB_DATA from "./jupyterLab/data";
-import ML_DATA from "./ml/data";
-import NWCHEM_DATA from "./nwchem/data";
-import PYTHON_DATA from "./python/data";
-import SHELL_DATA from "./shell/data";
-import VASP_DATA from "./vasp/data";
-
-const APP_DATA = {
-    espresso: ESPRESSO_DATA,
-    jupyterLab: JUPYTERLAB_DATA,
-    exabyteml: ML_DATA,
-    nwchem: NWCHEM_DATA,
-    python: PYTHON_DATA,
-    shell: SHELL_DATA,
-    vasp: VASP_DATA,
-};
+import { applicationData as APP_DATA } from "./data/application_data";
 
 /**
  * Given an application name, return the applications's data.

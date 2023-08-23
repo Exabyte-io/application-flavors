@@ -1,11 +1,11 @@
 {
   "name": "@exabyte-io/application-flavors.js",
-  "version": "2022.1.9-2",
+  "version": "0.0.0",
   "description": "Input file templates and related computational configuration parameters for the applications used in the platform.",
   "scripts": {
     "prepublishOnly": "rm -rf lib; npm run transpile",
     "postinstall": "npm run transpile",
-    "transpile": "mkdir -p lib; babel src/js --out-dir lib/js && node build_templates.js",
+    "transpile": "mkdir -p lib; babel src/js --out-dir lib/js",
     "test": "nyc --reporter=text mocha --require @babel/register tests",
     "build:assets": "node build_templates.js; node build_filter_trees.js",
     "lint": "eslint src/js tests && prettier --write src/js tests",
@@ -15,18 +15,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Exabyte-io/exabyte-application-flavors.git"
+    "url": "https://github.com/Exabyte-io/application-flavors.git"
   },
   "main": "lib/js/index.js",
   "author": "Exabyte Inc.",
   "email": "info@exabyte.io",
   "bugs": {
-    "url": "https://github.com/Exabyte-io/exabyte-application-flavors/issues"
+    "url": "https://github.com/Exabyte-io/application-flavors/issues"
   },
-  "homepage": "https://github.com/Exabyte-io/exabyte-application-flavors",
+  "homepage": "https://github.com/Exabyte-io/application-flavors",
   "devDependencies": {
     "@exabyte-io/eslint-config": "^2022.11.17-0",
-    "@exabyte-io/code.js": "git+https://github.com/Exabyte-io/code.js.git#5b7fbc824f7091bec77bdd967bbd839443145157",
+    "@exabyte-io/code.js": "git+https://github.com/Exabyte-io/code.js.git#b1c3e057e6b34bc53c2ead736dfda731cef69a2b",
     "chai": "^4.3.4",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^19.0.2",

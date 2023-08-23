@@ -4,7 +4,9 @@ import { expect } from "chai";
 import {
     allowedMonitors,
     allowedResults,
+    getAllAppData,
     getAllAppTemplates,
+    getAllAppTree,
     getAppData,
     getAppTree,
 } from "../src/js/index";
@@ -37,11 +39,18 @@ describe("ALL_INPUT_TEMPLATES", () => {
     });
 });
 
-describe("getAppTree", () => {
-    it("returns results", () => {
-        const tree = getAppTree("nwchem");
-        assert("nwchem" in tree);
+describe("getAllAppTree", () => {
+    let APP_TREE;
+    before(() => {
+        APP_TREE = getAllAppTree();
     });
+
+    it("returns valid tree", () => {
+        assert("nwchem" in APP_TREE);
+    });
+});
+
+describe("getAppTree", () => {
     it("raises on unknown application", () => {
         expect(() => {
             getAppTree("unknown_app");
@@ -49,12 +58,15 @@ describe("getAppTree", () => {
     });
 });
 
-describe("getAppData", () => {
+describe("getAllAppData", () => {
     it("returns results", () => {
-        const data = getAppData("nwchem");
-        assert("name" in data);
-        assert(data.name === "nwchem");
+        const { nwchem } = getAllAppData();
+        assert("name" in nwchem);
+        assert(nwchem.name === "nwchem");
     });
+});
+
+describe("getAppData", () => {
     it("raises on unknown application", () => {
         expect(() => {
             getAppData("unknown_app");
@@ -63,9 +75,14 @@ describe("getAppData", () => {
 });
 
 describe("assets for all executables", () => {
+    let APP_TREE, templates;
+    before(() => {
+        APP_TREE = getAllAppTree();
+        templates = getAllAppTemplates();
+    });
+
     it("exists at least 1 asset for each tree entry for espresso tree", () => {
-        const tree = getAppTree("espresso");
-        const templates = getAllAppTemplates();
+        const tree = APP_TREE.espresso;
 
         Object.keys(tree).forEach((treeItemName) => {
             const treeItemTemplates = templates.filter(
@@ -77,8 +94,7 @@ describe("assets for all executables", () => {
     });
 
     it("exists at least 1 asset for each tree entry for jupyterLab tree", () => {
-        const tree = getAppTree("jupyterLab");
-        const templates = getAllAppTemplates();
+        const tree = APP_TREE.jupyterLab;
 
         Object.keys(tree).forEach((treeItemName) => {
             const treeItemTemplates = templates.filter(
@@ -89,9 +105,10 @@ describe("assets for all executables", () => {
         });
     });
 
-    it.skip("exists at least 1 asset for each tree entry for ml tree", () => {
-        const tree = getAppTree("ml");
-        const templates = getAllAppTemplates();
+    // skip as there are no template assets for exabyteml
+    it.skip("exists at least 1 asset for each tree entry for exabyteml tree", () => {
+        const tree = APP_TREE.exabyteml;
+        console.log(JSON.stringify(tree, null, 4));
 
         Object.keys(tree).forEach((treeItemName) => {
             const treeItemTemplates = templates.filter(
@@ -103,8 +120,7 @@ describe("assets for all executables", () => {
     });
 
     it("exists at least 1 asset for each tree entry for nwchem tree", () => {
-        const tree = getAppTree("nwchem");
-        const templates = getAllAppTemplates();
+        const tree = APP_TREE.nwchem;
 
         Object.keys(tree).forEach((treeItemName) => {
             const treeItemTemplates = templates.filter(
@@ -116,8 +132,7 @@ describe("assets for all executables", () => {
     });
 
     it("exists at least 1 asset for each tree entry for python tree", () => {
-        const tree = getAppTree("python");
-        const templates = getAllAppTemplates();
+        const tree = APP_TREE.python;
 
         Object.keys(tree).forEach((treeItemName) => {
             const treeItemTemplates = templates.filter(
@@ -129,8 +144,7 @@ describe("assets for all executables", () => {
     });
 
     it("exists at least 1 asset for each tree entry for shell tree", () => {
-        const tree = getAppTree("shell");
-        const templates = getAllAppTemplates();
+        const tree = APP_TREE.shell;
 
         Object.keys(tree).forEach((treeItemName) => {
             const treeItemTemplates = templates.filter(
@@ -142,8 +156,7 @@ describe("assets for all executables", () => {
     });
 
     it("exists at least 1 asset for each tree entry for vasp tree", () => {
-        const tree = getAppTree("vasp");
-        const templates = getAllAppTemplates();
+        const tree = APP_TREE.vasp;
 
         Object.keys(tree).forEach((treeItemName) => {
             const treeItemTemplates = templates.filter(

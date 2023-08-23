@@ -1,0 +1,12 @@
+monitors:
+  - standard_output
+results: []
+flavors:
+  q2r:
+    input:
+      - name: q2r.in
+    results: []
+    monitors:
+      - standard_output
+    applicationName: espresso
+    executableName: q2r.x

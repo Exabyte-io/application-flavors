@@ -1,0 +1,14 @@
+monitors:
+  - standard_output
+results:
+  - density_of_states
+flavors:
+  projwfc:
+    input:
+      - name: projwfc.in
+    results:
+      - density_of_states
+    monitors:
+      - standard_output
+    applicationName: espresso
+    executableName: projwfc.x

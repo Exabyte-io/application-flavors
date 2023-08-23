@@ -1,0 +1,25 @@
+---
+
+extends: default
+
+rules:
+  line-length:
+    max: 100
+  empty-lines:
+    level: warning
+    max-end: 1
+  quoted-strings:
+    quote-type: single
+    required: false
+  indentation:
+    spaces: 2
+    indent-sequences: consistent
+  document-start: disable
+  comments:
+    min-spaces-from-content: 1
+  comments-indentation: disable
+
+ignore: |
+  node_modules/
+  test/
+  tests/

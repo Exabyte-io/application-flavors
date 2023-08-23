@@ -1,0 +1,5 @@
+- content: !readFile 'assets/espresso/q2r.j2.in'
+  name: q2r.in
+  contextProviders: []
+  applicationName: espresso
+  executableName: q2r.x

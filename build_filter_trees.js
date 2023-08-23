@@ -46,7 +46,7 @@ const getAssetData = (currPath, targetObj, assetRoot) => {
 
 getAssetData(MODEL_ASSET_PATH, MODEL_FILTER_TREE, MODEL_ASSET_PATH);
 getAssetData(METHOD_ASSET_PATH, METHOD_FILTER_TREE, METHOD_ASSET_PATH);
-const ignore = "// eslint-disable\n";
+const ignore = "/* eslint-disable */\n";
 const data = {
     models: MODEL_FILTER_TREE,
     methods: METHOD_FILTER_TREE,

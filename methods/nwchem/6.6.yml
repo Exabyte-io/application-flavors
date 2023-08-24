@@ -1,4 +1,4 @@
 Default:
-    nwchem:
-        nwchem_total_energy:
-            -   path: "/qm/wf/none/ao/pople?basisSlug=6-31G"
+  nwchem:
+    nwchem_total_energy:
+      - path: '/qm/wf/none/ao/pople?basisSlug=6-31G'

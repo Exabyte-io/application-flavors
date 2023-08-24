@@ -1,12 +1,12 @@
 Default:
-    !include "models/vasp/5.3.5.yml#/Default"
+  !include 'models/vasp/5.3.5.yml#/Default'
 Gamma:
-    !include "models/vasp/5.3.5.yml#/Default"
+  !include 'models/vasp/5.3.5.yml#/Default'
 Non-collinear:
-    !include "models/vasp/5.3.5.yml#/Non-collinear"
+  !include 'models/vasp/5.3.5.yml#/Non-collinear'
 VTST:
-    !include "models/vasp/5.3.5.yml#/VTST"
+  !include 'models/vasp/5.3.5.yml#/VTST'
 VTST-Gamma:
-    !include "models/vasp/5.3.5.yml#/Default"
+  !include 'models/vasp/5.3.5.yml#/Default'
 VTST-Non-collinear:
-    !include "models/vasp/5.3.5.yml#/Non-collinear"
+  !include 'models/vasp/5.3.5.yml#/Non-collinear'

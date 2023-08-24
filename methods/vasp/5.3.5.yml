@@ -1,12 +1,12 @@
 # Tetrahedron method and other smearing types cannot be rendered
 # to the input file yet and are hence deactivated
 Default:
+  vasp:
     vasp:
-        vasp:
-            -   path: /qm/wf/none/pw/none
-            -   path: /qm/wf/none/psp/paw
-            -   path: /qm/wf/none/smearing/gaussian
-            -   path: /linalg/diag/none/davidson/none
+      - path: /qm/wf/none/pw/none
+      - path: /qm/wf/none/psp/paw
+      - path: /qm/wf/none/smearing/gaussian
+      - path: /linalg/diag/none/davidson/none
 #            -   regex: \/qm\/wf\/none\/smearing\/(fermi-dirac|gaussian|methfessel-paxton)
 #            -   regex: \/qm\/wf\/none\/tetrahedron\/(linear|bloechl)
 

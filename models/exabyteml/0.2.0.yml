@@ -1,7 +1,7 @@
 Default:
+  train:
     train:
-        train:
-            - regex: \/st\/det\/ml\/.*
+      - regex: \/st\/det\/ml\/.*
+  score:
     score:
-        score:
-            - regex: \/st\/det\/ml\/.*
+      - regex: \/st\/det\/ml\/.*

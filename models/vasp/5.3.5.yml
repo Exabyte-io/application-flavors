@@ -1,72 +1,123 @@
 Default:
   vasp:
     vasp:
-      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
     vasp_bands:
-      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
     vasp_ncsf:
-      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
+    vasp_hse:
+      - path: /pb/qm/dft/ksdft/hybrid?functional=hse06
+    vasp_bands_hse:
+      - path: /pb/qm/dft/ksdft/hybrid?functional=hse06
+    vasp_nscf_hse:
+      - path: /pb/qm/dft/ksdft/hybrid?functional=hse06
     vasp_relax:
-      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
     vasp_vc_relax:
-      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
     vasp_zpe:
-      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
     vasp_kpt_conv:
-      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
     vasp_vc_relax_conv:
-      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
     vasp_neb:
-      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
     vasp_neb_initial:
-      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
     vasp_neb_final:
-      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
 Non-collinear:
   vasp:
     vasp:
-      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
     vasp_bands:
-      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
     vasp_ncsf:
-      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
+    vasp_hse:
+      - path: /pb/qm/dft/ksdft/hybrid?functional=hse06
+    vasp_bands_hse:
+      - path: /pb/qm/dft/ksdft/hybrid?functional=hse06
+    vasp_nscf_hse:
+      - path: /pb/qm/dft/ksdft/hybrid?functional=hse06
     vasp_relax:
-      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
     vasp_vc_relax:
-      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
     vasp_zpe:
-      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
     vasp_kpt_conv:
-      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
     vasp_vc_relax_conv:
-      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
     vasp_neb:
-      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
     vasp_neb_initial:
-      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
     vasp_neb_final:
-      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
 VTST:
   vasp:
     vasp:
-      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
     vasp_bands:
-      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
     vasp_ncsf:
-      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
+    vasp_hse:
+      - path: /pb/qm/dft/ksdft/hybrid?functional=hse06
+    vasp_bands_hse:
+      - path: /pb/qm/dft/ksdft/hybrid?functional=hse06
+    vasp_nscf_hse:
+      - path: /pb/qm/dft/ksdft/hybrid?functional=hse06
     vasp_relax:
-      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
     vasp_vc_relax:
-      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
     vasp_zpe:
-      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
     vasp_kpt_conv:
-      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
     vasp_vc_relax_conv:
-      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
     vasp_neb:
-      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
     vasp_neb_initial:
-      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
     vasp_neb_final:
-      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe

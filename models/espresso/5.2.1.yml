@@ -1,16 +1,23 @@
+# Below are the currently supported models
 Default:
   pw.x:
     pw_scf:
-      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
     pw_scf_bands_hse:
-      - path: /pb/qm/dft/ksdft/hybrid?functional=hse
+      - path: /pb/qm/dft/ksdft/hybrid?functional=hse06
     pw_esm:
-      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
     pw_esm_relax:
-      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
     pw_nscf:
-      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
     pw_relax:
-      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
     pw_vc-relax:
-      - regex: \/pb\/qm\/dft\/ksdft\/(lda|gga).*
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe

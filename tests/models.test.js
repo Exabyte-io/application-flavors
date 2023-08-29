@@ -17,10 +17,10 @@ describe("filterModelsByApplicationParameters", () => {
             functional: "pbe",
         },
         {
-            path: "/pb/qm/dft/ksdft/hybrid?functional=hse",
+            path: "/pb/qm/dft/ksdft/hybrid?functional=hse06",
             type: "ksdft",
             subtype: "hybrid",
-            functional: "hse",
+            functional: "hse06",
         },
     ];
 
@@ -36,7 +36,7 @@ describe("filterModelsByApplicationParameters", () => {
         expect(filteredConfigs).to.have.length(1);
         expect(filteredConfigs[0]).to.have.property("type", "ksdft");
         expect(filteredConfigs[0]).to.have.property("subtype", "hybrid");
-        expect(filteredConfigs[0]).to.have.property("functional", "hse");
+        expect(filteredConfigs[0]).to.have.property("functional", "hse06");
     });
 
     it("should return empty array if no filter assets are available", () => {

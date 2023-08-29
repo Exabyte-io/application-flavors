@@ -11,6 +11,7 @@ espresso:
   projwfc.x: !include 'executables/espresso/projwfc.x.yml'
   pw.x: !include 'executables/espresso/pw.x.yml'
   q2r.x: !include 'executables/espresso/q2r.x.yml'
+  hp.x: !include 'executables/espresso/hp.x.yml'
 jupyterLab:
   jupyter: !include 'executables/jupyterLab/jupyter.yml'
 exabyteml:

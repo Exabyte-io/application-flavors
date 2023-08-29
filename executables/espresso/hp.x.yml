@@ -1,0 +1,15 @@
+monitors:
+  - standard_output
+results: []
+flavors:
+  hp:
+    input:
+      - name: hp.in
+    results: []
+    monitors:
+      - standard_output
+    applicationName: espresso
+    executableName: hp.x
+supportedApplicationVersions:
+  - '7.0'
+  - '7.2'

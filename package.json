@@ -7,7 +7,7 @@
     "postinstall": "npm run transpile",
     "transpile": "mkdir -p lib; babel src/js --out-dir lib/js",
     "test": "nyc --reporter=text mocha --require @babel/register tests",
-    "build:assets": "node build_templates.js",
+    "build:assets": "node build_templates.js; node build_filter_trees.js",
     "lint": "eslint src/js tests && prettier --write src/js tests",
     "lint:fix": "eslint --fix --cache src/js tests && prettier --write src/js tests",
     "prettier": "prettier --check src/js tests",
@@ -26,7 +26,7 @@
   "homepage": "https://github.com/Exabyte-io/application-flavors",
   "devDependencies": {
     "@exabyte-io/eslint-config": "^2022.11.17-0",
-    "@exabyte-io/code.js": "2023.8.10-0",
+    "@exabyte-io/code.js": "2023.8.31-0",
     "chai": "^4.3.4",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^19.0.2",

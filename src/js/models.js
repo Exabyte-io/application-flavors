@@ -1,19 +1,11 @@
-import { filterEntityList, mergeTerminalNodes } from "@exabyte-io/code.js/dist/utils";
+import {
+    filterEntityList,
+    findPreviousVersion,
+    mergeTerminalNodes,
+} from "@exabyte-io/code.js/dist/utils";
 import lodash from "lodash";
 
-// TODO: reactivate once epic/SOF-6009 has been merged
-// import { models as applicationModelMap } from "../../filter_trees";
-
-// placeholder for applicationModelMap
-const applicationModelMap = {
-    espresso: {
-        "5.2.1": {
-            Default: {
-                "pw.x": { pw_scf_bands_hse: [{ path: "/pb/qm/dft/ksdft/hybrid?functional=hse" }] },
-            },
-        },
-    },
-};
+import { models as applicationModelMap } from "./data/filter_trees";
 
 /**
  * Extract unique filter objects by name of key.
@@ -31,6 +23,11 @@ function extractUniqueBy(filterObjects, name) {
 
 function safelyGet(obj, ...args) {
     return lodash.get(obj, args, undefined);
+}
+
+function getPreviousVersion(obj, version) {
+    const availableVersions = obj ? Object.keys(obj) : [];
+    return findPreviousVersion(availableVersions, version) || "";
 }
 
 /**
@@ -52,18 +49,27 @@ export function getFilterObjects({
     flavor = "",
 }) {
     let filterList;
+    const version_ = safelyGet(filterTree, appName, version)
+        ? version
+        : getPreviousVersion(filterTree[appName], version);
+
     if (!appName) {
         filterList = mergeTerminalNodes(filterTree);
-    } else if (!version) {
+    } else if (!version_) {
         filterList = mergeTerminalNodes(safelyGet(filterTree, appName));
     } else if (!build) {
-        filterList = mergeTerminalNodes(safelyGet(filterTree, appName, version));
+        const branch =
+            safelyGet(filterTree, appName, version_) ||
+            getPreviousVersion(filterTree[appName], version_);
+        filterList = mergeTerminalNodes(branch);
     } else if (!executable) {
-        filterList = mergeTerminalNodes(safelyGet(filterTree, appName, version, build));
+        filterList = mergeTerminalNodes(safelyGet(filterTree, appName, version_, build));
     } else if (!flavor) {
-        filterList = mergeTerminalNodes(safelyGet(filterTree, appName, version, build, executable));
+        filterList = mergeTerminalNodes(
+            safelyGet(filterTree, appName, version_, build, executable),
+        );
     } else {
-        filterList = safelyGet(filterTree, appName, version, build, executable, flavor);
+        filterList = safelyGet(filterTree, appName, version_, build, executable, flavor);
     }
 
     return [].concat(extractUniqueBy(filterList, "path"), extractUniqueBy(filterList, "regex"));

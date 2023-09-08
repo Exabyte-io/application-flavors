@@ -1,0 +1,12 @@
+monitors:
+  - standard_output
+results: []
+flavors:
+  dielectric_tensor:
+    input:
+      - name: epsilon.in
+    results: []
+    monitors:
+      - standard_output
+    applicationName: espresso
+    executableName: epsilon.x

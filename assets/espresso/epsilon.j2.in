@@ -1,0 +1,16 @@
+&inputpp
+    calculation = "eps"
+    prefix = "__prefix__"
+    outdir = {% raw %}'{{ JOB_WORK_DIR }}/outdir'{% endraw %}
+/
+
+&energy_grid
+    smeartype = "gauss"
+    intersmear = 0.2
+    intrasmear = 0.0
+    wmin =  0.0
+    wmax = 30.0
+    nw = 500
+    shift = 0.0
+/
+

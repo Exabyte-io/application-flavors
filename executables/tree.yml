@@ -12,6 +12,7 @@ espresso:
   pw.x: !include 'executables/espresso/pw.x.yml'
   q2r.x: !include 'executables/espresso/q2r.x.yml'
   hp.x: !include 'executables/espresso/hp.x.yml'
+  epsilon.x: !include 'executables/espresso/epsilon.x.yml'
 jupyterLab:
   jupyter: !include 'executables/jupyterLab/jupyter.yml'
 exabyteml:

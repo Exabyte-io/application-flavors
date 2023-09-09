@@ -19,6 +19,10 @@
     ecutrho = {{ cutoffs.density }}
     occupations = 'smearing'
     degauss = 0.005
+{%- if subworkflowContext.NO_SYMMETRY_NO_INVERSION %}
+    nosym = .true.
+    noinv = .true.
+{%- endif %}
 /
 &ELECTRONS
     diagonalization = 'david'

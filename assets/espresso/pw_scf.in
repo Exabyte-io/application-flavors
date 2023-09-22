@@ -1,0 +1,62 @@
+{% if subworkflowContext.MATERIAL_INDEX %}
+{%- set input = input.perMaterial[subworkflowContext.MATERIAL_INDEX] -%}
+{% endif -%}
+&CONTROL
+    {% if 'calculation' in control %}calculation = {{ control.calculation }}{% endif %}
+    {% if 'title' in control %}title = {{ control.title }}{% endif %}
+    {% if 'verbosity' in control %}verbosity = {{ control.verbosity }}{% endif %}
+    {% if 'restart_mode' in control %}restart_mode = {{ control.restart_mode }}{% endif %}
+    {% if 'wf_collect' in control %}wf_collect = {{ control.wf_collect }}{% endif %}
+    {% if 'tstress' in control %}tstress = {{ control.tstress }}{% endif %}
+    {% if 'tprnfor' in control %}tprnfor = {{ control.tprnfor }}{% endif %}
+    {% if 'outdir' in control %}outdir = {{ control.outdir }}{% endif %}
+    {% if 'wfcdir' in control %}wfcdir = {{ control.wfcdir }}{% endif %}
+    {% if 'prefix' in control %}prefix = {{ control.prefix }}{% endif %}
+    {% if 'pseudo_dir' in control %}pseudo_dir = {{ control.pseudo_dir }}{% endif %}
+/
+&SYSTEM
+    {% if 'ibrav' in system %}ibrav = {{ system.ibrav }}{% endif %}
+    {% if 'nat' in system %}nat = {{ system.nat }}{% endif %}
+    {% if 'ntyp' in system %}ntyp = {{ system.ntyp }}{% endif %}
+    {% if 'ecutwfc' in system %}ecutwfc = {{ system.ecutwfc }}{% endif %}
+    {% if 'ecutrho' in system %}ecutrho = {{ system.ecutrho }}{% endif %}
+    {% if 'occupations' in system %}occupations = {{ system.occupations }}{% endif %}
+    {% if 'degauss' in system %}degauss = {{ system.degauss }}{% endif %}
+/
+&ELECTRONS
+    {% if 'diagonalization' in electrons %}diagonalization = {{ electrons.diagonalization }}{% endif %}
+    {% if 'diago_david_ndim' in electrons %}diago_david_ndim = {{ electrons.diago_david_ndim }}{% endif %}
+    {% if 'diago_full_acc' in electrons %}diago_full_acc = {{ electrons.diago_full_acc }}{% endif %}
+    {% if 'mixing_beta' in electrons %}mixing_beta = {{ electrons.mixing_beta }}{% endif %}
+    {% if 'startingwfc' in electrons %}startingwfc = {{ electrons.startingwfc }}{% endif %}
+/
+&IONS
+/
+&CELL
+/
+
+ATOMIC_SPECIES
+{% for species in ATOMIC_SPECIES -%}
+{{species.X}} {{species.Mass_x}} {{species.PseudoPot_x}}
+{% endfor -%}
+
+ATOMIC_POSITIONS {{ATOMIC_POSITIONS.card_option}}
+{% for position in ATOMIC_POSITIONS -%}
+{{position.X}} {{position.x}} {{position.y}} {{position.z}} {% if 'if_pos(1)' in position -%} {{position["if_pos(1)"]}} {% endif -%} {% if 'if_pos(2)' in position -%} {{position["if_pos(2)"]}} {% endif -%} {% if 'if_pos(3)' in position -%} {{position["if_pos(3)"]}} {% endif %}
+{% endfor -%}
+
+CELL_PARAMETERS {{CELL_PARAMETERS.card_option}}
+{{CELL_PARAMETERS.v1[0]}} {{CELL_PARAMETERS.v1[1]}} {{CELL_PARAMETERS.v1[2]}}
+{{CELL_PARAMETERS.v2[0]}} {{CELL_PARAMETERS.v2[1]}} {{CELL_PARAMETERS.v2[2]}}
+{{CELL_PARAMETERS.v3[0]}} {{CELL_PARAMETERS.v3[1]}} {{CELL_PARAMETERS.v3[2]}}
+
+K_POINTS automatic {{CELL_PARAMETERS.card_option}}
+{% if K_POINTS.card_option == "automatic" %}{% for d in K_POINTS.kgrid.dimensions %}{{ d }} {% endfor %}{% for s in K_POINTS.kgrid.shifts %}{{ s }} {% endfor %}
+{% elif K_POINTS.card_option in ["tpiba", "crystal", "tpiba_b", "crystal_b", "tpiba_c", "crystal_c"] %}
+nks
+{% for point in K_POINTS.points %}
+{{ point.xk_x }} {{ point.xk_y }} {{ point.xk_z }} {{ point.wk }}
+{% endfor %}
+{% elif K_POINTS.card_option == "gamma" %}
+{# No additional info needed for gamma #}
+{% endif %}

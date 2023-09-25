@@ -27,6 +27,7 @@ jobs:
         uses: ./actions/yaml/lint
         with:
           python-version: 3.8
+          targets: ./applications ./assets ./executables ./methods ./models ./templates
 
   run-py-tests:
     runs-on: ubuntu-latest

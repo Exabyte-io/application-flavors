@@ -9,4 +9,18 @@ Default:
       - path: /linalg/diag/none/davidson/none
 #            -   regex: \/qm\/wf\/none\/smearing\/(fermi-dirac|gaussian|methfessel-paxton)
 #            -   regex: \/qm\/wf\/none\/tetrahedron\/(linear|bloechl)
+Non-collinear:
+  vasp:
+    vasp:
+      - path: /qm/wf/none/pw/none
+      - path: /qm/wf/none/psp/paw
+      - path: /qm/wf/none/smearing/gaussian
+      - path: /linalg/diag/none/davidson/none
 
+VTST:
+  vasp:
+    vasp:
+      - path: /qm/wf/none/pw/none
+      - path: /qm/wf/none/psp/paw
+      - path: /qm/wf/none/smearing/gaussian
+      - path: /linalg/diag/none/davidson/none

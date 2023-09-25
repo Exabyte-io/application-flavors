@@ -1,0 +1,12 @@
+Default:
+  !include 'methods/vasp/5.3.5.yml#/Default'
+Gamma:
+  !include 'methods/vasp/5.3.5.yml#/Default'
+Non-collinear:
+  !include 'methods/vasp/5.3.5.yml#/Non-collinear'
+VTST:
+  !include 'methods/vasp/5.3.5.yml#/VTST'
+VTST-Gamma:
+  !include 'methods/vasp/5.3.5.yml#/VTST'
+VTST-Non-collinear:
+  !include 'methods/vasp/5.3.5.yml#/VTST'

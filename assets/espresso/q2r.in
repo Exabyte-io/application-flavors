@@ -1,0 +1,5 @@
+&INPUT
+{%- for key, value in &INPUT %}
+    {{ typeCast(key, value) }}
+{%- endfor %}
+/

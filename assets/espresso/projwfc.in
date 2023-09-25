@@ -1,0 +1,5 @@
+&PROJWFC
+{%- for key, value in &PROJWFC %}
+    {{ typeCast(key, value) }}
+{%- endfor %}
+/

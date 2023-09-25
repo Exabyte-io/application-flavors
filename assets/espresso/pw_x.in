@@ -1,0 +1,56 @@
+{% if subworkflowContext.MATERIAL_INDEX %}
+{%- set input = input.perMaterial[subworkflowContext.MATERIAL_INDEX] -%}
+{% endif -%}
+&CONTROL
+{%- for key, value in &CONTROL %}
+    {{ typeCast(key, value) }}
+{%- endfor %}
+/
+&SYSTEM
+{%- for key, value in &SYSTEM %}
+    {{ typeCast(key, value) }}
+{%- endfor %}
+/
+&ELECTRONS
+{%- for key, value in &ELECTRONS %}
+    {{ key }} = {{ value|typeCast }}
+{%- endfor %}
+/
+&IONS
+{%- for key, value in &IONS %}
+    {{ key }} = {{ value|typeCast }}
+{%- endfor %}
+/
+&CELL
+{%- for key, value in &CELL %}
+    {{ key }} = {{ value|typeCast }}
+{%- endfor %}
+/
+
+ATOMIC_SPECIES
+{% for species in ATOMIC_SPECIES -%}
+{{species.X}} {{species.Mass_x}} {{species.PseudoPot_x}}
+{% endfor -%}
+
+ATOMIC_POSITIONS {{ATOMIC_POSITIONS.card_option}}
+{% for position in ATOMIC_POSITIONS -%}
+{{position.X}} {{position.x}} {{position.y}} {{position.z}} {% if 'if_pos(1)' in position -%} {{position["if_pos(1)"]}} {% endif -%} {% if 'if_pos(2)' in position -%} {{position["if_pos(2)"]}} {% endif -%} {% if 'if_pos(3)' in position -%} {{position["if_pos(3)"]}} {% endif %}
+{% endfor -%}
+
+CELL_PARAMETERS {{CELL_PARAMETERS.card_option}}
+{{CELL_PARAMETERS.v1[0]}} {{CELL_PARAMETERS.v1[1]}} {{CELL_PARAMETERS.v1[2]}}
+{{CELL_PARAMETERS.v2[0]}} {{CELL_PARAMETERS.v2[1]}} {{CELL_PARAMETERS.v2[2]}}
+{{CELL_PARAMETERS.v3[0]}} {{CELL_PARAMETERS.v3[1]}} {{CELL_PARAMETERS.v3[2]}}
+
+K_POINTS automatic {{CELL_PARAMETERS.card_option}}
+{% if K_POINTS.card_option == "automatic" %}{% for d in K_POINTS.kgrid.dimensions %}{{ d }} {% endfor %}{% for s in K_POINTS.kgrid.shifts %}{{ s }} {% endfor %}
+{% elif K_POINTS.card_option in ["tpiba", "crystal", "tpiba_b", "crystal_b", "tpiba_c", "crystal_c"] %}
+nks
+{% for point in K_POINTS.points %}
+{{ point.xk_x }} {{ point.xk_y }} {{ point.xk_z }} {{ point.wk }}
+{% endfor %}
+{% elif K_POINTS.card_option == "gamma" %}
+{% endif %}
+
+HUBBARD {HUBBARD.card_option}
+{% for row in hubbard %}{{row.hubbard_param}} {{ row.label }}-{{ row.manifold }} {{ row.hubbard_val }} {% endfor %}

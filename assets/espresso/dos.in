@@ -1,0 +1,5 @@
+&DOS
+{%- for key, value in &DOS %}
+    {{ typeCast(key, value) }}
+{%- endfor %}
+/

@@ -1,0 +1,10 @@
+&INPUTPP
+{%- for key, value in &INPUTPP %}
+    {{ typeCast(key, value) }}
+{%- endfor %}
+/
+&PLOT
+{%- for key, value in &PLOT %}
+    {{ typeCast(key, value) }}
+{%- endfor %}
+/

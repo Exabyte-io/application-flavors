@@ -1,0 +1,9 @@
+&INPUT
+{%- for key, value in &INPUT %}
+    {{ typeCast(key, value) }}
+{%- endfor %}
+ /
+{{ipath.length}}
+{% for point in ipath -%}
+{% for d in point.coordinates %}{{d}} {% endfor -%}{{point.steps}}
+{% endfor %}

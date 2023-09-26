@@ -52,11 +52,11 @@ nks
 {% elif K_POINTS.card_option == "gamma" %}
 {% endif %}
 
-HUBBARD {HUBBARD.card_option}
-{% for row in hubbard %}
-{% if row.hubbard_param == V %}
-{{row.hubbard_param}} {{ row.labe(I) }}-{{ row.manifold(I) }} {{ row.labe(J) }}-{{ row.manifold(J) }} {{row.I}} {{row.J}} {{ row.hubbard_val }}
-{% else %}
+HUBBARD {{HUBBARD.card_option}}
+{% for row in HUBBARD.values -%}
+{% if row.hubbard_param == "V" -%}
+{{row.hubbard_param}} {{ row["label(I)"] }}-{{ row["manifold(I)"] }} {{ row["label(J)"] }}-{{ row["manifold(J)"] }} {{row.I}} {{row.J}} {{ row.hubbard_val }}
+{% else -%}
 {{row.hubbard_param}} {{ row.label }}-{{ row.manifold }} {{ row.hubbard_val }}
 {% endif %}
-{% endfor %}
+{%- endfor -%}

@@ -50,7 +50,7 @@ nks
 {{ point.xk_x }} {{ point.xk_y }} {{ point.xk_z }} {{ point.wk }}
 {% endfor %}
 {% elif K_POINTS.card_option == "gamma" %}
-{% endif %}
+{%- endif %}
 
 HUBBARD {{HUBBARD.card_option}}
 {% for row in HUBBARD.values -%}

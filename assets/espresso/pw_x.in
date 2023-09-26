@@ -53,4 +53,10 @@ nks
 {% endif %}
 
 HUBBARD {HUBBARD.card_option}
-{% for row in hubbard %}{{row.hubbard_param}} {{ row.label }}-{{ row.manifold }} {{ row.hubbard_val }} {% endfor %}
+{% for row in hubbard %}
+{% if row.hubbard_param == V %}
+{{row.hubbard_param}} {{ row.labe(I) }}-{{ row.manifold(I) }} {{ row.labe(J) }}-{{ row.manifold(J) }} {{row.I}} {{row.J}} {{ row.hubbard_val }}
+{% else %}
+{{row.hubbard_param}} {{ row.label }}-{{ row.manifold }} {{ row.hubbard_val }}
+{% endif %}
+{% endfor %}

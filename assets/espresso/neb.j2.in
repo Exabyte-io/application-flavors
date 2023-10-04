@@ -1,60 +1,60 @@
 BEGIN
 BEGIN_PATH_INPUT
 &PATH
-{%- for key, value in &PATH %}
+{%- for key, value in path %}
     {{ typeCast(key, value) }}
 {%- endfor %}
 /
 END_PATH_INPUT
 BEGIN_ENGINE_INPUT
 &CONTROL
-{%- for key, value in &CONTROL %}
+{%- for key, value in control %}
     {{ typeCast(key, value) }}
 {%- endfor %}
 /
 &SYSTEM
-{%- for key, value in &SYSTEM %}
+{%- for key, value in system %}
     {{ typeCast(key, value) }}
 {%- endfor %}
 /
 &ELECTRONS
-{%- for key, value in &ELECTRONS %}
+{%- for key, value in electrons %}
     {{ typeCast(key, value) }}
 {%- endfor %}
 /
 ATOMIC_SPECIES
-{% for species in ATOMIC_SPECIES -%}
+{% for species in atomicSpecies -%}
 {{species.X}} {{species.Mass_x}} {{species.PseudoPot_x}}
 {% endfor -%}
 BEGIN_POSITIONS
 FIRST_IMAGE
-ATOMIC_POSITIONS {{ATOMIC_POSITIONS.first.card_option}}
-{% for position in ATOMIC_POSITIONS.first -%}
+ATOMIC_POSITIONS {{atomicPositions.first.card_option}}
+{% for position in atomicPositions.first -%}
 {{position.X}} {{position.x}} {{position.y}} {{position.z}} {% if 'if_pos(1)' in position -%} {{position["if_pos(1)"]}} {% endif -%} {% if 'if_pos(2)' in position -%} {{position["if_pos(2)"]}} {% endif -%} {% if 'if_pos(3)' in position -%} {{position["if_pos(3)"]}} {% endif %}
 {% endfor -%}
 INTERMEDIATE_IMAGE
-ATOMIC_POSITIONS {{ATOMIC_POSITIONS.intermediate.card_option}}
-{% for position in ATOMIC_POSITIONS.intermediate -%}
+ATOMIC_POSITIONS {{atomicPositions.intermediate.card_option}}
+{% for position in atomicPositions.intermediate -%}
 {{position.X}} {{position.x}} {{position.y}} {{position.z}} {% if 'if_pos(1)' in position -%} {{position["if_pos(1)"]}} {% endif -%} {% if 'if_pos(2)' in position -%} {{position["if_pos(2)"]}} {% endif -%} {% if 'if_pos(3)' in position -%} {{position["if_pos(3)"]}} {% endif %}
 {% endfor -%}
 LAST_IMAGE
-ATOMIC_POSITIONS {{ATOMIC_POSITIONS.last.card_option}}
-{% for position in ATOMIC_POSITIONS.last -%}
+ATOMIC_POSITIONS {{atomicPositions.last.card_option}}
+{% for position in atomicPositions.last -%}
 {{position.X}} {{position.x}} {{position.y}} {{position.z}} {% if 'if_pos(1)' in position -%} {{position["if_pos(1)"]}} {% endif -%} {% if 'if_pos(2)' in position -%} {{position["if_pos(2)"]}} {% endif -%} {% if 'if_pos(3)' in position -%} {{position["if_pos(3)"]}} {% endif %}
 {% endfor -%}
 END_POSITIONS
-CELL_PARAMETERS {{CELL_PARAMETERS.card_option}}
+CELL_PARAMETERS {{cellParameters.card_option}}
 {{CELL_PARAMETERS.v1[0]}} {{CELL_PARAMETERS.v1[1]}} {{CELL_PARAMETERS.v1[2]}}
 {{CELL_PARAMETERS.v2[0]}} {{CELL_PARAMETERS.v2[1]}} {{CELL_PARAMETERS.v2[2]}}
 {{CELL_PARAMETERS.v3[0]}} {{CELL_PARAMETERS.v3[1]}} {{CELL_PARAMETERS.v3[2]}}
-K_POINTS automatic {{CELL_PARAMETERS.card_option}}
-{% if K_POINTS.card_option == "automatic" %}{% for d in K_POINTS.kgrid.dimensions %}{{ d }} {% endfor %}{% for s in K_POINTS.kgrid.shifts %}{{ s }} {% endfor %}
-{% elif K_POINTS.card_option in ["tpiba", "crystal", "tpiba_b", "crystal_b", "tpiba_c", "crystal_c"] %}
+K_POINTS automatic {{cellParameters.card_option}}
+{% if kPoints.card_option == "automatic" %}{% for d in kPoints.kgrid.dimensions %}{{ d }} {% endfor %}{% for s in kPoints.kgrid.shifts %}{{ s }} {% endfor %}
+{% elif kPoints.card_option in ["tpiba", "crystal", "tpiba_b", "crystal_b", "tpiba_c", "crystal_c"] %}
 nks
-{% for point in K_POINTS.points %}
+{% for point in kPoints.points %}
 {{ point.xk_x }} {{ point.xk_y }} {{ point.xk_z }} {{ point.wk }}
 {% endfor %}
-{% elif K_POINTS.card_option == "gamma" %}
+{% elif kPoints.card_option == "gamma" %}
 {% endif %}
 END_ENGINE_INPUT
 END

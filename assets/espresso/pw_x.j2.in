@@ -2,58 +2,58 @@
 {%- set input = input.perMaterial[subworkflowContext.MATERIAL_INDEX] -%}
 {% endif -%}
 &CONTROL
-{%- for key, value in &CONTROL %}
+{%- for key, value in control %}
     {{ typeCast(key, value) }}
 {%- endfor %}
 /
 &SYSTEM
-{%- for key, value in &SYSTEM %}
+{%- for key, value in system %}
     {{ typeCast(key, value) }}
 {%- endfor %}
 /
 &ELECTRONS
-{%- for key, value in &ELECTRONS %}
+{%- for key, value in electrons %}
     {{ key }} = {{ value|typeCast }}
 {%- endfor %}
 /
 &IONS
-{%- for key, value in &IONS %}
+{%- for key, value in ions %}
     {{ key }} = {{ value|typeCast }}
 {%- endfor %}
 /
 &CELL
-{%- for key, value in &CELL %}
+{%- for key, value in cell %}
     {{ key }} = {{ value|typeCast }}
 {%- endfor %}
 /
 
 ATOMIC_SPECIES
-{% for species in ATOMIC_SPECIES -%}
+{% for species in atomicSpecies -%}
 {{species.X}} {{species.Mass_x}} {{species.PseudoPot_x}}
 {% endfor -%}
 
-ATOMIC_POSITIONS {{ATOMIC_POSITIONS.card_option}}
-{% for position in ATOMIC_POSITIONS -%}
+ATOMIC_POSITIONS {{atomicPositions.card_option}}
+{% for position in atomicPositions -%}
 {{position.X}} {{position.x}} {{position.y}} {{position.z}} {% if 'if_pos(1)' in position -%} {{position["if_pos(1)"]}} {% endif -%} {% if 'if_pos(2)' in position -%} {{position["if_pos(2)"]}} {% endif -%} {% if 'if_pos(3)' in position -%} {{position["if_pos(3)"]}} {% endif %}
 {% endfor -%}
 
-CELL_PARAMETERS {{CELL_PARAMETERS.card_option}}
+CELL_PARAMETERS {{cellParameters.card_option}}
 {{CELL_PARAMETERS.v1[0]}} {{CELL_PARAMETERS.v1[1]}} {{CELL_PARAMETERS.v1[2]}}
 {{CELL_PARAMETERS.v2[0]}} {{CELL_PARAMETERS.v2[1]}} {{CELL_PARAMETERS.v2[2]}}
 {{CELL_PARAMETERS.v3[0]}} {{CELL_PARAMETERS.v3[1]}} {{CELL_PARAMETERS.v3[2]}}
 
-K_POINTS automatic {{CELL_PARAMETERS.card_option}}
-{% if K_POINTS.card_option == "automatic" %}{% for d in K_POINTS.kgrid.dimensions %}{{ d }} {% endfor %}{% for s in K_POINTS.kgrid.shifts %}{{ s }} {% endfor %}
-{% elif K_POINTS.card_option in ["tpiba", "crystal", "tpiba_b", "crystal_b", "tpiba_c", "crystal_c"] %}
+K_POINTS automatic {{kPoints.card_option}}
+{% if kPoints.card_option == "automatic" %}{% for d in kPoints.kgrid.dimensions %}{{ d }} {% endfor %}{% for s in kPoints.kgrid.shifts %}{{ s }} {% endfor %}
+{% elif kPoints.card_option in ["tpiba", "crystal", "tpiba_b", "crystal_b", "tpiba_c", "crystal_c"] %}
 nks
-{% for point in K_POINTS.points %}
+{% for point in kPoints.points %}
 {{ point.xk_x }} {{ point.xk_y }} {{ point.xk_z }} {{ point.wk }}
 {% endfor %}
-{% elif K_POINTS.card_option == "gamma" %}
+{% elif kPoints.card_option == "gamma" %}
 {%- endif %}
 
-HUBBARD {{HUBBARD.card_option}}
-{% for row in HUBBARD.values -%}
+HUBBARD {{hubbard.card_option}}
+{% for row in hubbard.values -%}
 {% if row.hubbard_param == "V" -%}
 {{row.hubbard_param}} {{ row["label(I)"] }}-{{ row["manifold(I)"] }} {{ row["label(J)"] }}-{{ row["manifold(J)"] }} {{row.I}} {{row.J}} {{ row.hubbard_val }}
 {% else -%}

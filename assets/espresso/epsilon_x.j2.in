@@ -1,11 +1,11 @@
 &inputpp
-{%- for key, value in &inputpp %}
+{%- for key, value in inputpp %}
     {{ typeCast(key, value) }}
 {%- endfor %}
 /
 
 &energy_grid
-{%- for key, value in &energy_grid %}
+{%- for key, value in energy_grid %}
     {{ typeCast(key, value) }}
 {%- endfor %}
 /

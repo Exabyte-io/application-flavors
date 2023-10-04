@@ -40,6 +40,11 @@ flavors:
       - convergence_electronic
     applicationName: espresso
     executableName: pw.x
+    contextProviders:
+      - name: KGridFormDataManager
+      - name: QEPWXInputDataManager
+      - name: PlanewaveCutoffDataManager
+    staticContext: !include "executables/espresso/staticContext/pw.x.yml#/pw_scf"
 
   pw_scf_bands_hse:
     input:
@@ -57,6 +62,12 @@ flavors:
       - convergence_electronic
     applicationName: espresso
     executableName: pw.x
+    contextProviders:
+      - name: QEPWXInputDataManager
+      - name: PlanewaveCutoffDataManager
+      - name: QGridFormDataManager
+      - name: ExplicitKPathFormDataManager
+    staticContext: !include "executables/espresso/staticContext/pw.x.yml#/pw_scf_bands_hse"
 
   pw_scf_hse:
     input:
@@ -75,6 +86,11 @@ flavors:
       - convergence_electronic
     applicationName: espresso
     executableName: pw.x
+    contextProviders:
+      - name: KGridFormDataManager
+      - name: QEPWXInputDataManager
+      - name: PlanewaveCutoffDataManager
+    staticContext: !include "executables/espresso/staticContext/pw.x.yml#/pw_scf_hse"
 
   pw_scf_dft_u:
     input:
@@ -95,6 +111,13 @@ flavors:
     executableName: pw.x
     supportedApplicationVersions:
       - '7.2'
+    contextProviders:
+      - name: KGridFormDataManager
+      - name: QEPWXInputDataManager
+      - name: PlanewaveCutoffDataManager
+      - name: HubbardContextManager
+    staticContext:
+      !include "executables/espresso/staticContext/pw.x.yml#/pw_scf_dft_u"
 
   pw_esm:
     input:
@@ -114,6 +137,12 @@ flavors:
       - convergence_electronic
     applicationName: espresso
     executableName: pw.x
+    contextProviders:
+      - name: KGridFormDataManager
+      - name: QEPWXInputDataManager
+      - name: PlanewaveCutoffDataManager
+      - name: BoundaryConditionsFormDataManager
+    staticContext: !include "executables/espresso/staticContext/pw.x.yml#/pw_esm"
 
   pw_esm_relax:
     input:
@@ -133,6 +162,12 @@ flavors:
       - convergence_electronic
     applicationName: espresso
     executableName: pw.x
+    contextProviders:
+      - name: KGridFormDataManager
+      - name: QEPWXInputDataManager
+      - name: PlanewaveCutoffDataManager
+      - name: BoundaryConditionsFormDataManager
+    staticContext: !include "executables/espresso/staticContext/pw.x.yml#/pw_esm_relax"
 
   pw_nscf:
     input:
@@ -144,6 +179,11 @@ flavors:
       - standard_output
     applicationName: espresso
     executableName: pw.x
+    contextProviders:
+      - name: KGridFormDataManager
+      - name: QEPWXInputDataManager
+      - name: PlanewaveCutoffDataManager
+    staticContext: !include "executables/espresso/staticContext/pw.x.yml#/pw_nscf"
 
   pw_bands:
     input:
@@ -152,6 +192,11 @@ flavors:
       - standard_output
     applicationName: espresso
     executableName: pw.x
+    contextProviders:
+      - name: KPathFormDataManager
+      - name: QEPWXInputDataManager
+      - name: PlanewaveCutoffDataManager
+    staticContext: !include "executables/espresso/staticContext/pw.x.yml#/pw_bands"
 
   pw_relax:
     input:
@@ -170,6 +215,11 @@ flavors:
       - final_structure
     applicationName: espresso
     executableName: pw.x
+    contextProviders:
+      - name: KGridFormDataManager
+      - name: QEPWXInputDataManager
+      - name: PlanewaveCutoffDataManager
+    staticContext: !include "executables/espresso/staticContext/pw.x.yml#/pw_relax"
 
   pw_vc-relax:
     input:
@@ -188,6 +238,11 @@ flavors:
       - final_structure
     applicationName: espresso
     executableName: pw.x
+    contextProviders:
+      - name: KGridFormDataManager
+      - name: QEPWXInputDataManager
+      - name: PlanewaveCutoffDataManager
+    staticContext: !include "executables/espresso/staticContext/pw.x.yml#/pw_vc-relax"
 
   pw_scf_kpt_conv:
     input:
@@ -204,3 +259,7 @@ flavors:
       - convergence_electronic
     applicationName: espresso
     executableName: pw.x
+    contextProviders:
+      - name: QEPWXInputDataManager
+      - name: PlanewaveCutoffDataManager
+    staticContext: !include "executables/espresso/staticContext/pw.x.yml#/pw_scf_kpt_conv"

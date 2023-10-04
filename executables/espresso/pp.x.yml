@@ -10,6 +10,9 @@ flavors:
       - standard_output
     applicationName: espresso
     executableName: pp.x
+    contextProviders: []
+    staticContext: !include "executables/espresso/staticContent/pp.x.yml#/pp_density"
+
 
   pp_electrostatic_potential:
     input:
@@ -19,3 +22,5 @@ flavors:
       - standard_output
     applicationName: espresso
     executableName: pp.x
+    contextProviders: []
+    staticContext: !include "executables/espresso/staticContent/pp.x.yml#/pp_electrostatic_potential"

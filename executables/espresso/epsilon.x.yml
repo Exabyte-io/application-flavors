@@ -12,3 +12,5 @@ flavors:
       - standard_output
     applicationName: espresso
     executableName: epsilon.x
+    contextProviders: []
+    staticContext: !include "executables/espresso/staticContent/epsilon.x.yml#/dielectric_tensor"

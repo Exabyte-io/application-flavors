@@ -12,3 +12,5 @@ flavors:
       - standard_output
     applicationName: espresso
     executableName: bands.x
+    contextProviders: []
+    staticContext: !include "executables/espresso/staticContext/bands.x.yml#/bands"

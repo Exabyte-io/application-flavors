@@ -12,3 +12,5 @@ flavors:
       - standard_output
     applicationName: espresso
     executableName: dos.x
+    contextProviders: []
+    staticContext: !include "executables/espresso/staticContext/dos.x.yml#/dos"

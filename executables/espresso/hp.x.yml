@@ -10,6 +10,9 @@ flavors:
       - standard_output
     applicationName: espresso
     executableName: hp.x
+    contextProviders:
+      - name: QGridFormDataManager
+    staticContext: !include "executables/espresso/staticContent/hp.x.yml#/hp"
 supportedApplicationVersions:
   - '7.0'
   - '7.2'

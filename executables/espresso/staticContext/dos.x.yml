@@ -1,0 +1,5 @@
+dos:
+  dos:
+    prefix: '__prefix__'
+    outdir: '{{ JOB_WORK_DIR }}/outdir'
+    degauss: 0.01

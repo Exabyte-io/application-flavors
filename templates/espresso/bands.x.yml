@@ -1,5 +1,4 @@
 - content: !readFile 'assets/espresso/bands.j2.in'
   name: bands.in
-  contextProviders: []
   applicationName: espresso
   executableName: bands.x

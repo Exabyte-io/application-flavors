@@ -15,3 +15,9 @@ flavors:
       - standard_output
     applicationName: espresso
     executableName: neb.x
+    contextProviders:
+      - name: KGridFormDataManager
+      - name: NEBFormDataManager
+      - name: QENEBInputDataManager
+      - name: PlanewaveCutoffDataManager
+    staticContext: !include "executables/espresso/staticContent/neb.x.yml#/neb"

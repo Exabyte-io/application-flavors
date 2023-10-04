@@ -1,0 +1,18 @@
+matdyn_grid:
+  input:
+    asr: 'simple'
+    flfrc: 'force_constants.fc'
+    flfrq: 'frequencies.freq'
+    dos: true
+    fldos: 'phonon_dos.out'
+    deltaE: 1
+    # adjustment for nkx to be made in contextProviders
+
+matdyn_path:
+  input:
+    asr: 'simple'
+    flfrc: 'force_constants.fc'
+    flfrq: 'frequencies.freq'
+    flvec: 'normal_modes.out'
+    q_in_band_form: true
+    # adjustment for ipath to be made in contextProviders

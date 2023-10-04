@@ -16,6 +16,11 @@ flavors:
       - standard_output
     applicationName: espresso
     executableName: gw.x
+    contextProviders:
+      - name: KGridFormDataManager
+      - name: QGridFormDataManager
+      - name: ExplicitKPath2PIBAFormDataManager
+    staticContext: !include "executables/espresso/staticContent/gw.x.yml#/gw_bands_plasmon_pole"
 
   gw_bands_full_frequency:
     input:
@@ -28,3 +33,8 @@ flavors:
       - standard_output
     applicationName: espresso
     executableName: gw.x
+    contextProviders:
+      - name: KGridFormDataManager
+      - name: QGridFormDataManager
+      - name: ExplicitKPath2PIBAFormDataManager
+    staticContext: !include "executables/espresso/staticContent/gw.x.yml#/gw_bands_full_frequency"

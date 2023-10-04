@@ -12,3 +12,5 @@ flavors:
       - standard_output
     applicationName: espresso
     executableName: projwfc.x
+    contextProviders: []
+    staticContext: !include "executables/espresso/staticContext/projwfc.x.yml#/projwfc"

@@ -1,0 +1,222 @@
+common_control: &common_control
+  calculation: 'scf'
+  title: ''
+  verbosity: 'low'
+  wf_collect: true
+  tstress: true
+  tprnfor: true
+  outdir: '{{ JOB_WORK_DIR }}/outdir'
+  wfcdir: '{{ JOB_WORK_DIR }}/outdir'
+  prefix: '__prefix__'
+  pseudo_dir: '{{ JOB_WORK_DIR }}/pseudo'
+
+common_system: &common_system
+  occupations: 'smearing'
+  degauss: 0.005
+
+common_electrons: &common_electrons
+  diagonalization: 'david'
+  diago_david_ndim: 4
+  diago_full_acc: true
+  mixing_beta: 0.3
+
+pw_bands:
+  control:
+    calculation: 'bands'
+    <<: *common_control
+  system:
+    <<: *common_system
+  electrons:
+    <<: *common_electrons
+  atomicPositions:
+    cardOption: 'crystal'
+  cellParameters:
+    cardOption: 'angstrom'
+  kPoints:
+    cardOption: 'crystal_b'
+    # kPoints to be addressed in contextProvider
+
+pw_esm:
+  control:
+    <<: *common_control
+  system:
+    <<: *common_system
+    assume_isolated: 'esm'
+  electrons:
+    <<: *common_electrons
+    startingwfc: 'atomic+random'
+  atomicPositions:
+    cardOption: 'crystal'
+  cellParameters:
+    cardOption: 'angstrom'
+  kPoints:
+    cardOption: 'automatic'
+
+pw_esm_relax:
+  control:
+    calculation: 'relax'
+    <<: *common_control
+  system:
+    <<: *common_system
+    assume_isolated: 'esm'
+  electrons:
+    <<: *common_electrons
+    startingwfc: 'atomic+random'
+  atomicPositions:
+    cardOption: 'crystal'
+  cellParameters:
+    cardOption: 'angstrom'
+  kPoints:
+    cardOption: 'automatic'
+
+pw_nscf:
+  control:
+    calculation: 'nscf'
+    <<: *common_control
+  system:
+    <<: *common_system
+    # nosym noinv to be address in contextProvider
+  electrons:
+    <<: *common_electrons
+  atomicPositions:
+    cardOption: 'crystal'
+  cellParameters:
+    cardOption: 'angstrom'
+  kPoints:
+    cardOption: 'automatic'
+
+pw_relax:
+  control:
+    calculation: 'relax'
+    nstep: 50
+    restart_mode: 'from_scratch'
+    <<: *common_control
+  system:
+    <<: *common_system
+  electrons:
+    <<: *common_electrons
+    startingwfc: 'atomic+random'
+  atomicPositions:
+    cardOption: 'crystal'
+  cellParameters:
+    cardOption: 'angstrom'
+  kPoints:
+    cardOption: 'automatic'
+
+pw_scf:
+  control:
+    <<: *common_control
+  system:
+    <<: *common_system
+  electrons:
+    <<: *common_electrons
+    startingwfc: 'atomic+random'
+  atomicPositions:
+    cardOption: 'crystal'
+  cellParameters:
+    cardOption: 'angstrom'
+  kPoints:
+    cardOption: 'automatic'
+
+pw_scf_bands_hse:
+  control:
+    <<: *common_control
+  system:
+    <<: *common_system
+    input_dft: 'hse'
+    # nqx to be addressed in contextProvider based on qgrid
+  electrons:
+    <<: *common_electrons
+  atomicPositions:
+    cardOption: 'crystal'
+  cellParameters:
+    cardOption: 'angstrom'
+  kPoints:
+    cardOption: 'bands'
+    # kPoints to be addressed in contextProvider
+
+pw_scf_dft_u:
+  control:
+    <<: *common_control
+  system:
+    occupations: 'fixed'
+  electrons:
+    <<: *common_electrons
+    startingwfc: 'atomic+random'
+  atomicPositions:
+    cardOption: 'crystal'
+  cellParameters:
+    cardOption: 'angstrom'
+  kPoints:
+    cardOption: 'automatic'
+
+pw_scf_hse:
+  control:
+    <<: *common_control
+  system:
+    <<: *common_system
+    ecutfock: 100
+    input_hse: 'hse'
+    # nqx1, nqx2, nqx3 adjustments needed
+  electrons:
+    <<: *common_electrons
+    startingwfc: 'atomic+random'
+  atomicPositions:
+    cardOption: 'crystal'
+  cellParameters:
+    cardOption: 'angstrom'
+  kPoints:
+    cardOption: 'automatic'
+      # kPoints adjustments needed
+
+
+pw_scf_kpt_conv:
+  control:
+    <<: *common_control
+  system:
+    <<: *common_system
+  electrons:
+    <<: *common_electrons
+    startingwfc: 'atomic+random'
+  atomicPositions:
+    cardOption: 'crystal'
+  cellParameters:
+    cardOption: 'angstrom'
+  kPoints:
+    cardOption: 'automatic'
+    value: '{{PARAMETER | default("1")}} {{PARAMETER | default("1")}} {{PARAMETER | default("1")}} 0 0 0'
+
+pw_vc_relax:
+  control:
+    calculation: 'vc-relax'
+    restart_mode: 'from_scratch'
+    <<: *common_control
+  system:
+    <<: *common_system
+  electrons:
+    <<: *common_electrons
+    startingwfc: 'atomic+random'
+  atomicPositions:
+    cardOption: 'crystal'
+  cellParameters:
+    cardOption: 'angstrom'
+  kPoints:
+    cardOption: 'automatic'
+
+pw_vc_relax_conv:
+  control:
+    calculation: 'vc-relax'
+    restart_mode: 'from_scratch'
+    <<: *common_control
+  system:
+    <<: *common_system
+  electrons:
+    <<: *common_electrons
+    startingwfc: 'atomic+random'
+  atomicPositions:
+    cardOption: 'crystal'
+  cellParameters:
+    cardOption: 'angstrom'
+  kPoints:
+    cardOption: 'automatic'
+  kPoints: '{{PARAMETER | default("1")}} {{PARAMETER | default("1")}} {{PARAMETER | default("1")}} 0 0 0'

@@ -1,0 +1,5 @@
+q2r:
+  input:
+    fildyn: 'dyn'
+    zasr: 'simple'
+    flfrc: 'force_constants.fc'

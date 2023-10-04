@@ -1,40 +1,29 @@
 - content: !readFile 'assets/espresso/ph_grid.j2.in'
   name: ph_grid.in
-  contextProviders:
-    - name: QGridFormDataManager
   applicationName: espresso
   executableName: ph.x
 
 - content: !readFile 'assets/espresso/ph_path.j2.in'
   name: ph_path.in
-  contextProviders:
-    - name: QPathFormDataManager
   applicationName: espresso
   executableName: ph.x
 
 - content: !readFile 'assets/espresso/ph_gamma.j2.in'
   name: ph_gamma.in
-  contextProviders: []
   applicationName: espresso
   executableName: ph.x
 
 - content: !readFile 'assets/espresso/ph_init_qpoints.j2.in'
   name: ph_init_qpoints.in
-  contextProviders:
-    - name: QGridFormDataManager
   applicationName: espresso
   executableName: ph.x
 
 - content: !readFile 'assets/espresso/ph_grid_restart.j2.in'
   name: ph_grid_restart.in
-  contextProviders:
-    - name: QGridFormDataManager
   applicationName: espresso
   executableName: ph.x
 
 - content: !readFile 'assets/espresso/ph_single_irr_qpt.j2.in'
   name: ph_single_irr_qpt.in
-  contextProviders:
-    - name: QGridFormDataManager
   applicationName: espresso
   executableName: ph.x

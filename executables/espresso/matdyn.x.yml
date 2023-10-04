@@ -13,6 +13,9 @@ flavors:
       - phonon_dos
     applicationName: espresso
     executableName: matdyn.x
+    contextProviders:
+      - name: IGridFormDataManager
+    staticContext: !include "executables/espresso/staticContent/matdyn.x.yml#/matdyn_grid"
 
   matdyn_path:
     input:
@@ -23,3 +26,6 @@ flavors:
       - phonon_dispersions
     applicationName: espresso
     executableName: matdyn.x
+    contextProviders:
+      - name: IPathFormDataManager
+    staticContext: !include "executables/espresso/staticContent/matdyn.x.yml#/matdyn_path"

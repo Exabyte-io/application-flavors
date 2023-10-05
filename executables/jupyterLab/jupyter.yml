@@ -14,3 +14,5 @@ flavors:
       - jupyter_notebook_endpoint
     applicationName: jupyterLab
     executableName: jupyter
+    contextProviders: []
+    staticContext: {}

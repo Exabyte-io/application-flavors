@@ -19,3 +19,6 @@ flavors:
       - standard_output
     applicationName: nwchem
     executableName: nwchem
+    contextProviders:
+      - name: NWChemInputDataManager
+    staticContext: {}

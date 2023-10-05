@@ -1,4 +1,4 @@
-- content: !readFile 'assets/espresso/bands.j2.in'
+- content: !readFile 'assets/espresso/bands.x.j2'
   name: bands.in
   applicationName: espresso
   executableName: bands.x

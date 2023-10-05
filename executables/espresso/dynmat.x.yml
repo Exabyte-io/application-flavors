@@ -4,7 +4,8 @@ results: []
 flavors:
   dynmat:
     input:
-      - name: dynmat_grid.in
+      - name: dynmat_grid
+        fileName: dynmat.in
     results: []
     monitors:
       - standard_output
@@ -12,4 +13,5 @@ flavors:
     executableName: dynmat.x
     contextProviders:
     - name: IGridFormDataManager
-    staticContext: !include "executables/espresso/staticContext/dynmat.x.yml#/dynmat"
+    staticContext:
+      dynmat_grid: !include "executables/espresso/staticContext/dynmat.x.yml#/dynmat"

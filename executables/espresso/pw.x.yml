@@ -26,7 +26,8 @@ flavors:
   pw_scf:
     isDefault: true
     input:
-      - name: pw_scf.in
+      - name: pw_scf
+        fileName: pw.in
     results:
       - atomic_forces
       - fermi_energy
@@ -44,11 +45,14 @@ flavors:
       - name: KGridFormDataManager
       - name: QEPWXInputDataManager
       - name: PlanewaveCutoffDataManager
-    staticContext: !include "executables/espresso/staticContext/pw.x.yml#/pw_scf"
+    staticContext:
+      pw_scf: !include "executables/espresso/staticContext/pw.x.yml#/pw_scf"
 
   pw_scf_bands_hse:
     input:
-      - name: pw_scf_bands_hse.in
+      - name: pw_scf_bands_hse
+        fileName: pw.in
+
     results:
       - total_energy
       - total_energy_contributions
@@ -67,11 +71,13 @@ flavors:
       - name: PlanewaveCutoffDataManager
       - name: QGridFormDataManager
       - name: ExplicitKPathFormDataManager
-    staticContext: !include "executables/espresso/staticContext/pw.x.yml#/pw_scf_bands_hse"
+    staticContext:
+      pw_scf_bands_hse: !include "executables/espresso/staticContext/pw.x.yml#/pw_scf_bands_hse"
 
   pw_scf_hse:
     input:
-      - name: pw_scf_hse.in
+      - name: pw_scf_hse
+        fileName: pw.in
     results:
       - atomic_forces
       - band_gaps
@@ -90,11 +96,13 @@ flavors:
       - name: KGridFormDataManager
       - name: QEPWXInputDataManager
       - name: PlanewaveCutoffDataManager
-    staticContext: !include "executables/espresso/staticContext/pw.x.yml#/pw_scf_hse"
+    staticContext:
+      pw_scf_hse: !include "executables/espresso/staticContext/pw.x.yml#/pw_scf_hse"
 
   pw_scf_dft_u:
     input:
-      - name: pw_scf_dft_u.in
+      - name: pw_scf_dft_u
+        fileName: pw.in
     results:
       - atomic_forces
       - band_gaps
@@ -117,11 +125,12 @@ flavors:
       - name: PlanewaveCutoffDataManager
       - name: HubbardContextManager
     staticContext:
-      !include "executables/espresso/staticContext/pw.x.yml#/pw_scf_dft_u"
+      pw_scf_dft_u: !include "executables/espresso/staticContext/pw.x.yml#/pw_scf_dft_u"
 
   pw_esm:
     input:
-      - name: pw_esm.in
+      - name: pw_esm
+        fileName: pw.in
     results:
       - total_energy
       - total_energy_contributions
@@ -142,11 +151,13 @@ flavors:
       - name: QEPWXInputDataManager
       - name: PlanewaveCutoffDataManager
       - name: BoundaryConditionsFormDataManager
-    staticContext: !include "executables/espresso/staticContext/pw.x.yml#/pw_esm"
+    staticContext:
+      pw_esm: !include "executables/espresso/staticContext/pw.x.yml#/pw_esm"
 
   pw_esm_relax:
     input:
-      - name: pw_esm_relax.in
+      - name: pw_esm_relax
+        fileName: pw.in
     results:
       - total_energy
       - total_energy_contributions
@@ -167,11 +178,13 @@ flavors:
       - name: QEPWXInputDataManager
       - name: PlanewaveCutoffDataManager
       - name: BoundaryConditionsFormDataManager
-    staticContext: !include "executables/espresso/staticContext/pw.x.yml#/pw_esm_relax"
+    staticContext:
+      pw_esm_relax: !include "executables/espresso/staticContext/pw.x.yml#/pw_esm_relax"
 
   pw_nscf:
     input:
-      - name: pw_nscf.in
+      - name: pw_nscf
+        fileName: pw.in
     results:
       - fermi_energy
       - band_gaps
@@ -183,11 +196,13 @@ flavors:
       - name: KGridFormDataManager
       - name: QEPWXInputDataManager
       - name: PlanewaveCutoffDataManager
-    staticContext: !include "executables/espresso/staticContext/pw.x.yml#/pw_nscf"
+    staticContext:
+      pw_nscf: !include "executables/espresso/staticContext/pw.x.yml#/pw_nscf"
 
   pw_bands:
     input:
-      - name: pw_bands.in
+      - name: pw_bands
+        fileName: pw.in
     monitors:
       - standard_output
     applicationName: espresso
@@ -196,11 +211,13 @@ flavors:
       - name: KPathFormDataManager
       - name: QEPWXInputDataManager
       - name: PlanewaveCutoffDataManager
-    staticContext: !include "executables/espresso/staticContext/pw.x.yml#/pw_bands"
+    staticContext:
+      pw_bands: !include "executables/espresso/staticContext/pw.x.yml#/pw_bands"
 
   pw_relax:
     input:
-      - name: pw_relax.in
+      - name: pw_relax
+        fileName: pw.in
     monitors:
       - standard_output
       - convergence_electronic
@@ -219,11 +236,13 @@ flavors:
       - name: KGridFormDataManager
       - name: QEPWXInputDataManager
       - name: PlanewaveCutoffDataManager
-    staticContext: !include "executables/espresso/staticContext/pw.x.yml#/pw_relax"
+    staticContext:
+      pw_relax: !include "executables/espresso/staticContext/pw.x.yml#/pw_relax"
 
   pw_vc-relax:
     input:
-      - name: pw_vc_relax.in
+      - name: pw_vc_relax
+        fileName: pw.in
     monitors:
       - standard_output
       - convergence_electronic
@@ -242,11 +261,13 @@ flavors:
       - name: KGridFormDataManager
       - name: QEPWXInputDataManager
       - name: PlanewaveCutoffDataManager
-    staticContext: !include "executables/espresso/staticContext/pw.x.yml#/pw_vc-relax"
+    staticContext:
+      pw_vc_relax: !include "executables/espresso/staticContext/pw.x.yml#/pw_vc-relax"
 
   pw_scf_kpt_conv:
     input:
-      - name: pw_scf_kpt_conv.in
+      - name: pw_scf_kpt_conv
+        fileName: pw.in
     results:
       - total_energy
       - fermi_energy
@@ -262,4 +283,5 @@ flavors:
     contextProviders:
       - name: QEPWXInputDataManager
       - name: PlanewaveCutoffDataManager
-    staticContext: !include "executables/espresso/staticContext/pw.x.yml#/pw_scf_kpt_conv"
+    staticContext:
+      pw_scf_kpt_conv: !include "executables/espresso/staticContext/pw.x.yml#/pw_scf_kpt_conv"

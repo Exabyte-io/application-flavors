@@ -5,7 +5,8 @@ results:
 flavors:
   bands:
     input:
-      - name: bands.in
+      - name: bands
+        fileName: bands.in
     results:
       - band_structure
     monitors:
@@ -13,4 +14,5 @@ flavors:
     applicationName: espresso
     executableName: bands.x
     contextProviders: []
-    staticContext: !include "executables/espresso/staticContext/bands.x.yml#/bands"
+    staticContext:
+      bands: !include "executables/espresso/staticContext/bands.x.yml#/bands"

@@ -4,7 +4,8 @@ results: []
 flavors:
   hp:
     input:
-      - name: hp.in
+      - name: hp
+        fileName: hp.in
     results: []
     monitors:
       - standard_output
@@ -12,7 +13,8 @@ flavors:
     executableName: hp.x
     contextProviders:
       - name: QGridFormDataManager
-    staticContext: !include "executables/espresso/staticContent/hp.x.yml#/hp"
+    staticContext:
+      hp: !include "executables/espresso/staticContent/hp.x.yml#/hp"
 supportedApplicationVersions:
   - '7.0'
   - '7.2'

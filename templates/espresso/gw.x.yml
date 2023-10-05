@@ -1,9 +1,9 @@
-- content: !readFile 'assets/espresso/gw_bands_plasmon_pole.j2.in'
+- content: !readFile 'assets/espresso/gw.x.j2'
   name: gw_bands_plasmon_pole.in
   applicationName: espresso
   executableName: gw.x
 
-- content: !readFile 'assets/espresso/gw_bands_full_frequency.j2.in'
+- content: !readFile 'assets/espresso/gw.x.j2'
   name: gw_bands_full_frequency.in
   applicationName: espresso
   executableName: gw.x

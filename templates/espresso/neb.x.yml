@@ -1,4 +1,4 @@
-- content: !readFile 'assets/espresso/neb.j2.in'
+- content: !readFile 'assets/espresso/neb.x.j2'
   name: neb.in
   applicationName: espresso
   executableName: neb.x

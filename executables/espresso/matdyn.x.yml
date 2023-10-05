@@ -6,7 +6,8 @@ results:
 flavors:
   matdyn_grid:
     input:
-      - name: matdyn_grid.in
+      - name: matdyn_grid
+        fileName: matdyn.in
     monitors:
       - standard_output
     results:
@@ -15,11 +16,13 @@ flavors:
     executableName: matdyn.x
     contextProviders:
       - name: IGridFormDataManager
-    staticContext: !include "executables/espresso/staticContent/matdyn.x.yml#/matdyn_grid"
+    staticContext:
+      matdyn_grid: !include "executables/espresso/staticContent/matdyn.x.yml#/matdyn_grid"
 
   matdyn_path:
     input:
-      - name: matdyn_path.in
+      - name: matdyn_path
+        fileName: matdyn.in
     monitors:
       - standard_output
     results:
@@ -28,4 +31,5 @@ flavors:
     executableName: matdyn.x
     contextProviders:
       - name: IPathFormDataManager
-    staticContext: !include "executables/espresso/staticContent/matdyn.x.yml#/matdyn_path"
+    staticContext:
+      matdyn_path: !include "executables/espresso/staticContent/matdyn.x.yml#/matdyn_path"

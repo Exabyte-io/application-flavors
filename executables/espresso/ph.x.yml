@@ -7,7 +7,8 @@ results:
 flavors:
   ph_path:
     input:
-      - name: ph_path.in
+      - name: ph_path
+        fileName: ph.in
     results:
       - phonon_dispersions
     monitors:
@@ -16,11 +17,13 @@ flavors:
     executableName: ph.x
     contextProviders:
       - name: QPathFormDataManager
-    staticContext: !include "executables/espresso/staticContent/ph.x.yml#/ph_path"
+    staticContext:
+      ph_path: !include "executables/espresso/staticContent/ph.x.yml#/ph_path"
 
   ph_grid:
     input:
-      - name: ph_grid.in
+      - name: ph_grid
+        fileName: ph.in
     results:
       - phonon_dos
     monitors:
@@ -29,11 +32,13 @@ flavors:
     executableName: ph.x
     contextProviders:
       - name: QGridFormDataManager
-    staticContext: !include "executables/espresso/staticContent/ph.x.yml#/ph_grid"
+    staticContext:
+      ph_grid: !include "executables/espresso/staticContent/ph.x.yml#/ph_grid"
 
   ph_gamma:
     input:
-      - name: ph_gamma.in
+      - name: ph_gamma
+        fileName: ph.in
     results:
       - zero_point_energy
     monitors:
@@ -41,11 +46,13 @@ flavors:
     applicationName: espresso
     executableName: ph.x
     contextProviders: []
-    staticContext: !include "executables/espresso/staticContent/ph.x.yml#/ph_gamma"
+    staticContext:
+      ph_gamma: !include "executables/espresso/staticContent/ph.x.yml#/ph_gamma"
 
   ph_init_qpoints:
     input:
-      - name: ph_init_qpoints.in
+      - name: ph_init_qpoints
+        fileName: ph.in
     results: []
     monitors:
       - standard_output
@@ -53,11 +60,13 @@ flavors:
     executableName: ph.x
     contextProviders:
       - name: QGridFormDataManager
-    staticContext: !include "executables/espresso/staticContent/ph.x.yml#/ph_init_qpoints"
+    staticContext:
+      ph_init_qpoints: !include "executables/espresso/staticContent/ph.x.yml#/ph_init_qpoints"
 
   ph_grid_restart:
     input:
-      - name: ph_grid_restart.in
+      - name: ph_grid_restart
+        fileName: ph.in
     results: []
     monitors:
       - standard_output
@@ -65,11 +74,13 @@ flavors:
     executableName: ph.x
     contextProviders:
       - name: QGridFormDataManager
-    staticContext: !include "executables/espresso/staticContent/ph.x.yml#/ph_grid_restart"
+    staticContext:
+      ph_grid_restart: !include "executables/espresso/staticContent/ph.x.yml#/ph_grid_restart"
 
   ph_single_irr_qpt:
     input:
-      - name: ph_single_irr_qpt.in
+      - name: ph_single_irr_qpt
+        fileName: ph.in
     results: []
     monitors:
       - standard_output
@@ -77,4 +88,5 @@ flavors:
     executableName: ph.x
     contextProviders:
       - name: QGridFormDataManager
-    staticContext: !include "executables/espresso/staticContent/ph.x.yml#/ph_single_irr_qpt"
+    staticContext:
+      ph_single_irr_qpt: !include "executables/espresso/staticContent/ph.x.yml#/ph_single_irr_qpt"

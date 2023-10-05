@@ -5,7 +5,8 @@ results:
 flavors:
   dielectric_tensor:
     input:
-      - name: epsilon.in
+      - name: epsilon
+        fileName: epsilon.in
     results:
       - dielectric_tensor
     monitors:
@@ -13,4 +14,5 @@ flavors:
     applicationName: espresso
     executableName: epsilon.x
     contextProviders: []
-    staticContext: !include "executables/espresso/staticContent/epsilon.x.yml#/dielectric_tensor"
+    staticContext:
+      epsilon: !include "executables/espresso/staticContent/epsilon.x.yml#/dielectric_tensor"

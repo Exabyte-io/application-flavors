@@ -1,54 +1,54 @@
-- content: !readFile 'assets/espresso/pw_scf.j2.in'
+- content: !readFile 'assets/espresso/pw_x.j2'
   name: pw_scf.in
   applicationName: espresso
   executableName: pw.x
 
-- content: !readFile 'assets/espresso/pw_scf_bands_hse.j2.in'
+- content: !readFile 'assets/espresso/pw_x.j2'
   name: pw_scf_bands_hse.in
   applicationName: espresso
   executableName: pw.x
 
-- content: !readFile 'assets/espresso/pw_esm.j2.in'
+- content: !readFile 'assets/espresso/pw_x.j2'
   name: pw_esm.in
   applicationName: espresso
   executableName: pw.x
 
-- content: !readFile 'assets/espresso/pw_esm_relax.j2.in'
+- content: !readFile 'assets/espresso/pw_x.j2'
   name: pw_esm_relax.in
   applicationName: espresso
   executableName: pw.x
 
-- content: !readFile 'assets/espresso/pw_scf_kpt_conv.j2.in'
+- content: !readFile 'assets/espresso/pw_x.j2'
   name: pw_scf_kpt_conv.in
   applicationName: espresso
   executableName: pw.x
 
-- content: !readFile 'assets/espresso/pw_nscf.j2.in'
+- content: !readFile 'assets/espresso/pw_x.j2'
   name: pw_nscf.in
   applicationName: espresso
   executableName: pw.x
 
-- content: !readFile 'assets/espresso/pw_relax.j2.in'
+- content: !readFile 'assets/espresso/pw_x.j2'
   name: pw_relax.in
   applicationName: espresso
   executableName: pw.x
 
-- content: !readFile 'assets/espresso/pw_vc_relax.j2.in'
+- content: !readFile 'assets/espresso/pw_x.j2'
   name: pw_vc_relax.in
   applicationName: espresso
   executableName: pw.x
 
-- content: !readFile 'assets/espresso/pw_bands.j2.in'
+- content: !readFile 'assets/espresso/pw_x.j2'
   name: pw_bands.in
   applicationName: espresso
   executableName: pw.x
 
-- content: !readFile 'assets/espresso/pw_scf_hse.j2.in'
+- content: !readFile 'assets/espresso/pw_x.j2'
   name: pw_scf_hse.in
   applicationName: espresso
   executableName: pw.x
 
-- content: !readFile 'assets/espresso/pw_scf.j2.in'
+- content: !readFile 'assets/espresso/pw_x.j2'
   name: pw_scf_dft_u.in
   applicationName: espresso
   executableName: pw.x

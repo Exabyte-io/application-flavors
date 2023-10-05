@@ -5,18 +5,21 @@ results:
 flavors:
   average:
     input:
-      - name: average.in
+      - name: average
+        fileName: average.in
     results: []
     monitors:
       - standard_output
     applicationName: espresso
     executableName: average.x
     contextProviders: []
-    staticContext: !include "executables/espresso/staticContext/average.x.yml#/average"
+    staticContext:
+      average: !include "executables/espresso/staticContext/average.x.yml#/average"
 
   average_potential:
     input:
-      - name: average.in
+      - name: average_potential
+        fileName: average.in
     results:
       - average_potential_profile
     monitors:
@@ -24,4 +27,5 @@ flavors:
     applicationName: espresso
     executableName: average.x
     contextProviders: []
-    staticContext: !include "executables/espresso/staticContext/average.x.yml#/average_potential"
+    staticContext:
+      average_potential: !include "executables/espresso/staticContext/average.x.yml#/average_potential"

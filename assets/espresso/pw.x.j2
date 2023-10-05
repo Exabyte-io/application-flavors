@@ -13,17 +13,17 @@
 /
 &ELECTRONS
 {%- for key, value in electrons %}
-    {{ key }} = {{ value|typeCast }}
+    {{ typeCast(key, value) }}
 {%- endfor %}
 /
 &IONS
 {%- for key, value in ions %}
-    {{ key }} = {{ value|typeCast }}
+    {{ typeCast(key, value) }}
 {%- endfor %}
 /
 &CELL
 {%- for key, value in cell %}
-    {{ key }} = {{ value|typeCast }}
+    {{ typeCast(key, value) }}
 {%- endfor %}
 /
 

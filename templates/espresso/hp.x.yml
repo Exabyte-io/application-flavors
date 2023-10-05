@@ -1,4 +1,4 @@
-- content: !readFile 'assets/espresso/hp.j2.in'
+- content: !readFile 'assets/espresso/hp.x.j2'
   name: hp.in
   applicationName: espresso
   executableName: hp.x

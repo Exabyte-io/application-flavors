@@ -4,11 +4,13 @@ results: []
 flavors:
   q2r:
     input:
-      - name: q2r.in
+      - name: q2r
+        fileName: q2r.in
     results: []
     monitors:
       - standard_output
     applicationName: espresso
     executableName: q2r.x
   contextProviders: []
-  staticContext: !include "executables/espresso/staticContext/q2r.x.yml#/q2r"
+  staticContext:
+    q2r: !include "executables/espresso/staticContext/q2r.x.yml#/q2r"

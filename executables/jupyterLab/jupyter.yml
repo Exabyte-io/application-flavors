@@ -15,4 +15,5 @@ flavors:
     applicationName: jupyterLab
     executableName: jupyter
     contextProviders: []
-    staticContext: {}
+    staticContext:
+      imports: 'jupyterlab==3.0.3\nnotebook>=6.2.0\nexabyte-api-client>=2020.10.19\nnumpy>=1.17.3\npandas>=1.1.4\nurllib3<2'

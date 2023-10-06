@@ -22,7 +22,8 @@ flavors:
       - name: QGridFormDataManager
       - name: ExplicitKPath2PIBAFormDataManager
     staticContext:
-      gw_bands_plasmon_pole: !include "executables/espresso/staticContent/gw.x.yml#/gw_bands_plasmon_pole"
+      gw_bands_plasmon_pole:
+        !include 'executables/espresso/staticContent/gw.x.yml#/gw_bands_plasmon_pole'
 
   gw_bands_full_frequency:
     input:
@@ -41,4 +42,5 @@ flavors:
       - name: QGridFormDataManager
       - name: ExplicitKPath2PIBAFormDataManager
     staticContext:
-      gw_bands_full_frequency: !include "executables/espresso/staticContent/gw.x.yml#/gw_bands_full_frequency"
+      gw_bands_full_frequency:
+        !include 'executables/espresso/staticContent/gw.x.yml#/gw_bands_full_frequency'

@@ -14,7 +14,8 @@ flavors:
     contextProviders:
       - name: QGridFormDataManager
     staticContext:
-      hp: !include "executables/espresso/staticContent/hp.x.yml#/hp"
+      hp:
+        !include 'executables/espresso/staticContent/hp.x.yml#/hp'
 supportedApplicationVersions:
   - '7.0'
   - '7.2'

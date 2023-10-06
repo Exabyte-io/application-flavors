@@ -15,4 +15,5 @@ flavors:
     executableName: bands.x
     contextProviders: []
     staticContext:
-      bands: !include "executables/espresso/staticContext/bands.x.yml#/bands"
+      bands:
+        !include 'executables/espresso/staticContext/bands.x.yml#/bands'

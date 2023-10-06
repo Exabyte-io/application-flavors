@@ -13,4 +13,5 @@ flavors:
     executableName: q2r.x
   contextProviders: []
   staticContext:
-    q2r: !include "executables/espresso/staticContext/q2r.x.yml#/q2r"
+    q2r:
+      !include 'executables/espresso/staticContext/q2r.x.yml#/q2r'

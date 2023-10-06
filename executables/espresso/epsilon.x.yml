@@ -15,4 +15,5 @@ flavors:
     executableName: epsilon.x
     contextProviders: []
     staticContext:
-      epsilon: !include "executables/espresso/staticContent/epsilon.x.yml#/dielectric_tensor"
+      epsilon:
+        !include 'executables/espresso/staticContent/epsilon.x.yml#/dielectric_tensor'

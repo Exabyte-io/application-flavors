@@ -14,7 +14,8 @@ flavors:
     executableName: average.x
     contextProviders: []
     staticContext:
-      average: !include "executables/espresso/staticContext/average.x.yml#/average"
+      average:
+        !include 'executables/espresso/staticContext/average.x.yml#/average'
 
   average_potential:
     input:
@@ -28,4 +29,5 @@ flavors:
     executableName: average.x
     contextProviders: []
     staticContext:
-      average_potential: !include "executables/espresso/staticContext/average.x.yml#/average_potential"
+      average_potential:
+        !include 'executables/espresso/staticContext/average.x.yml#/average_potential'

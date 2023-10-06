@@ -18,7 +18,8 @@ flavors:
     contextProviders:
       - name: QPathFormDataManager
     staticContext:
-      ph_path: !include "executables/espresso/staticContent/ph.x.yml#/ph_path"
+      ph_path:
+        !include 'executables/espresso/staticContent/ph.x.yml#/ph_path'
 
   ph_grid:
     input:
@@ -33,7 +34,8 @@ flavors:
     contextProviders:
       - name: QGridFormDataManager
     staticContext:
-      ph_grid: !include "executables/espresso/staticContent/ph.x.yml#/ph_grid"
+      ph_grid:
+        !include 'executables/espresso/staticContent/ph.x.yml#/ph_grid'
 
   ph_gamma:
     input:
@@ -47,7 +49,8 @@ flavors:
     executableName: ph.x
     contextProviders: []
     staticContext:
-      ph_gamma: !include "executables/espresso/staticContent/ph.x.yml#/ph_gamma"
+      ph_gamma:
+        !include 'executables/espresso/staticContent/ph.x.yml#/ph_gamma'
 
   ph_init_qpoints:
     input:
@@ -61,7 +64,7 @@ flavors:
     contextProviders:
       - name: QGridFormDataManager
     staticContext:
-      ph_init_qpoints: !include "executables/espresso/staticContent/ph.x.yml#/ph_init_qpoints"
+      ph_init_qpoints: !include 'executables/espresso/staticContent/ph.x.yml#/ph_init_qpoints'
 
   ph_grid_restart:
     input:
@@ -75,7 +78,8 @@ flavors:
     contextProviders:
       - name: QGridFormDataManager
     staticContext:
-      ph_grid_restart: !include "executables/espresso/staticContent/ph.x.yml#/ph_grid_restart"
+      ph_grid_restart:
+        !include 'executables/espresso/staticContent/ph.x.yml#/ph_grid_restart'
 
   ph_single_irr_qpt:
     input:
@@ -89,4 +93,5 @@ flavors:
     contextProviders:
       - name: QGridFormDataManager
     staticContext:
-      ph_single_irr_qpt: !include "executables/espresso/staticContent/ph.x.yml#/ph_single_irr_qpt"
+      ph_single_irr_qpt:
+        !include 'executables/espresso/staticContent/ph.x.yml#/ph_single_irr_qpt'

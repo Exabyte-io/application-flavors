@@ -46,7 +46,8 @@ flavors:
       - name: QEPWXInputDataManager
       - name: PlanewaveCutoffDataManager
     staticContext:
-      pw_scf: !include "executables/espresso/staticContext/pw.x.yml#/pw_scf"
+      pw_scf:
+        !include 'executables/espresso/staticContext/pw.x.yml#/pw_scf'
 
   pw_scf_bands_hse:
     input:
@@ -72,7 +73,8 @@ flavors:
       - name: QGridFormDataManager
       - name: ExplicitKPathFormDataManager
     staticContext:
-      pw_scf_bands_hse: !include "executables/espresso/staticContext/pw.x.yml#/pw_scf_bands_hse"
+      pw_scf_bands_hse:
+        !include 'executables/espresso/staticContext/pw.x.yml#/pw_scf_bands_hse'
 
   pw_scf_hse:
     input:
@@ -97,7 +99,8 @@ flavors:
       - name: QEPWXInputDataManager
       - name: PlanewaveCutoffDataManager
     staticContext:
-      pw_scf_hse: !include "executables/espresso/staticContext/pw.x.yml#/pw_scf_hse"
+      pw_scf_hse:
+        !include 'executables/espresso/staticContext/pw.x.yml#/pw_scf_hse'
 
   pw_scf_dft_u:
     input:
@@ -125,7 +128,8 @@ flavors:
       - name: PlanewaveCutoffDataManager
       - name: HubbardContextManager
     staticContext:
-      pw_scf_dft_u: !include "executables/espresso/staticContext/pw.x.yml#/pw_scf_dft_u"
+      pw_scf_dft_u:
+        !include 'executables/espresso/staticContext/pw.x.yml#/pw_scf_dft_u'
 
   pw_esm:
     input:
@@ -152,7 +156,8 @@ flavors:
       - name: PlanewaveCutoffDataManager
       - name: BoundaryConditionsFormDataManager
     staticContext:
-      pw_esm: !include "executables/espresso/staticContext/pw.x.yml#/pw_esm"
+      pw_esm: !include
+        'executables/espresso/staticContext/pw.x.yml#/pw_esm'
 
   pw_esm_relax:
     input:
@@ -179,7 +184,8 @@ flavors:
       - name: PlanewaveCutoffDataManager
       - name: BoundaryConditionsFormDataManager
     staticContext:
-      pw_esm_relax: !include "executables/espresso/staticContext/pw.x.yml#/pw_esm_relax"
+      pw_esm_relax: !include
+        'executables/espresso/staticContext/pw.x.yml#/pw_esm_relax'
 
   pw_nscf:
     input:
@@ -197,7 +203,8 @@ flavors:
       - name: QEPWXInputDataManager
       - name: PlanewaveCutoffDataManager
     staticContext:
-      pw_nscf: !include "executables/espresso/staticContext/pw.x.yml#/pw_nscf"
+      pw_nscf: !include
+        'executables/espresso/staticContext/pw.x.yml#/pw_nscf'
 
   pw_bands:
     input:
@@ -212,7 +219,8 @@ flavors:
       - name: QEPWXInputDataManager
       - name: PlanewaveCutoffDataManager
     staticContext:
-      pw_bands: !include "executables/espresso/staticContext/pw.x.yml#/pw_bands"
+      pw_bands: !include
+        'executables/espresso/staticContext/pw.x.yml#/pw_bands'
 
   pw_relax:
     input:
@@ -237,7 +245,8 @@ flavors:
       - name: QEPWXInputDataManager
       - name: PlanewaveCutoffDataManager
     staticContext:
-      pw_relax: !include "executables/espresso/staticContext/pw.x.yml#/pw_relax"
+      pw_relax: !include
+        'executables/espresso/staticContext/pw.x.yml#/pw_relax'
 
   pw_vc-relax:
     input:
@@ -262,7 +271,8 @@ flavors:
       - name: QEPWXInputDataManager
       - name: PlanewaveCutoffDataManager
     staticContext:
-      pw_vc_relax: !include "executables/espresso/staticContext/pw.x.yml#/pw_vc-relax"
+      pw_vc_relax: !include
+        'executables/espresso/staticContext/pw.x.yml#/pw_vc-relax'
 
   pw_scf_kpt_conv:
     input:
@@ -284,4 +294,5 @@ flavors:
       - name: QEPWXInputDataManager
       - name: PlanewaveCutoffDataManager
     staticContext:
-      pw_scf_kpt_conv: !include "executables/espresso/staticContext/pw.x.yml#/pw_scf_kpt_conv"
+      pw_scf_kpt_conv: !include
+        'executables/espresso/staticContext/pw.x.yml#/pw_scf_kpt_conv'

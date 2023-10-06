@@ -17,7 +17,8 @@ flavors:
     contextProviders:
       - name: IGridFormDataManager
     staticContext:
-      matdyn_grid: !include "executables/espresso/staticContent/matdyn.x.yml#/matdyn_grid"
+      matdyn_grid:
+        !include 'executables/espresso/staticContent/matdyn.x.yml#/matdyn_grid'
 
   matdyn_path:
     input:
@@ -32,4 +33,5 @@ flavors:
     contextProviders:
       - name: IPathFormDataManager
     staticContext:
-      matdyn_path: !include "executables/espresso/staticContent/matdyn.x.yml#/matdyn_path"
+      matdyn_path:
+        !include 'executables/espresso/staticContent/matdyn.x.yml#/matdyn_path'

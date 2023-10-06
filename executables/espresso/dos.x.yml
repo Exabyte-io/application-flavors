@@ -15,4 +15,5 @@ flavors:
     executableName: dos.x
     contextProviders: []
     staticContext:
-      dos: !include "executables/espresso/staticContext/dos.x.yml#/dos"
+      dos:
+        !include 'executables/espresso/staticContext/dos.x.yml#/dos'

@@ -13,7 +13,8 @@ flavors:
     executableName: pp.x
     contextProviders: []
     staticContext:
-      pp_density: !include "executables/espresso/staticContent/pp.x.yml#/pp_density"
+      pp_density:
+        !include 'executables/espresso/staticContent/pp.x.yml#/pp_density'
 
 
   pp_electrostatic_potential:
@@ -27,4 +28,5 @@ flavors:
     executableName: pp.x
     contextProviders: []
     staticContext:
-      pp_electrostatic_potential: !include "executables/espresso/staticContent/pp.x.yml#/pp_electrostatic_potential"
+      pp_electrostatic_potential:
+        !include 'executables/espresso/staticContent/pp.x.yml#/pp_electrostatic_potential'

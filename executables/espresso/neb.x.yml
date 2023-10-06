@@ -22,4 +22,5 @@ flavors:
       - name: QENEBInputDataManager
       - name: PlanewaveCutoffDataManager
     staticContext:
-      neb: !include "executables/espresso/staticContent/neb.x.yml#/neb"
+      neb:
+        !include 'executables/espresso/staticContent/neb.x.yml#/neb'

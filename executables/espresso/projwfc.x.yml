@@ -15,4 +15,5 @@ flavors:
     executableName: projwfc.x
     contextProviders: []
     staticContext:
-      projwfc: !include "executables/espresso/staticContext/projwfc.x.yml#/projwfc"
+      projwfc:
+        !include 'executables/espresso/staticContext/projwfc.x.yml#/projwfc'

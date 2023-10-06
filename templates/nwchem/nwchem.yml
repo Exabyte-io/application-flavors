@@ -1,4 +1,4 @@
-- content: !readFile 'assets/nwchem/nwchem_total_energy.j2.inp'
+- content: !readFile 'assets/nwchem/nwchem_total_energy.j2'
   name: nwchem_total_energy.inp
   applicationName: nwchem
   executableName: nwchem

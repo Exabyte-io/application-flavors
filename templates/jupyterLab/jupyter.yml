@@ -1,4 +1,4 @@
-- content: !readFile 'assets/jupyterLab/requirements303.j2.txt'
+- content: !readFile 'assets/jupyterLab/requirements303.j2'
   name: requirements.txt
   applicationName: jupyterLab
   executableName: jupyter

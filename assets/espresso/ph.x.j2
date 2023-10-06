@@ -3,11 +3,6 @@
     {{ typeCast(key, value) }}
 {%- endfor %}
 /
-&PLOT
-{%- for key, value in plot %}
-    {{ typeCast(key, value) }}
-{%- endfor %}
-/
 {% for point in qpath -%}
 {% for d in point.coordinates %}{{d}} {% endfor %}
 {% endfor %}

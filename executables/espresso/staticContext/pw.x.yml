@@ -28,13 +28,13 @@ pw_bands:
     <<: *common_system
   electrons:
     <<: *common_electrons
-  atomicPositions:
-    cardOption: 'crystal'
-  cellParameters:
-    cardOption: 'angstrom'
-  kPoints:
-    cardOption: 'crystal_b'
-    # kPoints to be addressed in contextProvider
+  atomic_positions:
+    card_option: 'crystal'
+  cell_parameters:
+    card_option: 'angstrom'
+  kpoints:
+    card_option: 'crystal_b'
+    # kpoints to be addressed in contextProvider
 
 pw_esm:
   control:
@@ -45,12 +45,12 @@ pw_esm:
   electrons:
     <<: *common_electrons
     startingwfc: 'atomic+random'
-  atomicPositions:
-    cardOption: 'crystal'
-  cellParameters:
-    cardOption: 'angstrom'
-  kPoints:
-    cardOption: 'automatic'
+  atomic_positions:
+    card_option: 'crystal'
+  cell_parameters:
+    card_option: 'angstrom'
+  kpoints:
+    card_option: 'automatic'
 
 pw_esm_relax:
   control:
@@ -62,12 +62,12 @@ pw_esm_relax:
   electrons:
     <<: *common_electrons
     startingwfc: 'atomic+random'
-  atomicPositions:
-    cardOption: 'crystal'
-  cellParameters:
-    cardOption: 'angstrom'
-  kPoints:
-    cardOption: 'automatic'
+  atomic_positions:
+    card_option: 'crystal'
+  cell_parameters:
+    card_option: 'angstrom'
+  kpoints:
+    card_option: 'automatic'
 
 pw_nscf:
   control:
@@ -78,12 +78,12 @@ pw_nscf:
     # nosym noinv to be address in contextProvider
   electrons:
     <<: *common_electrons
-  atomicPositions:
-    cardOption: 'crystal'
-  cellParameters:
-    cardOption: 'angstrom'
-  kPoints:
-    cardOption: 'automatic'
+  atomic_positions:
+    card_option: 'crystal'
+  cell_parameters:
+    card_option: 'angstrom'
+  kpoints:
+    card_option: 'automatic'
 
 pw_relax:
   control:
@@ -96,12 +96,12 @@ pw_relax:
   electrons:
     <<: *common_electrons
     startingwfc: 'atomic+random'
-  atomicPositions:
-    cardOption: 'crystal'
-  cellParameters:
-    cardOption: 'angstrom'
-  kPoints:
-    cardOption: 'automatic'
+  atomic_positions:
+    card_option: 'crystal'
+  cell_parameters:
+    card_option: 'angstrom'
+  kpoints:
+    card_option: 'automatic'
 
 pw_scf:
   control:
@@ -111,12 +111,12 @@ pw_scf:
   electrons:
     <<: *common_electrons
     startingwfc: 'atomic+random'
-  atomicPositions:
-    cardOption: 'crystal'
-  cellParameters:
-    cardOption: 'angstrom'
-  kPoints:
-    cardOption: 'automatic'
+  atomic_positions:
+    card_option: 'crystal'
+  cell_parameters:
+    card_option: 'angstrom'
+  kpoints:
+    card_option: 'automatic'
 
 pw_scf_bands_hse:
   control:
@@ -127,13 +127,13 @@ pw_scf_bands_hse:
     # nqx to be addressed in contextProvider based on qgrid
   electrons:
     <<: *common_electrons
-  atomicPositions:
-    cardOption: 'crystal'
-  cellParameters:
-    cardOption: 'angstrom'
-  kPoints:
-    cardOption: 'bands'
-    # kPoints to be addressed in contextProvider
+  atomic_positions:
+    card_option: 'crystal'
+  cell_parameters:
+    card_option: 'angstrom'
+  kpoints:
+    card_option: 'bands'
+    # kpoints to be addressed in contextProvider
 
 pw_scf_dft_u:
   control:
@@ -143,12 +143,12 @@ pw_scf_dft_u:
   electrons:
     <<: *common_electrons
     startingwfc: 'atomic+random'
-  atomicPositions:
-    cardOption: 'crystal'
-  cellParameters:
-    cardOption: 'angstrom'
-  kPoints:
-    cardOption: 'automatic'
+  atomic_positions:
+    card_option: 'crystal'
+  cell_parameters:
+    card_option: 'angstrom'
+  kpoints:
+    card_option: 'automatic'
 
 pw_scf_hse:
   control:
@@ -161,13 +161,13 @@ pw_scf_hse:
   electrons:
     <<: *common_electrons
     startingwfc: 'atomic+random'
-  atomicPositions:
-    cardOption: 'crystal'
-  cellParameters:
-    cardOption: 'angstrom'
-  kPoints:
-    cardOption: 'automatic'
-      # kPoints adjustments needed
+  atomic_positions:
+    card_option: 'crystal'
+  cell_parameters:
+    card_option: 'angstrom'
+  kpoints:
+    card_option: 'automatic'
+      # kpoints adjustments needed
 
 
 pw_scf_kpt_conv:
@@ -178,12 +178,12 @@ pw_scf_kpt_conv:
   electrons:
     <<: *common_electrons
     startingwfc: 'atomic+random'
-  atomicPositions:
-    cardOption: 'crystal'
-  cellParameters:
-    cardOption: 'angstrom'
-  kPoints:
-    cardOption: 'automatic'
+  atomic_positions:
+    card_option: 'crystal'
+  cell_parameters:
+    card_option: 'angstrom'
+  kpoints:
+    card_option: 'automatic'
     value: '{{PARAMETER | default("1")}} {{PARAMETER | default("1")}} {{PARAMETER | default("1")}} 0 0 0'
 
 pw_vc_relax:
@@ -196,12 +196,12 @@ pw_vc_relax:
   electrons:
     <<: *common_electrons
     startingwfc: 'atomic+random'
-  atomicPositions:
-    cardOption: 'crystal'
-  cellParameters:
-    cardOption: 'angstrom'
-  kPoints:
-    cardOption: 'automatic'
+  atomic_positions:
+    card_option: 'crystal'
+  cell_parameters:
+    card_option: 'angstrom'
+  kpoints:
+    card_option: 'automatic'
 
 pw_vc_relax_conv:
   control:
@@ -213,10 +213,10 @@ pw_vc_relax_conv:
   electrons:
     <<: *common_electrons
     startingwfc: 'atomic+random'
-  atomicPositions:
-    cardOption: 'crystal'
-  cellParameters:
-    cardOption: 'angstrom'
-  kPoints:
-    cardOption: 'automatic'
-  kPoints: '{{PARAMETER | default("1")}} {{PARAMETER | default("1")}} {{PARAMETER | default("1")}} 0 0 0'
+  atomic_positions:
+    card_option: 'crystal'
+  cell_parameters:
+    card_option: 'angstrom'
+  kpoints:
+    card_option: 'automatic'
+  kpoints: '{{PARAMETER | default("1")}} {{PARAMETER | default("1")}} {{PARAMETER | default("1")}} 0 0 0'

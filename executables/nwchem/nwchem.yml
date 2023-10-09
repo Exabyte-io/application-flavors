@@ -24,4 +24,4 @@ flavors:
       - name: NWChemInputDataManager
     staticContext:
       nwchem_total_energy:
-        title: "Test"
+        title: 'Test'

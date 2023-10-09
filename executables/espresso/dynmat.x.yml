@@ -12,7 +12,7 @@ flavors:
     applicationName: espresso
     executableName: dynmat.x
     contextProviders:
-    - name: IGridFormDataManager
+      - name: IGridFormDataManager
     staticContext:
       dynmat_grid:
         !include 'executables/espresso/staticContext/dynmat.x.yml#/dynmat'

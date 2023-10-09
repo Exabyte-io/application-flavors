@@ -184,7 +184,8 @@ pw_scf_kpt_conv:
     card_option: 'angstrom'
   kpoints:
     card_option: 'automatic'
-    value: '{{PARAMETER | default("1")}} {{PARAMETER | default("1")}} {{PARAMETER | default("1")}} 0 0 0'
+    value:
+      '{{PARAMETER | default("1")}} {{PARAMETER | default("1")}} {{PARAMETER | default("1")}} 0 0 0'
 
 pw_vc_relax:
   control:
@@ -219,4 +220,5 @@ pw_vc_relax_conv:
     card_option: 'angstrom'
   kpoints:
     card_option: 'automatic'
-  kpoints: '{{PARAMETER | default("1")}} {{PARAMETER | default("1")}} {{PARAMETER | default("1")}} 0 0 0'
+    value:
+      '{{PARAMETER | default("1")}} {{PARAMETER | default("1")}} {{PARAMETER | default("1")}} 0 0 0'

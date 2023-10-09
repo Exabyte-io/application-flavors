@@ -1,9 +1,9 @@
-- content: !readFile 'assets/espresso/matdyn.x.j2'
+- content: !readFile 'assets/espresso/matdyn.x.in.j2'
   name: matdyn_grid.in
   applicationName: espresso
   executableName: matdyn.x
 
-- content: !readFile 'assets/espresso/matdyn.x.j2'
+- content: !readFile 'assets/espresso/matdyn.x.in.j2'
   name: matdyn_path.in
   applicationName: espresso
   executableName: matdyn.x

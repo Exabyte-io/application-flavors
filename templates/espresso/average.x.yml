@@ -1,4 +1,4 @@
-- content: !readFile 'assets/espresso/average.x.j2'
+- content: !readFile 'assets/espresso/average.x.in.j2'
   name: average.in
   applicationName: espresso
   executableName: average.x

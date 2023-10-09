@@ -1,4 +1,4 @@
-- content: !readFile 'assets/espresso/epsilon.x.j2'
+- content: !readFile 'assets/espresso/epsilon.x.in.j2'
   name: epsilon.in
   applicationName: espresso
   executableName: epsilon.x

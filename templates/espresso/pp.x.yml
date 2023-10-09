@@ -1,9 +1,9 @@
-- content: !readFile 'assets/espresso/pp.x.j2'
+- content: !readFile 'assets/espresso/pp.x.in.j2'
   name: pp_density.in
   applicationName: espresso
   executableName: pp.x
 
-- content: !readFile 'assets/espresso/pp.x.j2'
+- content: !readFile 'assets/espresso/pp.x.in.j2'
   name: pp_electrostatic_potential.in
   applicationName: espresso
   executableName: pp.x

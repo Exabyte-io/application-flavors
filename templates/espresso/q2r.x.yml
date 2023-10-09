@@ -1,4 +1,4 @@
-- content: !readFile 'assets/espresso/q2r.x.j2'
+- content: !readFile 'assets/espresso/q2r.x.in.j2'
   name: q2r.in
   applicationName: espresso
   executableName: q2r.x

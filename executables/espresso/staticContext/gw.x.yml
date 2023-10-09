@@ -78,10 +78,10 @@ gw_bands_plasmon_pole:
     # configuration for the output
     eta: 0.1
     min_freq_wind: -30.0
-    max_freq_wind:  30.0
+    max_freq_wind: 30.0
     num_freq_wind: 601
   frequencies:
     numFrequencies: 2
     values:
-      - [0.0,  0.0]
+      - [0.0, 0.0]
       - [0.0, 10.0]

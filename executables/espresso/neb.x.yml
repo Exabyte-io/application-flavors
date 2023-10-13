@@ -24,3 +24,37 @@ flavors:
     staticContext:
       neb:
         !include 'executables/espresso/staticContent/neb.x.yml#/neb'
+    requiredKeys:
+      - path.restart_mode
+      - path.string_method
+      - path.nstep_path
+      - path.ds
+      - path.opt_scheme
+      - path.num_of_images
+      - path.k_max
+      - path.k_min
+      - path.CI_scheme
+      - path.path_thr
+      - control.prefix
+      - control.outdir
+      - control.pseudo_dir
+      - system.ibrav
+      - system.nat
+      - system.ntyp
+      - system.ecutwfc
+      - system.ecutrho
+      - system.occupations
+      - system.degauss
+      - system.nspin
+      - system.starting_magnetization
+      - electrons.conv_thr
+      - electrons.mixing_beta
+      - atomic_species.values
+      - first_atomic_positions.card_option
+      - first_atomic_positions.values
+      - intermediate_atomic_positions.card_option
+      - intermediate_atomic_positions.values
+      - last_atomic_positions.card_option
+      - last_atomic_positions.values
+      - k_points.card_option
+      - k_points.values

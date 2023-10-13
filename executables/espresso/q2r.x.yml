@@ -15,3 +15,7 @@ flavors:
   staticContext:
     q2r:
       !include 'executables/espresso/staticContext/q2r.x.yml#/q2r'
+  requiredKeys:
+    - input.fildyn
+    - input.zasr
+    - input.flfrc

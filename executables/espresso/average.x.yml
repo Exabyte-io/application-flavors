@@ -16,6 +16,9 @@ flavors:
     staticContext:
       average:
         !include 'executables/espresso/staticContext/average.x.yml#/average'
+    requiredKeys:
+      - "nfile"
+      - "file_params"
 
   average_potential:
     input:
@@ -30,4 +33,7 @@ flavors:
     contextProviders: []
     staticContext:
       average_potential:
-        !include 'executables/espresso/staticContext/average.x.yml#/average_potential'
+        !include 'executables/espresso/staticContext/average.x.yml#/average_potential'\
+    requiredKeys:
+      - "nfile"
+      - "file_params"

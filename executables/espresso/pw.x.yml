@@ -48,6 +48,37 @@ flavors:
     staticContext:
       pw_scf:
         !include 'executables/espresso/staticContext/pw.x.yml#/pw_scf'
+    requiredKeys:
+      - control.calculation
+      - control.title
+      - control.verbosity
+      - control.restart_mode
+      - control.wf_collect
+      - control.tstress
+      - control.tprnfor
+      - control.outdir
+      - control.wfcdir
+      - control.prefix
+      - control.pseudo_dir
+      - system.ibrav
+      - system.nat
+      - system.ntyp
+      - system.ecutwfc
+      - system.ecutrho
+      - system.occupations
+      - system.degauss
+      - electrons.diagonalization
+      - electrons.diago_david_ndim
+      - electrons.diago_full_acc
+      - electrons.startingwfc
+      - atomic_species.values
+      - atomic_positions.card_option
+      - atomic_positions.values
+      - cell_parameters.card_option
+      - cell_parameters.values
+      - k_points.card_option
+      - k_points.values
+
 
   pw_scf_bands_hse:
     input:
@@ -75,6 +106,38 @@ flavors:
     staticContext:
       pw_scf_bands_hse:
         !include 'executables/espresso/staticContext/pw.x.yml#/pw_scf_bands_hse'
+    requiredKeys:
+      - control.calculation
+      - control.title
+      - control.verbosity
+      - control.restart_mode
+      - control.wf_collect
+      - control.tstress
+      - control.tprnfor
+      - control.outdir
+      - control.wfcdir
+      - control.prefix
+      - control.pseudo_dir
+      - system.ibrav
+      - system.nat
+      - system.ntyp
+      - system.ecutwfc
+      - system.ecutrho
+      - system.occupations
+      - system.degauss
+      - system.input_dft
+      - system.nqx
+      - electrons.diagonalization
+      - electrons.diago_david_ndim
+      - electrons.diago_full_acc
+      - electrons.mixing_beta
+      - atomic_species.values
+      - atomic_positions.card_option
+      - atomic_positions.values
+      - cell_parameters.card_option
+      - cell_parameters.values
+      - k_points.card_option
+      - k_points.values
 
   pw_scf_hse:
     input:
@@ -101,6 +164,40 @@ flavors:
     staticContext:
       pw_scf_hse:
         !include 'executables/espresso/staticContext/pw.x.yml#/pw_scf_hse'
+    requiredKeys:
+      - control.calculation
+      - control.title
+      - control.verbosity
+      - control.restart_mode
+      - control.wf_collect
+      - control.tstress
+      - control.tprnfor
+      - control.outdir
+      - control.wfcdir
+      - control.prefix
+      - control.pseudo_dir
+      - system.ibrav
+      - system.nat
+      - system.ntyp
+      - system.ecutwfc
+      - system.ecutrho
+      - system.ecutfock
+      - system.occupations
+      - system.degauss
+      - system.input_dft
+      - system.nqx
+      - electrons.diagonalization
+      - electrons.diago_david_ndim
+      - electrons.diago_full_acc
+      - electrons.mixing_beta
+      - electrons.startingwfc
+      - atomic_species.values
+      - atomic_positions.card_option
+      - atomic_positions.values
+      - cell_parameters.card_option
+      - cell_parameters.values
+      - k_points.card_option
+      - k_points.values
 
   pw_scf_dft_u:
     input:
@@ -130,6 +227,38 @@ flavors:
     staticContext:
       pw_scf_dft_u:
         !include 'executables/espresso/staticContext/pw.x.yml#/pw_scf_dft_u'
+    requiredKeys:
+      - control.calculation
+      - control.title
+      - control.verbosity
+      - control.restart_mode
+      - control.wf_collect
+      - control.tstress
+      - control.tprnfor
+      - control.outdir
+      - control.wfcdir
+      - control.prefix
+      - control.pseudo_dir
+      - system.ibrav
+      - system.nat
+      - system.ntyp
+      - system.ecutwfc
+      - system.ecutrho
+      - system.occupations
+      - electrons.diagonalization
+      - electrons.diago_david_ndim
+      - electrons.diago_full_acc
+      - electrons.mixing_beta
+      - electrons.startingwfc
+      - atomic_species.values
+      - atomic_positions.card_option
+      - atomic_positions.values
+      - cell_parameters.card_option
+      - cell_parameters.values
+      - k_points.card_option
+      - k_points.values
+      - hubbard.card_option
+      - hubbard.values
 
   pw_esm:
     input:
@@ -158,6 +287,42 @@ flavors:
     staticContext:
       pw_esm: !include
         'executables/espresso/staticContext/pw.x.yml#/pw_esm'
+    requiredKeys:
+      - control.calculation
+      - control.title
+      - control.verbosity
+      - control.restart_mode
+      - control.wf_collect
+      - control.tstress
+      - control.tprnfor
+      - control.outdir
+      - control.wfcdir
+      - control.prefix
+      - control.pseudo_dir
+      - system.ibrav
+      - system.nat
+      - system.ntyp
+      - system.ecutwfc
+      - system.ecutrho
+      - system.occupations
+      - system.degauss
+      - system.assume_isolated
+      - system.esm_bc
+      - system.fcp_mu
+      - system.esm_w
+      - system.esm_efield
+      - electrons.diagonalization
+      - electrons.diago_david_ndim
+      - electrons.diago_full_acc
+      - electrons.mixing_beta
+      - electrons.startingwfc
+      - atomic_species.values
+      - atomic_positions.card_option
+      - atomic_positions.values
+      - cell_parameters.card_option
+      - cell_parameters.values
+      - k_points.card_option
+      - k_points.values
 
   pw_esm_relax:
     input:
@@ -186,6 +351,42 @@ flavors:
     staticContext:
       pw_esm_relax: !include
         'executables/espresso/staticContext/pw.x.yml#/pw_esm_relax'
+    requiredKeys:
+      - control.calculation
+      - control.title
+      - control.verbosity
+      - control.restart_mode
+      - control.wf_collect
+      - control.tstress
+      - control.tprnfor
+      - control.outdir
+      - control.wfcdir
+      - control.prefix
+      - control.pseudo_dir
+      - system.ibrav
+      - system.nat
+      - system.ntyp
+      - system.ecutwfc
+      - system.ecutrho
+      - system.occupations
+      - system.degauss
+      - system.assume_isolated
+      - system.esm_bc
+      - system.fcp_mu
+      - system.esm_w
+      - system.esm_efield
+      - electrons.diagonalization
+      - electrons.diago_david_ndim
+      - electrons.diago_full_acc
+      - electrons.mixing_beta
+      - electrons.startingwfc
+      - atomic_species.values
+      - atomic_positions.card_option
+      - atomic_positions.values
+      - cell_parameters.card_option
+      - cell_parameters.values
+      - k_points.card_option
+      - k_points.values
 
   pw_nscf:
     input:
@@ -205,6 +406,37 @@ flavors:
     staticContext:
       pw_nscf: !include
         'executables/espresso/staticContext/pw.x.yml#/pw_nscf'
+    requiredKeys:
+      - control.calculation
+      - control.title
+      - control.verbosity
+      - control.restart_mode
+      - control.wf_collect
+      - control.tstress
+      - control.tprnfor
+      - control.outdir
+      - control.wfcdir
+      - control.prefix
+      - control.pseudo_dir
+      - system.ibrav
+      - system.nat
+      - system.ntyp
+      - system.ecutwfc
+      - system.ecutrho
+      - system.occupations
+      - system.nosym
+      - system.noinv
+      - electrons.diagonalization
+      - electrons.diago_david_ndim
+      - electrons.diago_full_acc
+      - electrons.mixing_beta
+      - atomic_species.values
+      - atomic_positions.card_option
+      - atomic_positions.values
+      - cell_parameters.card_option
+      - cell_parameters.values
+      - k_points.card_option
+      - k_points.values
 
   pw_bands:
     input:
@@ -221,6 +453,36 @@ flavors:
     staticContext:
       pw_bands: !include
         'executables/espresso/staticContext/pw.x.yml#/pw_bands'
+    requiredKeys:
+      - control.calculation
+      - control.title
+      - control.verbosity
+      - control.restart_mode
+      - control.wf_collect
+      - control.tstress
+      - control.tprnfor
+      - control.outdir
+      - control.wfcdir
+      - control.prefix
+      - control.pseudo_dir
+      - system.ibrav
+      - system.nat
+      - system.ntyp
+      - system.ecutwfc
+      - system.ecutrho
+      - system.occupations
+      - system.degauss
+      - electrons.diagonalization
+      - electrons.diago_david_ndim
+      - electrons.diago_full_acc
+      - electrons.mixing_beta
+      - atomic_species.values
+      - atomic_positions.card_option
+      - atomic_positions.values
+      - cell_parameters.card_option
+      - cell_parameters.values
+      - k_points.card_option
+      - k_points.values
 
   pw_relax:
     input:
@@ -247,6 +509,38 @@ flavors:
     staticContext:
       pw_relax: !include
         'executables/espresso/staticContext/pw.x.yml#/pw_relax'
+    requiredKeys:
+      - control.calculation
+      - control.nstep
+      - control.title
+      - control.verbosity
+      - control.restart_mode
+      - control.wf_collect
+      - control.tstress
+      - control.tprnfor
+      - control.outdir
+      - control.wfcdir
+      - control.prefix
+      - control.pseudo_dir
+      - system.ibrav
+      - system.nat
+      - system.ntyp
+      - system.ecutwfc
+      - system.ecutrho
+      - system.occupations
+      - system.degauss
+      - electrons.diagonalization
+      - electrons.diago_david_ndim
+      - electrons.diago_full_acc
+      - electrons.mixing_beta
+      - electrons.startingwfc
+      - atomic_species.values
+      - atomic_positions.card_option
+      - atomic_positions.values
+      - cell_parameters.card_option
+      - cell_parameters.values
+      - k_points.card_option
+      - k_points.values
 
   pw_vc-relax:
     input:
@@ -273,6 +567,37 @@ flavors:
     staticContext:
       pw_vc_relax: !include
         'executables/espresso/staticContext/pw.x.yml#/pw_vc-relax'
+    requiredKeys:
+      - control.calculation
+      - control.title
+      - control.verbosity
+      - control.restart_mode
+      - control.wf_collect
+      - control.tstress
+      - control.tprnfor
+      - control.outdir
+      - control.wfcdir
+      - control.prefix
+      - control.pseudo_dir
+      - system.ibrav
+      - system.nat
+      - system.ntyp
+      - system.ecutwfc
+      - system.ecutrho
+      - system.occupations
+      - system.degauss
+      - electrons.diagonalization
+      - electrons.diago_david_ndim
+      - electrons.diago_full_acc
+      - electrons.mixing_beta
+      - electrons.startingwfc
+      - atomic_species.values
+      - atomic_positions.card_option
+      - atomic_positions.values
+      - cell_parameters.card_option
+      - cell_parameters.values
+      - k_points.card_option
+      - k_points.values
 
   pw_scf_kpt_conv:
     input:
@@ -296,3 +621,34 @@ flavors:
     staticContext:
       pw_scf_kpt_conv: !include
         'executables/espresso/staticContext/pw.x.yml#/pw_scf_kpt_conv'
+    requiredKeys:
+      - control.calculation
+      - control.title
+      - control.verbosity
+      - control.restart_mode
+      - control.wf_collect
+      - control.tstress
+      - control.tprnfor
+      - control.outdir
+      - control.wfcdir
+      - control.prefix
+      - control.pseudo_dir
+      - system.ibrav
+      - system.nat
+      - system.ntyp
+      - system.ecutwfc
+      - system.ecutrho
+      - system.occupations
+      - system.degauss
+      - electrons.diagonalization
+      - electrons.diago_david_ndim
+      - electrons.diago_full_acc
+      - electrons.mixing_beta
+      - electrons.startingwfc
+      - atomic_species.values
+      - atomic_positions.card_option
+      - atomic_positions.values
+      - cell_parameters.card_option
+      - cell_parameters.values
+      - k_points.card_option
+      - k_points.values

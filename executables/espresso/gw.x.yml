@@ -24,6 +24,30 @@ flavors:
     staticContext:
       gw_bands_plasmon_pole:
         !include 'executables/espresso/staticContent/gw.x.yml#/gw_bands_plasmon_pole'
+    requiredKeys:
+      - gw_input.prefix
+      - gw_input.outdir
+      - gw_input.kpt_grid
+      - gw_input.qpt_grid
+      - gw_input.truncation
+      - gw_input.num_band
+      - gw_input.thres_coul
+      - gw_input.model_coul
+      - gw_input.max_freq_coul
+      - gw_input.num_freq_coul
+      - gw_input.thres_green
+      - gw_input.max_iter_green
+      - gw_input.ecut_corr
+      - gw_input.max_freq_corr
+      - gw_input.num_freq_corr
+      - gw_input.ecut_exch
+      - gw_input.eta
+      - gw_input.min_freq_wind
+      - gw_input.max_freq_wind
+      - gw_input.num_freq_wind
+      - frequencies
+      - k_points.card_option
+      - k_points.card_type
 
   gw_bands_full_frequency:
     input:
@@ -44,3 +68,16 @@ flavors:
     staticContext:
       gw_bands_full_frequency:
         !include 'executables/espresso/staticContent/gw.x.yml#/gw_bands_full_frequency'
+    requiredKeys:
+      - gw_input.prefix
+      - gw_input.outdir
+      - gw_input.kpt_grid
+      - gw_input.qpt_grid
+      - gw_input.num_band
+      - gw_input.max_freq_coul
+      - gw_input.num_freq_coul
+      - gw_input.ecut_corr
+      - gw_input.ecut_exch
+      - frequencies
+      - k_points.card_option
+      - k_points.values

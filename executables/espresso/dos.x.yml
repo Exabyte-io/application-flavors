@@ -17,3 +17,7 @@ flavors:
     staticContext:
       dos:
         !include 'executables/espresso/staticContext/dos.x.yml#/dos'
+    requiredKeys:
+      - dos.prefix
+      - dos.outdir
+      - dos.degauss

@@ -1,11 +1,12 @@
 average: &average
-  fields:
-  - 1
-  - 'pp.dat'
-  - 1.0
-  - 3000
-  - 3
-  - 3.0000
+  input:
+    nfile: 1
+    file_params:
+      - filename: pp.dat
+        weight: 1.0
+        npt: 3000
+        idir: 3
+        awin: 3.0000
 
 average_potential:
   <<: *average

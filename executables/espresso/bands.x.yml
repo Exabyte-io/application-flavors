@@ -17,3 +17,16 @@ flavors:
     staticContext:
       bands:
         !include 'executables/espresso/staticContext/bands.x.yml#/bands'
+    requiredKeys:
+      - prefix,
+      - outdir,
+      - filband,
+      - spin_component,
+      - lsigma,
+      - lp,
+      - filp,
+      - lsym,
+      - no_overlap,
+      - plot_2d,
+      - firstk,
+      - lastk

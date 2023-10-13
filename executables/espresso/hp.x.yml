@@ -16,6 +16,11 @@ flavors:
     staticContext:
       hp:
         !include 'executables/espresso/staticContent/hp.x.yml#/hp'
+    requiredKeys:
+      - inputhp.prefix
+      - inputhp.outdir
+      - inputhp.nqx
+
 supportedApplicationVersions:
   - '7.0'
   - '7.2'

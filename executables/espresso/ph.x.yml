@@ -20,6 +20,13 @@ flavors:
     staticContext:
       ph_path:
         !include 'executables/espresso/staticContent/ph.x.yml#/ph_path'
+    requiredKeys:
+      - inputph.tr2_ph
+      - inputph.asr
+      - inputph.search_sym
+      - inputph.prefix
+      - inputph.outdir
+      - inputph.xq
 
   ph_grid:
     input:
@@ -36,6 +43,15 @@ flavors:
     staticContext:
       ph_grid:
         !include 'executables/espresso/staticContent/ph.x.yml#/ph_grid'
+    requiredKeys:
+      - inputph.tr2_ph
+      - inputph.asr
+      - inputph.search_sym
+      - inputph.prefix
+      - inputph.outdir
+      - inputph.fildyn
+      - inputph.ldisp
+      - inputph.nqx
 
   ph_gamma:
     input:
@@ -51,6 +67,13 @@ flavors:
     staticContext:
       ph_gamma:
         !include 'executables/espresso/staticContent/ph.x.yml#/ph_gamma'
+    requiredKeys:
+      - inputph.tr2_ph
+      - inputph.asr
+      - inputph.search_sym
+      - inputph.prefix
+      - inputph.outdir
+      - inputph.nqx # double check this
 
   ph_init_qpoints:
     input:
@@ -65,6 +88,17 @@ flavors:
       - name: QGridFormDataManager
     staticContext:
       ph_init_qpoints: !include 'executables/espresso/staticContent/ph.x.yml#/ph_init_qpoints'
+    requiredKeys:
+      - inputph.tr2_ph
+      - inputph.recover
+      - inputph.start_irr
+      - inputph.last_irr
+      - inputph.ldisp
+      - inputph.fildyn
+      - inputph.ldisp
+      - inputph.prefix
+      - inputph.outdir
+      - inputph.nqx
 
   ph_grid_restart:
     input:
@@ -80,6 +114,14 @@ flavors:
     staticContext:
       ph_grid_restart:
         !include 'executables/espresso/staticContent/ph.x.yml#/ph_grid_restart'
+    requiredKeys:
+      - inputph.tr2_ph
+      - inputph.recover
+      - inputph.ldisp
+      - inputph.prefix
+      - inputph.outdir
+      - inputph.fildyn
+      - inputph.nqx
 
   ph_single_irr_qpt:
     input:
@@ -95,3 +137,15 @@ flavors:
     staticContext:
       ph_single_irr_qpt:
         !include 'executables/espresso/staticContent/ph.x.yml#/ph_single_irr_qpt'
+    requiredKeys:
+      - inputph.tr2_ph
+      - inputph.ldisp
+      - inputph.startq
+      - inputph.lastq
+      - inputph.start_irr
+      - inputph.last_irr
+      - inputph.recover
+      - inputph.fildyn
+      - inputph.prefix
+      - inputph.outdir
+      - inputph.nqx

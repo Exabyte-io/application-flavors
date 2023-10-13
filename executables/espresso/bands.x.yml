@@ -5,10 +5,20 @@ results:
 flavors:
   bands:
     input:
-      - name: bands.in
+      - name: bands
+        fileName: bands.in
     results:
       - band_structure
     monitors:
       - standard_output
     applicationName: espresso
     executableName: bands.x
+    contextProviders: []
+    staticContext:
+      bands:
+        !include 'executables/espresso/staticContext/bands.x.yml#/bands'
+    requiredKeys:
+      - bands.prefix
+      - bands.outdir
+      - bands.filband
+      - bands.no_overlap

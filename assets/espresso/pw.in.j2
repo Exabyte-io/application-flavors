@@ -1,0 +1,67 @@
+{% if subworkflowContext.MATERIAL_INDEX %}
+{%- set input = input.perMaterial[subworkflowContext.MATERIAL_INDEX] -%}
+{% endif -%}
+
+&CONTROL
+{%- for key, value in control %}
+    {{ key }} = {{ value }}
+{%- endfor %}
+/
+
+&SYSTEM
+{%- for key, value in system %}
+    {{ key }} = {{ value }}
+{%- endfor %}
+/
+
+&ELECTRONS
+{%- for key, value in electrons %}
+    {{ key }} = {{ value }}
+{%- endfor %}
+/
+
+{% if ions %}&IONS
+{%- for key, value in ions %}
+    {{ key }} = {{ value }}
+{%- endfor %}
+/{% endif -%}
+
+{% if cell %}&CELL
+{%- for key, value in cell %}
+    {{ key }} = {{ value }}
+{%- endfor %}
+/{% endif -%}
+
+ATOMIC_SPECIES
+{% for species in atomic_species -%}
+{{species.X}} {{species.Mass_x}} {{species.PseudoPot_x}}
+{% endfor %}
+ATOMIC_POSITIONS {{atomic_positions.card_option}}
+{% for position in atomic_positions.positions -%}
+{{position.X}} {{position.x}} {{position.y}} {{position.z}} {% if 'if_pos(1)' in position -%} {{position["if_pos(1)"]}} {% endif -%} {% if 'if_pos(2)' in position -%} {{position["if_pos(2)"]}} {% endif -%} {% if 'if_pos(3)' in position -%} {{position["if_pos(3)"]}} {% endif %}
+{% endfor -%}
+
+{% if cell_parameters %}\nCELL_PARAMETERS {{cell_parameters.card_option}}
+{{cell_parameters.v1[0]}} {{cell_parameters.v1[1]}} {{cell_parameters.v1[2]}}
+{{cell_parameters.v2[0]}} {{cell_parameters.v2[1]}} {{cell_parameters.v2[2]}}
+{{cell_parameters.v3[0]}} {{cell_parameters.v3[1]}} {{cell_parameters.v3[2]}}
+{% endif %}
+K_POINTS {{kpoints.card_option}}
+{% if kpoints.card_option == "automatic" %}{% for d in kpoints.kgrid.dimensions %}{{ d }} {% endfor %}{% for s in kpoints.kgrid.shifts %}{{ s }} {% endfor %}
+{% elif kpoints.card_option in ["tpiba", "crystal", "tpiba_b", "crystal_b", "tpiba_c", "crystal_c"] %}
+nks
+{% for point in kpoints.points %}
+{{ point.xk_x }} {{ point.xk_y }} {{ point.xk_z }} {{ point.wk }}
+{% endfor %}
+{% elif kpoints.card_option == "gamma" %}
+{%- endif %}
+
+{% if hubbard %}HUBBARD {{hubbard.card_option}}
+{% for row in hubbard.values -%}
+{% if row.paramType == V -%}
+{{row.V}} {{ row["label(I)"] }}-{{ row["manifold(I)"] }} {{ row["label(J)"] }}-{{ row["manifold(J)"] }} {{row.I}} {{row.J}} {{ row.v_val }}
+{% else -%}
+{{row.paramType}} {{ row.label }}-{{ row.manifold }} {{ row.paramValue }}
+{% endif %}
+{%- endfor -%}
+{% endif %}

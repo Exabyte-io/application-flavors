@@ -1,0 +1,5 @@
+hp:
+  inputhp:
+    prefix: '__prefix__'
+    outdir: '{{ JOB_WORK_DIR }}/outdir'
+    # nqx parameters to be handled in contextProviders

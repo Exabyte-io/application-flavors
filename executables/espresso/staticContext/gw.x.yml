@@ -1,0 +1,87 @@
+gw_bands_full_frequency:
+  gwInput:
+    # config of the scf run
+    prefix: '__prefix__'
+    outdir: '{{ JOB_WORK_DIR }}/outdir'
+    # number of bands for which the GW correction is calculated
+    num_bands: 8
+    # configuration of W in the convolution
+    max_freq_coul: 200
+    num_freq_coul: 51
+    # configuration for the correlation self energy
+    ecut_corr: 6.0
+    # configuration for the exchange self energy
+    ecut_exch: 15.0
+  frequencies:
+    numFrequencies: 35
+    values:
+      - [0.0, 0.0]
+      - [0.0, 0.3]
+      - [0.0, 0.9]
+      - [0.0, 1.8]
+      - [0.0, 3.0]
+      - [0.0, 4.5]
+      - [0.0, 6.3]
+      - [0.0, 8.4]
+      - [0.0, 10.8]
+      - [0.0, 13.5]
+      - [0.0, 16.5]
+      - [0.0, 19.8]
+      - [0.0, 23.4]
+      - [0.0, 27.3]
+      - [0.0, 31.5]
+      - [0.0, 36.0]
+      - [0.0, 40.8]
+      - [0.0, 45.9]
+      - [0.0, 51.3]
+      - [0.0, 57.0]
+      - [0.0, 63.0]
+      - [0.0, 69.3]
+      - [0.0, 75.9]
+      - [0.0, 82.8]
+      - [0.0, 90.0]
+      - [0.0, 97.5]
+      - [0.0, 105.3]
+      - [0.0, 113.4]
+      - [0.0, 121.8]
+      - [0.0, 130.5]
+      - [0.0, 139.5]
+      - [0.0, 148.8]
+      - [0.0, 158.4]
+      - [0.0, 168.3]
+      - [0.0, 178.5]
+
+gw_bands_plasmon_pole:
+  gwInput:
+    # config of the scf run
+    prefix: '__prefix__'
+    outdir: '{{ JOB_WORK_DIR }}/outdir'
+    # truncation (used for both correlation and exchange)
+    truncation: '2d'
+    # number of bands for which the GW correction is calculated
+    num_bands: 8
+    # configuration of the Coulomb solver
+    thres_coul: 1.0e-2
+    # configuration of W in the convolution
+    model_coul: 'godby-needs'
+    max_freq_coul: 120
+    num_freq_coul: 35
+    # configuration of the Green solver
+    thres_green: 1.0d-3
+    max_iter_green: 300
+    # configuration for the correlation self energy
+    ecut_corr: 5.0
+    max_freq_corr: 100.0
+    num_freq_corr: 11
+    # configuration for the exchange self energy
+    ecut_exch: 20.0
+    # configuration for the output
+    eta: 0.1
+    min_freq_wind: -30.0
+    max_freq_wind: 30.0
+    num_freq_wind: 601
+  frequencies:
+    numFrequencies: 2
+    values:
+      - [0.0, 0.0]
+      - [0.0, 10.0]

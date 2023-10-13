@@ -5,10 +5,19 @@ results:
 flavors:
   dos:
     input:
-      - name: dos.in
+      - name: dos
+        fileName: dos.in
     results:
       - density_of_states
     monitors:
       - standard_output
     applicationName: espresso
     executableName: dos.x
+    contextProviders: []
+    staticContext:
+      dos:
+        !include 'executables/espresso/staticContext/dos.x.yml#/dos'
+    requiredKeys:
+      - dos.prefix
+      - dos.outdir
+      - dos.degauss

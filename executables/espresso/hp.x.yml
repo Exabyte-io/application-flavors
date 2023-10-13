@@ -4,12 +4,23 @@ results: []
 flavors:
   hp:
     input:
-      - name: hp.in
+      - name: hp
+        fileName: hp.in
     results: []
     monitors:
       - standard_output
     applicationName: espresso
     executableName: hp.x
+    contextProviders:
+      - name: QGridFormDataManager
+    staticContext:
+      hp:
+        !include 'executables/espresso/staticContent/hp.x.yml#/hp'
+    requiredKeys:
+      - inputhp.prefix
+      - inputhp.outdir
+      - inputhp.nqx
+
 supportedApplicationVersions:
   - '7.0'
   - '7.2'

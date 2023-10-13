@@ -1,0 +1,25 @@
+&gw_input
+{%- for key, value in gw_input %}
+    {{ typeCast(key, value) }}
+{%- endfor %}
+/
+
+&gw_output
+{%- for key, value in gw_output %}
+    {{ typeCast(key, value) }}
+{%- endfor %}
+/
+
+FREQUENCIES
+{{ FREQUENCIES.length }}
+{%- for arr in frequencies %}
+{{arr[0] arr[1]}}
+{%- endfor %}
+/
+
+K_points
+{{ explicitKPath2PIBA.length }}
+{% for point in explicitKPath2PIBA -%}
+{% for coordinate in point.coordinates %}{{ coordinate }}{% endfor %}
+{% endfor %}
+/

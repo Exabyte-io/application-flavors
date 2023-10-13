@@ -1,0 +1,9 @@
+dynmat:
+  input:
+    asr: 'simple'
+    flfrc: 'force_constants.fc'
+    flfrq: 'frequencies.freq'
+    dos: true
+    fldos: 'phonon_dos.out'
+    deltaE: 1
+    # adjustment for nkx to be made in contextProviders

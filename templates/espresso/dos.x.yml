@@ -1,5 +1,4 @@
-- content: !readFile 'assets/espresso/dos.j2.in'
+- content: !readFile 'assets/espresso/dos.in.j2'
   name: dos.in
-  contextProviders: []
   applicationName: espresso
   executableName: dos.x

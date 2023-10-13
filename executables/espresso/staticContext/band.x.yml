@@ -1,0 +1,6 @@
+bands:
+  bands:
+    prefix: '__prefix__'
+    outdir: '{{ JOB_WORK_DIR }}/outdir'
+    filband: '{{ JOB_WORK_DIR }}/bands.dat'
+    no_overlap: .true.

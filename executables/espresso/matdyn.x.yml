@@ -6,20 +6,47 @@ results:
 flavors:
   matdyn_grid:
     input:
-      - name: matdyn_grid.in
+      - name: matdyn_grid
+        fileName: matdyn.in
     monitors:
       - standard_output
     results:
       - phonon_dos
     applicationName: espresso
     executableName: matdyn.x
+    contextProviders:
+      - name: IGridFormDataManager
+    staticContext:
+      matdyn_grid:
+        !include 'executables/espresso/staticContent/matdyn.x.yml#/matdyn_grid'
+    requiredKeys:
+      - input.asr
+      - input.flfrc
+      - input.flfrq
+      - input.dos
+      - input.fldos
+      - input.deltaE
+      - input.nkx
 
   matdyn_path:
     input:
-      - name: matdyn_path.in
+      - name: matdyn_path
+        fileName: matdyn.in
     monitors:
       - standard_output
     results:
       - phonon_dispersions
     applicationName: espresso
     executableName: matdyn.x
+    contextProviders:
+      - name: IPathFormDataManager
+    staticContext:
+      matdyn_path:
+        !include 'executables/espresso/staticContent/matdyn.x.yml#/matdyn_path'
+    requiredKeys:
+      - input.asr
+      - input.flfrc
+      - input.flfrq
+      - input.flvec
+      - input.q_in_band_form
+      - input.nqx

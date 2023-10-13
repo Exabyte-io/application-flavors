@@ -1,0 +1,27 @@
+neb:
+  path:
+    restart_mode: 'from_scratch'
+    string_method: 'neb'
+    nstep_path: 50
+    ds: 2
+    opt_scheme: 'broyden'
+    k_max: 0.3
+    k_min: 0.2
+    CI_scheme: 'auto'
+    path_thr: 0.1
+  control:
+    prefix: '__prefix__'
+    outdir: '{{ JOB_WORK_DIR }}/outdir'
+    pseudo_dir: '{{ JOB_WORK_DIR }}/pseudo'
+  system:
+    occupations: 'smearing'
+    degauss: 0.03
+    nspin: 2
+    starting_magnetization: 0.5
+  electrons:
+    conv_thr: 1.0e-8
+    mixing_beta: 0.3
+  cellParameters:
+    cardOption: 'angstrom'
+  kPoints:
+    cardOption: 'automatic'

@@ -11,7 +11,8 @@ flavors:
   nwchem_total_energy:
     isDefault: true
     input:
-      - name: nwchem_total_energy.inp
+      - name: nwchem_total_energy
+        fileName: nwchem_total_energy.inp
     results:
       - total_energy
       - total_energy_contributions
@@ -19,3 +20,8 @@ flavors:
       - standard_output
     applicationName: nwchem
     executableName: nwchem
+    contextProviders:
+      - name: NWChemInputDataManager
+    staticContext:
+      nwchem_total_energy:
+        title: 'Test'

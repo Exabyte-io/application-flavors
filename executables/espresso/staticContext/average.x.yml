@@ -1,0 +1,11 @@
+average: &average
+  fields:
+  - 1
+  - 'pp.dat'
+  - 1.0
+  - 3000
+  - 3
+  - 3.0000
+
+average_potential:
+  <<: *average

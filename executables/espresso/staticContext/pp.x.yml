@@ -1,0 +1,17 @@
+pp_density:
+  inputpp:
+    outdir: '{{ JOB_WORK_DIR }}/outdir'
+    prefix: '__prefix__'
+    filplot: 'pp.dat'
+    plot_num: 0
+  plot:
+    iflag: 3
+    output_format: 5
+    fileout: 'density.xsf'
+
+pp_electrostatic_potential:
+  inputpp:
+    outdir: '{{ JOB_WORK_DIR }}/outdir'
+    prefix: '__prefix__'
+    filplot: 'pp.dat'
+    plot_num: 11

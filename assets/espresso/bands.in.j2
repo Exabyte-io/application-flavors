@@ -1,0 +1,5 @@
+&BANDS
+{%- for key, value in bands %}
+    {{ typeCast(key, value) }}
+{%- endfor %}
+/

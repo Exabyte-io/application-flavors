@@ -5,10 +5,20 @@ results:
 flavors:
   projwfc:
     input:
-      - name: projwfc.in
+      - name: projwfc
+        fileName: projwfc.in
     results:
       - density_of_states
     monitors:
       - standard_output
     applicationName: espresso
     executableName: projwfc.x
+    contextProviders: []
+    staticContext:
+      projwfc:
+        !include 'executables/espresso/staticContext/projwfc.x.yml#/projwfc'
+    requiredKeys:
+      - projwfc.prefix
+      - projwfc.outdir
+      - projwfc.degauss
+      - projwfc.deltaE

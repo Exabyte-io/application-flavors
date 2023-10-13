@@ -1,0 +1,5 @@
+&inputhp
+{%- for key, value in inputhp %}
+    {{ typeCast(key, value) }}
+{%- endfor %}
+/

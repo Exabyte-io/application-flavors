@@ -1,0 +1,8 @@
+&INPUTPH
+{%- for key, value in inputph %}
+    {{ typeCast(key, value) }}
+{%- endfor %}
+/
+{% for point in qpath -%}
+{% for d in point.coordinates %}{{d}} {% endfor %}
+{% endfor %}

@@ -1,0 +1,14 @@
+ start nwchem
+ title {{ input.title }}
+ charge {{ input.charge }}
+ geometry units au noautosym
+ {{ input.atomicPositions }}
+ end
+ basis
+   * library {{ input.basis }}
+ end
+ dft
+ xc {{ input.functional }}
+ mult {{ input.mult }}
+ end
+ task dft energy

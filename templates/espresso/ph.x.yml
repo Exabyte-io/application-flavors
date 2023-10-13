@@ -23,7 +23,7 @@
   applicationName: espresso
   executableName: ph.x
 
-- content: !readFile 'assets/espresso/ph_x.in.j2'
+- content: !readFile 'assets/espresso/ph.in.j2'
   name: ph_single_irr_qpt.in
   applicationName: espresso
   executableName: ph.x

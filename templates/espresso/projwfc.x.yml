@@ -1,4 +1,4 @@
-- content: !readFile 'assets/espresso/projwfc_x.in.j2'
+- content: !readFile 'assets/espresso/projwfc.in.j2'
   name: projwfc.in
   applicationName: espresso
   executableName: projwfc.x

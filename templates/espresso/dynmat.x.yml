@@ -1,4 +1,4 @@
-- content: !readFile 'assets/espresso/matdyn_x.in.j2'
+- content: !readFile 'assets/espresso/matdyn.in.j2'
   name: dynmat_grid.in
   applicationName: espresso
   executableName: dynmat.x

@@ -17,3 +17,14 @@ flavors:
     staticContext:
       epsilon:
         !include 'executables/espresso/staticContent/epsilon.x.yml#/dielectric_tensor'
+    requiredKeys:
+      - inputpp.calculation
+      - inputpp.prefix
+      - inputpp.outdir
+      - energy_grid.smeartype
+      - energy_grid.intersmear
+      - energy_grid.intrasmear
+      - energy_grid.wmin
+      - energy_grid.wmax
+      - energy_grid.nw
+      - energy_grid.shift

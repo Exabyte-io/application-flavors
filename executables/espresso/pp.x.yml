@@ -15,7 +15,14 @@ flavors:
     staticContext:
       pp_density:
         !include 'executables/espresso/staticContent/pp.x.yml#/pp_density'
-
+    requiredKeys:
+      - inputpp.prefix
+      - inputpp.outdir
+      - inputpp.filplot
+      - inputpp.plot_num
+      - plot.iflag
+      - plot.output_format
+      - plot.fileout
 
   pp_electrostatic_potential:
     input:
@@ -30,3 +37,8 @@ flavors:
     staticContext:
       pp_electrostatic_potential:
         !include 'executables/espresso/staticContent/pp.x.yml#/pp_electrostatic_potential'
+    requiredKeys:
+      - inputpp.prefix
+      - inputpp.outdir
+      - inputpp.filplot
+      - inputpp.plot_num

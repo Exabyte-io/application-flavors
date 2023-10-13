@@ -17,3 +17,8 @@ flavors:
     staticContext:
       projwfc:
         !include 'executables/espresso/staticContext/projwfc.x.yml#/projwfc'
+    requiredKeys:
+      - projwfc.prefix
+      - projwfc.outdir
+      - projwfc.degauss
+      - projwfc.deltaE

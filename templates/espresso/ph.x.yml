@@ -1,29 +1,29 @@
-- content: !readFile 'assets/espresso/ph.x.in.j2'
+- content: !readFile 'assets/espresso/ph_x.in.j2'
   name: ph_grid.in
   applicationName: espresso
   executableName: ph.x
 
-- content: !readFile 'assets/espresso/ph.x.in.j2'
+- content: !readFile 'assets/espresso/ph_x.in.j2'
   name: ph_path.in
   applicationName: espresso
   executableName: ph.x
 
-- content: !readFile 'assets/espresso/ph.x.in.j2'
+- content: !readFile 'assets/espresso/ph_x.in.j2'
   name: ph_gamma.in
   applicationName: espresso
   executableName: ph.x
 
-- content: !readFile 'assets/espresso/ph.x.in.j2'
+- content: !readFile 'assets/espresso/ph_x.in.j2'
   name: ph_init_qpoints.in
   applicationName: espresso
   executableName: ph.x
 
-- content: !readFile 'assets/espresso/ph.x.in.j2'
+- content: !readFile 'assets/espresso/ph_x.in.j2'
   name: ph_grid_restart.in
   applicationName: espresso
   executableName: ph.x
 
-- content: !readFile 'assets/espresso/ph.x.in.j2'
+- content: !readFile 'assets/espresso/ph_x.in.j2'
   name: ph_single_irr_qpt.in
   applicationName: espresso
   executableName: ph.x

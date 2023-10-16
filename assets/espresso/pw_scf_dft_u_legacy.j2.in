@@ -24,9 +24,9 @@
     lda_plus_u = .true.
     lda_plus_u_kind = 0
     U_projection_type = 'ortho-atomic'
-    {% for row in hubbard_legacy -%}
+    {%- for row in hubbard_legacy %}
     Hubbard_U({{ row.atomicSpeciesIndex }}) = {{ row.hubbardUValue }}
-    {% endfor %}
+{%- endfor %}
 /
 &ELECTRONS
     diagonalization = 'david'

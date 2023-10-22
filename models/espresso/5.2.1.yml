@@ -4,6 +4,7 @@ Default:
     pw_scf:
       - path: /pb/qm/dft/ksdft/lda?functional=pz
       - path: /pb/qm/dft/ksdft/gga?functional=pbe
+      - path: /pb/qm/abin/gw/g0w0?functional=pbe&require=pb%2Fqm%2Fdft%2Fksdft%2Fgga%3Ffunctional%3Dpbe
     pw_scf_bands_hse:
       - path: /pb/qm/dft/ksdft/hybrid?functional=hse06
     pw_esm:

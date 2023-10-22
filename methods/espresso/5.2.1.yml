@@ -5,6 +5,7 @@ Default:
     pw_scf:
       - path: /qm/wf/none/pw/none
       - path: /qm/wf/none/smearing/gaussian
+      - path: /qm/wf/none/smearing/methfessel-paxton
       - regex: \/qm\/wf\/none\/psp\/(nc|us|paw)
       - path: /linalg/diag/none/davidson/none
 #      - regex: \/qm\/wf\/none\/tetrahedron\/.*

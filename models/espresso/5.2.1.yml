@@ -3,21 +3,27 @@ Default:
   pw.x:
     pw_scf:
       - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/lda?magnetization=true&functional=pz
       - path: /pb/qm/dft/ksdft/gga?functional=pbe
     pw_scf_bands_hse:
       - path: /pb/qm/dft/ksdft/hybrid?functional=hse06
     pw_esm:
       - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/lda?magnetization=true&functional=pz
       - path: /pb/qm/dft/ksdft/gga?functional=pbe
     pw_esm_relax:
       - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/lda?magnetization=true&functional=pz
       - path: /pb/qm/dft/ksdft/gga?functional=pbe
     pw_nscf:
       - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/lda?magnetization=true&functional=pz
       - path: /pb/qm/dft/ksdft/gga?functional=pbe
     pw_relax:
       - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/lda?magnetization=true&functional=pz
       - path: /pb/qm/dft/ksdft/gga?functional=pbe
     pw_vc-relax:
       - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/lda?magnetization=true&functional=pz
       - path: /pb/qm/dft/ksdft/gga?functional=pbe

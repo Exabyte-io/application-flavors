@@ -4,6 +4,7 @@
     - name: KGridFormDataManager
     - name: QEPWXInputDataManager
     - name: PlanewaveCutoffDataManager
+    - name: MagnetizationContextManager
   applicationName: espresso
   executableName: pw.x
 

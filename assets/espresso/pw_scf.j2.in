@@ -22,6 +22,8 @@
     ecutrho = {{ cutoffs.density }}
     occupations = 'smearing'
     degauss = 0.005
+    nspin = {{ magnetization.nSpin }}
+    tot_magnetization = {{ magnetization.totalMagnetization }}
 /
 &ELECTRONS
     diagonalization = 'david'

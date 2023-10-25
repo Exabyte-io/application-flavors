@@ -1,7 +1,7 @@
 &inputhp
     prefix = '__prefix__'
     outdir = {% raw %}'{{ JOB_WORK_DIR }}/outdir'{% endraw %}
-    {% for d in qgrid.dimensions -%}
+    {%- for d in qgrid.dimensions %}
     nq{{ loop.index }} = {{ d }}
-    {% endfor %}
+    {%- endfor %}
 /

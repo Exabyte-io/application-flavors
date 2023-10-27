@@ -1,4 +1,4 @@
-- content: !readFile 'assets/espresso/average.j2.in'
+- content: !readFile "assets/espresso/average.j2.in"
   name: average.in
   contextProviders: []
   applicationName: espresso

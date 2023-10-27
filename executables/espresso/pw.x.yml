@@ -94,7 +94,7 @@ flavors:
     applicationName: espresso
     executableName: pw.x
     supportedApplicationVersions:
-      - '7.2'
+      - "7.2"
 
   pw_scf_dft_u_legacy:
     input:
@@ -114,16 +114,16 @@ flavors:
     applicationName: espresso
     executableName: pw.x
     supportedApplicationVersions:
-      - '5.2.1'
-      - '5.4.0'
-      - '6.0.0'
-      - '6.3'
-      - '6.4.1'
-      - '6.5.0'
-      - '6.6.0'
-      - '6.7.0'
-      - '6.8.0'
-      - '7.0'
+      - "5.2.1"
+      - "5.4.0"
+      - "6.0.0"
+      - "6.3"
+      - "6.4.1"
+      - "6.5.0"
+      - "6.6.0"
+      - "6.7.0"
+      - "6.8.0"
+      - "7.0"
 
   pw_esm:
     input:

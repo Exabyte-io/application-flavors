@@ -1,4 +1,4 @@
-- content: !readFile 'assets/espresso/epsilon.j2.in'
+- content: !readFile "assets/espresso/epsilon.j2.in"
   name: epsilon.in
   contextProviders: []
   applicationName: espresso

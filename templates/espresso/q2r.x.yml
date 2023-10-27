@@ -1,4 +1,4 @@
-- content: !readFile 'assets/espresso/q2r.j2.in'
+- content: !readFile "assets/espresso/q2r.j2.in"
   name: q2r.in
   contextProviders: []
   applicationName: espresso

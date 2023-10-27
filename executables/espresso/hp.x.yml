@@ -11,5 +11,5 @@ flavors:
     applicationName: espresso
     executableName: hp.x
 supportedApplicationVersions:
-  - '7.0'
-  - '7.2'
+  - "7.0"
+  - "7.2"

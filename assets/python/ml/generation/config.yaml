@@ -1,4 +1,4 @@
-pyml_render_output_directory: '..'
+pyml_render_output_directory: ".."
 documentation_box_common_text:
   regression: >
     When then workflow is in Training mode, the model is trained
@@ -24,7 +24,7 @@ documentation_box_common_text:
     In k-means clustering, the labels are not provided ahead of
     time. Instead, one supplies the number of groups the algorithm
     should split the dataset into. Here, we set our own default of
-    4 groups (fewer than sklearn's default of 8). Otherwise, the
+    4 groups (fewer than sklearn"s default of 8). Otherwise, the
     default parameters of the clustering method are the same as
     in sklearn.
 

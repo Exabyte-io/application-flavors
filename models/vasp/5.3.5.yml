@@ -3,6 +3,7 @@ Default:
     vasp:
       - path: /pb/qm/dft/ksdft/lda?functional=pz
       - path: /pb/qm/dft/ksdft/gga?functional=pbe
+        isDefault: true
     vasp_bands:
       - path: /pb/qm/dft/ksdft/lda?functional=pz
       - path: /pb/qm/dft/ksdft/gga?functional=pbe
@@ -44,6 +45,7 @@ Non-collinear:
     vasp:
       - path: /pb/qm/dft/ksdft/lda?functional=pz
       - path: /pb/qm/dft/ksdft/gga?functional=pbe
+        isDefault: true
     vasp_bands:
       - path: /pb/qm/dft/ksdft/lda?functional=pz
       - path: /pb/qm/dft/ksdft/gga?functional=pbe
@@ -85,6 +87,7 @@ VTST:
     vasp:
       - path: /pb/qm/dft/ksdft/lda?functional=pz
       - path: /pb/qm/dft/ksdft/gga?functional=pbe
+        isDefault: true
     vasp_bands:
       - path: /pb/qm/dft/ksdft/lda?functional=pz
       - path: /pb/qm/dft/ksdft/gga?functional=pbe

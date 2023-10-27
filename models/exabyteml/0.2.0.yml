@@ -2,6 +2,8 @@ Default:
   train:
     train:
       - regex: \/st\/det\/ml\/.*
+      - path: /st/det/ml/re/none
+        isDefault: true
   score:
     score:
       - regex: \/st\/det\/ml\/.*

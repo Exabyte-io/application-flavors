@@ -1,11 +1,13 @@
 monitors:
   - standard_output
-results: []
+results:
+  - hubbard_parameters
 flavors:
   hp:
     input:
       - name: hp.in
-    results: []
+    results:
+      - hubbard_parameters
     monitors:
       - standard_output
     applicationName: espresso

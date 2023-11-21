@@ -83,7 +83,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
   publish-js-package:
-    needs: [run-py-tests, run-js-tests]
+    needs: [run-js-tests]
     runs-on: ubuntu-latest
     if: github.ref_name == 'dev'
 

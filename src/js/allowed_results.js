@@ -18,5 +18,5 @@ export default [
     "reaction_energy_profile",
     "potential_profile",
     "charge_density_profile",
-    "hubbard_parameters",
+    "hubbard_u",
 ];

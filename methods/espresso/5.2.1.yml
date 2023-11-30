@@ -16,3 +16,35 @@ Default:
       - path: /linalg/diag/none/davidson/none
 #      - regex: \/qm\/wf\/none\/tetrahedron\/.*
 #      - path: /opt/diff/ordern/cg/none
+GNU:
+  pw.x:
+    pw_scf:
+      - path: /qm/wf/none/pw/none
+      - path: /qm/wf/none/smearing/gaussian
+      - regex: \/qm\/wf\/none\/psp\/(nc|us|paw)
+      - path: /linalg/diag/none/davidson/none
+#      - regex: \/qm\/wf\/none\/tetrahedron\/.*
+#      - path: /opt/diff/ordern/cg/none
+    pw_scf_bands_hse:
+      - path: /qm/wf/none/pw/none
+      - path: /qm/wf/none/smearing/gaussian
+      - regex: \/qm\/wf\/none\/psp\/(nc|us|paw)
+      - path: /linalg/diag/none/davidson/none
+#      - regex: \/qm\/wf\/none\/tetrahedron\/.*
+#      - path: /opt/diff/ordern/cg/none
+Intel:
+  pw.x:
+    pw_scf:
+      - path: /qm/wf/none/pw/none
+      - path: /qm/wf/none/smearing/gaussian
+      - regex: \/qm\/wf\/none\/psp\/(nc|us|paw)
+      - path: /linalg/diag/none/davidson/none
+#      - regex: \/qm\/wf\/none\/tetrahedron\/.*
+#      - path: /opt/diff/ordern/cg/none
+    pw_scf_bands_hse:
+      - path: /qm/wf/none/pw/none
+      - path: /qm/wf/none/smearing/gaussian
+      - regex: \/qm\/wf\/none\/psp\/(nc|us|paw)
+      - path: /linalg/diag/none/davidson/none
+#      - regex: \/qm\/wf\/none\/tetrahedron\/.*
+#      - path: /opt/diff/ordern/cg/none

@@ -101,7 +101,6 @@ export function filterModelsByApplicationParameters({
         executable,
         flavor,
     });
-
     return filterEntityList({
         entitiesOrPaths: modelList,
         filterObjects,

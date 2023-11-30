@@ -27,3 +27,59 @@ Default:
       - path: /pb/qm/dft/ksdft/lda?functional=pz
       - path: /pb/qm/dft/ksdft/gga?functional=pbe
       - path: /pb/qm/dft/ksdft/gga?functional=pbesol
+GNU:
+  pw.x:
+    pw_scf:
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
+      - path: /pb/qm/dft/ksdft/gga?functional=pbesol
+    pw_scf_bands_hse:
+      - path: /pb/qm/dft/ksdft/hybrid?functional=hse06
+    pw_esm:
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
+      - path: /pb/qm/dft/ksdft/gga?functional=pbesol
+    pw_esm_relax:
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
+      - path: /pb/qm/dft/ksdft/gga?functional=pbesol
+    pw_nscf:
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
+      - path: /pb/qm/dft/ksdft/gga?functional=pbesol
+    pw_relax:
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
+      - path: /pb/qm/dft/ksdft/gga?functional=pbesol
+    pw_vc-relax:
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
+      - path: /pb/qm/dft/ksdft/gga?functional=pbesol
+Intel:
+  pw.x:
+    pw_scf:
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
+      - path: /pb/qm/dft/ksdft/gga?functional=pbesol
+    pw_scf_bands_hse:
+      - path: /pb/qm/dft/ksdft/hybrid?functional=hse06
+    pw_esm:
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
+      - path: /pb/qm/dft/ksdft/gga?functional=pbesol
+    pw_esm_relax:
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
+      - path: /pb/qm/dft/ksdft/gga?functional=pbesol
+    pw_nscf:
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
+      - path: /pb/qm/dft/ksdft/gga?functional=pbesol
+    pw_relax:
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
+      - path: /pb/qm/dft/ksdft/gga?functional=pbesol
+    pw_vc-relax:
+      - path: /pb/qm/dft/ksdft/lda?functional=pz
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe
+      - path: /pb/qm/dft/ksdft/gga?functional=pbesol

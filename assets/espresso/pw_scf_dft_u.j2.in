@@ -42,6 +42,6 @@ CELL_PARAMETERS angstrom
 K_POINTS automatic
 {% for d in kgrid.dimensions %}{{d}} {% endfor %}{% for s in kgrid.shifts %}{{s}} {% endfor %}
 HUBBARD {ortho-atomic}
-{% for row in hubbard -%}
+{% for row in hubbard_u -%}
 U {{ row.atomicSpecies }}-{{ row.atomicOrbital }} {{ row.hubbardUValue }}
 {% endfor -%}

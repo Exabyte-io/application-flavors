@@ -96,7 +96,7 @@
     - name: KGridFormDataManager
     - name: QEPWXInputDataManager
     - name: PlanewaveCutoffDataManager
-    - name: HubbardContextManager
+    - name: HubbardUContextManager
   applicationName: espresso
   executableName: pw.x
 

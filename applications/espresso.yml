@@ -1,7 +1,7 @@
 name: espresso
 shortName: qe
 summary: Quantum Espresso
-defaultVersion: '5.4.0'
+defaultVersion: '6.3'
 versions:
   #### version 5.2.1 ####
   - version: '5.2.1'

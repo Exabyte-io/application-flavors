@@ -96,7 +96,7 @@ flavors:
     supportedApplicationVersions:
       - '7.2'
 
-  pw_scf_dft_v:
+  pw_scf_dft_u+v:
     input:
       - name: pw_scf_dft_v.in
     results:
@@ -116,7 +116,7 @@ flavors:
     supportedApplicationVersions:
       - '7.2'
 
-  pw_scf_dft_j:
+  pw_scf_dft_u+j:
     input:
       - name: pw_scf_dft_j.in
     results:

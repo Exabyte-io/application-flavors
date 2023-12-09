@@ -12,12 +12,12 @@ jobs:
 
     steps:
       - name: Checkout this repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           lfs: true
 
       - name: Checkout actions repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           repository: Exabyte-io/actions
           token: ${{ secrets.BOT_GITHUB_TOKEN }}
@@ -38,12 +38,12 @@ jobs:
 #
 #    steps:
 #      - name: Checkout this repository
-#        uses: actions/checkout@v2
+#        uses: actions/checkout@v4
 #        with:
 #          lfs: true
 #
 #      - name: Checkout actions repository
-#        uses: actions/checkout@v2
+#        uses: actions/checkout@v4
 #        with:
 #          repository: Exabyte-io/actions
 #          token: ${{ secrets.BOT_GITHUB_TOKEN }}
@@ -66,12 +66,12 @@ jobs:
 
     steps:
       - name: Checkout this repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           lfs: true
 
       - name: Checkout actions repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           repository: Exabyte-io/actions
           token: ${{ secrets.BOT_GITHUB_TOKEN }}
@@ -91,12 +91,12 @@ jobs:
 
     steps:
       - name: Checkout this repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           lfs: true
 
       - name: Checkout actions repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           repository: Exabyte-io/actions
           token: ${{ secrets.BOT_GITHUB_TOKEN }}

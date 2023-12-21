@@ -45,3 +45,6 @@ HUBBARD {ortho-atomic}
 {% for row in hubbard_u -%}
 U {{ row.atomicSpecies }}-{{ row.atomicOrbital }} {{ row.hubbardUValue }}
 {% endfor -%}
+{% for row in hubbard_v -%}
+V {{ row.atomicSpecies }}-{{ row.atomicOrbital }} {{ row.atomicSpecies2 }}-{{ row.atomicOrbital2 }} {{ row.siteIndex }} {{ row.siteIndex2 }} {{ row.hubbardVValue }}
+{% endfor -%}

@@ -49,27 +49,35 @@ export function getFilterObjects({
     flavor = "",
 }) {
     let filterList;
+
+    // use previous version when the filterTree does not contain the version specified
     const version_ = safelyGet(filterTree, appName, version)
         ? version
         : getPreviousVersion(filterTree[appName], version);
 
+    // use Default build when the filterTree does not contain the build specified
+    const build_ =
+        !safelyGet(filterTree, appName, version_, build) &&
+        safelyGet(filterTree, appName, version_, "Default")
+            ? "Default"
+            : build;
     if (!appName) {
         filterList = mergeTerminalNodes(filterTree);
     } else if (!version_) {
         filterList = mergeTerminalNodes(safelyGet(filterTree, appName));
-    } else if (!build) {
+    } else if (!build_) {
         const branch =
             safelyGet(filterTree, appName, version_) ||
             getPreviousVersion(filterTree[appName], version_);
         filterList = mergeTerminalNodes(branch);
     } else if (!executable) {
-        filterList = mergeTerminalNodes(safelyGet(filterTree, appName, version_, build));
+        filterList = mergeTerminalNodes(safelyGet(filterTree, appName, version_, build_));
     } else if (!flavor) {
         filterList = mergeTerminalNodes(
-            safelyGet(filterTree, appName, version_, build, executable),
+            safelyGet(filterTree, appName, version_, build_, executable),
         );
     } else {
-        filterList = safelyGet(filterTree, appName, version_, build, executable, flavor);
+        filterList = safelyGet(filterTree, appName, version_, build_, executable, flavor);
     }
 
     return [].concat(extractUniqueBy(filterList, "path"), extractUniqueBy(filterList, "regex"));

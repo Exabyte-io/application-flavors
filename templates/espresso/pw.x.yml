@@ -96,7 +96,28 @@
     - name: KGridFormDataManager
     - name: QEPWXInputDataManager
     - name: PlanewaveCutoffDataManager
-    - name: HubbardContextManager
+    - name: HubbardUContextManager
+  applicationName: espresso
+  executableName: pw.x
+
+- content: !readFile 'assets/espresso/pw_scf_dft_v.j2.in'
+  name: pw_scf_dft_v.in
+  contextProviders:
+    - name: KGridFormDataManager
+    - name: QEPWXInputDataManager
+    - name: PlanewaveCutoffDataManager
+    - name: HubbardUContextManager
+    - name: HubbardVContextManager
+  applicationName: espresso
+  executableName: pw.x
+
+- content: !readFile 'assets/espresso/pw_scf_dft_j.j2.in'
+  name: pw_scf_dft_j.in
+  contextProviders:
+    - name: KGridFormDataManager
+    - name: QEPWXInputDataManager
+    - name: PlanewaveCutoffDataManager
+    - name: HubbardJContextManager
   applicationName: espresso
   executableName: pw.x
 

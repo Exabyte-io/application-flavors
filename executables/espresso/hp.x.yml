@@ -2,12 +2,16 @@ monitors:
   - standard_output
 results:
   - hubbard_u
+  - hubbard_v_nn
+  - hubbard_v
 flavors:
   hp:
     input:
       - name: hp.in
     results:
       - hubbard_u
+      - hubbard_v_nn
+      - hubbard_v
     monitors:
       - standard_output
     applicationName: espresso

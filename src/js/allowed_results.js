@@ -19,4 +19,6 @@ export default [
     "potential_profile",
     "charge_density_profile",
     "hubbard_u",
+    "hubbard_v_nn",
+    "hubbard_v",
 ];

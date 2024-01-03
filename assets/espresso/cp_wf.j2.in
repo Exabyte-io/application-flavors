@@ -10,9 +10,9 @@
     outdir = {% raw %}'{{ JOB_WORK_DIR }}/outdir'{% endraw %}
     prefix = 'cp_wf'
     pseudo_dir = {% raw %}'{{ JOB_WORK_DIR }}/pseudo'{% endraw %}
-    nstep = 100
+    nstep = {{ md.nstep }}
     iprint = 1
-    dt = 5.0
+    dt = {{ md.dt }}
 /
 &SYSTEM
     ibrav = {{ input.IBRAV }}
@@ -24,12 +24,12 @@
 &ELECTRONS
     electron_dynamics = 'verlet'
     electron_velocities = 'zero'
-    emass = 300.0
+    emass = {{ md.emass }}
 /
 &IONS
     ion_dynamics = 'verlet'
     ion_velocities = 'zero'
-    tempw = 300
+    tempw = {{ md.tempw }}
 /
 &CELL
 /

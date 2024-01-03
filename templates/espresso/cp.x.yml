@@ -1,11 +1,15 @@
 - content: !readFile 'assets/espresso/cp.j2.in'
   name: cp.in
-  contextProviders: []
+  contextProviders:
+    - name: QEPWXInputDataManager
+    - name: PlanewaveCutoffDataManager
   applicationName: espresso
   executableName: cp.x
 
 - content: !readFile 'assets/espresso/cp_wf.j2.in'
   name: cp_wf.in
-  contextProviders: []
+  contextProviders:
+    - name: QEPWXInputDataManager
+    - name: PlanewaveCutoffDataManager
   applicationName: espresso
   executableName: cp.x

@@ -3,11 +3,10 @@
 {% endif -%}
 &CONTROL
     calculation = 'cp-wf'
-    title = ''
     restart_mode = '{{ input.RESTART_MODE }}'
     tstress = .true.
     tprnfor = .true.
-    outdir = {% raw %}'{{ JOB_WORK_DIR }}/outdir'{% endraw %}
+    outdir = {% raw %}'{{ JOB_WORK_DIR }}'{% endraw %}
     prefix = 'cp_wf'
     pseudo_dir = {% raw %}'{{ JOB_WORK_DIR }}/pseudo'{% endraw %}
     nstep = {{ dynamics.numberOfSteps }}
@@ -19,10 +18,10 @@
     nat = {{ input.NAT }}
     ntyp = {{ input.NTYP }}
     ecutwfc = {{ cutoffs.wavefunction }}
-    ecutrho = {{ cutoffs.density }}
-    nr1b      = 20
-    nr2b      = 20
-    nr3b      = 20
+!    ecutrho = {{ cutoffs.density }}
+    nr1b = 20
+    nr2b = 20
+    nr3b = 20
 /
 &ELECTRONS
     electron_dynamics = 'verlet'
@@ -35,6 +34,16 @@
     tempw = {{ dynamics.temperature }}
 /
 &CELL
+/
+&WANNIER
+  nit = 60,
+  calwf = 3,
+  tolw = 1.D-6,
+  nsteps = 50,
+  adapt = .FALSE.
+  wfdt = 2.0D0,
+  wf_q = 500.D0,
+  wf_friction = 0.3d0,
 /
 ATOMIC_SPECIES
 {{ input.ATOMIC_SPECIES }}

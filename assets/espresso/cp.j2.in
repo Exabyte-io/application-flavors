@@ -20,6 +20,9 @@
     ntyp = {{ input.NTYP }}
     ecutwfc = {{ cutoffs.wavefunction }}
     ecutrho = {{ cutoffs.density }}
+    nr1b      = 20
+    nr2b      = 20
+    nr3b      = 20
 /
 &ELECTRONS
     electron_dynamics = 'verlet'

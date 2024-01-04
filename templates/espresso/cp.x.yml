@@ -3,7 +3,7 @@
   contextProviders:
     - name: QEPWXInputDataManager
     - name: PlanewaveCutoffDataManager
-    - name: MolDynContextProvider
+    - name: IonDynamicsContextProvider
   applicationName: espresso
   executableName: cp.x
 
@@ -12,6 +12,6 @@
   contextProviders:
     - name: QEPWXInputDataManager
     - name: PlanewaveCutoffDataManager
-    - name: MolDynContextProvider
+    - name: IonDynamicsContextProvider
   applicationName: espresso
   executableName: cp.x

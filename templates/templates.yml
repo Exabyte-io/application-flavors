@@ -1,4 +1,8 @@
 !flatten
+# deepmd
+- !include 'templates/deepmd/dp_prepare.py.yml'
+- !include 'templates/deepmd/dp_train.yml'
+# espresso
 - !include 'templates/espresso/average.x.yml'
 - !include 'templates/espresso/bands.x.yml'
 - !include 'templates/espresso/dos.x.yml'

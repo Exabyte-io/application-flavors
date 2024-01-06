@@ -1,0 +1,12 @@
+monitors:
+  - standard_output
+results: []
+flavors:
+  qe_cp_to_deepmd:
+    input:
+      - name: qe_cp_to_deepmd.py
+    results: []
+    monitors:
+      - standard_output
+    applicationName: deepmd
+    executableName: 'dp_prepare'  # python3 qe_cp_to_deepmd.py

@@ -4,6 +4,7 @@ monitors:
 results: []
 flavors:
   qe_cp_to_deepmd:
+    isDefault: true
     input:
       - name: qe_cp_to_deepmd.py
     results: []

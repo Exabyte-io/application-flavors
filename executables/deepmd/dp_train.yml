@@ -5,9 +5,9 @@ results: []
 flavors:
   dp_train_se_e2_r:
     input:
-      - name: dp_train_se_e2_r.josn
+      - name: dp_train_se_e2_r.json
     results: []
     monitors:
       - standard_output
     applicationName: deepmd
-    executableName: dp_train  # dp train dp_train_se_e2_r.josn && dp freeze -o graph.pb
+    executableName: dp_train  # dp train dp_train_se_e2_r.json && dp freeze -o graph.pb

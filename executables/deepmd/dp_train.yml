@@ -1,3 +1,4 @@
+isDefault: false
 monitors:
   - standard_output
 results: []

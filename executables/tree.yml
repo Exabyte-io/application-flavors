@@ -1,5 +1,5 @@
 deepmd:
-  dp_prepare: !include 'executables/deepmd/dp_prepare.py.yml'
+  dp_prepare: !include 'executables/deepmd/dp_prepare.yml'
   dp_train: !include 'executables/deepmd/dp_train.yml'
 espresso:
   average.x: !include 'executables/espresso/average.x.yml'

@@ -10,4 +10,4 @@ flavors:
     monitors:
       - standard_output
     applicationName: deepmd
-    executableName: 'dp_prepare'  # python3 qe_cp_to_deepmd.py
+    executableName: dp_prepare  # python3 qe_cp_to_deepmd.py

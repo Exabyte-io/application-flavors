@@ -11,6 +11,7 @@ export const allApplications = [
     "espresso",
     "jupyterLab",
     "exabyteml",
+    "deepmd",
     "nwchem",
     "python",
     "shell",

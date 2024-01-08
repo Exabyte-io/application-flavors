@@ -1,0 +1,11 @@
+- content: !readFile 'assets/deepmd/in.lammps'
+  name: in.lammps
+  contextProviders: []
+  applicationName: deepmd
+  executableName: dp_lmp
+
+- content: !readFile 'assets/deepmd/structure.lmp'
+  name: structure.lmp
+  contextProviders: []
+  applicationName: deepmd
+  executableName: dp_lmp

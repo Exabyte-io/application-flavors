@@ -5,8 +5,8 @@ results: []
 flavors:
   dp_lmp:
     input:
-      - in.lammps
-      - structure.lmp
+      - name: in.lammps
+      - name: structure.lmp
     results: []
     monitors:
       - standard_output

@@ -1,4 +1,5 @@
 deepmd:
+  dp_lmp: !include 'executables/deepmd/dp_lmp.yml'
   dp_prepare: !include 'executables/deepmd/dp_prepare.yml'
   dp_train: !include 'executables/deepmd/dp_train.yml'
 espresso:

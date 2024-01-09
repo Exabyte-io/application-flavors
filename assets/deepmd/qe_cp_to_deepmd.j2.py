@@ -2,7 +2,7 @@ import dpdata
 import numpy as np
 
 # https://docs.deepmodeling.com/projects/dpdata/en/master/formats/QECPTrajFormat.html
-data = dpdata.LabeledSystem("generate_dft_data", fmt="qe/cp/traj")
+data = dpdata.LabeledSystem("cp", fmt="qe/cp/traj")
 print("Dataset contains total {0} frames".format(len(data)))
 
 # randomly choose 20% index for validation_data

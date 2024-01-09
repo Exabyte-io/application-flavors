@@ -3,7 +3,7 @@ monitors:
   - standard_output
 results: []
 flavors:
-  dp_lmp:
+  lammps:
     input:
       - name: in.lammps
       - name: structure.lmp

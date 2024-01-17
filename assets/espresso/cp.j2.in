@@ -1,0 +1,43 @@
+{% if subworkflowContext.MATERIAL_INDEX %}
+{%- set input = input.perMaterial[subworkflowContext.MATERIAL_INDEX] -%}
+{% endif -%}
+&CONTROL
+    calculation = 'cp'
+    restart_mode = '{{ input.RESTART_MODE }}'
+    tstress = .true.
+    tprnfor = .true.
+    outdir = {% raw %}'{{ JOB_WORK_DIR }}'{% endraw %}
+    prefix = 'cp'
+    pseudo_dir = {% raw %}'{{ JOB_WORK_DIR }}/pseudo'{% endraw %}
+    nstep = {{ dynamics.numberOfSteps }}
+    iprint = 1
+    dt = {{ dynamics.timeStep }}
+/
+&SYSTEM
+    ibrav = {{ input.IBRAV }}
+    nat = {{ input.NAT }}
+    ntyp = {{ input.NTYP }}
+    ecutwfc = {{ cutoffs.wavefunction }}
+    ecutrho = {{ cutoffs.density }}
+    nr1b = 20
+    nr2b = 20
+    nr3b = 20
+/
+&ELECTRONS
+    electron_dynamics = 'verlet'
+    electron_velocities = 'zero'
+    emass = {{ dynamics.electronMass }}
+/
+&IONS
+    ion_dynamics = 'verlet'
+    ion_velocities = 'zero'
+    tempw = {{ dynamics.temperature }}
+/
+&CELL
+/
+ATOMIC_SPECIES
+{{ input.ATOMIC_SPECIES }}
+ATOMIC_POSITIONS crystal
+{{ input.ATOMIC_POSITIONS }}
+CELL_PARAMETERS angstrom
+{{ input.CELL_PARAMETERS }}

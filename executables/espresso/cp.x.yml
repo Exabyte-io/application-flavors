@@ -1,0 +1,21 @@
+monitors:
+  - standard_output
+results: []
+flavors:
+  cp:
+    input:
+      - name: cp.in
+    results: []
+    monitors:
+      - standard_output
+    applicationName: espresso
+    executableName: cp.x
+
+  cp_wf:
+    input:
+      - name: cp_wf.in
+    results: []
+    monitors:
+      - standard_output
+    applicationName: espresso
+    executableName: cp.x

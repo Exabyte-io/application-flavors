@@ -95,11 +95,6 @@ jobs:
         with:
           lfs: true
 
-      - name: Build assets
-        run: |
-          node build_filter_trees.js
-          node build_templates.js
-
       - name: Checkout actions repository
         uses: actions/checkout@v4
         with:

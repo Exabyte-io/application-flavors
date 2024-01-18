@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "Input file templates and related computational configuration parameters for the applications used in the platform.",
   "scripts": {
-    "prepublishOnly": "rm -rf lib; npm run transpile",
+    "prepublishOnly": "rm -rf lib; npm run transpile; node build_templates.js; node build_filter_trees.js",
     "postinstall": "npm run transpile",
     "transpile": "mkdir -p lib; babel src/js --out-dir lib/js",
     "test": "nyc --reporter=text mocha --require @babel/register tests",

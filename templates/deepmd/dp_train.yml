@@ -2,4 +2,4 @@
   name: dp_train_se_e2_r.json
   contextProviders: []
   applicationName: deepmd
-  executableName: dp_train
+  executableName: dp

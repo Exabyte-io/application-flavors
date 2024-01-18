@@ -2,4 +2,4 @@
   name: qe_cp_to_deepmd.py
   contextProviders: []
   applicationName: deepmd
-  executableName: dp_prepare
+  executableName: python

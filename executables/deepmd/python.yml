@@ -11,4 +11,14 @@ flavors:
     monitors:
       - standard_output
     applicationName: deepmd
-    executableName: dp_prepare  # python3 qe_cp_to_deepmd.py
+    executableName: python
+
+  qe_to_lmp_structure:
+    isDefault: true
+    input:
+      - name: qe_to_lmp_structure.py
+    results: []
+    monitors:
+      - standard_output
+    applicationName: deepmd
+    executableName: python

@@ -1,0 +1,5 @@
+- content: !readFile 'assets/deepmd/qe_to_lmp_structure.j2.py'
+  name: qe_to_lmp_structure.py
+  contextProviders: []
+  applicationName: deepmd
+  executableName: python

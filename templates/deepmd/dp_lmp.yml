@@ -2,10 +2,4 @@
   name: in.lammps
   contextProviders: []
   applicationName: deepmd
-  executableName: dp_lmp
-
-- content: !readFile 'assets/deepmd/system.lmp'
-  name: system.lmp
-  contextProviders: []
-  applicationName: deepmd
-  executableName: dp_lmp
+  executableName: lmp

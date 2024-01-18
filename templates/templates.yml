@@ -1,5 +1,6 @@
 !flatten
 # deepmd
+- !include 'templates/deepmd/dp_create_lmp_structure.py.yml'
 - !include 'templates/deepmd/dp_lmp.yml'
 - !include 'templates/deepmd/dp_prepare.py.yml'
 - !include 'templates/deepmd/dp_train.yml'

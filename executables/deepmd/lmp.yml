@@ -6,7 +6,6 @@ flavors:
   lammps:
     input:
       - name: in.lammps
-      - name: system.lmp
     results: []
     monitors:
       - standard_output

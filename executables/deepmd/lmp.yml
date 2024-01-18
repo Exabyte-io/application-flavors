@@ -10,4 +10,4 @@ flavors:
     monitors:
       - standard_output
     applicationName: deepmd
-    executableName: dp_lmp  # mpirun -np $NP lmp -in in.lammps
+    executableName: lmp  # mpirun -np $NP lmp -in in.lammps

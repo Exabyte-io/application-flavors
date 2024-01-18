@@ -14,7 +14,7 @@ flavors:
     executableName: python
 
   qe_to_lmp_structure:
-    isDefault: true
+    isDefault: false
     input:
       - name: qe_to_lmp_structure.py
     results: []

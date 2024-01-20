@@ -95,6 +95,7 @@ flavors:
     executableName: pw.x
     supportedApplicationVersions:
       - '7.2'
+      - '7.3'
 
   pw_scf_dft_u+v:
     input:
@@ -115,6 +116,7 @@ flavors:
     executableName: pw.x
     supportedApplicationVersions:
       - '7.2'
+      - '7.3'
 
   pw_scf_dft_u+j:
     input:
@@ -135,6 +137,7 @@ flavors:
     executableName: pw.x
     supportedApplicationVersions:
       - '7.2'
+      - '7.3'
 
   pw_scf_dft_u_legacy:
     input:

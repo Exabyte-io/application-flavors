@@ -27,8 +27,9 @@
     electron_dynamics = 'verlet'
     electron_velocities = 'zero'
     emass = {{ dynamics.electronMass }}
-    orthogonalization = 'ortho'
-    ortho_eps = 1d-11
+!! consider the below parameters if orthogonalization fails
+!   orthogonalization = 'ortho'
+!   ortho_eps = 1d-11
 /
 &IONS
     ion_dynamics = 'verlet'

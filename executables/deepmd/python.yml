@@ -3,20 +3,20 @@ monitors:
   - standard_output
 results: []
 flavors:
-  qe_cp_to_deepmd:
+  espresso_cp_to_deepmd:
     isDefault: true
     input:
-      - name: qe_cp_to_deepmd.py
+      - name: espresso_cp_to_deepmd.py
     results: []
     monitors:
       - standard_output
     applicationName: deepmd
     executableName: python
 
-  qe_to_lmp_structure:
+  espresso_to_lammps_structure:
     isDefault: false
     input:
-      - name: qe_to_lmp_structure.py
+      - name: espresso_to_lammps_structure.py
     results: []
     monitors:
       - standard_output

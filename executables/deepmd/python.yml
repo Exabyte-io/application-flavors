@@ -1,0 +1,24 @@
+isDefault: true
+monitors:
+  - standard_output
+results: []
+flavors:
+  espresso_cp_to_deepmd:
+    isDefault: true
+    input:
+      - name: espresso_cp_to_deepmd.py
+    results: []
+    monitors:
+      - standard_output
+    applicationName: deepmd
+    executableName: python
+
+  espresso_to_lammps_structure:
+    isDefault: false
+    input:
+      - name: espresso_to_lammps_structure.py
+    results: []
+    monitors:
+      - standard_output
+    applicationName: deepmd
+    executableName: python

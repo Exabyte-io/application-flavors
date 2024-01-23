@@ -1,0 +1,5 @@
+- content: !readFile 'assets/deepmd/dp_train_se_e2_r.j2.json'
+  name: dp_train_se_e2_r.json
+  contextProviders: []
+  applicationName: deepmd
+  executableName: dp

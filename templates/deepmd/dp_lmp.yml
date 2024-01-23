@@ -1,0 +1,5 @@
+- content: !readFile 'assets/deepmd/in.lammps'
+  name: in.lammps
+  contextProviders: []
+  applicationName: deepmd
+  executableName: lmp

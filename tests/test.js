@@ -81,6 +81,18 @@ describe("assets for all executables", () => {
         templates = getAllAppTemplates();
     });
 
+    it("exists at least 1 asset for each tree entry for deepmd tree", () => {
+        const tree = APP_TREE.deepmd;
+
+        Object.keys(tree).forEach((treeItemName) => {
+            const treeItemTemplates = templates.filter(
+                (template) => template.executableName === treeItemName,
+            );
+
+            assert(treeItemTemplates.length > 0);
+        });
+    });
+
     it("exists at least 1 asset for each tree entry for espresso tree", () => {
         const tree = APP_TREE.espresso;
 

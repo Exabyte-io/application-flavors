@@ -1,0 +1,5 @@
+- content: !readFile 'assets/deepmd/espresso_cp_to_deepmd.j2.py'
+  name: espresso_cp_to_deepmd.py
+  contextProviders: []
+  applicationName: deepmd
+  executableName: python

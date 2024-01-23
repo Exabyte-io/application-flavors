@@ -1,0 +1,13 @@
+isDefault: false
+monitors:
+  - standard_output
+results: []
+flavors:
+  lammps_md:
+    input:
+      - name: in.lammps
+    results: []
+    monitors:
+      - standard_output
+    applicationName: deepmd
+    executableName: lmp  # mpirun -np $NP lmp -in in.lammps

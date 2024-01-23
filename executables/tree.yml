@@ -1,3 +1,7 @@
+deepmd:
+  dp: !include 'executables/deepmd/dp.yml'
+  lmp: !include 'executables/deepmd/lmp.yml'
+  python: !include 'executables/deepmd/python.yml'
 espresso:
   average.x: !include 'executables/espresso/average.x.yml'
   bands.x: !include 'executables/espresso/bands.x.yml'

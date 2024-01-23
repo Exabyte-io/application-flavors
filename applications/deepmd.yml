@@ -1,0 +1,7 @@
+name: deepmd
+shortName: deepmd
+summary: DeePMD
+defaultVersion: '2.0.2'
+versions:
+  - version: '2.0.2'
+    isDefault: true

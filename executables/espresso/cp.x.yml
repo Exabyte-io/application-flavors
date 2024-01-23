@@ -3,6 +3,7 @@ monitors:
 results: []
 flavors:
   cp:
+    isDefault: true
     input:
       - name: cp.in
     results: []

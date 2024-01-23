@@ -95,3 +95,15 @@ versions:
     isDefault: false
     build: GNU
     hasAdvancedComputeOptions: true
+  #### version 7.3 ####
+  - version: '7.3'
+    isDefault: true
+    hasAdvancedComputeOptions: true
+  - version: '7.3'
+    isDefault: false
+    build: Intel
+    hasAdvancedComputeOptions: true
+  - version: '7.3'
+    isDefault: false
+    build: GNU
+    hasAdvancedComputeOptions: true

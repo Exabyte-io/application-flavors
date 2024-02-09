@@ -7,6 +7,7 @@ import lodash from "lodash";
 
 import { models as applicationModelMap } from "./data/filter_trees";
 import { AnyObject } from "@exabyte-io/code.js/dist/entity/in_memory";
+import { FilterObject } from "@exabyte-io/code.js/dist/utils/filter";
 
 /**
  * Extract unique filter objects by name of key.
@@ -130,9 +131,10 @@ export function filterModelsByApplicationParameters({
         build,
         executable,
         flavor,
-    });
+    }) as FilterObject[];
+
     return filterEntityList({
         entitiesOrPaths: modelList,
         filterObjects,
-    });
+    }) as {path: string}[];
 }

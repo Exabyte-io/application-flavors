@@ -53,7 +53,9 @@ export type ExecutableTreeData = {
     flavors: Record<string, FlavorTreeData>;
 };
 
-export type ApplicationTreeData = Record<AllowedApplications, ExecutableTreeData>;
+export type ApplicationTreeData = {
+    [key in AllowedApplications]: Record<string, ExecutableTreeData>;
+};
 
 /*
  * This function reads a yml asset from the file system and writes it to the target path as json under the given dataKey.
@@ -61,20 +63,17 @@ export type ApplicationTreeData = Record<AllowedApplications, ExecutableTreeData
  * @param targetPath - The path to the target file.
  * @param dataKey - The key to use for the data in the target file.
  */
-function buildAsset<T, K extends string = string>({
+function buildAsset<T>({
     assetPath,
     targetPath,
     dataKey,
 }: {
     assetPath: fs.PathOrFileDescriptor;
     targetPath: fs.PathOrFileDescriptor;
-    dataKey: K;
-}): Record<K, T> {
+    dataKey: string;
+}): T {
     const fileContent = fs.readFileSync(assetPath);
-    const obj = yaml.load(fileContent.toString(), { schema: JsYamlAllSchemas }) as Record<
-        K,
-        T
-    >;
+    const obj = yaml.load(fileContent.toString(), { schema: JsYamlAllSchemas }) as T;
     const ignore = "/* eslint-disable */\n";
     fs.writeFileSync(
         targetPath,
@@ -85,19 +84,19 @@ function buildAsset<T, K extends string = string>({
     return obj;
 }
 
-buildAsset<TemplateData, "allTemplates">({
+buildAsset<TemplateData>({
     assetPath: "./templates/templates.yml",
     targetPath: "./src/js/data/templates.js",
     dataKey: "allTemplates",
 });
 
-buildAsset<ApplicationData, "applicationData">({
+buildAsset<ApplicationData>({
     assetPath: "./applications/application_data.yml",
     targetPath: "./src/js/data/application_data.js",
     dataKey: "applicationData",
 });
 
-buildAsset<ApplicationTreeData, "applicationTree">({
+buildAsset<ApplicationTreeData>({
     assetPath: "./executables/tree.yml",
     targetPath: "./src/js/data/tree.js",
     dataKey: "applicationTree",

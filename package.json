@@ -6,7 +6,7 @@
     "prepublishOnly": "rm -rf lib; npm run transpile; node lib/js/build_templates.js; node build_filter_trees.js",
     "postinstall": "npm run transpile",
     "transpile": "tsc",
-    "test": "nyc --reporter=text mocha --require @babel/register tests",
+    "test": "nyc --reporter=text mocha --recursive --bail -require ts-node/register --require './tests'",
     "build:assets": "tsc; node lib/js/build_templates.js; node lib/js/build_filter_trees.js",
     "lint": "eslint src/js tests && prettier --write src/js tests",
     "lint:fix": "eslint --fix --cache src/js tests && prettier --write src/js tests",

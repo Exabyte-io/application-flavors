@@ -50,11 +50,17 @@ export type ExecutableTreeData = {
     postProcessors?: AllowedPostProcessors[];
     isDefault?: boolean;
     hasAdvancedComputeOptions?: boolean;
-    flavors: Record<string, FlavorTreeData>;
+    flavors: {
+        [key: string]: FlavorTreeData;
+    };
 };
 
 export type ApplicationTreeData = {
-    [key in AllowedApplications]: Record<string, ExecutableTreeData>;
+    [key: string]: ExecutableTreeData;
+};
+
+export type ApplicationTree = {
+    [key in AllowedApplications]: ApplicationTreeData
 };
 
 /*
@@ -96,7 +102,7 @@ buildAsset<ApplicationData>({
     dataKey: "applicationData",
 });
 
-buildAsset<ApplicationTreeData>({
+buildAsset<ApplicationTree>({
     assetPath: "./executables/tree.yml",
     targetPath: "./src/js/data/tree.js",
     dataKey: "applicationTree",

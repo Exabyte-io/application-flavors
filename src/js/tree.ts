@@ -1,5 +1,5 @@
-import { AllowedApplications, ExecutableTreeData } from ".";
-import { ApplicationTreeData } from "./build_templates";
+import { AllowedApplications } from ".";
+import { ApplicationTree } from "./build_templates";
 import { applicationTree } from "./data/tree";
 
 /**
@@ -7,9 +7,10 @@ import { applicationTree } from "./data/tree";
  *          Expands and caches the tree to contain parent level attributes for flavors.
  */
 export function getAppTree(appName: AllowedApplications) {
-    if (!(appName in applicationTree)) {
+    const appTree = applicationTree as ApplicationTree;
+    if (!(appName in appTree)) {
         throw new Error(`${appName} is not a known application with a tree.`);
     }
 
-    return applicationTree[appName];
+    return appTree[appName];
 }

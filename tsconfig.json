@@ -18,12 +18,12 @@
       "types": ["node"]
     },
     "include": [
-      "src/js/**/*"
+      "src/js/**/*",
+      "src/js/data.ts"
     ],
     "exclude": [
       "node_modules",
       "lib",
-      "src/js/data"
     ],
     "ts-node": {
       "files": true,

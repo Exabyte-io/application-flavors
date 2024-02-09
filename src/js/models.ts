@@ -6,26 +6,27 @@ import {
 import lodash from "lodash";
 
 import { models as applicationModelMap } from "./data/filter_trees";
+import { AnyObject } from "@exabyte-io/code.js/dist/entity/in_memory";
 
 /**
  * Extract unique filter objects by name of key.
  * @param {Array<{path: string}|{regex: string}>} filterObjects - List of filter objects
  * @param {string} name - Name of object key
  */
-function extractUniqueBy(filterObjects, name) {
+function extractUniqueBy(filterObjects: any, name: string) {
     return lodash
         .chain(filterObjects)
         .filter(Boolean)
-        .filter((o) => Boolean(o[name]))
+        .filter((o: AnyObject) => Boolean(o[name]))
         .uniqBy(name)
         .value();
 }
 
-function safelyGet(obj, ...args) {
+function safelyGet(obj: AnyObject, ...args: any[]) {
     return lodash.get(obj, args, undefined);
 }
 
-function getPreviousVersion(obj, version) {
+function getPreviousVersion(obj: any, version: string) {
     const availableVersions = obj ? Object.keys(obj) : [];
     return findPreviousVersion(availableVersions, version) || "";
 }
@@ -47,6 +48,14 @@ export function getFilterObjects({
     build = "",
     executable = "",
     flavor = "",
+}: {
+    filterTree: any;
+    appName: string;
+    version: string;
+    build: string;
+    executable: string;
+    flavor: string;
+
 }) {
     let filterList;
 
@@ -64,22 +73,27 @@ export function getFilterObjects({
     if (!appName) {
         filterList = mergeTerminalNodes(filterTree);
     } else if (!version_) {
+        // @ts-ignore
         filterList = mergeTerminalNodes(safelyGet(filterTree, appName));
     } else if (!build_) {
         const branch =
             safelyGet(filterTree, appName, version_) ||
             getPreviousVersion(filterTree[appName], version_);
+        // @ts-ignore
         filterList = mergeTerminalNodes(branch);
     } else if (!executable) {
+        // @ts-ignore
         filterList = mergeTerminalNodes(safelyGet(filterTree, appName, version_, build_));
     } else if (!flavor) {
         filterList = mergeTerminalNodes(
+            // @ts-ignore
             safelyGet(filterTree, appName, version_, build_, executable),
         );
     } else {
         filterList = safelyGet(filterTree, appName, version_, build_, executable, flavor);
     }
 
+    // @ts-ignore
     return [].concat(extractUniqueBy(filterList, "path"), extractUniqueBy(filterList, "regex"));
 }
 
@@ -100,6 +114,14 @@ export function filterModelsByApplicationParameters({
     build,
     executable,
     flavor,
+}: {
+    modelList: any[];
+    appName: string;
+    version: string;
+    build: string;
+    executable: string;
+    flavor: string;
+
 }) {
     const filterObjects = getFilterObjects({
         filterTree: applicationModelMap,

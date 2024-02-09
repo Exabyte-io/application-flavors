@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "description": "Input file templates and related computational configuration parameters for the applications used in the platform.",
   "scripts": {
-    "prepublishOnly": "rm -rf lib; npm run transpile; node build_templates.js; node build_filter_trees.js",
+    "prepublishOnly": "rm -rf lib; npm run transpile; node lib/js/build_templates.js; node build_filter_trees.js",
     "postinstall": "npm run transpile",
-    "transpile": "mkdir -p lib; babel src/js --out-dir lib/js",
+    "transpile": "tsc",
     "test": "nyc --reporter=text mocha --require @babel/register tests",
-    "build:assets": "node build_templates.js; node build_filter_trees.js",
+    "build:assets": "tsc; node lib/js/build_templates.js; node lib/js/build_filter_trees.js",
     "lint": "eslint src/js tests && prettier --write src/js tests",
     "lint:fix": "eslint --fix --cache src/js tests && prettier --write src/js tests",
     "prettier": "prettier --check src/js tests",
@@ -25,12 +25,14 @@
   },
   "homepage": "https://github.com/Exabyte-io/application-flavors",
   "devDependencies": {
-    "@exabyte-io/eslint-config": "^2022.11.17-0",
     "@exabyte-io/code.js": "2023.11.22-0",
+    "@exabyte-io/eslint-config": "^2022.11.17-0",
+    "@types/node": "^20.11.17",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
     "chai": "^4.3.4",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^19.0.2",
-    "eslint-config-mat3ra": "git+https://github.com/Exabyte-io/eslint-config-mat3ra.git#feat/SOF-6397",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-jsdoc": "^37.1.0",
@@ -56,6 +58,7 @@
     "@babel/register": "7.16.0",
     "js-yaml": "^4.1.0",
     "lodash": "^4.17.21",
+    "typescript": "^5.3.3",
     "underscore": "^1.12.1",
     "underscore.string": "^3.3.4"
   },
@@ -65,9 +68,5 @@
   "engines": {
     "node": ">=12.0",
     "npm": ">=6.4.1"
-  },
-  "lint-staged": {
-    "*.js": "eslint --cache --fix",
-    "*.{js,css}": "prettier --write"
   }
 }

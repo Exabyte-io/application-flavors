@@ -44,7 +44,7 @@ describe("allowedPostProcessors", () => {
 });
 
 describe("loadApplicationTemplates", () => {
-    const ALL_INPUT_TEMPLATES = loadApplicationTemplates();
+    const ALL_INPUT_TEMPLATES = loadApplicationTemplates("./templates/templates.yml");
     assert(Array.isArray(ALL_INPUT_TEMPLATES));
     assert(ALL_INPUT_TEMPLATES.length > 0);
     it("has all required keys in each element", () => {
@@ -58,9 +58,9 @@ describe("loadApplicationTemplates", () => {
 });
 
 describe("loadApplicationExecutableFlavorTree", () => {
-    let APP_TREE;
+    let APP_TREE: typeof applicationExecutableFlavorTree;
     before(() => {
-        APP_TREE = loadApplicationExecutableFlavorTree();
+        APP_TREE = loadApplicationExecutableFlavorTree("./executables/tree.yml");
     });
 
     it("returns valid tree", () => {
@@ -79,7 +79,7 @@ describe("getApplicationExecutableFlavorData", () => {
 
 describe("loadApplicationVersionBuildTree", () => {
     it("returns results", () => {
-        const { nwchem } = loadApplicationVersionBuildTree();
+        const { nwchem } = loadApplicationVersionBuildTree("./applications/application_data.yml");
         assert("name" in nwchem);
         assert(nwchem.name === "nwchem");
     });
@@ -97,8 +97,8 @@ describe("getApplicationVersionBuildData", () => {
 describe("assets for all executables", () => {
     let APP_TREE: typeof applicationExecutableFlavorTree, templates: typeof allTemplates;
     before(() => {
-        APP_TREE = loadApplicationExecutableFlavorTree();
-        templates = loadApplicationTemplates();
+        APP_TREE = loadApplicationExecutableFlavorTree("./executables/tree.yml");
+        templates = loadApplicationTemplates("./templates/templates.yml");
     });
 
     it("exists at least 1 asset for each tree entry for deepmd tree", () => {

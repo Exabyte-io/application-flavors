@@ -13,9 +13,6 @@
     "parserOptions": {
         "ecmaVersion": 2020,
         "sourceType": "module",
-        "allowImportExportEverywhere": true,
-        "babelOptions": {
-            "configFile": "./src/application/.babelrc"
-        }
-    },
+        "allowImportExportEverywhere": true
+    }
 }

@@ -15,7 +15,7 @@
     "outDir": "./lib/js",
     "baseUrl": "./",
     "rootDir": "./src/js",
-    "types": ["node"]
+    "types": ["node", "mocha"]
   },
   "include": [
     "src/js/**/*",

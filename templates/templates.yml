@@ -23,6 +23,7 @@
 - !include 'templates/espresso/pw.x.yml'
 - !include 'templates/espresso/pw4gww.x.yml'
 - !include 'templates/espresso/q2r.x.yml'
+- !include 'templates/espresso/simple.x.yml'
 # jupyterLab
 - !include 'templates/jupyterLab/jupyter.yml'
 # nwchem

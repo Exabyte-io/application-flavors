@@ -9,7 +9,7 @@ export {
     loadApplicationExecutableFlavorTree
 } from "./assets";
 
-export { getApplicationExecutableFlavorTree } from "./tree";
+export { getApplicationExecutableFlavorData } from "./tree";
 export { getApplicationVersionBuildData } from "./data";
 export { allTemplates } from "./data/templates";
 export { applicationVersionBuildTree } from "./data/application_data";

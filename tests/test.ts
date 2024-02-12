@@ -9,9 +9,18 @@ import {
     loadApplicationVersionBuildTree,
     loadApplicationTemplates,
     loadApplicationExecutableFlavorTree,
-    getApplicationExecutableFlavorTree,
     getApplicationVersionBuildData,
+    allowedPostProcessors,
+    allowedApplications,
+    getApplicationExecutableFlavorData,
 } from "../src/js/index";
+
+describe("allowedApplications", () => {
+    it("should not be empty", () => {
+        assert(Array.isArray(allowedApplications));
+        assert(allowedApplications.length > 0);
+    });
+});
 
 describe("allowedResults", () => {
     it("should not be empty", () => {
@@ -27,7 +36,14 @@ describe("allowedMonitors", () => {
     });
 });
 
-describe("ALL_INPUT_TEMPLATES", () => {
+describe("allowedPostProcessors", () => {
+    it("should not be empty", () => {
+        assert(allowedPostProcessors instanceof Object);
+        assert(Object.keys(allowedPostProcessors).length > 0);
+    });
+});
+
+describe("loadApplicationTemplates", () => {
     const ALL_INPUT_TEMPLATES = loadApplicationTemplates();
     assert(Array.isArray(ALL_INPUT_TEMPLATES));
     assert(ALL_INPUT_TEMPLATES.length > 0);
@@ -41,7 +57,7 @@ describe("ALL_INPUT_TEMPLATES", () => {
     });
 });
 
-describe("getAllAppTree", () => {
+describe("loadApplicationExecutableFlavorTree", () => {
     let APP_TREE;
     before(() => {
         APP_TREE = loadApplicationExecutableFlavorTree();
@@ -52,16 +68,16 @@ describe("getAllAppTree", () => {
     });
 });
 
-describe("getApplicationExecutableFlavorTree", () => {
+describe("getApplicationExecutableFlavorData", () => {
     it("raises on unknown application", () => {
         expect(() => {
             // @ts-expect-error
-            getApplicationExecutableFlavorTree("unknown_app");
+            getApplicationExecutableFlavorData("unknown_app");
         }).to.throw("unknown_app is not a known application with a tree.");
     });
 });
 
-describe("getAllAppData", () => {
+describe("loadApplicationVersionBuildTree", () => {
     it("returns results", () => {
         const { nwchem } = loadApplicationVersionBuildTree();
         assert("name" in nwchem);
@@ -69,7 +85,7 @@ describe("getAllAppData", () => {
     });
 });
 
-describe("getAppData", () => {
+describe("getApplicationVersionBuildData", () => {
     it("raises on unknown application", () => {
         expect(() => {
             // @ts-expect-error

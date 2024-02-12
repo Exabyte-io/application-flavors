@@ -1,3 +1,15 @@
 {
-    "extends": ["@exabyte-io/eslint-config"]
+    "parser": "@typescript-eslint/parser",
+    "extends": ["@exabyte-io/eslint-config"],
+    "ignorePatterns": ["lib/"],
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [".js", ".ts"]
+            }
+        }
+    }
 }

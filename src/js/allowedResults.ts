@@ -1,4 +1,4 @@
-export default [
+const allowedResults = [
     "atomic_forces",
     "band_gaps",
     "band_structure",
@@ -21,4 +21,8 @@ export default [
     "hubbard_u",
     "hubbard_v_nn",
     "hubbard_v",
-];
+] as  const;
+
+export default allowedResults;
+
+export type AllowedResults = typeof allowedResults[number];

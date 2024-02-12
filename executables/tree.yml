@@ -3,6 +3,7 @@ deepmd:
   lmp: !include 'executables/deepmd/lmp.yml'
   python: !include 'executables/deepmd/python.yml'
 espresso:
+  abcoeff_to_eps.x: !include 'executables/espresso/abcoeff_to_eps.x.yml'
   average.x: !include 'executables/espresso/average.x.yml'
   bands.x: !include 'executables/espresso/bands.x.yml'
   cp.x: !include 'executables/espresso/cp.x.yml'

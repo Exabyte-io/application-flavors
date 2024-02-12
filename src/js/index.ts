@@ -3,7 +3,11 @@ import { type AllowedMonitors, allowedMonitors } from "./allowedMonitors";
 import { type AllowedPostProcessors, allowedPostProcessors } from "./allowedPostProcessors";
 import { type AllowedResults, allowedResults } from "./allowedResults";
 
-export { getAllAppTemplates, getAllAppData, getAllAppTree } from "./assets";
+export {
+    loadApplicationTemplates,
+    loadApplicationVersionBuildTree,
+    loadApplicationExecutableFlavorTree
+} from "./assets";
 
 export { getApplicationExecutableFlavorTree } from "./tree";
 export { getApplicationVersionBuildData } from "./data";

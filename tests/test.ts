@@ -6,9 +6,9 @@ import {
     allowedMonitors,
     allowedResults,
     applicationExecutableFlavorTree,
-    getAllAppData,
-    getAllAppTemplates,
-    getAllAppTree,
+    loadApplicationVersionBuildTree,
+    loadApplicationTemplates,
+    loadApplicationExecutableFlavorTree,
     getApplicationExecutableFlavorTree,
     getApplicationVersionBuildData,
 } from "../src/js/index";
@@ -28,7 +28,7 @@ describe("allowedMonitors", () => {
 });
 
 describe("ALL_INPUT_TEMPLATES", () => {
-    const ALL_INPUT_TEMPLATES = getAllAppTemplates();
+    const ALL_INPUT_TEMPLATES = loadApplicationTemplates();
     assert(Array.isArray(ALL_INPUT_TEMPLATES));
     assert(ALL_INPUT_TEMPLATES.length > 0);
     it("has all required keys in each element", () => {
@@ -44,7 +44,7 @@ describe("ALL_INPUT_TEMPLATES", () => {
 describe("getAllAppTree", () => {
     let APP_TREE;
     before(() => {
-        APP_TREE = getAllAppTree();
+        APP_TREE = loadApplicationExecutableFlavorTree();
     });
 
     it("returns valid tree", () => {
@@ -63,7 +63,7 @@ describe("getApplicationExecutableFlavorTree", () => {
 
 describe("getAllAppData", () => {
     it("returns results", () => {
-        const { nwchem } = getAllAppData();
+        const { nwchem } = loadApplicationVersionBuildTree();
         assert("name" in nwchem);
         assert(nwchem.name === "nwchem");
     });
@@ -81,8 +81,8 @@ describe("getAppData", () => {
 describe("assets for all executables", () => {
     let APP_TREE: typeof applicationExecutableFlavorTree, templates: typeof allTemplates;
     before(() => {
-        APP_TREE = getAllAppTree();
-        templates = getAllAppTemplates();
+        APP_TREE = loadApplicationExecutableFlavorTree();
+        templates = loadApplicationTemplates();
     });
 
     it("exists at least 1 asset for each tree entry for deepmd tree", () => {

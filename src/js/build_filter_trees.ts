@@ -4,8 +4,8 @@ import yaml from "js-yaml";
 import lodash from "lodash";
 import { JsYamlAllSchemas, createObjectPathFromFilePath, getDirectories, getFilesInDirectory} from "@exabyte-io/code.js/dist/utils";
 
-const MODEL_ASSET_PATH = path.resolve(__dirname, "../..models");
-const METHOD_ASSET_PATH = path.resolve(__dirname, "../..methods");
+const MODEL_ASSET_PATH = path.resolve(__dirname, "../../models");
+const METHOD_ASSET_PATH = path.resolve(__dirname, "../../methods");
 const MODEL_FILTER_TREE = {};
 const METHOD_FILTER_TREE = {};
 

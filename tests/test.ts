@@ -2,13 +2,15 @@ import assert from "assert";
 import { expect } from "chai";
 
 import {
+    allTemplates,
     allowedMonitors,
     allowedResults,
+    applicationExecutableFlavorTree,
     getAllAppData,
     getAllAppTemplates,
     getAllAppTree,
-    getAppData,
-    getAppTree,
+    getApplicationExecutableFlavorTree,
+    getApplicationVersionBuildData,
 } from "../src/js/index";
 
 describe("allowedResults", () => {
@@ -50,10 +52,11 @@ describe("getAllAppTree", () => {
     });
 });
 
-describe("getAppTree", () => {
+describe("getApplicationExecutableFlavorTree", () => {
     it("raises on unknown application", () => {
         expect(() => {
-            getAppTree("unknown_app");
+            // @ts-expect-error
+            getApplicationExecutableFlavorTree("unknown_app");
         }).to.throw("unknown_app is not a known application with a tree.");
     });
 });
@@ -69,13 +72,14 @@ describe("getAllAppData", () => {
 describe("getAppData", () => {
     it("raises on unknown application", () => {
         expect(() => {
-            getAppData("unknown_app");
+            // @ts-expect-error
+            getApplicationVersionBuildData("unknown_app");
         }).to.throw("unknown_app is not a known application with data.");
     });
 });
 
 describe("assets for all executables", () => {
-    let APP_TREE, templates;
+    let APP_TREE: typeof applicationExecutableFlavorTree, templates: typeof allTemplates;
     before(() => {
         APP_TREE = getAllAppTree();
         templates = getAllAppTemplates();

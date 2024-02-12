@@ -21,7 +21,7 @@ function buildAsset({
     const ignore = "/* eslint-disable */\n";
     fs.writeFileSync(
         targetPath,
-        ignore + `export const ${dataKey} = {${JSON.stringify(obj)} as const;\nexport default ${dataKey};`,
+        ignore + `export const ${dataKey} = ${JSON.stringify(obj)} as const;\nexport default ${dataKey};`,
         "utf8",
     );
     console.log(`Written asset "${assetPath}" to "${targetPath}"`);
@@ -29,18 +29,18 @@ function buildAsset({
 
 buildAsset({
     assetPath: "./templates/templates.yml",
-    targetPath: "./data/templates.ts",
+    targetPath: "src/js/data/templates.ts",
     dataKey: "allTemplates",
 });
 
 buildAsset({
     assetPath: "./applications/application_data.yml",
-    targetPath: "./data/application_data.ts",
+    targetPath: "src/js/data/application_data.ts",
     dataKey: "applicationVersionBuildTree",
 });
 
 buildAsset({
     assetPath: "./executables/tree.yml",
-    targetPath: "./data/tree.ts",
+    targetPath: "src/js/data/tree.ts",
     dataKey: "applicationExecutableFlavorTree",
 });

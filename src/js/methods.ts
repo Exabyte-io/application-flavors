@@ -2,7 +2,6 @@ import { filterEntityList } from "@exabyte-io/code.js/dist/utils";
 
 import filterTree from "./data/filter_trees";
 import { getFilterObjects } from "./models";
-import { filter } from "lodash";
 import { PathObject } from "@exabyte-io/code.js/dist/utils/filter";
 
 export function filterMethodsByApplicationParameters<T extends PathObject[]>({
@@ -15,10 +14,10 @@ export function filterMethodsByApplicationParameters<T extends PathObject[]>({
 }: {
     methodList: T;
     appName: string;
-    version: string;
-    build: string;
-    executable: string;
-    flavor: string;
+    version?: string;
+    build?: string;
+    executable?: string;
+    flavor?: string;
 }) {
     const filterObjects = getFilterObjects({
         filterTree: filterTree.methods,

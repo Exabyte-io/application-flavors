@@ -58,10 +58,10 @@ export function getFilterObjects({
 }: {
     filterTree: any;
     appName: string;
-    version: string;
-    build: string;
-    executable: string;
-    flavor: string;
+    version?: string;
+    build?: string;
+    executable?: string;
+    flavor?: string;
 
 }) {
     let filterList;
@@ -121,8 +121,8 @@ export function filterModelsByApplicationParameters<T extends PathObject[]>({
     appName: string;
     version: string;
     build: string;
-    executable: string;
-    flavor: string;
+    executable?: string;
+    flavor?: string;
 }) {
     const filterObjects = getFilterObjects({
         filterTree: filterTree.models,

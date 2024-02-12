@@ -6,7 +6,7 @@ import { applicationExecutableFlavorTree } from "./data/tree";
  * @param appName {string}
  * @returns {object}
  */
-export function getAppTree(appName: keyof typeof applicationExecutableFlavorTree) {
+export function getApplicationExecutableFlavorTree(appName: keyof typeof applicationExecutableFlavorTree) {
     if (!(appName in applicationExecutableFlavorTree)) {
         throw new Error(`${appName} is not a known application with a tree.`);
     }

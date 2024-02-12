@@ -1,6 +1,7 @@
 import { expect } from "chai";
 
 import { filterModelsByApplicationParameters, getFilterObjects } from "../src/js/models";
+import { PathObject } from "@exabyte-io/code.js/dist/utils/filter";
 
 describe("filterModelsByApplicationParameters", () => {
     const modelConfigs = [
@@ -58,7 +59,7 @@ describe("filterModelsByApplicationParameters", () => {
             },
         };
 
-        const filters = getFilterObjects({
+        const filters: PathObject[] = getFilterObjects({
             filterTree: mockTree,
             appName: "a",
             version: "6.2",

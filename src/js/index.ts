@@ -5,7 +5,7 @@ import { type AllowedResults, allowedResults } from "./allowedResults";
 
 export { getAllAppTemplates, getAllAppData, getAllAppTree } from "./assets";
 
-export { getAppTree } from "./tree";
+export { getApplicationExecutableFlavorTree } from "./tree";
 export { getApplicationVersionBuildData } from "./data";
 export { allTemplates } from "./data/templates";
 export { applicationVersionBuildTree } from "./data/application_data";

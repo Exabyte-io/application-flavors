@@ -3,17 +3,25 @@
  * at build time and writes them out to a single templates.js file for
  * downstream consumption to avoid FS calls in the browser.
  */
-const fs = require("fs");
-const yaml = require("js-yaml");
-const utils = require("@exabyte-io/code.js/dist/utils");
+import { JsYamlAllSchemas } from "@exabyte-io/code.js/dist/utils";
+import fs from "fs";
+import yaml from "js-yaml";
 
-function buildAsset({ assetPath, targetPath, dataKey = "" }) {
+function buildAsset({
+    assetPath,
+    targetPath,
+    dataKey = ""
+}: {
+    assetPath: fs.PathOrFileDescriptor;
+    targetPath: fs.PathOrFileDescriptor;
+    dataKey: string;
+}) {
     const fileContent = fs.readFileSync(assetPath);
-    const obj = yaml.load(fileContent, { schema: utils.JsYamlAllSchemas });
+    const obj = yaml.load(fileContent.toString(), { schema: JsYamlAllSchemas });
     const ignore = "/* eslint-disable */\n";
     fs.writeFileSync(
         targetPath,
-        ignore + `module.exports = {${dataKey}: ` + JSON.stringify(obj) + "}\n",
+        ignore + `export const ${dataKey} = {${JSON.stringify(obj)} as const;\nexport default ${dataKey};`,
         "utf8",
     );
     console.log(`Written asset "${assetPath}" to "${targetPath}"`);
@@ -21,18 +29,18 @@ function buildAsset({ assetPath, targetPath, dataKey = "" }) {
 
 buildAsset({
     assetPath: "./templates/templates.yml",
-    targetPath: "./data/templates.js",
+    targetPath: "./data/templates.ts",
     dataKey: "allTemplates",
 });
 
 buildAsset({
     assetPath: "./applications/application_data.yml",
-    targetPath: "./data/application_data.js",
-    dataKey: "applicationData",
+    targetPath: "./data/application_data.ts",
+    dataKey: "applicationVersionBuildTree",
 });
 
 buildAsset({
     assetPath: "./executables/tree.yml",
-    targetPath: "./data/tree.js",
-    dataKey: "applicationTree",
+    targetPath: "./data/tree.ts",
+    dataKey: "applicationExecutableFlavorTree",
 });

@@ -1,11 +1,11 @@
-const fs = require("fs");
-const path = require("path");
-const yaml = require("js-yaml");
-const lodash = require("lodash");
-const utils = require("@exabyte-io/code.js/dist/utils");
+import fs from "fs";
+import path from "path";
+import yaml from "js-yaml";
+import lodash from "lodash";
+import { JsYamlAllSchemas, createObjectPathFromFilePath, getDirectories, getFilesInDirectory} from "@exabyte-io/code.js/dist/utils";
 
-const MODEL_ASSET_PATH = path.resolve(__dirname, "models");
-const METHOD_ASSET_PATH = path.resolve(__dirname, "methods");
+const MODEL_ASSET_PATH = path.resolve(__dirname, "../..models");
+const METHOD_ASSET_PATH = path.resolve(__dirname, "../..methods");
 const MODEL_FILTER_TREE = {};
 const METHOD_FILTER_TREE = {};
 
@@ -15,10 +15,10 @@ const METHOD_FILTER_TREE = {};
  * @param {string} assetPath - Absolute path to asset file.
  * @param {string} assetRoot - Path to asset root directory to construct relative path.
  */
-function loadAndInsertAssetData(targetObject, assetPath, assetRoot) {
+function loadAndInsertAssetData(targetObject: object, assetPath: string, assetRoot: string) {
     const fileContent = fs.readFileSync(assetPath, "utf8");
-    const data = yaml.load(fileContent, { schema: utils.JsYamlAllSchemas });
-    const objectPath = utils.createObjectPathFromFilePath(assetPath, assetRoot);
+    const data = yaml.load(fileContent, { schema: JsYamlAllSchemas });
+    const objectPath = createObjectPathFromFilePath(assetPath, assetRoot);
     lodash.set(targetObject, objectPath, data);
 }
 
@@ -28,9 +28,10 @@ function loadAndInsertAssetData(targetObject, assetPath, assetRoot) {
  * @param {Object} targetObj - Object in which assets are assigned
  * @param {string} assetRoot - Path to asset root directory to construct relative path.
  */
-const getAssetData = (currPath, targetObj, assetRoot) => {
-    const branches = utils.getDirectories(currPath);
-    const assetFiles = utils.getFilesInDirectory(currPath, [".yml", ".yaml"], false);
+function getAssetData(currPath: string, targetObj: object, assetRoot: string) {
+    // TODO: improve this type in code.js
+    const branches = getDirectories(currPath) as string[];
+    const assetFiles = getFilesInDirectory(currPath, [".yml", ".yaml"], false);
 
     assetFiles.forEach((asset) => {
         try {
@@ -53,7 +54,7 @@ const data = {
 };
 
 fs.writeFileSync(
-    "./src/js/data/filter_trees.js",
-    ignore + `module.exports = ${JSON.stringify(data)}`,
+    "./src/js/data/filter_trees.ts",
+    ignore + `export const filterTree = ${JSON.stringify(data)} as const;\n export default filterTree;`,
     "utf8",
 );

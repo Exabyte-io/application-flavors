@@ -1,15 +1,21 @@
 {
-    "parser": "@typescript-eslint/parser",
     "extends": ["@exabyte-io/eslint-config"],
+    "plugins": ["@typescript-eslint/eslint-plugin"],
     "ignorePatterns": ["lib/"],
-    "plugins": [
-        "@typescript-eslint"
-    ],
     "settings": {
         "import/resolver": {
             "node": {
                 "extensions": [".js", ".ts"]
             }
         }
-    }
+    },
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaVersion": 2020,
+        "sourceType": "module",
+        "allowImportExportEverywhere": true,
+        "babelOptions": {
+            "configFile": "./src/application/.babelrc"
+        }
+    },
 }

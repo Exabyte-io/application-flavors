@@ -1,4 +1,4 @@
-const allowedResults = [
+export const allowedResults = [
     "atomic_forces",
     "band_gaps",
     "band_structure",
@@ -21,7 +21,7 @@ const allowedResults = [
     "hubbard_u",
     "hubbard_v_nn",
     "hubbard_v",
-] as  const;
+] as const;
 
 export default allowedResults;
 

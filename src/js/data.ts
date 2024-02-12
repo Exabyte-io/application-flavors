@@ -1,13 +1,13 @@
-import { applicationData as APP_DATA } from "./data/application_data";
+import { applicationVersionBuildTree } from "./data/application_data";
 
 /**
- * Given an application name, return the applications's data.
+ * Given an application name, return the applications's version and build data.
  * @param appName {str}
  * @returns {object}
  */
-export function getAppData(appName) {
-    if (!(appName in APP_DATA)) {
+export function getApplicationVersionBuildData(appName: keyof typeof applicationVersionBuildTree) {
+    if (!(appName in applicationVersionBuildTree)) {
         throw new Error(`${appName} is not a known application with data.`);
     }
-    return APP_DATA[appName];
+    return applicationVersionBuildTree[appName];
 }

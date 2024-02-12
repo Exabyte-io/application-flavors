@@ -22,6 +22,7 @@ espresso:
   pw4gww.x: !include 'executables/espresso/pw4gww.x.yml'
   q2r.x: !include 'executables/espresso/q2r.x.yml'
   simple.x: !include 'executables/espresso/simple.x.yml'
+  simple_bse.x: !include 'executables/espresso/simple_bse.x.yml'
 jupyterLab:
   jupyter: !include 'executables/jupyterLab/jupyter.yml'
 exabyteml:

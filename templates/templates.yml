@@ -12,6 +12,7 @@
 - !include 'templates/espresso/dynmat.x.yml'
 - !include 'templates/espresso/epsilon.x.yml'
 - !include 'templates/espresso/gw.x.yml'
+- !include 'templates/espresso/head.x.yml'
 - !include 'templates/espresso/hp.x.yml'
 - !include 'templates/espresso/matdyn.x.yml'
 - !include 'templates/espresso/neb.x.yml'

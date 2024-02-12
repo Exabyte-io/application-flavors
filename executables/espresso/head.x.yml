@@ -1,0 +1,12 @@
+monitors:
+  - standard_output
+results: []
+flavors:
+  head:
+    input:
+      - name: head.in
+    results: []
+    monitors:
+      - standard_output
+    applicationName: espresso
+    executableName: head.x

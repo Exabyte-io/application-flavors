@@ -10,6 +10,7 @@ espresso:
   dynmat.x: !include 'executables/espresso/dynmat.x.yml'
   epsilon.x: !include 'executables/espresso/epsilon.x.yml'
   gw.x: !include 'executables/espresso/gw.x.yml'
+  gww.x: !include 'executables/espresso/gww.x.yml'
   head.x: !include 'executables/espresso/head.x.yml'
   hp.x: !include 'executables/espresso/hp.x.yml'
   matdyn.x: !include 'executables/espresso/matdyn.x.yml'

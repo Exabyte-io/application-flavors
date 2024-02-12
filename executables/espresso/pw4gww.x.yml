@@ -1,0 +1,12 @@
+monitors:
+  - standard_output
+results: []
+flavors:
+  pw4gww:
+    input:
+      - name: pw4gww.in
+    results: []
+    monitors:
+      - standard_output
+    applicationName: espresso
+    executableName: pw4gww.x

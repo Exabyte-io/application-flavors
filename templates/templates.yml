@@ -20,6 +20,7 @@
 - !include 'templates/espresso/pp.x.yml'
 - !include 'templates/espresso/projwfc.x.yml'
 - !include 'templates/espresso/pw.x.yml'
+- !include 'templates/espresso/pw4gww.x.yml'
 - !include 'templates/espresso/q2r.x.yml'
 # jupyterLab
 - !include 'templates/jupyterLab/jupyter.yml'

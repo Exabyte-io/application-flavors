@@ -1,5 +1,5 @@
 /**
- * build_templates uses node API to read all jinja templates from the FS
+ * build_application_trees uses node API to read all jinja templates from the FS
  * at build time and writes them out to a single templates.js file for
  * downstream consumption to avoid FS calls in the browser.
  */

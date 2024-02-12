@@ -21,18 +21,18 @@ function buildAsset({ assetPath, targetPath, dataKey = "" }) {
 
 buildAsset({
     assetPath: "./templates/templates.yml",
-    targetPath: "./src/js/data/templates.js",
+    targetPath: "./data/templates.js",
     dataKey: "allTemplates",
 });
 
 buildAsset({
     assetPath: "./applications/application_data.yml",
-    targetPath: "./src/js/data/application_data.js",
+    targetPath: "./data/application_data.js",
     dataKey: "applicationData",
 });
 
 buildAsset({
     assetPath: "./executables/tree.yml",
-    targetPath: "./src/js/data/tree.js",
+    targetPath: "./data/tree.js",
     dataKey: "applicationTree",
 });

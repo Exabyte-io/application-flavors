@@ -1,5 +1,5 @@
-- content: !readFile 'assets/espresso/pw4gww.j2.in'
-  name: pw4gww.in
+- content: !readFile 'assets/espresso/pw4gww_simple.j2.in'
+  name: pw4gww_simple.in
   contextProviders: []
   applicationName: espresso
   executableName: pw4gww.x

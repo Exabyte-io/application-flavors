@@ -2,9 +2,9 @@ monitors:
   - standard_output
 results: []
 flavors:
-  head:
+  head_simple:
     input:
-      - name: head.in
+      - name: head_simple.in
     results: []
     monitors:
       - standard_output

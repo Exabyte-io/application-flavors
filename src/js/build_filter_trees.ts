@@ -55,6 +55,6 @@ const data = {
 
 fs.writeFileSync(
     "./src/js/data/filter_trees.ts",
-    ignore + `export const filterTree = ${JSON.stringify(data)} as const;\n export default filterTree;`,
+    ignore + `export const filterTree = ${JSON.stringify(data)} as const;\nexport default filterTree;`,
     "utf8",
 );

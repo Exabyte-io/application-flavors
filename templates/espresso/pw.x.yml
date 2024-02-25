@@ -130,3 +130,11 @@
     - name: HubbardContextManagerLegacy
   applicationName: espresso
   executableName: pw.x
+
+- content: !readFile 'assets/espresso/pw_md.j2.in'
+  name: pw_md.in
+  contextProviders:
+    - name: QEPWXInputDataManager
+    - name: PlanewaveCutoffDataManager
+  applicationName: espresso
+  executableName: pw.x

@@ -1,0 +1,12 @@
+100     ! Total number of Lanczos steps
+100     ! Number of Lanczos steps to consider
+0.      ! E_min (eV)
+5.      ! E_max (eV)
+0.2     ! delta
+2000    ! number of energy steps
+1080.04 ! omega
+8       ! nk, number of k points
+2       ! nspin
+0.0     ! energy offset (eV)
+
+! Please see https://gitlab.com/QEF/q-e/-/blob/qe-7.3/GWW/util/abcoeff_to_eps.f90

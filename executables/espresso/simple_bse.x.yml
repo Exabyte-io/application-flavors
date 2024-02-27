@@ -1,0 +1,12 @@
+monitors:
+  - standard_output
+results: []
+flavors:
+  simple_bse:
+    input:
+      - name: simple_bse.in
+    results: []
+    monitors:
+      - standard_output
+    applicationName: espresso
+    executableName: simple_bse.x

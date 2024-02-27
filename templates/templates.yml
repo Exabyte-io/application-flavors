@@ -5,6 +5,7 @@
 - !include 'templates/deepmd/dp_prepare.py.yml'
 - !include 'templates/deepmd/dp_train.yml'
 # espresso
+- !include 'templates/espresso/abcoeff_to_eps.x.yml'
 - !include 'templates/espresso/average.x.yml'
 - !include 'templates/espresso/bands.x.yml'
 - !include 'templates/espresso/cp.x.yml'
@@ -12,6 +13,8 @@
 - !include 'templates/espresso/dynmat.x.yml'
 - !include 'templates/espresso/epsilon.x.yml'
 - !include 'templates/espresso/gw.x.yml'
+- !include 'templates/espresso/gww.x.yml'
+- !include 'templates/espresso/head.x.yml'
 - !include 'templates/espresso/hp.x.yml'
 - !include 'templates/espresso/matdyn.x.yml'
 - !include 'templates/espresso/neb.x.yml'
@@ -19,7 +22,11 @@
 - !include 'templates/espresso/pp.x.yml'
 - !include 'templates/espresso/projwfc.x.yml'
 - !include 'templates/espresso/pw.x.yml'
+- !include 'templates/espresso/pw4gww.x.yml'
 - !include 'templates/espresso/q2r.x.yml'
+- !include 'templates/espresso/simple.x.yml'
+- !include 'templates/espresso/simple_bse.x.yml'
+- !include 'templates/espresso/simple_ip.x.yml'
 # jupyterLab
 - !include 'templates/jupyterLab/jupyter.yml'
 # nwchem

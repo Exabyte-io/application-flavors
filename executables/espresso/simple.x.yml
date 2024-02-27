@@ -1,0 +1,12 @@
+monitors:
+  - standard_output
+results: []
+flavors:
+  simple:
+    input:
+      - name: simple.in
+    results: []
+    monitors:
+      - standard_output
+    applicationName: espresso
+    executableName: simple.x

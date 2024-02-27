@@ -1,0 +1,5 @@
+- content: !readFile 'assets/espresso/simple.j2.in'
+  name: simple.in
+  contextProviders: []
+  applicationName: espresso
+  executableName: simple.x

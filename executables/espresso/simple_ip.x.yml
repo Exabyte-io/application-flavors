@@ -1,0 +1,12 @@
+monitors:
+  - standard_output
+results: []
+flavors:
+  simple_ip:
+    input:
+      - name: simple_ip.in
+    results: []
+    monitors:
+      - standard_output
+    applicationName: espresso
+    executableName: simple_ip.x

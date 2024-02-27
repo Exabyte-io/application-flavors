@@ -1,0 +1,5 @@
+- content: !readFile 'assets/espresso/gww_simple.j2.in'
+  name: gww_simple.in
+  contextProviders: []
+  applicationName: espresso
+  executableName: gww.x

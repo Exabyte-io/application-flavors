@@ -1,0 +1,49 @@
+{% if subworkflowContext.MATERIAL_INDEX %}
+{%- set input = input.perMaterial[subworkflowContext.MATERIAL_INDEX] -%}
+{% endif -%}
+&control
+    calculation = 'md'
+    verbosity = 'low'
+    restart_mode = '{{ input.RESTART_MODE }}'
+    wf_collect = .true.
+    tstress = .true.
+    tprnfor = .true.
+    outdir = {% raw %}'{{ JOB_WORK_DIR }}/outdir'{% endraw %}
+    wfcdir = {% raw %}'{{ JOB_WORK_DIR }}/outdir'{% endraw %}
+    prefix = '__prefix__'
+    pseudo_dir = {% raw %}'{{ JOB_WORK_DIR }}/pseudo'{% endraw %}
+!   1 a.u. = 0.048378 fs, 20 a.u. ~ 1 fs, dt unit is different in pw.x and cp.x
+    dt = 20
+    nstep = 100
+/
+
+&system
+    ibrav = {{ input.IBRAV }}
+    nat = {{ input.NAT }}
+    ntyp = {{ input.NTYP }}
+    ecutwfc = {{ cutoffs.wavefunction }}
+    ecutrho = {{ cutoffs.density }}
+    nosym = .true.
+/
+
+&electrons
+    conv_thr = 1e-8
+/
+
+&ions
+    pot_extrapolation = 'second-order'
+    wfc_extrapolation = 'second-order'
+    ion_temperature = 'initial'
+    tempw = 300
+/
+
+ATOMIC_SPECIES
+{{ input.ATOMIC_SPECIES }}
+
+ATOMIC_POSITIONS crystal
+{{ input.ATOMIC_POSITIONS }}
+
+CELL_PARAMETERS angstrom
+{{ input.CELL_PARAMETERS }}
+
+K_POINTS gamma

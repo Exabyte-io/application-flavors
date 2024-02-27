@@ -276,3 +276,21 @@ flavors:
       - convergence_electronic
     applicationName: espresso
     executableName: pw.x
+
+  pw_md:
+    input:
+      - name: pw_md.in
+    results:
+      - atomic_forces
+      - band_gaps
+      - fermi_energy
+      - pressure
+      - stress_tensor
+      - total_energy
+      - total_energy_contributions
+      - total_force
+    monitors:
+      - standard_output
+      - convergence_electronic
+    applicationName: espresso
+    executableName: pw.x

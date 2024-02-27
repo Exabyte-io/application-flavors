@@ -136,5 +136,7 @@
   contextProviders:
     - name: QEPWXInputDataManager
     - name: PlanewaveCutoffDataManager
+# TODO: integrate IonDynamicsContextProvider, timeStep unit is different in cp.x
+# pw.x md calculation, also there seems to be no effective electron mass in pw.x
   applicationName: espresso
   executableName: pw.x

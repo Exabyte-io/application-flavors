@@ -73,7 +73,7 @@ describe("getApplicationExecutableFlavorData", () => {
         expect(() => {
             // @ts-expect-error
             getApplicationExecutableFlavorData("unknown_app");
-        }).to.throw("unknown_app is not a known application with a tree.");
+        }).to.throw("Cannot use \'in\' operator to search for \'unknown_app\' in undefined");
     });
 });
 

@@ -3,6 +3,7 @@ deepmd:
   lmp: !include 'executables/deepmd/lmp.yml'
   python: !include 'executables/deepmd/python.yml'
 espresso:
+  abcoeff_to_eps.x: !include 'executables/espresso/abcoeff_to_eps.x.yml'
   average.x: !include 'executables/espresso/average.x.yml'
   bands.x: !include 'executables/espresso/bands.x.yml'
   cp.x: !include 'executables/espresso/cp.x.yml'
@@ -10,6 +11,8 @@ espresso:
   dynmat.x: !include 'executables/espresso/dynmat.x.yml'
   epsilon.x: !include 'executables/espresso/epsilon.x.yml'
   gw.x: !include 'executables/espresso/gw.x.yml'
+  gww.x: !include 'executables/espresso/gww.x.yml'
+  head.x: !include 'executables/espresso/head.x.yml'
   hp.x: !include 'executables/espresso/hp.x.yml'
   matdyn.x: !include 'executables/espresso/matdyn.x.yml'
   neb.x: !include 'executables/espresso/neb.x.yml'
@@ -17,7 +20,11 @@ espresso:
   pp.x: !include 'executables/espresso/pp.x.yml'
   projwfc.x: !include 'executables/espresso/projwfc.x.yml'
   pw.x: !include 'executables/espresso/pw.x.yml'
+  pw4gww.x: !include 'executables/espresso/pw4gww.x.yml'
   q2r.x: !include 'executables/espresso/q2r.x.yml'
+  simple.x: !include 'executables/espresso/simple.x.yml'
+  simple_bse.x: !include 'executables/espresso/simple_bse.x.yml'
+  simple_ip.x: !include 'executables/espresso/simple_ip.x.yml'
 jupyterLab:
   jupyter: !include 'executables/jupyterLab/jupyter.yml'
 exabyteml:

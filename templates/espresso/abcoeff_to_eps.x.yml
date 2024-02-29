@@ -1,0 +1,5 @@
+- content: !readFile 'assets/espresso/abcoeff_to_eps_simple.j2.in'
+  name: abcoeff_to_eps_simple.in
+  contextProviders: []
+  applicationName: espresso
+  executableName: abcoeff_to_eps.x

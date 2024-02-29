@@ -1,0 +1,5 @@
+- content: !readFile 'assets/espresso/simple_ip.j2.in'
+  name: simple_ip.in
+  contextProviders: []
+  applicationName: espresso
+  executableName: simple_ip.x

@@ -5,27 +5,35 @@ import {
 } from "@exabyte-io/code.js/dist/utils";
 import lodash from "lodash";
 
-import { models as applicationModelMap } from "./data/filter_trees";
+import filterTree from "./data/filter_trees";
+import { PathObject } from "@exabyte-io/code.js/dist/utils/filter";
 
+type FilterObject = {
+    path: string;
+} | {
+    regex: string;
+};
+type KeysOfUnion<T> = T extends any ? keyof T : never;
 /**
  * Extract unique filter objects by name of key.
  * @param {Array<{path: string}|{regex: string}>} filterObjects - List of filter objects
  * @param {string} name - Name of object key
  */
-function extractUniqueBy(filterObjects, name) {
+function extractUniqueBy(filterObjects: Array<FilterObject>, name: KeysOfUnion<FilterObject>) {
     return lodash
         .chain(filterObjects)
         .filter(Boolean)
+        // @ts-ignore - TS does not support union type in lodash
         .filter((o) => Boolean(o[name]))
         .uniqBy(name)
         .value();
 }
 
-function safelyGet(obj, ...args) {
+function safelyGet(obj: any, ...args: any[]) {
     return lodash.get(obj, args, undefined);
 }
 
-function getPreviousVersion(obj, version) {
+function getPreviousVersion(obj: object, version: string) {
     const availableVersions = obj ? Object.keys(obj) : [];
     return findPreviousVersion(availableVersions, version) || "";
 }
@@ -47,6 +55,14 @@ export function getFilterObjects({
     build = "",
     executable = "",
     flavor = "",
+}: {
+    filterTree: any;
+    appName: string;
+    version?: string;
+    build?: string;
+    executable?: string;
+    flavor?: string;
+
 }) {
     let filterList;
 
@@ -79,7 +95,7 @@ export function getFilterObjects({
     } else {
         filterList = safelyGet(filterTree, appName, version_, build_, executable, flavor);
     }
-
+    // @ts-ignore
     return [].concat(extractUniqueBy(filterList, "path"), extractUniqueBy(filterList, "regex"));
 }
 
@@ -93,16 +109,23 @@ export function getFilterObjects({
  * @param {string} flavor - flavor name
  * @returns {Array<Object>} - filtered list of model paths for given application data
  */
-export function filterModelsByApplicationParameters({
+export function filterModelsByApplicationParameters<T extends PathObject[]>({
     modelList,
     appName,
     version,
     build,
     executable,
     flavor,
+}: {
+    modelList: T;
+    appName: string;
+    version: string;
+    build: string;
+    executable?: string;
+    flavor?: string;
 }) {
     const filterObjects = getFilterObjects({
-        filterTree: applicationModelMap,
+        filterTree: filterTree.models,
         appName,
         version,
         build,

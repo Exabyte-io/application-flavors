@@ -1,18 +1,26 @@
 import { filterEntityList } from "@exabyte-io/code.js/dist/utils";
 
-import { methods as applicationMethodMap } from "./data/filter_trees";
+import filterTree from "./data/filter_trees";
 import { getFilterObjects } from "./models";
+import { PathObject } from "@exabyte-io/code.js/dist/utils/filter";
 
-export function filterMethodsByApplicationParameters({
+export function filterMethodsByApplicationParameters<T extends PathObject[]>({
     methodList,
     appName,
     version,
     build,
     executable,
     flavor,
+}: {
+    methodList: T;
+    appName: string;
+    version?: string;
+    build?: string;
+    executable?: string;
+    flavor?: string;
 }) {
     const filterObjects = getFilterObjects({
-        filterTree: applicationMethodMap,
+        filterTree: filterTree.methods,
         appName,
         version,
         build,

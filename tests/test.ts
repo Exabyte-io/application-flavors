@@ -2,14 +2,25 @@ import assert from "assert";
 import { expect } from "chai";
 
 import {
+    allTemplates,
     allowedMonitors,
     allowedResults,
-    getAllAppData,
-    getAllAppTemplates,
-    getAllAppTree,
-    getAppData,
-    getAppTree,
+    applicationExecutableFlavorTree,
+    loadApplicationVersionBuildTree,
+    loadApplicationTemplates,
+    loadApplicationExecutableFlavorTree,
+    getApplicationVersionBuildData,
+    allowedPostProcessors,
+    allowedApplications,
+    getApplicationExecutableFlavorData,
 } from "../src/js/index";
+
+describe("allowedApplications", () => {
+    it("should not be empty", () => {
+        assert(Array.isArray(allowedApplications));
+        assert(allowedApplications.length > 0);
+    });
+});
 
 describe("allowedResults", () => {
     it("should not be empty", () => {
@@ -25,8 +36,15 @@ describe("allowedMonitors", () => {
     });
 });
 
-describe("ALL_INPUT_TEMPLATES", () => {
-    const ALL_INPUT_TEMPLATES = getAllAppTemplates();
+describe("allowedPostProcessors", () => {
+    it("should not be empty", () => {
+        assert(allowedPostProcessors instanceof Object);
+        assert(Object.keys(allowedPostProcessors).length > 0);
+    });
+});
+
+describe("loadApplicationTemplates", () => {
+    const ALL_INPUT_TEMPLATES = loadApplicationTemplates("./templates/templates.yml");
     assert(Array.isArray(ALL_INPUT_TEMPLATES));
     assert(ALL_INPUT_TEMPLATES.length > 0);
     it("has all required keys in each element", () => {
@@ -39,10 +57,10 @@ describe("ALL_INPUT_TEMPLATES", () => {
     });
 });
 
-describe("getAllAppTree", () => {
-    let APP_TREE;
+describe("loadApplicationExecutableFlavorTree", () => {
+    let APP_TREE: typeof applicationExecutableFlavorTree;
     before(() => {
-        APP_TREE = getAllAppTree();
+        APP_TREE = loadApplicationExecutableFlavorTree("./executables/tree.yml");
     });
 
     it("returns valid tree", () => {
@@ -50,35 +68,37 @@ describe("getAllAppTree", () => {
     });
 });
 
-describe("getAppTree", () => {
+describe("getApplicationExecutableFlavorData", () => {
     it("raises on unknown application", () => {
         expect(() => {
-            getAppTree("unknown_app");
-        }).to.throw("unknown_app is not a known application with a tree.");
+            // @ts-expect-error
+            getApplicationExecutableFlavorData("unknown_app");
+        }).to.throw("Cannot use \'in\' operator to search for \'unknown_app\' in undefined");
     });
 });
 
-describe("getAllAppData", () => {
+describe("loadApplicationVersionBuildTree", () => {
     it("returns results", () => {
-        const { nwchem } = getAllAppData();
+        const { nwchem } = loadApplicationVersionBuildTree("./applications/application_data.yml");
         assert("name" in nwchem);
         assert(nwchem.name === "nwchem");
     });
 });
 
-describe("getAppData", () => {
+describe("getApplicationVersionBuildData", () => {
     it("raises on unknown application", () => {
         expect(() => {
-            getAppData("unknown_app");
+            // @ts-expect-error
+            getApplicationVersionBuildData("unknown_app");
         }).to.throw("unknown_app is not a known application with data.");
     });
 });
 
 describe("assets for all executables", () => {
-    let APP_TREE, templates;
+    let APP_TREE: typeof applicationExecutableFlavorTree, templates: typeof allTemplates;
     before(() => {
-        APP_TREE = getAllAppTree();
-        templates = getAllAppTemplates();
+        APP_TREE = loadApplicationExecutableFlavorTree("./executables/tree.yml");
+        templates = loadApplicationTemplates("./templates/templates.yml");
     });
 
     it("exists at least 1 asset for each tree entry for deepmd tree", () => {

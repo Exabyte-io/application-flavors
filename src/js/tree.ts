@@ -1,4 +1,4 @@
-import { applicationTree as APP_TREES } from "./data/tree";
+import { applicationExecutableFlavorTree } from "./data/tree";
 
 /**
  * @summary Given an application name, return the applications's tree.
@@ -6,10 +6,10 @@ import { applicationTree as APP_TREES } from "./data/tree";
  * @param appName {string}
  * @returns {object}
  */
-export function getAppTree(appName) {
-    if (!(appName in APP_TREES)) {
+export function getApplicationExecutableFlavorData(appName: keyof typeof applicationExecutableFlavorTree) {
+    if (!(appName in applicationExecutableFlavorTree)) {
         throw new Error(`${appName} is not a known application with a tree.`);
     }
 
-    return APP_TREES[appName];
+    return applicationExecutableFlavorTree[appName];
 }

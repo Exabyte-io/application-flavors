@@ -140,3 +140,13 @@
 # pw.x md calculation, also there seems to be no effective electron mass in pw.x
   applicationName: espresso
   executableName: pw.x
+
+- content: !readFile 'assets/espresso/pw_scf_spin_magnetic.j2.in'
+  name: pw_scf_spin_magnetic.in
+  contextProviders:
+    - name: KGridFormDataManager
+    - name: QEPWXInputDataManager
+    - name: PlanewaveCutoffDataManager
+    - name: SpinMagneticContextManager
+  applicationName: espresso
+  executableName: pw.x

@@ -1,6 +1,6 @@
 &inputsimpleip
-    simple_in%prefix = '__prefix__'
-    simple_in%outdir = {% raw %}'{{ JOB_WORK_DIR }}/outdir'{% endraw %}
+    simpleip_in%prefix = '__prefix__'
+    simpleip_in%outdir = {% raw %}'{{ JOB_WORK_DIR }}/outdir'{% endraw %}
     simpleip_in%interp_grid(1) = 20
     simpleip_in%interp_grid(2) = 20
     simpleip_in%interp_grid(3) = 20

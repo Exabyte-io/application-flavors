@@ -160,3 +160,13 @@
     - name: SpinMagneticContextManager
   applicationName: espresso
   executableName: pw.x
+
+- content: !readFile 'assets/espresso/pw_bands_spin_magnetic.j2.in'
+  name: pw_bands_spin_magnetic.in
+  contextProviders:
+    - name: KPathFormDataManager
+    - name: QEPWXInputDataManager
+    - name: PlanewaveCutoffDataManager
+    - name: SpinMagneticContextManager
+  applicationName: espresso
+  executableName: pw.x

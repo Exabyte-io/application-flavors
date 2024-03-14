@@ -296,7 +296,6 @@ flavors:
     executableName: pw.x
 
   pw_scf_spin_magnetic:
-    isDefault: true
     input:
       - name: pw_scf_spin_magnetic.in
     results:
@@ -319,6 +318,14 @@ flavors:
     results:
       - fermi_energy
       - band_gaps
+    monitors:
+      - standard_output
+    applicationName: espresso
+    executableName: pw.x
+
+  pw_bands_spin_magnetic:
+    input:
+      - name: pw_bands_spin_magnetic.in
     monitors:
       - standard_output
     applicationName: espresso

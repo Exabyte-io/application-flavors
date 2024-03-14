@@ -2,10 +2,10 @@
 {%- set input = input.perMaterial[subworkflowContext.MATERIAL_INDEX] -%}
 {% endif -%}
 &CONTROL
-    calculation = 'scf'
+    calculation = 'bands'
     title = ''
     verbosity = 'low'
-    restart_mode = '{{ input.RESTART_MODE }}'
+    restart_mode = '{{input.RESTART_MODE}}'
     wf_collect = .true.
     tstress = .true.
     tprnfor = .true.
@@ -31,7 +31,6 @@
     diago_david_ndim = 4
     diago_full_acc = .true.
     mixing_beta = 0.3
-    startingwfc = 'atomic+random'
 /
 &IONS
 /
@@ -43,5 +42,8 @@ ATOMIC_POSITIONS crystal
 {{ input.ATOMIC_POSITIONS }}
 CELL_PARAMETERS angstrom
 {{ input.CELL_PARAMETERS }}
-K_POINTS automatic
-{% for d in kgrid.dimensions %}{{d}} {% endfor %}{% for s in kgrid.shifts %}{{s}} {% endfor %}
+K_POINTS crystal_b
+{{kpath.length}}
+{% for point in kpath -%}
+{% for d in point.coordinates %}{{d}} {% endfor -%}{{point.steps}}
+{% endfor %}

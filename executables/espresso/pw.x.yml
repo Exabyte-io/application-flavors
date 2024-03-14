@@ -312,3 +312,14 @@ flavors:
       - convergence_electronic
     applicationName: espresso
     executableName: pw.x
+
+  pw_nscf_spin_magnetic:
+    input:
+      - name: pw_nscf_spin_magnetic.in
+    results:
+      - fermi_energy
+      - band_gaps
+    monitors:
+      - standard_output
+    applicationName: espresso
+    executableName: pw.x

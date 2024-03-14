@@ -76,6 +76,22 @@ flavors:
     applicationName: espresso
     executableName: pw.x
 
+  pw_scf_kpt_conv:
+    input:
+      - name: pw_scf_kpt_conv.in
+    results:
+      - total_energy
+      - fermi_energy
+      - pressure
+      - atomic_forces
+      - total_force
+      - stress_tensor
+    monitors:
+      - standard_output
+      - convergence_electronic
+    applicationName: espresso
+    executableName: pw.x
+
   pw_scf_dft_u:
     input:
       - name: pw_scf_dft_u.in
@@ -168,6 +184,23 @@ flavors:
       - '6.8.0'
       - '7.0'
 
+  pw_scf_spin_magnetic:
+    input:
+      - name: pw_scf_spin_magnetic.in
+    results:
+      - atomic_forces
+      - fermi_energy
+      - pressure
+      - stress_tensor
+      - total_energy
+      - total_energy_contributions
+      - total_force
+    monitors:
+      - standard_output
+      - convergence_electronic
+    applicationName: espresso
+    executableName: pw.x
+
   pw_esm:
     input:
       - name: pw_esm.in
@@ -217,9 +250,28 @@ flavors:
     applicationName: espresso
     executableName: pw.x
 
+  pw_nscf_spin_magnetic:
+    input:
+      - name: pw_nscf_spin_magnetic.in
+    results:
+      - fermi_energy
+      - band_gaps
+    monitors:
+      - standard_output
+    applicationName: espresso
+    executableName: pw.x
+
   pw_bands:
     input:
       - name: pw_bands.in
+    monitors:
+      - standard_output
+    applicationName: espresso
+    executableName: pw.x
+
+  pw_bands_spin_magnetic:
+    input:
+      - name: pw_bands_spin_magnetic.in
     monitors:
       - standard_output
     applicationName: espresso
@@ -261,22 +313,6 @@ flavors:
     applicationName: espresso
     executableName: pw.x
 
-  pw_scf_kpt_conv:
-    input:
-      - name: pw_scf_kpt_conv.in
-    results:
-      - total_energy
-      - fermi_energy
-      - pressure
-      - atomic_forces
-      - total_force
-      - stress_tensor
-    monitors:
-      - standard_output
-      - convergence_electronic
-    applicationName: espresso
-    executableName: pw.x
-
   pw_md:
     input:
       - name: pw_md.in
@@ -292,41 +328,5 @@ flavors:
     monitors:
       - standard_output
       - convergence_electronic
-    applicationName: espresso
-    executableName: pw.x
-
-  pw_scf_spin_magnetic:
-    input:
-      - name: pw_scf_spin_magnetic.in
-    results:
-      - atomic_forces
-      - fermi_energy
-      - pressure
-      - stress_tensor
-      - total_energy
-      - total_energy_contributions
-      - total_force
-    monitors:
-      - standard_output
-      - convergence_electronic
-    applicationName: espresso
-    executableName: pw.x
-
-  pw_nscf_spin_magnetic:
-    input:
-      - name: pw_nscf_spin_magnetic.in
-    results:
-      - fermi_energy
-      - band_gaps
-    monitors:
-      - standard_output
-    applicationName: espresso
-    executableName: pw.x
-
-  pw_bands_spin_magnetic:
-    input:
-      - name: pw_bands_spin_magnetic.in
-    monitors:
-      - standard_output
     applicationName: espresso
     executableName: pw.x

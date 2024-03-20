@@ -184,9 +184,9 @@ flavors:
       - '6.8.0'
       - '7.0'
 
-  pw_scf_spin_magnetic:
+  pw_scf_magn:
     input:
-      - name: pw_scf_spin_magnetic.in
+      - name: pw_scf_magn.in
     results:
       - atomic_forces
       - fermi_energy
@@ -250,9 +250,9 @@ flavors:
     applicationName: espresso
     executableName: pw.x
 
-  pw_nscf_spin_magnetic:
+  pw_nscf_magn:
     input:
-      - name: pw_nscf_spin_magnetic.in
+      - name: pw_nscf_magn.in
     results:
       - fermi_energy
       - band_gaps
@@ -269,9 +269,9 @@ flavors:
     applicationName: espresso
     executableName: pw.x
 
-  pw_bands_spin_magnetic:
+  pw_bands_magn:
     input:
-      - name: pw_bands_spin_magnetic.in
+      - name: pw_bands_magn.in
     monitors:
       - standard_output
     applicationName: espresso

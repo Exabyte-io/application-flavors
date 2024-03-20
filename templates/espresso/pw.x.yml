@@ -141,8 +141,8 @@
   applicationName: espresso
   executableName: pw.x
 
-- content: !readFile 'assets/espresso/pw_scf_spin_magnetic.j2.in'
-  name: pw_scf_spin_magnetic.in
+- content: !readFile 'assets/espresso/pw_scf_magn.j2.in'
+  name: pw_scf_magn.in
   contextProviders:
     - name: KGridFormDataManager
     - name: QEPWXInputDataManager
@@ -151,8 +151,8 @@
   applicationName: espresso
   executableName: pw.x
 
-- content: !readFile 'assets/espresso/pw_nscf_spin_magnetic.j2.in'
-  name: pw_nscf_spin_magnetic.in
+- content: !readFile 'assets/espresso/pw_nscf_magn.j2.in'
+  name: pw_nscf_magn.in
   contextProviders:
     - name: KGridFormDataManager
     - name: QEPWXInputDataManager
@@ -161,8 +161,8 @@
   applicationName: espresso
   executableName: pw.x
 
-- content: !readFile 'assets/espresso/pw_bands_spin_magnetic.j2.in'
-  name: pw_bands_spin_magnetic.in
+- content: !readFile 'assets/espresso/pw_bands_magn.j2.in'
+  name: pw_bands_magn.in
   contextProviders:
     - name: KPathFormDataManager
     - name: QEPWXInputDataManager

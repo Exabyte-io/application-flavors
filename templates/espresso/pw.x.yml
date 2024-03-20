@@ -147,7 +147,7 @@
     - name: KGridFormDataManager
     - name: QEPWXInputDataManager
     - name: PlanewaveCutoffDataManager
-    - name: SpinMagneticContextManager
+    - name: CollinearMagnetizationDataManager
   applicationName: espresso
   executableName: pw.x
 
@@ -157,7 +157,7 @@
     - name: KGridFormDataManager
     - name: QEPWXInputDataManager
     - name: PlanewaveCutoffDataManager
-    - name: SpinMagneticContextManager
+    - name: CollinearMagnetizationDataManager
   applicationName: espresso
   executableName: pw.x
 
@@ -167,6 +167,6 @@
     - name: KPathFormDataManager
     - name: QEPWXInputDataManager
     - name: PlanewaveCutoffDataManager
-    - name: SpinMagneticContextManager
+    - name: CollinearMagnetizationDataManager
   applicationName: espresso
   executableName: pw.x

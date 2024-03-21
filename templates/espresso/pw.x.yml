@@ -140,3 +140,33 @@
 # pw.x md calculation, also there seems to be no effective electron mass in pw.x
   applicationName: espresso
   executableName: pw.x
+
+- content: !readFile 'assets/espresso/pw_scf_magn.j2.in'
+  name: pw_scf_magn.in
+  contextProviders:
+    - name: KGridFormDataManager
+    - name: QEPWXInputDataManager
+    - name: PlanewaveCutoffDataManager
+    - name: CollinearMagnetizationDataManager
+  applicationName: espresso
+  executableName: pw.x
+
+- content: !readFile 'assets/espresso/pw_nscf_magn.j2.in'
+  name: pw_nscf_magn.in
+  contextProviders:
+    - name: KGridFormDataManager
+    - name: QEPWXInputDataManager
+    - name: PlanewaveCutoffDataManager
+    - name: CollinearMagnetizationDataManager
+  applicationName: espresso
+  executableName: pw.x
+
+- content: !readFile 'assets/espresso/pw_bands_magn.j2.in'
+  name: pw_bands_magn.in
+  contextProviders:
+    - name: KPathFormDataManager
+    - name: QEPWXInputDataManager
+    - name: PlanewaveCutoffDataManager
+    - name: CollinearMagnetizationDataManager
+  applicationName: espresso
+  executableName: pw.x

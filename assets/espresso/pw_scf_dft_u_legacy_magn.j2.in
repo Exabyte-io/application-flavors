@@ -21,7 +21,8 @@
     nspin = 2
     ecutwfc = {{ cutoffs.wavefunction }}
     ecutrho = {{ cutoffs.density }}
-    occupations = 'fixed'
+    occupations = 'smearing'
+    degauss = 0.005
     lda_plus_u = .true.
     lda_plus_u_kind = 0
     U_projection_type = 'ortho-atomic'

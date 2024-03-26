@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const yaml = require("js-yaml");
 const lodash = require("lodash");
-const utils = require("@exabyte-io/code.js/dist/utils");
+const utils = require("@mat3ra/code/dist/js/utils");
 
 const MODEL_ASSET_PATH = path.resolve(__dirname, "models");
 const METHOD_ASSET_PATH = path.resolve(__dirname, "methods");

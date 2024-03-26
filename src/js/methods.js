@@ -1,4 +1,4 @@
-import { filterEntityList } from "@exabyte-io/code.js/dist/utils";
+import { filterEntityList } from "@mat3ra/code/dist/js/utils";
 
 import { methods as applicationMethodMap } from "./data/filter_trees";
 import { getFilterObjects } from "./models";

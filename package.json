@@ -26,7 +26,8 @@
   "homepage": "https://github.com/Exabyte-io/application-flavors",
   "devDependencies": {
     "@exabyte-io/eslint-config": "^2022.11.17-0",
-    "@exabyte-io/code.js": "2023.11.22-0",
+    "@mat3ra/code": "2024.3.25-3",
+    "@mat3ra/esse": "^2024.3.25-6",
     "chai": "^4.3.4",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^19.0.2",
@@ -60,7 +61,8 @@
     "underscore.string": "^3.3.4"
   },
   "peerDependencies": {
-    "@exabyte-io/code.js": "*"
+    "@mat3ra/code": "*",
+    "@mat3ra/esse": "*"
   },
   "engines": {
     "node": ">=12.0",

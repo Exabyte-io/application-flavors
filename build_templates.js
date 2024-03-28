@@ -5,7 +5,7 @@
  */
 const fs = require("fs");
 const yaml = require("js-yaml");
-const utils = require("@exabyte-io/code.js/dist/utils");
+const utils = require("@mat3ra/code/dist/js/utils");
 
 function buildAsset({ assetPath, targetPath, dataKey = "" }) {
     const fileContent = fs.readFileSync(assetPath);

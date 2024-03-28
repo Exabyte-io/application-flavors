@@ -2,7 +2,7 @@ import {
     filterEntityList,
     findPreviousVersion,
     mergeTerminalNodes,
-} from "@exabyte-io/code.js/dist/utils";
+} from "@mat3ra/code/dist/js/utils";
 import lodash from "lodash";
 
 import { models as applicationModelMap } from "./data/filter_trees";

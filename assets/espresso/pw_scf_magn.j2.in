@@ -28,8 +28,7 @@
     constrained_magnetization = 'total'
 {%- else %}
 {%- for item in collinear_magnetization.starting_magnetization %}
-    starting_magnetization({{ item.index }}) = {{ item.value }}
-{%- endfor %}
+    starting_magnetization({{ item.index }}) = {{ item.value }} {% endfor -%}
 {%- endif %}
 /
 &ELECTRONS

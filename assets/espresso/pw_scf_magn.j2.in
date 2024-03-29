@@ -23,9 +23,8 @@
     ecutrho = {{ cutoffs.density }}
     occupations = 'smearing'
     degauss = 0.005
-{%- if collinear_magnetization.is_constrained_magnetization %}
-    total_magnetization = {{ collinear_magnetization.total_magnetization }}
-    constrained_magnetization = 'total'
+{%- if collinear_magnetization.is_total_magnetization %}
+    tot_magnetization = {{ collinear_magnetization.total_magnetization }}
 {%- else %}
 {%- for item in collinear_magnetization.starting_magnetization %}
     starting_magnetization({{ item.index }}) = {{ item.value }} {% endfor -%}

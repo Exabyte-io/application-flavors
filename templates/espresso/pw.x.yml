@@ -239,6 +239,18 @@
     - name: QEPWXInputDataManager
     - name: PlanewaveCutoffDataManager
     - name: HubbardUContextManager
+    - name: HubbardVContextManager
+    - name: CollinearMagnetizationDataManager
+  applicationName: espresso
+  executableName: pw.x
+
+- content: !readFile 'assets/espresso/pw_bands_dft_j_magn.j2.in'
+  name: pw_bands_dft_j_magn.in
+  contextProviders:
+    - name: KGridFormDataManager
+    - name: QEPWXInputDataManager
+    - name: PlanewaveCutoffDataManager
+    - name: HubbardJContextManager
     - name: CollinearMagnetizationDataManager
   applicationName: espresso
   executableName: pw.x

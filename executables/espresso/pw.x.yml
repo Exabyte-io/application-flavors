@@ -462,6 +462,17 @@ flavors:
       - '7.2'
       - '7.3'
 
+  pw_bands_dft_u+j_magn:
+    input:
+      - name: pw_bands_dft_j_magn.in
+    monitors:
+      - standard_output
+    applicationName: espresso
+    executableName: pw.x
+    supportedApplicationVersions:
+      - '7.2'
+      - '7.3'
+
   pw_relax:
     input:
       - name: pw_relax.in

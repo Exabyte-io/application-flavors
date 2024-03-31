@@ -224,7 +224,7 @@
 - content: !readFile 'assets/espresso/pw_bands_dft_u_magn.j2.in'
   name: pw_bands_dft_u_magn.in
   contextProviders:
-    - name: KGridFormDataManager
+    - name: KPathFormDataManager
     - name: QEPWXInputDataManager
     - name: PlanewaveCutoffDataManager
     - name: HubbardUContextManager
@@ -235,7 +235,7 @@
 - content: !readFile 'assets/espresso/pw_bands_dft_v_magn.j2.in'
   name: pw_bands_dft_v_magn.in
   contextProviders:
-    - name: KGridFormDataManager
+    - name: KPathFormDataManager
     - name: QEPWXInputDataManager
     - name: PlanewaveCutoffDataManager
     - name: HubbardUContextManager
@@ -247,7 +247,7 @@
 - content: !readFile 'assets/espresso/pw_bands_dft_j_magn.j2.in'
   name: pw_bands_dft_j_magn.in
   contextProviders:
-    - name: KGridFormDataManager
+    - name: KPathFormDataManager
     - name: QEPWXInputDataManager
     - name: PlanewaveCutoffDataManager
     - name: HubbardJContextManager
@@ -258,7 +258,7 @@
 - content: !readFile 'assets/espresso/pw_bands_dft_u_magn_legacy.j2.in'
   name: pw_bands_dft_u_magn_legacy.in
   contextProviders:
-    - name: KGridFormDataManager
+    - name: KPathFormDataManager
     - name: QEPWXInputDataManager
     - name: PlanewaveCutoffDataManager
     - name: HubbardContextManagerLegacy

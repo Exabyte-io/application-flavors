@@ -363,6 +363,9 @@ flavors:
       - standard_output
     applicationName: espresso
     executableName: pw.x
+    supportedApplicationVersions:
+      - '7.2'
+      - '7.3'
 
   pw_bands:
     input:
@@ -387,6 +390,9 @@ flavors:
       - standard_output
     applicationName: espresso
     executableName: pw.x
+    supportedApplicationVersions:
+      - '7.2'
+      - '7.3'
 
   pw_relax:
     input:

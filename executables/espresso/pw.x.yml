@@ -367,9 +367,23 @@ flavors:
       - '7.2'
       - '7.3'
 
-  pw_nscf_dft_v_magn:
+  pw_nscf_dft_u+v_magn:
     input:
-      - name: pw_nscf_dft_u_magn.in
+      - name: pw_nscf_dft_v_magn.in
+    results:
+      - fermi_energy
+      - band_gaps
+    monitors:
+      - standard_output
+    applicationName: espresso
+    executableName: pw.x
+    supportedApplicationVersions:
+      - '7.2'
+      - '7.3'
+
+  pw_nscf_dft_u+j_magn:
+    input:
+      - name: pw_nscf_dft_j_magn.in
     results:
       - fermi_energy
       - band_gaps

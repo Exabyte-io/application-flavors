@@ -353,6 +353,17 @@ flavors:
     applicationName: espresso
     executableName: pw.x
 
+  pw_nscf_dft_u_magn:
+    input:
+      - name: pw_nscf_dft_u_magn.in
+    results:
+      - fermi_energy
+      - band_gaps
+    monitors:
+      - standard_output
+    applicationName: espresso
+    executableName: pw.x
+
   pw_bands:
     input:
       - name: pw_bands.in

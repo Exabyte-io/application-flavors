@@ -264,9 +264,9 @@ flavors:
       - '7.2'
       - '7.3'
 
-  pw_scf_dft_u_legacy_magn:
+  pw_scf_dft_u_magn_legacy:
     input:
-      - name: pw_scf_dft_u_legacy_magn.in
+      - name: pw_scf_dft_u_magn_legacy.in
     results:
       - atomic_forces
       - band_gaps

@@ -380,6 +380,14 @@ flavors:
     applicationName: espresso
     executableName: pw.x
 
+  pw_bands_dft_u_magn:
+    input:
+      - name: pw_bands_dft_u_magn.in
+    monitors:
+      - standard_output
+    applicationName: espresso
+    executableName: pw.x
+
   pw_relax:
     input:
       - name: pw_relax.in

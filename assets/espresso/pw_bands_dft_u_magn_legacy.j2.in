@@ -29,10 +29,10 @@
     {%- for row in hubbard_legacy %}
     Hubbard_U({{ row.atomicSpeciesIndex }}) = {{ row.hubbardUValue }}
     {%- endfor %}
-{%- if collinear_magnetization.isTotalMagnetization %}
-    tot_magnetization = {{ collinear_magnetization.totalMagnetization }}
+{%- if collinearMagnetization.isTotalMagnetization %}
+    tot_magnetization = {{ collinearMagnetization.totalMagnetization }}
 {%- else %}
-{%- for item in collinear_magnetization.startingMagnetization %}
+{%- for item in collinearMagnetization.startingMagnetization %}
     starting_magnetization({{ item.index }}) = {{ item.value }} {% endfor -%}
 {%- endif %}
 /

@@ -20,10 +20,10 @@
     ecutrho = {{ cutoffs.density }}
     occupations = 'smearing'
     degauss = 0.005
-{%- if collinear_magnetization.isTotalMagnetization %}
-    tot_magnetization = {{ collinear_magnetization.totalMagnetization }}
+{%- if collinearMagnetization.isTotalMagnetization %}
+    tot_magnetization = {{ collinearMagnetization.totalMagnetization }}
 {%- else %}
-{%- for item in collinear_magnetization.startingMagnetization %}
+{%- for item in collinearMagnetization.startingMagnetization %}
     starting_magnetization({{ item.index }}) = {{ item.value }} {% endfor -%}
 {%- endif %}
 {%- if subworkflowContext.NO_SYMMETRY_NO_INVERSION %}

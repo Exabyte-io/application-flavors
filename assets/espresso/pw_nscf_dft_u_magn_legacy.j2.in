@@ -20,6 +20,12 @@
     ecutrho = {{ cutoffs.density }}
     occupations = 'smearing'
     degauss = 0.005
+    lda_plus_u = .true.
+    lda_plus_u_kind = 0
+    U_projection_type = 'ortho-atomic'
+    {%- for row in hubbard_legacy %}
+    Hubbard_U({{ row.atomicSpeciesIndex }}) = {{ row.hubbardUValue }}
+    {%- endfor %}
 {%- if collinearMagnetization.isTotalMagnetization %}
     tot_magnetization = {{ collinearMagnetization.totalMagnetization }}
 {%- else %}

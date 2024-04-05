@@ -2,10 +2,10 @@
 {%- set input = input.perMaterial[subworkflowContext.MATERIAL_INDEX] -%}
 {% endif -%}
 &CONTROL
-    calculation = 'scf'
+    calculation = 'bands'
     title = ''
     verbosity = 'low'
-    restart_mode = '{{ input.RESTART_MODE }}'
+    restart_mode = '{{input.RESTART_MODE}}'
     wf_collect = .true.
     tstress = .true.
     tprnfor = .true.
@@ -23,22 +23,18 @@
     ecutrho = {{ cutoffs.density }}
     occupations = 'smearing'
     degauss = 0.005
-    lda_plus_u = .true.
-    lda_plus_u_kind = 0
-    U_projection_type = 'ortho-atomic'
-{%- for row in hubbard_legacy %}
-    Hubbard_U({{ row.atomicSpeciesIndex }}) = {{ row.hubbardUValue }}
-{%- endfor %}
-{%- for item in starting_magnetization %}
-    starting_magnetization({{ item.index }}) = {{ item.value }}
-{%- endfor %}
+{%- if collinearMagnetization.isTotalMagnetization %}
+    tot_magnetization = {{ collinearMagnetization.totalMagnetization }}
+{%- else %}
+{%- for item in collinearMagnetization.startingMagnetization %}
+    starting_magnetization({{ item.index }}) = {{ item.value }} {% endfor -%}
+{%- endif %}
 /
 &ELECTRONS
     diagonalization = 'david'
     diago_david_ndim = 4
     diago_full_acc = .true.
     mixing_beta = 0.3
-    startingwfc = 'atomic+random'
 /
 &IONS
 /
@@ -50,5 +46,15 @@ ATOMIC_POSITIONS crystal
 {{ input.ATOMIC_POSITIONS }}
 CELL_PARAMETERS angstrom
 {{ input.CELL_PARAMETERS }}
-K_POINTS automatic
-{% for d in kgrid.dimensions %}{{d}} {% endfor %}{% for s in kgrid.shifts %}{{s}} {% endfor %}
+K_POINTS crystal_b
+{{kpath.length}}
+{% for point in kpath -%}
+{% for d in point.coordinates %}{{d}} {% endfor -%}{{point.steps}}
+{% endfor %}
+HUBBARD {ortho-atomic}
+{% for row in hubbard_u -%}
+U {{ row.atomicSpecies }}-{{ row.atomicOrbital }} {{ row.hubbardUValue }}
+{% endfor -%}
+{% for row in hubbard_v -%}
+V {{ row.atomicSpecies }}-{{ row.atomicOrbital }} {{ row.atomicSpecies2 }}-{{ row.atomicOrbital2 }} {{ row.siteIndex }} {{ row.siteIndex2 }} {{ row.hubbardVValue }}
+{% endfor -%}

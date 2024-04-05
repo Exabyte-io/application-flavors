@@ -1,5 +1,8 @@
+{% if subworkflowContext.MATERIAL_INDEX %}
+{%- set input = input.perMaterial[subworkflowContext.MATERIAL_INDEX] -%}
+{% endif -%}
 &CONTROL
-    calculation = 'nscf'
+    calculation = 'bands'
     title = ''
     verbosity = 'low'
     restart_mode = '{{input.RESTART_MODE}}'
@@ -26,10 +29,6 @@
 {%- for item in collinearMagnetization.startingMagnetization %}
     starting_magnetization({{ item.index }}) = {{ item.value }} {% endfor -%}
 {%- endif %}
-{%- if subworkflowContext.NO_SYMMETRY_NO_INVERSION %}
-    nosym = .true.
-    noinv = .true.
-{%- endif %}
 /
 &ELECTRONS
     diagonalization = 'david'
@@ -47,5 +46,12 @@ ATOMIC_POSITIONS crystal
 {{ input.ATOMIC_POSITIONS }}
 CELL_PARAMETERS angstrom
 {{ input.CELL_PARAMETERS }}
-K_POINTS automatic
-{% for d in kgrid.dimensions %}{{d}} {% endfor %}{% for s in kgrid.shifts %}{{s}} {% endfor %}
+K_POINTS crystal_b
+{{kpath.length}}
+{% for point in kpath -%}
+{% for d in point.coordinates %}{{d}} {% endfor -%}{{point.steps}}
+{% endfor %}
+HUBBARD {ortho-atomic}
+{% for row in hubbard_u -%}
+U {{ row.atomicSpecies }}-{{ row.atomicOrbital }} {{ row.hubbardUValue }}
+{% endfor -%}

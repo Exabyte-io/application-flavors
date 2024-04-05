@@ -1,8 +1,11 @@
+{% if subworkflowContext.MATERIAL_INDEX %}
+{%- set input = input.perMaterial[subworkflowContext.MATERIAL_INDEX] -%}
+{% endif -%}
 &CONTROL
-    calculation = 'nscf'
+    calculation = 'scf'
     title = ''
     verbosity = 'low'
-    restart_mode = '{{input.RESTART_MODE}}'
+    restart_mode = '{{ input.RESTART_MODE }}'
     wf_collect = .true.
     tstress = .true.
     tprnfor = .true.
@@ -20,15 +23,17 @@
     ecutrho = {{ cutoffs.density }}
     occupations = 'smearing'
     degauss = 0.005
+    lda_plus_u = .true.
+    lda_plus_u_kind = 0
+    U_projection_type = 'ortho-atomic'
+{%- for row in hubbard_legacy %}
+    Hubbard_U({{ row.atomicSpeciesIndex }}) = {{ row.hubbardUValue }}
+{%- endfor %}
 {%- if collinearMagnetization.isTotalMagnetization %}
     tot_magnetization = {{ collinearMagnetization.totalMagnetization }}
 {%- else %}
 {%- for item in collinearMagnetization.startingMagnetization %}
     starting_magnetization({{ item.index }}) = {{ item.value }} {% endfor -%}
-{%- endif %}
-{%- if subworkflowContext.NO_SYMMETRY_NO_INVERSION %}
-    nosym = .true.
-    noinv = .true.
 {%- endif %}
 /
 &ELECTRONS
@@ -36,6 +41,7 @@
     diago_david_ndim = 4
     diago_full_acc = .true.
     mixing_beta = 0.3
+    startingwfc = 'atomic+random'
 /
 &IONS
 /

@@ -23,9 +23,12 @@
     ecutrho = {{ cutoffs.density }}
     occupations = 'smearing'
     degauss = 0.005
-{%- for item in starting_magnetization %}
-    starting_magnetization({{ item.index }}) = {{ item.value }}
-{%- endfor %}
+{%- if collinearMagnetization.isTotalMagnetization %}
+    tot_magnetization = {{ collinearMagnetization.totalMagnetization }}
+{%- else %}
+{%- for item in collinearMagnetization.startingMagnetization %}
+    starting_magnetization({{ item.index }}) = {{ item.value }} {% endfor -%}
+{%- endif %}
 /
 &ELECTRONS
     diagonalization = 'david'

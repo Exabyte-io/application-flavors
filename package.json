@@ -27,7 +27,7 @@
   "devDependencies": {
     "@exabyte-io/eslint-config": "^2022.11.17-0",
     "@mat3ra/code": "2024.3.25-3",
-    "@mat3ra/esse": "^2024.3.25-6",
+    "@mat3ra/esse": "git+https://github.com/Exabyte-io/esse.git#cfe9014a2d155778c36d54931a65dd36b6529688",
     "chai": "^4.3.4",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^19.0.2",

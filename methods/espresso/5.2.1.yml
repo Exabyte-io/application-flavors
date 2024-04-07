@@ -5,14 +5,14 @@ Default:
     pw_scf:
       - path: /qm/wf/none/pw/none
       - path: /qm/wf/none/smearing/gaussian
-      - regex: \/qm\/wf\/none\/psp\/(nc|us|paw)
+      - regex: \/qm\/wf\/none\/psp\/(nc|nc-fr|us|paw)
       - path: /linalg/diag/none/davidson/none
 #      - regex: \/qm\/wf\/none\/tetrahedron\/.*
 #      - path: /opt/diff/ordern/cg/none
     pw_scf_bands_hse:
       - path: /qm/wf/none/pw/none
       - path: /qm/wf/none/smearing/gaussian
-      - regex: \/qm\/wf\/none\/psp\/(nc|us|paw)
+      - regex: \/qm\/wf\/none\/psp\/(nc|nc-fr|us|paw)
       - path: /linalg/diag/none/davidson/none
 #      - regex: \/qm\/wf\/none\/tetrahedron\/.*
 #      - path: /opt/diff/ordern/cg/none

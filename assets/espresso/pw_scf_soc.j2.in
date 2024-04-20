@@ -34,7 +34,7 @@
     lambda = {{ nonCollinearMagnetization.constrainedMagnetization.lambda }}
 {%- endif %}
 {%- if nonCollinearMagnetization.isExistingChargeDensity %}
-{%- for item in nonCollinearMagnetization.constrainedMagnetization.values %}
+{%- for item in nonCollinearMagnetization.spinAngles %}
     angle1({{ item.index }}) = {{ item.angle1 }}
     angle2({{ item.index }}) = {{ item.angle2 }} {% endfor -%}
     lforcet = .true.

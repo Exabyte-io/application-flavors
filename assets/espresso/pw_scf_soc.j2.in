@@ -26,7 +26,7 @@
     noncolin = .true.
     lspinorb = .true.
 {%- if nonCollinearMagnetization.isConstrainedMagnetization %}
-    constrained_magnetization = {{ nonCollinearMagnetization.constrainedMagnetization.constrainedMagnetizationType }}
+    constrained_magnetization = '{{ nonCollinearMagnetization.constrainedMagnetization.constrainedMagnetizationType }}'
 {%- for item in nonCollinearMagnetization.constrainedMagnetization.values %}
     angle1({{ item.index }}) = {{ item.angle1 }}
     angle2({{ item.index }}) = {{ item.angle2 }} {% endfor -%}

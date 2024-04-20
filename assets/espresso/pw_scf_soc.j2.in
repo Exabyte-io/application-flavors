@@ -25,16 +25,19 @@
     degauss = 0.005
     noncolin = .true.
     lspinorb = .true.
+{%- if nonCollinearMagnetization.isStartingMagnetization %}
+{%- for item in nonCollinearMagnetization.startingMagnetization %}
+    starting_magnetization({{ item.index }}) = {{ item.value }} {% endfor -%}
+{%- endif %}
 {%- if nonCollinearMagnetization.isConstrainedMagnetization %}
     constrained_magnetization = '{{ nonCollinearMagnetization.constrainedMagnetization.constrainedMagnetizationType }}'
+    lambda = {{ nonCollinearMagnetization.constrainedMagnetization.lambda }}
+{%- endif %}
+{%- if nonCollinearMagnetization.isExistingChargeDensity %}
 {%- for item in nonCollinearMagnetization.constrainedMagnetization.values %}
     angle1({{ item.index }}) = {{ item.angle1 }}
     angle2({{ item.index }}) = {{ item.angle2 }} {% endfor -%}
-    lambda = {{ nonCollinearMagnetization.constrainedMagnetization.lambda }}
-    lforcet = {{ nonCollinearMagnetization.constrainedMagnetization.lforcet }}
-{%- else %}
-{%- for item in nonCollinearMagnetization.startingMagnetization %}
-    starting_magnetization({{ item.index }}) = {{ item.value }} {% endfor -%}
+    lforcet = .true.
 {%- endif %}
 /
 &ELECTRONS
@@ -43,6 +46,9 @@
     diago_full_acc = .true.
     mixing_beta = 0.3
     startingwfc = 'atomic+random'
+{%- if nonCollinearMagnetization.isExistingChargeDensity %}
+    startingpot = 'file'
+{%- endif %}
 /
 &IONS
 /

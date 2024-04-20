@@ -30,13 +30,13 @@
     starting_magnetization({{ item.index }}) = {{ item.value }} {% endfor -%}
 {%- endif %}
 {%- if nonCollinearMagnetization.isConstrainedMagnetization %}
-    constrained_magnetization = '{{ nonCollinearMagnetization.constrainedMagnetization.constrainedMagnetizationType }}'
+    constrained_magnetization = '{{ nonCollinearMagnetization.constrainedMagnetization.constrainType }}'
     lambda = {{ nonCollinearMagnetization.constrainedMagnetization.lambda }}
 {%- endif %}
 {%- if nonCollinearMagnetization.isExistingChargeDensity %}
 {%- for item in nonCollinearMagnetization.spinAngles %}
     angle1({{ item.index }}) = {{ item.angle1 }}
-    angle2({{ item.index }}) = {{ item.angle2 }} {% endfor -%}
+    angle2({{ item.index }}) = {{ item.angle2 }} {% endfor %}
     lforcet = .true.
 {%- endif %}
 /

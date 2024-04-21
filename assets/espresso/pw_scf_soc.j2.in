@@ -32,12 +32,19 @@
 {%- if nonCollinearMagnetization.isConstrainedMagnetization %}
     constrained_magnetization = '{{ nonCollinearMagnetization.constrainedMagnetization.constrainType }}'
     lambda = {{ nonCollinearMagnetization.constrainedMagnetization.lambda }}
+{%- if nonCollinearMagnetization.isFixedMagnetization %}
+    fixed_magnetization(1) = {{ nonCollinearMagnetization.fixedMagnetization.x }}
+    fixed_magnetization(2) = {{ nonCollinearMagnetization.fixedMagnetization.y }}
+    fixed_magnetization(3) = {{ nonCollinearMagnetization.fixedMagnetization.z }}
+{%- endif %}
 {%- endif %}
 {%- if nonCollinearMagnetization.isExistingChargeDensity %}
+    lforcet = .true.
+{%- endif %}
+{%- if nonCollinearMagnetization.isArbitrarySpinDirection %}
 {%- for item in nonCollinearMagnetization.spinAngles %}
     angle1({{ item.index }}) = {{ item.angle1 }}
     angle2({{ item.index }}) = {{ item.angle2 }} {% endfor %}
-    lforcet = .true.
 {%- endif %}
 /
 &ELECTRONS

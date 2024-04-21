@@ -18,7 +18,6 @@
     ibrav = {{ input.IBRAV }}
     nat = {{ input.NAT }}
     ntyp = {{ input.NTYP_WITH_LABELS }}
-    nspin = 2
     ecutwfc = {{ cutoffs.wavefunction }}
     ecutrho = {{ cutoffs.density }}
     occupations = 'smearing'

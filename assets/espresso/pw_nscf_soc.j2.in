@@ -1,0 +1,73 @@
+&CONTROL
+    calculation = 'nscf'
+    title = ''
+    verbosity = 'low'
+    restart_mode = '{{input.RESTART_MODE}}'
+    wf_collect = .true.
+    tstress = .true.
+    tprnfor = .true.
+    outdir = {% raw %}'{{ JOB_WORK_DIR }}/outdir'{% endraw %}
+    wfcdir = {% raw %}'{{ JOB_WORK_DIR }}/outdir'{% endraw %}
+    prefix = '__prefix__'
+    pseudo_dir = {% raw %}'{{ JOB_WORK_DIR }}/pseudo'{% endraw %}
+/
+&SYSTEM
+    ibrav = {{ input.IBRAV }}
+    nat = {{ input.NAT }}
+    ntyp = {{ input.NTYP_WITH_LABELS }}
+    ecutwfc = {{ cutoffs.wavefunction }}
+    ecutrho = {{ cutoffs.density }}
+    occupations = 'smearing'
+    degauss = 0.005
+    noncolin = .true.
+    lspinorb = .true.
+{%- if nonCollinearMagnetization.isStartingMagnetization %}
+{%- for item in nonCollinearMagnetization.startingMagnetization %}
+    starting_magnetization({{ item.index }}) = {{ item.value }} {% endfor -%}
+{%- endif %}
+{%- if nonCollinearMagnetization.isConstrainedMagnetization %}
+    constrained_magnetization = '{{ nonCollinearMagnetization.constrainedMagnetization.constrainType }}'
+    lambda = {{ nonCollinearMagnetization.constrainedMagnetization.lambda }}
+{%- endif %}
+{%- if nonCollinearMagnetization.isConstrainedMagnetization and nonCollinearMagnetization.isFixedMagnetization %}
+    fixed_magnetization(1) = {{ nonCollinearMagnetization.fixedMagnetization.x }}
+    fixed_magnetization(2) = {{ nonCollinearMagnetization.fixedMagnetization.y }}
+    fixed_magnetization(3) = {{ nonCollinearMagnetization.fixedMagnetization.z }}
+{%- endif %}
+{%- if nonCollinearMagnetization.isExistingChargeDensity and nonCollinearMagnetization.lforcet %}
+    lforcet = .true.
+{%- endif %}
+{%- if nonCollinearMagnetization.isExistingChargeDensity and !nonCollinearMagnetization.lforcet %}
+    lforcet = .false.
+{%- endif %}
+{%- if nonCollinearMagnetization.isArbitrarySpinDirection %}
+{%- for item in nonCollinearMagnetization.spinAngles %}
+    angle1({{ item.index }}) = {{ item.angle1 }}
+    angle2({{ item.index }}) = {{ item.angle2 }} {% endfor %}
+{%- endif %}
+{%- if subworkflowContext.NO_SYMMETRY_NO_INVERSION %}
+    nosym = .true.
+    noinv = .true.
+{%- endif %}
+/
+&ELECTRONS
+    diagonalization = 'david'
+    diago_david_ndim = 4
+    diago_full_acc = .true.
+    mixing_beta = 0.3
+{%- if nonCollinearMagnetization.isExistingChargeDensity %}
+    startingpot = 'file'
+{%- endif %}
+/
+&IONS
+/
+&CELL
+/
+ATOMIC_SPECIES
+{{ input.ATOMIC_SPECIES_WITH_LABELS }}
+ATOMIC_POSITIONS crystal
+{{ input.ATOMIC_POSITIONS }}
+CELL_PARAMETERS angstrom
+{{ input.CELL_PARAMETERS }}
+K_POINTS automatic
+{% for d in kgrid.dimensions %}{{d}} {% endfor %}{% for s in kgrid.shifts %}{{s}} {% endfor %}

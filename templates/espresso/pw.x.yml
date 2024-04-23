@@ -306,6 +306,16 @@
   applicationName: espresso
   executableName: pw.x
 
+- content: !readFile 'assets/espresso/pw_nscf_soc.j2.in'
+  name: pw_nscf_soc.in
+  contextProviders:
+    - name: KGridFormDataManager
+    - name: QEPWXInputDataManager
+    - name: PlanewaveCutoffDataManager
+    - name: NonCollinearMagnetizationDataManager
+  applicationName: espresso
+  executableName: pw.x
+
 - content: !readFile 'assets/espresso/pw_bands_magn.j2.in'
   name: pw_bands_magn.in
   contextProviders:

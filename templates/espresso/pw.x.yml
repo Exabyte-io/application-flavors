@@ -176,6 +176,17 @@
   applicationName: espresso
   executableName: pw.x
 
+- content: !readFile 'assets/espresso/pw_scf_dft_u_soc_legacy.j2.in'
+  name: pw_scf_dft_u_soc_legacy.in
+  contextProviders:
+    - name: KGridFormDataManager
+    - name: QEPWXInputDataManager
+    - name: PlanewaveCutoffDataManager
+    - name: HubbardContextManagerLegacy
+    - name: NonCollinearMagnetizationDataManager
+  applicationName: espresso
+  executableName: pw.x
+
 - content: !readFile 'assets/espresso/pw_nscf_dft_u_magn.j2.in'
   name: pw_nscf_dft_u_magn.in
   contextProviders:

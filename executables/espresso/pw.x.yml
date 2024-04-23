@@ -468,6 +468,14 @@ flavors:
     applicationName: espresso
     executableName: pw.x
 
+  pw_bands_soc:
+    input:
+      - name: pw_bands_soc.in
+    monitors:
+      - standard_output
+    applicationName: espresso
+    executableName: pw.x
+
   pw_bands_dft_u_magn:
     input:
       - name: pw_bands_dft_u_magn.in

@@ -325,3 +325,13 @@
     - name: CollinearMagnetizationDataManager
   applicationName: espresso
   executableName: pw.x
+
+- content: !readFile 'assets/espresso/pw_bands_soc.j2.in'
+  name: pw_bands_soc.in
+  contextProviders:
+    - name: KPathFormDataManager
+    - name: QEPWXInputDataManager
+    - name: PlanewaveCutoffDataManager
+    - name: NonCollinearMagnetizationDataManager
+  applicationName: espresso
+  executableName: pw.x

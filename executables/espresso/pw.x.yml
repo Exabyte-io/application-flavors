@@ -632,6 +632,25 @@ flavors:
       - '7.2'
       - '7.3'
 
+  pw_bands_dft_u_soc_legacy:
+    input:
+      - name: pw_bands_dft_u_soc_legacy.in
+    monitors:
+      - standard_output
+    applicationName: espresso
+    executableName: pw.x
+    supportedApplicationVersions:
+      - '5.2.1'
+      - '5.4.0'
+      - '6.0.0'
+      - '6.3'
+      - '6.4.1'
+      - '6.5.0'
+      - '6.6.0'
+      - '6.7.0'
+      - '6.8.0'
+      - '7.0'
+
   pw_relax:
     input:
       - name: pw_relax.in

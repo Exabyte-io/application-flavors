@@ -310,8 +310,8 @@
   applicationName: espresso
   executableName: pw.x
 
-- content: !readFile 'assets/espresso/pw_bands_dft_u_magn.j2.in'
-  name: pw_bands_dft_u_magn.in
+- content: !readFile 'assets/espresso/pw_bands_dft_u_soc.j2.in'
+  name: pw_bands_dft_u_soc.in
   contextProviders:
     - name: KPathFormDataManager
     - name: QEPWXInputDataManager

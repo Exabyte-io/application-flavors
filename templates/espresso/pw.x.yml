@@ -142,6 +142,17 @@
   applicationName: espresso
   executableName: pw.x
 
+- content: !readFile 'assets/espresso/pw_scf_dft_u_soc.j2.in'
+  name: pw_scf_dft_u_soc.in
+  contextProviders:
+    - name: KGridFormDataManager
+    - name: QEPWXInputDataManager
+    - name: PlanewaveCutoffDataManager
+    - name: HubbardUContextManager
+    - name: NonCollinearMagnetizationDataManager
+  applicationName: espresso
+  executableName: pw.x
+
 - content: !readFile 'assets/espresso/pw_scf_dft_v_magn.j2.in'
   name: pw_scf_dft_v_magn.in
   contextProviders:
@@ -173,6 +184,17 @@
     - name: PlanewaveCutoffDataManager
     - name: HubbardContextManagerLegacy
     - name: CollinearMagnetizationDataManager
+  applicationName: espresso
+  executableName: pw.x
+
+- content: !readFile 'assets/espresso/pw_scf_dft_u_soc_legacy.j2.in'
+  name: pw_scf_dft_u_soc_legacy.in
+  contextProviders:
+    - name: KGridFormDataManager
+    - name: QEPWXInputDataManager
+    - name: PlanewaveCutoffDataManager
+    - name: HubbardContextManagerLegacy
+    - name: NonCollinearMagnetizationDataManager
   applicationName: espresso
   executableName: pw.x
 
@@ -221,6 +243,28 @@
   applicationName: espresso
   executableName: pw.x
 
+- content: !readFile 'assets/espresso/pw_nscf_dft_u_soc.j2.in'
+  name: pw_nscf_dft_u_soc.in
+  contextProviders:
+    - name: KGridFormDataManager
+    - name: QEPWXInputDataManager
+    - name: PlanewaveCutoffDataManager
+    - name: HubbardUContextManager
+    - name: NonCollinearMagnetizationDataManager
+  applicationName: espresso
+  executableName: pw.x
+
+- content: !readFile 'assets/espresso/pw_nscf_dft_u_soc_legacy.j2.in'
+  name: pw_nscf_dft_u_soc_legacy.in
+  contextProviders:
+    - name: KGridFormDataManager
+    - name: QEPWXInputDataManager
+    - name: PlanewaveCutoffDataManager
+    - name: HubbardContextManagerLegacy
+    - name: NonCollinearMagnetizationDataManager
+  applicationName: espresso
+  executableName: pw.x
+
 - content: !readFile 'assets/espresso/pw_bands_dft_u_magn.j2.in'
   name: pw_bands_dft_u_magn.in
   contextProviders:
@@ -266,6 +310,17 @@
   applicationName: espresso
   executableName: pw.x
 
+- content: !readFile 'assets/espresso/pw_bands_dft_u_soc.j2.in'
+  name: pw_bands_dft_u_soc.in
+  contextProviders:
+    - name: KPathFormDataManager
+    - name: QEPWXInputDataManager
+    - name: PlanewaveCutoffDataManager
+    - name: HubbardUContextManager
+    - name: NonCollinearMagnetizationDataManager
+  applicationName: espresso
+  executableName: pw.x
+
 - content: !readFile 'assets/espresso/pw_md.j2.in'
   name: pw_md.in
   contextProviders:
@@ -286,6 +341,16 @@
   applicationName: espresso
   executableName: pw.x
 
+- content: !readFile 'assets/espresso/pw_scf_soc.j2.in'
+  name: pw_scf_soc.in
+  contextProviders:
+    - name: KGridFormDataManager
+    - name: QEPWXInputDataManager
+    - name: PlanewaveCutoffDataManager
+    - name: NonCollinearMagnetizationDataManager
+  applicationName: espresso
+  executableName: pw.x
+
 - content: !readFile 'assets/espresso/pw_nscf_magn.j2.in'
   name: pw_nscf_magn.in
   contextProviders:
@@ -296,6 +361,16 @@
   applicationName: espresso
   executableName: pw.x
 
+- content: !readFile 'assets/espresso/pw_nscf_soc.j2.in'
+  name: pw_nscf_soc.in
+  contextProviders:
+    - name: KGridFormDataManager
+    - name: QEPWXInputDataManager
+    - name: PlanewaveCutoffDataManager
+    - name: NonCollinearMagnetizationDataManager
+  applicationName: espresso
+  executableName: pw.x
+
 - content: !readFile 'assets/espresso/pw_bands_magn.j2.in'
   name: pw_bands_magn.in
   contextProviders:
@@ -303,5 +378,26 @@
     - name: QEPWXInputDataManager
     - name: PlanewaveCutoffDataManager
     - name: CollinearMagnetizationDataManager
+  applicationName: espresso
+  executableName: pw.x
+
+- content: !readFile 'assets/espresso/pw_bands_soc.j2.in'
+  name: pw_bands_soc.in
+  contextProviders:
+    - name: KPathFormDataManager
+    - name: QEPWXInputDataManager
+    - name: PlanewaveCutoffDataManager
+    - name: NonCollinearMagnetizationDataManager
+  applicationName: espresso
+  executableName: pw.x
+
+- content: !readFile 'assets/espresso/pw_bands_dft_u_soc_legacy.j2.in'
+  name: pw_bands_dft_u_soc_legacy.in
+  contextProviders:
+    - name: KPathFormDataManager
+    - name: QEPWXInputDataManager
+    - name: PlanewaveCutoffDataManager
+    - name: HubbardContextManagerLegacy
+    - name: NonCollinearMagnetizationDataManager
   applicationName: espresso
   executableName: pw.x

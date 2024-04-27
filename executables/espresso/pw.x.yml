@@ -201,9 +201,47 @@ flavors:
     applicationName: espresso
     executableName: pw.x
 
+  pw_scf_soc:
+    input:
+      - name: pw_scf_soc.in
+    results:
+      - atomic_forces
+      - fermi_energy
+      - pressure
+      - stress_tensor
+      - total_energy
+      - total_energy_contributions
+      - total_force
+    monitors:
+      - standard_output
+      - convergence_electronic
+    applicationName: espresso
+    executableName: pw.x
+
   pw_scf_dft_u_magn:
     input:
       - name: pw_scf_dft_u_magn.in
+    results:
+      - atomic_forces
+      - band_gaps
+      - fermi_energy
+      - pressure
+      - stress_tensor
+      - total_energy
+      - total_energy_contributions
+      - total_force
+    monitors:
+      - standard_output
+      - convergence_electronic
+    applicationName: espresso
+    executableName: pw.x
+    supportedApplicationVersions:
+      - '7.2'
+      - '7.3'
+
+  pw_scf_dft_u_soc:
+    input:
+      - name: pw_scf_dft_u_soc.in
     results:
       - atomic_forces
       - band_gaps
@@ -293,6 +331,35 @@ flavors:
       - '6.8.0'
       - '7.0'
 
+  pw_scf_dft_u_soc_legacy:
+    input:
+      - name: pw_scf_dft_u_soc_legacy.in
+    results:
+      - atomic_forces
+      - band_gaps
+      - fermi_energy
+      - pressure
+      - stress_tensor
+      - total_energy
+      - total_energy_contributions
+      - total_force
+    monitors:
+      - standard_output
+      - convergence_electronic
+    applicationName: espresso
+    executableName: pw.x
+    supportedApplicationVersions:
+      - '5.2.1'
+      - '5.4.0'
+      - '6.0.0'
+      - '6.3'
+      - '6.4.1'
+      - '6.5.0'
+      - '6.6.0'
+      - '6.7.0'
+      - '6.8.0'
+      - '7.0'
+
   pw_esm:
     input:
       - name: pw_esm.in
@@ -345,6 +412,17 @@ flavors:
   pw_nscf_magn:
     input:
       - name: pw_nscf_magn.in
+    results:
+      - fermi_energy
+      - band_gaps
+    monitors:
+      - standard_output
+    applicationName: espresso
+    executableName: pw.x
+
+  pw_nscf_soc:
+    input:
+      - name: pw_nscf_soc.in
     results:
       - fermi_energy
       - band_gaps
@@ -424,6 +502,49 @@ flavors:
       - '6.8.0'
       - '7.0'
 
+  pw_nscf_dft_u_soc:
+    input:
+      - name: pw_nscf_dft_u_soc.in
+    results:
+      - fermi_energy
+      - band_gaps
+    monitors:
+      - standard_output
+    applicationName: espresso
+    executableName: pw.x
+    supportedApplicationVersions:
+      - '7.2'
+      - '7.3'
+
+  pw_nscf_dft_u_soc_legacy:
+    input:
+      - name: pw_nscf_dft_u_soc_legacy.in
+    results:
+      - atomic_forces
+      - band_gaps
+      - fermi_energy
+      - pressure
+      - stress_tensor
+      - total_energy
+      - total_energy_contributions
+      - total_force
+    monitors:
+      - standard_output
+      - convergence_electronic
+    applicationName: espresso
+    executableName: pw.x
+    supportedApplicationVersions:
+      - '5.2.1'
+      - '5.4.0'
+      - '6.0.0'
+      - '6.3'
+      - '6.4.1'
+      - '6.5.0'
+      - '6.6.0'
+      - '6.7.0'
+      - '6.8.0'
+      - '7.0'
+
   pw_bands:
     input:
       - name: pw_bands.in
@@ -435,6 +556,14 @@ flavors:
   pw_bands_magn:
     input:
       - name: pw_bands_magn.in
+    monitors:
+      - standard_output
+    applicationName: espresso
+    executableName: pw.x
+
+  pw_bands_soc:
+    input:
+      - name: pw_bands_soc.in
     monitors:
       - standard_output
     applicationName: espresso
@@ -476,6 +605,36 @@ flavors:
   pw_bands_dft_u_magn_legacy:
     input:
       - name: pw_bands_dft_u_magn_legacy.in
+    monitors:
+      - standard_output
+    applicationName: espresso
+    executableName: pw.x
+    supportedApplicationVersions:
+      - '5.2.1'
+      - '5.4.0'
+      - '6.0.0'
+      - '6.3'
+      - '6.4.1'
+      - '6.5.0'
+      - '6.6.0'
+      - '6.7.0'
+      - '6.8.0'
+      - '7.0'
+
+  pw_bands_dft_u_soc:
+    input:
+      - name: pw_bands_dft_u_soc.in
+    monitors:
+      - standard_output
+    applicationName: espresso
+    executableName: pw.x
+    supportedApplicationVersions:
+      - '7.2'
+      - '7.3'
+
+  pw_bands_dft_u_soc_legacy:
+    input:
+      - name: pw_bands_dft_u_soc_legacy.in
     monitors:
       - standard_output
     applicationName: espresso

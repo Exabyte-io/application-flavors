@@ -5,6 +5,10 @@ Default:
       - path: /pb/qm/dft/ksdft/lda?functional=pz
       - path: /pb/qm/dft/ksdft/gga?functional=pbe
       - path: /pb/qm/dft/ksdft/gga?functional=pbesol
+    pw_scf_magn:
+      - path: /pb/qm/dft/ksdft/lda?functional=pz&spinPolarization=collinear
+      - path: /pb/qm/dft/ksdft/gga?functional=pbe&spinPolarization=collinear
+      - path: /pb/qm/dft/ksdft/gga?functional=pbesol&spinPolarization=collinear
     pw_scf_bands_hse:
       - path: /pb/qm/dft/ksdft/hybrid?functional=hse06
     pw_esm:

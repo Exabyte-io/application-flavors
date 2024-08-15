@@ -550,6 +550,8 @@ flavors:
       - name: pw_bands.in
     monitors:
       - standard_output
+    results:
+      - band_structure
     applicationName: espresso
     executableName: pw.x
 

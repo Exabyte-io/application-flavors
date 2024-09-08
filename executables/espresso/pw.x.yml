@@ -548,6 +548,8 @@ flavors:
   pw_bands:
     input:
       - name: pw_bands.in
+    results:
+      - band_structure
     monitors:
       - standard_output
     applicationName: espresso
@@ -556,6 +558,8 @@ flavors:
   pw_bands_magn:
     input:
       - name: pw_bands_magn.in
+    results:
+      - band_structure
     monitors:
       - standard_output
     applicationName: espresso
@@ -564,6 +568,8 @@ flavors:
   pw_bands_soc:
     input:
       - name: pw_bands_soc.in
+    results:
+      - band_structure
     monitors:
       - standard_output
     applicationName: espresso
@@ -572,6 +578,8 @@ flavors:
   pw_bands_dft_u_magn:
     input:
       - name: pw_bands_dft_u_magn.in
+    results:
+      - band_structure
     monitors:
       - standard_output
     applicationName: espresso
@@ -583,6 +591,8 @@ flavors:
   pw_bands_dft_u+v_magn:
     input:
       - name: pw_bands_dft_v_magn.in
+    results:
+      - band_structure
     monitors:
       - standard_output
     applicationName: espresso
@@ -594,6 +604,8 @@ flavors:
   pw_bands_dft_u+j_magn:
     input:
       - name: pw_bands_dft_j_magn.in
+    results:
+      - band_structure
     monitors:
       - standard_output
     applicationName: espresso
@@ -605,6 +617,8 @@ flavors:
   pw_bands_dft_u_magn_legacy:
     input:
       - name: pw_bands_dft_u_magn_legacy.in
+    results:
+      - band_structure
     monitors:
       - standard_output
     applicationName: espresso
@@ -624,6 +638,8 @@ flavors:
   pw_bands_dft_u_soc:
     input:
       - name: pw_bands_dft_u_soc.in
+    results:
+      - band_structure
     monitors:
       - standard_output
     applicationName: espresso
@@ -635,6 +651,8 @@ flavors:
   pw_bands_dft_u_soc_legacy:
     input:
       - name: pw_bands_dft_u_soc_legacy.in
+    results:
+      - band_structure
     monitors:
       - standard_output
     applicationName: espresso

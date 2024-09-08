@@ -3,3 +3,15 @@
   contextProviders: []
   applicationName: espresso
   executableName: bands.x
+
+- content: !readFile 'assets/espresso/bands_spin_up.j2.in'
+  name: bands_spin_up.in
+  contextProviders: []
+  applicationName: espresso
+  executableName: bands.x
+
+- content: !readFile 'assets/espresso/bands_spin_dn.j2.in'
+  name: bands_spin_dn.in
+  contextProviders: []
+  applicationName: espresso
+  executableName: bands.x

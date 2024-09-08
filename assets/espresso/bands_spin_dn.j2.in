@@ -1,0 +1,8 @@
+&BANDS
+    prefix = '__prefix__'
+    outdir = {% raw %}'{{ JOB_WORK_DIR }}/outdir'{% endraw %}
+    filband = {% raw %}'{{ JOB_WORK_DIR }}/bands_dn.dat'{% endraw %}
+    spin_component = 2
+    no_overlap = .true.
+/
+

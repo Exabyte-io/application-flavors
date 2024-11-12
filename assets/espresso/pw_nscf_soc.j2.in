@@ -37,7 +37,7 @@
 {%- if nonCollinearMagnetization.isExistingChargeDensity and nonCollinearMagnetization.lforcet %}
     lforcet = .true.
 {%- endif %}
-{%- if nonCollinearMagnetization.isExistingChargeDensity and !nonCollinearMagnetization.lforcet %}
+{%- if nonCollinearMagnetization.isExistingChargeDensity and not nonCollinearMagnetization.lforcet %}
     lforcet = .false.
 {%- endif %}
 {%- if nonCollinearMagnetization.isArbitrarySpinDirection %}

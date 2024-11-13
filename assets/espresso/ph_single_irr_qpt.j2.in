@@ -1,12 +1,12 @@
 &INPUTPH
     tr2_ph = 1.0d-18
     ldisp = .true.
-    {% raw -%}
+    {% raw %}
     start_q = {{MAP_DATA.qpoint}}
     last_q = {{MAP_DATA.qpoint}}
     start_irr = {{MAP_DATA.irr}}
     last_irr= {{MAP_DATA.irr}}
-    {%- endraw %}
+    {% endraw %}
     recover = .true.
     fildyn = 'dyn'
     prefix = '__prefix__'

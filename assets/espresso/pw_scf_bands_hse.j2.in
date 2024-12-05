@@ -42,11 +42,11 @@ CELL_PARAMETERS angstrom
 {{ input.CELL_PARAMETERS }}
 K_POINTS crystal
 {{ '{{' }} {{ explicitKPath.length }} {% raw %} + KPOINTS|length }} {% endraw %}
-{%- raw %}
+{% raw %}
 {% for point in KPOINTS -%}
     {% for d in point.coordinates %}{{ "%14.9f"|format(d) }} {% endfor -%}{{ point.weight }}
 {% endfor %}
-{% endraw -%}
+{% endraw %}
 {% for point in explicitKPath -%}
 {% for d in point.coordinates %}{{d}} {% endfor -%}0.0000001
 {% endfor %}

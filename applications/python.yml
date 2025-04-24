@@ -10,3 +10,4 @@ versions:
   - version: '3.11.10'
   - version: '3.12.7'
   - version: 'anaconda3-2024.10.1'
+  - version: 'miniconda3-3.10-24.11.1-0'

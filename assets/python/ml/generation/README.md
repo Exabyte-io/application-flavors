@@ -2,7 +2,7 @@
 
 This directory contains the work corresponding to the PythonML implementation. Further documentation can be found here:
 
-https://docs.exabyte.io/software-directory/machine-learning/python-ml/overview/
+https://docs.mat3ra.com/software-directory/machine-learning/python-ml/overview/
 
 ## Current Status
 

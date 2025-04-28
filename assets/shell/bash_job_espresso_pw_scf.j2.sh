@@ -15,7 +15,7 @@
 #    7. email about job abort, begin, end  (-m abe)                #
 #    8. email address to use               (-M)                    #
 #                                                                  #
-#  For more information visit https://docs.exabyte.io/cli/jobs     #
+#  For more information visit https://docs.mat3ra.com/cli/jobs     #
 # ---------------------------------------------------------------- #
 
 #PBS -N ESPRESSO-TEST
@@ -25,10 +25,10 @@
 #PBS -l walltime=00:00:10:00
 #PBS -q D
 #PBS -m abe
-#PBS -M info@exabyte.io
+#PBS -M info@mat3ra.com
 
 # load module
-module add espresso/540-i-174-impi-044
+module add espresso
 
 # go to the job working directory
 cd $PBS_O_WORKDIR

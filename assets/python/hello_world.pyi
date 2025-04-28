@@ -13,8 +13,7 @@
 #                                                                  #
 # ---------------------------------------------------------------- #
 
-import pymatgen as mg
+import numpy as np
 
-si = mg.Element("Si")
-
-print(si.atomic_mass)
+pi_value = np.pi
+print(pi_value)

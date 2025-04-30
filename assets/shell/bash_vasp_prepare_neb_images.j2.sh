@@ -11,9 +11,9 @@
 #  directories to calculate the reaction energy profile.
 # ------------------------------------------------------------------ #
 
-{% raw -%}
+{% raw %}
 cd {{ JOB_WORK_DIR }}
-{%- endraw %}
+{% endraw %}
 
 # Prepare First Directory
 mkdir -p 00

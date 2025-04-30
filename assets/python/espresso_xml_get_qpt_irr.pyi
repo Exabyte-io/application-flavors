@@ -11,10 +11,10 @@ import json
 from xml.dom import minidom
 
 {# JOB_WORK_DIR will be initialized at runtime => avoid substituion below #}
-{%- raw -%}
+{% raw %}
 CONTROL_PH_FILENAME = "{{JOB_WORK_DIR}}/outdir/_ph0/__prefix__.phsave/control_ph.xml"
 PATTERNS_FILENAME = "{{JOB_WORK_DIR}}/outdir/_ph0/__prefix__.phsave/patterns.{}.xml"
-{%- endraw -%}
+{% endraw %}
 
 # get integer content of an xml tag in a document
 def get_int_by_tag_name(doc, tag_name):

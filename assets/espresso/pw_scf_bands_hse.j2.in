@@ -41,7 +41,7 @@ ATOMIC_POSITIONS crystal
 CELL_PARAMETERS angstrom
 {{ input.CELL_PARAMETERS }}
 K_POINTS crystal
-{{ '{{' }} {{ explicitKPath.length }} {% raw %} + KPOINTS|length }} {% endraw %}
+{{ '{{' }} {{ explicitKPath.length }} {% raw %} + KPOINTS|length {% endraw %}  {{ '}}' }}
 {% raw %}
 {% for point in KPOINTS -%}
     {% for d in point.coordinates %}{{ "%14.9f"|format(d) }} {% endfor -%}{{ point.weight }}

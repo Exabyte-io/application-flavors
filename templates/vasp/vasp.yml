@@ -5,6 +5,13 @@
   applicationName: vasp
   executableName: vasp
 
+- content: !readFile 'assets/vasp/INCAR_SYMPREC.j2'
+  name: INCAR_SYMPREC
+  contextProviders:
+    - name: VASPInputDataManager
+  applicationName: vasp
+  executableName: vasp
+
 - content: !readFile 'assets/vasp/INCAR_bands.j2'
   name: INCAR_BANDS
   contextProviders:

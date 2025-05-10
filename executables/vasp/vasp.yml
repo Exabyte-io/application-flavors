@@ -46,6 +46,26 @@ flavors:
     applicationName: vasp
     executableName: vasp
 
+  vasp_symprec:
+    input:
+      - name: INCAR
+        templateName: INCAR_SYMPREC
+      - name: KPOINTS
+      - name: POSCAR
+    results:
+      - total_energy
+      - total_energy_contributions
+      - pressure
+      - fermi_energy
+      - atomic_forces
+      - total_force
+      - stress_tensor
+    monitors:
+      - standard_output
+      - convergence_electronic
+    applicationName: vasp
+    executableName: vasp
+
   vasp_bands:
     input:
       - name: INCAR

@@ -82,4 +82,5 @@ K_POINTS automatic
 EOF
 
 # run the calculation
-mpirun -np $PBS_NP pw.x -in pw.in > pw.out
+# EXEC_CMD envvar is (conditionally) set by the module
+mpirun -np $PBS_NP $EXEC_CMD pw.x -in pw.in > pw.out

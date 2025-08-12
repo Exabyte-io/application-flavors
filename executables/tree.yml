@@ -27,9 +27,6 @@ espresso:
   simple_ip.x: !include 'executables/espresso/simple_ip.x.yml'
 jupyterLab:
   jupyter: !include 'executables/jupyterLab/jupyter.yml'
-exabyteml:
-  score: !include 'executables/exabyteml/score.yml'
-  train: !include 'executables/exabyteml/train.yml'
 nwchem:
   nwchem: !include 'executables/nwchem/nwchem.yml'
 python:

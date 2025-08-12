@@ -10,7 +10,6 @@ export { filterModelsByApplicationParameters } from "./models";
 export const allApplications = [
     "espresso",
     "jupyterLab",
-    "exabyteml",
     "deepmd",
     "nwchem",
     "python",

@@ -117,20 +117,6 @@ describe("assets for all executables", () => {
         });
     });
 
-    // skip as there are no template assets for exabyteml
-    it.skip("exists at least 1 asset for each tree entry for exabyteml tree", () => {
-        const tree = APP_TREE.exabyteml;
-        console.log(JSON.stringify(tree, null, 4));
-
-        Object.keys(tree).forEach((treeItemName) => {
-            const treeItemTemplates = templates.filter(
-                (template) => template.executableName === treeItemName,
-            );
-
-            assert(treeItemTemplates.length > 0);
-        });
-    });
-
     it("exists at least 1 asset for each tree entry for nwchem tree", () => {
         const tree = APP_TREE.nwchem;
 
